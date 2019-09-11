@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "gatsby-theme-elk",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A theme of blog for gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "zh.sanget@gmail.com",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -38,7 +38,7 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/SANGET/gatsby-theme-elk/blob/master/README.md",
   "keywords": [
     "gatsby"
   ],
