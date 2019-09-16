@@ -1,6 +1,7 @@
 {
   "name": "gatsby-theme-elk",
   "private": true,
+  "workspaces": ["gatsby-theme-events", "site"],
   "description": "A theme of blog for gatsby",
   "version": "0.1.0",
   "author": "zh.sanget@gmail.com",
@@ -46,7 +47,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/SANGET/gatsby-theme-elk.git"
   },
   "scripts": {
     "build": "gatsby build",
