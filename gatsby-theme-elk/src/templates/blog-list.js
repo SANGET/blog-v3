@@ -42,6 +42,7 @@ class BlogIndex extends React.Component {
           })}
         </section>
         <Pagination 
+          isNeedHelper={false}
           pagingInfo={{
             pIdx: 0,
             pSize: 10,
