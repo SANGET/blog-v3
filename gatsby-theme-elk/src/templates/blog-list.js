@@ -1,44 +1,58 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import { Link, graphql, navigate } from 'gatsby';
+import { Pagination } from 'ukelli-ui/core/pagin';
 
-import SEO from '../components/seo'
-import Bio from '../components/Bio'
-import Layout from '../components/Layout'
+import SEO from '../components/seo';
+import Bio from '../components/bio';
+import Layout from '../components/layout';
 
 import '../style/index.scss';
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-    const { currentPage, numPages } = this.props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
+    const { currentPage, numPages } = this.props.pageContext;
+    const isFirst = currentPage === 1;
+    const isLast = currentPage === numPages;
+    const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString();
+    const nextPage = (currentPage + 1).toString();
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={siteTitle}
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}/>
         <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        <section className="post-list">
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <div key={node.fields.slug}>
+                <h3>
+                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            );
+          })}
+        </section>
+        <Pagination 
+          pagingInfo={{
+            pIdx: 0,
+            pSize: 10,
+            total: 100,
+            active: true
+          }}
+          onPagin={nextPagin => {
+            // console.log(nextPagin);
+            // TODO: 完善分页
+            // navigate(``);
+          }} />
         <ul
           style={{
             display: 'flex',
@@ -47,8 +61,7 @@ class BlogIndex extends React.Component {
             alignItems: 'center',
             listStyle: 'none',
             padding: 0,
-          }}
-        >
+          }}>
           {!isFirst && (
             <Link to={prevPage} rel="prev">
               ← Previous Page
@@ -59,11 +72,9 @@ class BlogIndex extends React.Component {
               key={`pagination-number${i + 1}`}
               style={{
                 margin: 0,
-              }}
-            >
+              }}>
               <Link
-                to={`/${i === 0 ? '' : i + 1}`}
-              >
+                to={`/${i === 0 ? '' : i + 1}`}>
                 {i + 1}
               </Link>
             </li>
@@ -75,11 +86,11 @@ class BlogIndex extends React.Component {
           )}
         </ul>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
@@ -107,4 +118,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
