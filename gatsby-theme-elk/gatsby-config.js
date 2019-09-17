@@ -69,11 +69,12 @@ module.exports = ({
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    `gatsby-plugin-sass`,
+    // {
+    //   resolve: `gatsby-plugin-postcss`,
+    //   options: {
+    //     postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+    //   },
+    // },
   ],
 })

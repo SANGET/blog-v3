@@ -4,7 +4,8 @@ import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
-import { rhythm } from '../utils/typography'
+
+import '../style/index.scss';
 
 class BlogIndex extends React.Component {
   render() {
@@ -28,11 +29,7 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
@@ -66,12 +63,6 @@ class BlogIndex extends React.Component {
             >
               <Link
                 to={`/${i === 0 ? '' : i + 1}`}
-                style={{
-                  padding: rhythm(1 / 4),
-                  textDecoration: 'none',
-                  color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#007acc' : '',
-                }}
               >
                 {i + 1}
               </Link>

@@ -1,4 +1,5 @@
 const fs = require("fs")
+const path = require("path")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // Make sure the data directory exists
@@ -50,7 +51,7 @@ exports.createPages = ({ graphql, actions }, options) => {
   const { createPage } = actions
   const { postsPerPage = 10 } = options
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = path.resolve(__dirname, `./src/templates/blog-post.js`)
   return graphql(
     `
       {
@@ -101,7 +102,7 @@ exports.createPages = ({ graphql, actions }, options) => {
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: path.resolve('./src/templates/blog-list.js'),
+        component: path.resolve(__dirname, './src/templates/blog-list.js'),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,

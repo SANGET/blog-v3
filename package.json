@@ -1,7 +1,9 @@
 {
   "name": "gatsby-theme-elk",
   "private": true,
-  "workspaces": ["gatsby-theme-elk"],
+  "workspaces": [
+    "gatsby-theme-elk"
+  ],
   "description": "A theme of blog for gatsby",
   "version": "0.1.0",
   "author": "zh.sanget@gmail.com",
@@ -14,6 +16,7 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^5.0.1",
     "prettier": "^1.18.2"
   },
   "homepage": "https://github.com/SANGET/gatsby-theme-elk/blob/master/README.md",

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Uke blog`,
+    title: `{思行合一}`,
     author: `Alex Zhang`,
     description: `A blog of Alex Zhang.`,
     siteUrl: `https://ukelli.com`,
