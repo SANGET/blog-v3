@@ -1,10 +1,12 @@
 body {
-  // background-color: #000000;
+  background-color: #EEE;
+  font-size: 14px;
 }
 .main-container {
   padding: 0.1px;
 }
 .container {
+  width: 60%;
   max-width: 1140px;
   min-width: 768px;
   margin: 0 auto;
@@ -13,5 +15,13 @@ img {
   max-width: 100%;
 }
 .post-list {
-  padding: 20px 40px;
+  padding: 20px 0;
+}
+.pagin-con {
+  margin: 20px 0;
+}
+.footer {
+  background-color: #222;
+  color: #CCC;
+  padding: 20px 0;
 }

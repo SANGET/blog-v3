@@ -13,7 +13,8 @@ class BlogIndex extends React.Component {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
-    const { currentPage, numPages } = this.props.pageContext;
+    const { currentPage, numPages, limit, totalPosts } = this.props.pageContext;
+    console.log(this.props.pageContext)
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
     const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString();
@@ -44,48 +45,17 @@ class BlogIndex extends React.Component {
         <Pagination 
           isNeedHelper={false}
           pagingInfo={{
-            pIdx: 0,
-            pSize: 10,
-            total: 100,
+            pIdx: currentPage - 1,
+            pSize: limit,
+            total: totalPosts,
             active: true
           }}
           onPagin={nextPagin => {
             // console.log(nextPagin);
             // TODO: 完善分页
-            // navigate(``);
+            const nextPageIdx = nextPagin.pIdx + 1;
+            navigate(`/${nextPageIdx === 1 ? '' : nextPageIdx}`);
           }} />
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            listStyle: 'none',
-            padding: 0,
-          }}>
-          {!isFirst && (
-            <Link to={prevPage} rel="prev">
-              ← Previous Page
-            </Link>
-          )}
-          {Array.from({ length: numPages }, (_, i) => (
-            <li
-              key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}>
-              <Link
-                to={`/${i === 0 ? '' : i + 1}`}>
-                {i + 1}
-              </Link>
-            </li>
-          ))}
-          {!isLast && (
-            <Link to={nextPage} rel="next">
-              Next Page →
-            </Link>
-          )}
-        </ul>
       </Layout>
     );
   }

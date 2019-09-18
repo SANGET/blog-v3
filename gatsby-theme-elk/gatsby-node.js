@@ -1,15 +1,15 @@
-const fs = require("fs")
-const path = require("path")
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const fs = require("fs");
+const path = require("path");
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
-  const contentPath = options.contentPath || "data"
+  const contentPath = options.contentPath || "data";
   if (!fs.existsSync(contentPath)) {
-    reporter.info(`creating the ${contentPath} directory`)
-    fs.mkdirSync(contentPath)
+    reporter.info(`creating the ${contentPath} directory`);
+    fs.mkdirSync(contentPath);
   }
-}
+};
 
 // Define the "Event" type
 // exports.sourceNodes = ({ actions }) => {
@@ -29,29 +29,30 @@ exports.onPreBootstrap = ({ reporter }, options) => {
 
 // Define resolvers for custom fields
 exports.createResolvers = ({ createResolvers }, options) => {
-  const basePath = options.basePath || "/"
+  const basePath = options.basePath || "/";
   // Quick-and-dirty helper to convert strings into URL-friendly slugs.
   const slugify = str => {
     const slug = str
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)+/g, "")
-    return `/${basePath}/${slug}`.replace(/\/\/+/g, "/")
-  }
+      .replace(/(^-|-$)+/g, "");
+    return `/${basePath}/${slug}`.replace(/\/\/+/g, "/");
+  };
   createResolvers({
     Event: {
       slug: {
         resolve: source => slugify(source.name),
       },
     },
-  })
-}
+  });
+};
 
 exports.createPages = ({ graphql, actions }, options) => {
-  const { createPage } = actions
-  const { postsPerPage = 10 } = options
+  const { createPage } = actions;
+  const { postsPerPage = 10 } = options;
 
-  const blogPost = path.resolve(__dirname, `./src/templates/blog-post.js`)
+  const blogPostTMPL = path.resolve(__dirname, `./src/templates/blog-post.js`);
+  const blogListTMPL = path.resolve(__dirname, './src/templates/blog-list.js');
   return graphql(
     `
       {
@@ -74,26 +75,26 @@ exports.createPages = ({ graphql, actions }, options) => {
     `
   ).then(result => {
     if (result.errors) {
-      throw result.errors
+      throw result.errors;
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
 
       createPage({
         path: post.node.fields.slug,
-        component: blogPost,
+        component: blogPostTMPL,
         context: {
           slug: post.node.fields.slug,
           previous,
           next,
         },
-      })
-    })
+      });
+    });
 
     // Create blog post list pages
     // const postsPerPage = 2;
@@ -102,27 +103,28 @@ exports.createPages = ({ graphql, actions }, options) => {
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: path.resolve(__dirname, './src/templates/blog-list.js'),
+        component: blogListTMPL,
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
+          totalPosts: posts.length,
           numPages,
           currentPage: i + 1
         },
       });
     });
-  })
-}
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
+};
