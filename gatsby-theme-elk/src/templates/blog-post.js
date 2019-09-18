@@ -15,7 +15,13 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}/>
+          description={post.frontmatter.description || post.excerpt}
+          resources={[
+            {
+              type: 'link',
+              url: 'https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css'
+            }
+          ]} />
         <article>
           <header>
             <h1>
@@ -25,7 +31,7 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section className="markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr />
           <footer>
             <Bio />
