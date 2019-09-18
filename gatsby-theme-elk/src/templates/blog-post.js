@@ -19,6 +19,7 @@ class BlogPostTemplate extends React.Component {
           resources={[
             {
               type: 'link',
+              resourceType: 'text/css',
               url: 'https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css'
             }
           ]} />
@@ -31,7 +32,9 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
-          <section className="markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div className="markdown-body">
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          </div>
           <hr />
           <footer>
             <Bio />
