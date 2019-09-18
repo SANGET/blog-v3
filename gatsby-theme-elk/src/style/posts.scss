@@ -1,0 +1,23 @@
+
+.post-list {
+  padding: 20px 0;
+  .post-title {
+    color: #000;
+    a {
+      color: inherit;
+    }
+  }
+}
+.post-item {
+  margin-bottom: 40px;
+  cursor: pointer;
+  .post-desc, .time {
+    color: #888;
+  }
+}
+.post-shortcut-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}

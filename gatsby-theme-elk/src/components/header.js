@@ -8,7 +8,7 @@ const Header = (props) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1>
+      <div className="logo">
         <Link
           style={{
             boxShadow: `none`,
@@ -18,15 +18,11 @@ const Header = (props) => {
           to={`/`}>
           {title}
         </Link>
-      </h1>
+      </div>
     );
   } else {
     header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}>
+      <div className="logo">
         <Link
           style={{
             boxShadow: `none`,
@@ -36,11 +32,15 @@ const Header = (props) => {
           to={`/`}>
           {title}
         </Link>
-      </h3>
+      </div>
     );
   }
 
-  return header;
+  return (
+    <header className="container header">
+      {header}
+    </header>
+  );
 };
 
 export default Header;

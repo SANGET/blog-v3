@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-      © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        2013 - 
+        ©{new Date().getFullYear()}
+        Sanget
       </div>
     </footer>
   );

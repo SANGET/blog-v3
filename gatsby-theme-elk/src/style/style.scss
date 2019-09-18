@@ -2,20 +2,21 @@ body {
   background-color: #fefefe;
   font-size: 14px;
 }
-.main-container {
+.wrapper {
   padding: 0.1px;
+  position: relative;
 }
 .container {
   width: 60%;
   max-width: 1140px;
   min-width: 768px;
   margin: 0 auto;
+  &.main {
+    padding-top: 30px;
+  }
 }
 img {
   max-width: 100%;
-}
-.post-list {
-  padding: 20px 0;
 }
 .pagin-con {
   margin: 20px 0;
@@ -24,4 +25,11 @@ img {
   background-color: #222;
   color: #CCC;
   padding: 20px 0;
+}
+.header {
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #FFF;
 }

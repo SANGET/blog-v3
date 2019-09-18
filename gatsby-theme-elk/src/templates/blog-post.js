@@ -35,29 +35,29 @@ class BlogPostTemplate extends React.Component {
           <div className="markdown-body">
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
-          <hr />
+          {/* <hr />
           <footer>
             <Bio />
-          </footer>
+          </footer> */}
         </article>
 
         <nav>
-          <ul>
-            <li>
+          <div className="post-shortcut-nav">
+            <div>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
-            </li>
-            <li>
+            </div>
+            <div>
               {next && (
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>
               )}
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
       </Layout>
     );
