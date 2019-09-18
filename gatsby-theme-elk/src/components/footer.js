@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ title }) => {
   return (
     <footer className="footer">
       <div className="container">
-        2013 - 
-        ©{new Date().getFullYear()}
-        Sanget
+        © {new Date().getFullYear()} {title}, build with 
+        <a href="https://www.gatsbyjs.org/" rel="nofollow" className="ms5" target="_blank">Gatsby</a>
       </div>
     </footer>
   );

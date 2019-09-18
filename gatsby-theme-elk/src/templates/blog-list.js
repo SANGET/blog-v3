@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, graphql, navigate } from 'gatsby';
 import { Pagination } from 'ukelli-ui/core/pagin';
+import { Icon } from 'ukelli-ui/core/icon';
 
 import SEO from '../components/seo';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
+
+import calculateReadTime from '../../utils/calc-read-time';
 
 import '../style/index.scss';
 
@@ -24,6 +27,14 @@ class BlogIndex extends React.Component {
         <section className="post-list">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
+            const { description, date } = node.frontmatter;
+            const readTime = calculateReadTime(node.rawMarkdownBody);
+            const timeDOM = (
+              <time className="time">
+                <Icon n="clock" s="r" classNames={['mr5']} />
+                {date}
+              </time>
+            );
             return (
               <div key={node.fields.slug} className="post-item">
                 <h3 className="post-title">
@@ -31,8 +42,9 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <p className="post-desc" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                <time className="time">{node.frontmatter.date}</time>
+                {readTime} min read
+                <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
+                {timeDOM}
               </div>
             );
           })}
@@ -73,12 +85,14 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
+          rawMarkdownBody
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
+            description
           }
         }
       }

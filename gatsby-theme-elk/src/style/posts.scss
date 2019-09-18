@@ -3,16 +3,20 @@
   padding: 20px 0;
   .post-title {
     color: #000;
+    // margin-top: 5px;
     a {
       color: inherit;
     }
   }
 }
 .post-item {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   cursor: pointer;
   .post-desc, .time {
     color: #888;
+  }
+  .post-desc {
+    margin: 20px 0 10px;
   }
 }
 .post-shortcut-nav {

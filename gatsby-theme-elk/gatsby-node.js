@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const calculateReadTime = require(path.resolve(__dirname, './utils/calc-read-time'));
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
@@ -62,6 +63,7 @@ exports.createPages = ({ graphql, actions }, options) => {
         ) {
           edges {
             node {
+              rawMarkdownBody
               fields {
                 slug
               }
@@ -84,6 +86,7 @@ exports.createPages = ({ graphql, actions }, options) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
+      const readTime = calculateReadTime(post.node.rawMarkdownBody);
 
       createPage({
         path: post.node.fields.slug,
@@ -91,6 +94,7 @@ exports.createPages = ({ graphql, actions }, options) => {
         context: {
           slug: post.node.fields.slug,
           previous,
+          readTime,
           next,
         },
       });

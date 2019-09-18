@@ -1,0 +1,31 @@
+.header {
+  // padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #FFF;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  color: #333;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .item {
+    $border: 1px;
+    padding: 15px 30px;
+    border-bottom: $border solid transparent;
+    margin-bottom: -$border;
+    &:hover {
+      background-color: #f9f9f9;
+    }
+    &.active {
+      border-color: $themeColor;
+      // color: #FFF;
+    }
+  }
+}

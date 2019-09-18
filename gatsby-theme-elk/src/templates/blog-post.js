@@ -9,7 +9,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
+    const { previous, next, readTime } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -28,6 +28,7 @@ class BlogPostTemplate extends React.Component {
             <h1>
               {post.frontmatter.title}
             </h1>
+            <span>{readTime} min read</span>
             <p>
               {post.frontmatter.date}
             </p>
