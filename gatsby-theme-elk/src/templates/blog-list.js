@@ -62,7 +62,6 @@ class BlogIndex extends React.Component {
           }}
           onPagin={nextPagin => {
             // console.log(nextPagin);
-            // TODO: 完善分页
             const nextPageIdx = nextPagin.pIdx + 1;
             navigate(`/${nextPageIdx === 1 ? '' : nextPageIdx}`);
           }} />

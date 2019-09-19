@@ -6,7 +6,7 @@ import Scripts from './scripts';
 
 class Layout extends React.Component {
   render() {
-    const { children, ...other } = this.props;
+    const { children, loadResources, ...other } = this.props;
     return (
       <>
         <div className="wrapper">
@@ -14,8 +14,7 @@ class Layout extends React.Component {
           <main className="container main">{children}</main>
           <Footer {...other} />
         </div>
-        {/* TODO: 把通用 scripts 放到最外层 */}
-        <Scripts />
+        <Scripts resources={loadResources} />
       </>
     );
   }
