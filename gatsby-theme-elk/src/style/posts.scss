@@ -12,11 +12,15 @@
 .post-item {
   margin-bottom: 50px;
   cursor: pointer;
-  .post-desc, .time {
+  .post-desc {
+    color: #777;
+  }
+  .time, .read-time {
     color: #888;
   }
   .post-desc {
-    margin: 20px 0 10px;
+    // margin: 20px 0 10px;
+    font-size: 1.1em;
   }
 }
 .post-shortcut-nav {

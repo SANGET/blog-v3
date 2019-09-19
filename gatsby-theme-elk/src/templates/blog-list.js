@@ -42,9 +42,12 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                {readTime} min read
                 <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
                 {timeDOM}
+                <span className="read-time ml20">
+                  <Icon n="eye" s="r" classNames={['mr5']} />
+                  {readTime} min read
+                </span>
               </div>
             );
           })}
