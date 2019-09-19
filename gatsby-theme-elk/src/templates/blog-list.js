@@ -12,11 +12,20 @@ import calculateReadTime from '../../utils/calc-read-time';
 import '../style/index.scss';
 
 class BlogIndex extends React.Component {
+  componentDidMount() {
+    document.body.addEventListener('scroll', this.handleScroll, {
+      capture: true,
+      passive: true
+    });
+  }
+  handleScroll = (e) => {
+    console.log(e)
+  }
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
-    const { currentPage, numPages, limit, totalPosts } = this.props.pageContext;
+    const { currentPage, limit, totalPosts } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -25,32 +34,39 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}/>
         <Bio />
         <section className="post-list">
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-            const { description, date } = node.frontmatter;
-            const readTime = calculateReadTime(node.rawMarkdownBody);
-            const timeDOM = (
-              <time className="time">
-                <Icon n="clock" s="r" classNames={['mr5']} />
-                {date}
-              </time>
-            );
-            return (
-              <div key={node.fields.slug} className="post-item">
-                <h3 className="post-title">
-                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
-                {timeDOM}
-                <span className="read-time ml20">
-                  <Icon n="eye" s="r" classNames={['mr5']} />
-                  {readTime} min read
-                </span>
-              </div>
-            );
-          })}
+          {
+            posts.map(({ node }) => {
+              const slug = node.fields.slug;
+              const title = node.frontmatter.title || slug;
+              const { description, date } = node.frontmatter;
+              const readTime = calculateReadTime(node.rawMarkdownBody);
+              const timeDOM = (
+                <time className="time">
+                  <Icon n="clock" s="r" classNames={['mr5']} />
+                  {date}
+                </time>
+              );
+              return (
+                <div key={slug}
+                  onClick={e => {
+                    navigate(`/${slug}`);
+                  }}
+                  className="post-item">
+                  <h3 className="post-title">
+                    <Link style={{ boxShadow: 'none' }} to={slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                  <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
+                  {timeDOM}
+                  <span className="read-time ml20">
+                    <Icon n="eye" s="r" classNames={['mr5']} />
+                    {readTime} min read
+                  </span>
+                </div>
+              );
+            })
+          }
         </section>
         <Pagination 
           isNeedHelper={false}
