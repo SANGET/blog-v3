@@ -1,11 +1,27 @@
 import React from 'react';
 import { Link } from "gatsby";
 
+const rootPath = `${__PATH_PREFIX__}/`;
+const navConfig = [
+  {
+    title: '博客',
+    path: '/',
+    activeFilter: pathname => pathname === rootPath
+  },
+  {
+    title: '关于',
+    path: '/about',
+  },
+  {
+    title: '标签',
+    path: '/tags',
+  },
+];
+
 const Header = (props) => {
   const { location, title } = props;
-  const rootPath = `${__PATH_PREFIX__}/`;
   const { pathname } = location;
-  const isInRoot = pathname === rootPath;
+  // const isInRoot = pathname === rootPath;
   let header = (
     <nav className="header-nav">
       <div className="logo">
@@ -15,7 +31,21 @@ const Header = (props) => {
         </Link>
       </div>
       <span className="flex"></span>
-      <Link
+      {
+        navConfig.map((nav) => {
+          const { title, path, activeFilter } = nav;
+          const isActive = activeFilter ? activeFilter(pathname) : pathname === path;
+          return (
+            <Link
+              key={path}
+              className={`item${isActive ? ' active' : ''}`}
+              to={path}>
+              {title}
+            </Link>
+          );
+        })
+      }
+      {/* <Link
         className={`item${isInRoot ? ' active' : ''}`}
         to={`/`}>
         博客
@@ -24,7 +54,7 @@ const Header = (props) => {
         className={`item${pathname === '/about' ? ' active' : ''}`}
         to={`/about`}>
         关于
-      </Link>
+      </Link> */}
     </nav>
   );
 

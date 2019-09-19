@@ -4,8 +4,9 @@ const Footer = ({ title }) => {
   return (
     <footer className="footer">
       <div className="container">
-        © {new Date().getFullYear()} {title}, build with 
-        <a href="https://www.gatsbyjs.org/" rel="nofollow" className="ms5" target="_blank">Gatsby</a>
+        © {new Date().getFullYear()} {title} - build with 
+        <a href="https://www.gatsbyjs.org/" rel="nofollow" className="ms5" target="_blank">Gatsby</a>-
+        <a href="https://www.gatsbyjs.org/" rel="nofollow" className="ms5" target="_blank">Gatsby Theme Elk</a>
       </div>
     </footer>
   );

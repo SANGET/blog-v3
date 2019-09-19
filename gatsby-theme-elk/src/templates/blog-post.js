@@ -5,6 +5,8 @@ import { Icon } from 'ukelli-ui/core/icon';
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import TimeTip from '../components/time-tip';
+import Tags from '../components/tags-render';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -25,23 +27,20 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}/>
-        <article>
-          <header>
+        <article className="post-detail">
+          <header className="post-header">
             <h1>
               {post.frontmatter.title}
             </h1>
-            <span>{readTime} min read</span>
-            <p>
-              {post.frontmatter.date}
-            </p>
+            <div className="subcontent">
+              <TimeTip date={post.frontmatter.date} readTime={readTime} className="time-helper" />
+              <span className="flex"></span>
+              <Tags tags={post.frontmatter.tags} />
+            </div>
           </header>
           <div className="markdown-body">
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
-          {/* <hr />
-          <footer>
-            <Bio />
-          </footer> */}
         </article>
 
         <nav>
@@ -87,6 +86,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }

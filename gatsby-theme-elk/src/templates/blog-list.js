@@ -6,6 +6,7 @@ import { Icon } from 'ukelli-ui/core/icon';
 import SEO from '../components/seo';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
+import TimeTip from '../components/time-tip';
 
 import calculateReadTime from '../../utils/calc-read-time';
 
@@ -19,7 +20,7 @@ class BlogIndex extends React.Component {
     });
   }
   handleScroll = (e) => {
-    console.log(e)
+    console.log(e);
   }
   render() {
     const { data } = this.props;
@@ -40,12 +41,12 @@ class BlogIndex extends React.Component {
               const title = node.frontmatter.title || slug;
               const { description, date } = node.frontmatter;
               const readTime = calculateReadTime(node.rawMarkdownBody);
-              const timeDOM = (
-                <time className="time">
-                  <Icon n="clock" s="r" classNames={['mr5']} />
-                  {date}
-                </time>
-              );
+              // const timeDOM = (
+              //   <time className="time">
+              //     <Icon n="clock" s="r" classNames={['mr5']} />
+              //     {date}
+              //   </time>
+              // );
               return (
                 <div key={slug}
                   onClick={e => {
@@ -58,11 +59,12 @@ class BlogIndex extends React.Component {
                     </Link>
                   </h3>
                   <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
-                  {timeDOM}
+                  <TimeTip date={date} readTime={readTime} />
+                  {/* {timeDOM}
                   <span className="read-time ml20">
                     <Icon n="eye" s="r" classNames={['mr5']} />
                     {readTime} min read
-                  </span>
+                  </span> */}
                 </div>
               );
             })

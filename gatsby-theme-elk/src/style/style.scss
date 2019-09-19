@@ -2,14 +2,27 @@ body {
   background-color: #fefefe;
   font-size: 14px;
 }
+a {
+  color: $themeColor;
+}
 .wrapper {
-  padding: 0.1px;
   position: relative;
+  &.desktop {
+    .container {
+      width: 60%;
+      max-width: 1140px;
+      min-width: 768px;
+    }
+  }
+  &.mobile {
+    .container {
+      &.main {
+        padding: 20px 10px;
+      }
+    }
+  }
 }
 .container {
-  width: 60%;
-  max-width: 1140px;
-  min-width: 768px;
   margin: 0 auto;
   &.main {
     padding: 40px 0;
@@ -23,8 +36,14 @@ img {
   padding: 0;
 }
 .footer {
-  background-color: #222;
-  color: #CCC;
-  border-top: 1px solid #000;
+  background-color: #EEE;
+  color: #777;
+  border-top: 1px solid #e9e9e9;
   padding: 20px 0;
+}
+.mobile {
+  .header, .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

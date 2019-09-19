@@ -1,7 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const _ = require("lodash");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const calculateReadTime = require(path.resolve(__dirname, './utils/calc-read-time'));
+const layoutMapper = require('./utils/layout-mapper');
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
@@ -52,14 +54,12 @@ exports.createPages = ({ graphql, actions }, options) => {
   const { createPage } = actions;
   const { postsPerPage = 10 } = options;
 
-  const blogPostTMPL = path.resolve(__dirname, `./src/templates/blog-post.js`);
-  const blogListTMPL = path.resolve(__dirname, './src/templates/blog-list.js');
   return graphql(
     `
       {
-        allMarkdownRemark(
+        postsRemark: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
+          limit: 2000
         ) {
           edges {
             node {
@@ -69,8 +69,14 @@ exports.createPages = ({ graphql, actions }, options) => {
               }
               frontmatter {
                 title
+                layout
               }
             }
+          }
+        }
+        tagsGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
           }
         }
       }
@@ -79,18 +85,19 @@ exports.createPages = ({ graphql, actions }, options) => {
     if (result.errors) {
       throw result.errors;
     }
+    // const blogPostTMPL = path.resolve(__dirname, `./src/templates/blog-post.js`);
 
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges;
-
+    const posts = result.data.postsRemark.edges;
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
       const readTime = calculateReadTime(post.node.rawMarkdownBody);
+      const layoutComponent = layoutMapper[post.node.frontmatter.layout];
 
       createPage({
         path: post.node.fields.slug,
-        component: blogPostTMPL,
+        component: layoutComponent,
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -100,14 +107,25 @@ exports.createPages = ({ graphql, actions }, options) => {
       });
     });
 
+    // Create tags page
+    const tags = result.data.tagsGroup.group;
+    tags.forEach(tag => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: path.resolve(__dirname, './src/templates/tags.js'),
+        context: {
+          tag: tag.fieldValue,
+        },
+      });
+    });
+
     // Create blog post list pages
     // const postsPerPage = 2;
     const numPages = Math.ceil(posts.length / postsPerPage);
-
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: blogListTMPL,
+        component: path.resolve(__dirname, './src/templates/blog-list.js'),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,

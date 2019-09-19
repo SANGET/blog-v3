@@ -36,6 +36,10 @@ function SEO({ description, lang, meta, title, resources }) {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          name: 'viewport',
+          content: "width=device-width, initial-scale=1, maximum-scale=2"
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
@@ -51,22 +55,22 @@ function SEO({ description, lang, meta, title, resources }) {
           property: `og:type`,
           content: `website`,
         },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+        // {
+        //   name: `twitter:card`,
+        //   content: `summary`,
+        // },
+        // {
+        //   name: `twitter:creator`,
+        //   content: site.siteMetadata.author,
+        // },
+        // {
+        //   name: `twitter:title`,
+        //   content: title,
+        // },
+        // {
+        //   name: `twitter:description`,
+        //   content: metaDescription,
+        // },
       ].concat(meta)}>
       {
         Array.isArray(resources) && resources.map((resource, idx) => {
