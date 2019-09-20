@@ -9,7 +9,7 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
-    "basic-helper": "^3.0.6",
+    "basic-helper": "^3.0.7",
     "css-loader": "^3.2.0",
     "gatsby": "^2.15.14",
     "gatsby-image": "^2.2.18",
@@ -40,7 +40,7 @@
     "react-transition-group": "^4.3.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "ukelli-ui": "^3.0.0"
+    "ukelli-ui": "^3.0.1-rc1"
   },
   "devDependencies": {
     "gatsby": "^2.15.14",

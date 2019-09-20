@@ -1,0 +1,19 @@
+.tag-posts {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.tag-cloud {
+}
+.block-a {
+  a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #EEE;
+    padding: 10px 0;
+    display: inline-block;
+    &:hover {
+      color: $themeColor;
+    }
+  }
+}

@@ -16,20 +16,30 @@ const TagsPage = ({
   },
   location
 }) => {
+  const allTags = group.length;
   return (
     <Layout location={location} title={title}>
       <SEO title="思行合一的文章标签" />
       <div>
         <h1>Tags</h1>
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <br/>
+        <p>Total {allTags} tags</p>
+        <div className="tag-cloud block-a">
+          {
+            group.map(tag => {
+              const { fieldValue, totalCount } = tag;
+              return (
+                <span key={fieldValue} className="mr15" style={{
+                  fontSize: `${15 + totalCount}px`
+                }}>
+                  <Link to={`/tags/${kebabCase(fieldValue)}/`}>
+                    {fieldValue} ({totalCount})
+                  </Link>
+                </span>
+              );
+            })
+          }
+        </div>
       </div>
     </Layout>
   );

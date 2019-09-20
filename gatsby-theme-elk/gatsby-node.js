@@ -52,7 +52,7 @@ exports.createResolvers = ({ createResolvers }, options) => {
 
 exports.createPages = ({ graphql, actions }, options) => {
   const { createPage } = actions;
-  const { postsPerPage = 10 } = options;
+  const { postsPerPage = 30 } = options;
 
   return graphql(
     `

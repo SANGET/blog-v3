@@ -16,13 +16,6 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout
-        loadResources={(
-          <>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css"></link>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism.css"></link>
-            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js"></script>
-          </>
-        )}
         location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}

@@ -35,43 +35,45 @@ class BlogIndex extends React.Component {
           title={siteTitle}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}/>
         <Bio />
-        <TagsList tags={tags} />
-        <section className="post-list">
-          {
-            posts.map(({ node }) => {
-              const slug = node.fields.slug;
-              const title = node.frontmatter.title || slug;
-              const { description, date } = node.frontmatter;
-              const readTime = calculateReadTime(node.rawMarkdownBody);
-              // const timeDOM = (
-              //   <time className="time">
-              //     <Icon n="clock" s="r" classNames={['mr5']} />
-              //     {date}
-              //   </time>
-              // );
-              return (
-                <div key={slug}
-                  onClick={e => {
-                    navigate(`/${slug}`);
-                  }}
-                  className="post-item">
-                  <h3 className="post-title">
-                    <Link style={{ boxShadow: 'none' }} to={slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
-                  <TimeTip date={date} readTime={readTime} />
-                  {/* {timeDOM}
+        <div className="post-wrapper">
+          <section className="post-list">
+            {
+              posts.map(({ node }) => {
+                const slug = node.fields.slug;
+                const title = node.frontmatter.title || slug;
+                const { description, date } = node.frontmatter;
+                const readTime = calculateReadTime(node.rawMarkdownBody);
+                // const timeDOM = (
+                //   <time className="time">
+                //     <Icon n="clock" s="r" classNames={['mr5']} />
+                //     {date}
+                //   </time>
+                // );
+                return (
+                  <div key={slug}
+                    onClick={e => {
+                      navigate(`/${slug}`);
+                    }}
+                    className="post-item">
+                    <h3 className="post-title">
+                      <Link style={{ boxShadow: 'none' }} to={slug}>
+                        {title}
+                      </Link>
+                    </h3>
+                    <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
+                    <TimeTip date={date} readTime={readTime} />
+                    {/* {timeDOM}
                   <span className="read-time ml20">
                     <Icon n="eye" s="r" classNames={['mr5']} />
                     {readTime} min read
                   </span> */}
-                </div>
-              );
-            })
-          }
-        </section>
+                  </div>
+                );
+              })
+            }
+          </section>
+          {/* <TagsList tags={tags} /> */}
+        </div>
         <Pagination 
           isNeedHelper={false}
           pagingInfo={{

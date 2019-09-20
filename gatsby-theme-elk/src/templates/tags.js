@@ -14,17 +14,21 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <Layout location={location} title={data.site.siteMetadata.title}>
       <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields;
-          const { title } = node.frontmatter;
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="tag-posts block-a">
+        {
+          edges.map(({ node }) => {
+            const { slug } = node.fields;
+            const { title } = node.frontmatter;
+            return (
+              <span className="item" style={{
+                fontSize: '16px'
+              }} key={slug}>
+                <Link to={slug}>- {title}</Link>
+              </span>
+            );
+          })
+        }
+      </div>
       <Link to="/tags">All tags</Link>
     </Layout>
   );

@@ -9,7 +9,7 @@ const TimeTip = ({ date, readTime, ...other }) => {
         {date}
       </time>
       <span className="read-time ml20">
-        <Icon n="eye" s="r" classNames={['mr5']} />
+        {/* <Icon n="eye" s="r" classNames={['mr5']} /> */}
         {readTime} min read
       </span>
     </div>
