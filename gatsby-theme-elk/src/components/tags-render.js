@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, graphql } from "gatsby";
+import wrapTagPath from '../../utils/wrap-tag-slug';
 
 const Tags = ({ tags, className, ...other }) => {
   return Array.isArray(tags) && tags.length > 0 ? (
@@ -6,9 +8,9 @@ const Tags = ({ tags, className, ...other }) => {
       {
         tags.map((tag, idx) => {
           return (
-            <span key={tag}>
+            <Link key={tag} to={wrapTagPath(tag)}>
               # <span className="tag mr10">{tag}</span>
-            </span>
+            </Link>
           );
         })
       }

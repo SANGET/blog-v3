@@ -27,9 +27,16 @@
   margin-bottom: 25px;
   border-bottom: 1px dashed #EEE;
   padding-bottom: 25px;
-  cursor: pointer;
   .post-desc {
     color: #777;
+  }
+  .post-entity {
+    cursor: pointer;
+    &:hover {
+      .post-title {
+        color: $themeColor;
+      }
+    }
   }
   .time, .read-time {
     color: #888;
@@ -38,10 +45,8 @@
     // margin: 20px 0 10px;
     font-size: 1.1em;
   }
-  &:hover {
-    .post-title {
-      color: $themeColor;
-    }
+  a {
+    color: #777;
   }
 }
 .post-shortcut-nav {
@@ -57,10 +62,12 @@
 }
 .post-detail {
   .subcontent {
-    display: flex;
     margin: 30px 0;
-    color: #777;
   }
+}
+.subcontent {
+  display: flex;
+  color: #777;
 }
 .tags-list {
   padding-left: 20px;

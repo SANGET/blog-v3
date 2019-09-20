@@ -13,22 +13,23 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next, readTime } = this.props.pageContext;
+    const { title, description, date, tags } = post.frontmatter;
 
     return (
       <Layout
         location={this.props.location} title={siteTitle}>
         <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}/>
+          title={title}
+          description={description || post.excerpt}/>
         <article className="post-detail">
           <header className="post-header">
             <h1>
-              {post.frontmatter.title}
+              {title}
             </h1>
             <div className="subcontent">
-              <TimeTip date={post.frontmatter.date} readTime={readTime} className="time-helper" />
+              <TimeTip date={date} readTime={readTime} className="time-helper" />
               <span className="flex"></span>
-              <Tags tags={post.frontmatter.tags} />
+              <Tags tags={tags} />
             </div>
           </header>
           <div className="markdown-body">

@@ -8,6 +8,7 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import TimeTip from '../components/time-tip';
 import TagsList from '../components/tags-list';
+import Tags from '../components/tags-render';
 
 import calculateReadTime from '../../utils/calc-read-time';
 
@@ -41,7 +42,7 @@ class BlogIndex extends React.Component {
               posts.map(({ node }) => {
                 const slug = node.fields.slug;
                 const title = node.frontmatter.title || slug;
-                const { description, date } = node.frontmatter;
+                const { description, date, tags } = node.frontmatter;
                 const readTime = calculateReadTime(node.rawMarkdownBody);
                 // const timeDOM = (
                 //   <time className="time">
@@ -51,17 +52,24 @@ class BlogIndex extends React.Component {
                 // );
                 return (
                   <div key={slug}
-                    onClick={e => {
-                      navigate(`/${slug}`);
-                    }}
                     className="post-item">
-                    <h3 className="post-title">
-                      <Link style={{ boxShadow: 'none' }} to={slug}>
-                        {title}
-                      </Link>
-                    </h3>
-                    <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
-                    <TimeTip date={date} readTime={readTime} />
+                    <div
+                      className="post-entity"
+                      onClick={e => {
+                        navigate(`/${slug}`);
+                      }}>
+                      <h3 className="post-title">
+                        <Link style={{ boxShadow: 'none' }} to={slug}>
+                          {title}
+                        </Link>
+                      </h3>
+                      <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
+                    </div>
+                    <div className="subcontent">
+                      <TimeTip date={date} readTime={readTime} className="time-helper" />
+                      <span className="flex"></span>
+                      <Tags tags={tags} />
+                    </div>
                     {/* {timeDOM}
                   <span className="read-time ml20">
                     <Icon n="eye" s="r" classNames={['mr5']} />
@@ -116,6 +124,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
             description
           }
         }

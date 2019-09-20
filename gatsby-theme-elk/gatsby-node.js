@@ -4,6 +4,7 @@ const _ = require("lodash");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const calculateReadTime = require(path.resolve(__dirname, './utils/calc-read-time'));
 const layoutMapper = require('./utils/layout-mapper');
+const wrapTagPath = require('./utils/wrap-tag-slug');
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
@@ -52,7 +53,7 @@ exports.createResolvers = ({ createResolvers }, options) => {
 
 exports.createPages = ({ graphql, actions }, options) => {
   const { createPage } = actions;
-  const { postsPerPage = 30 } = options;
+  const { postsPerPage = 20 } = options;
 
   return graphql(
     `
@@ -111,7 +112,8 @@ exports.createPages = ({ graphql, actions }, options) => {
     // Create tags page
     const tags = result.data.tagsGroup.group;
     tags.forEach((tag, idx) => {
-      const tagPath = `/tags/${_.kebabCase(tag.fieldValue)}/`;
+      const tagPath = wrapTagPath(tag.fieldValue);
+      // `/tags/${_.kebabCase(tag.fieldValue)}/`;
       tags[idx].tagPath = tagPath;
       createPage({
         path: tagPath,
