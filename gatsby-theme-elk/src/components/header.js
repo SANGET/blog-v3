@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 const rootPath = `${__PATH_PREFIX__}/`;
 const navConfig = [
@@ -19,7 +19,18 @@ const navConfig = [
 ];
 
 const Header = (props) => {
-  const { location, title } = props;
+  const siteData = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          author
+          title
+        }
+      }
+    }
+  `);
+  const defaultSiteTitle = siteData.site.siteMetadata.title;
+  const { location, title = defaultSiteTitle } = props;
   const { pathname } = location;
   // const isInRoot = pathname === rootPath;
   let header = (
@@ -45,16 +56,6 @@ const Header = (props) => {
           );
         })
       }
-      {/* <Link
-        className={`item${isInRoot ? ' active' : ''}`}
-        to={`/`}>
-        博客
-      </Link>
-      <Link
-        className={`item${pathname === '/about' ? ' active' : ''}`}
-        to={`/about`}>
-        关于
-      </Link> */}
     </nav>
   );
 

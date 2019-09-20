@@ -77,6 +77,7 @@ exports.createPages = ({ graphql, actions }, options) => {
         tagsGroup: allMarkdownRemark(limit: 2000) {
           group(field: frontmatter___tags) {
             fieldValue
+            totalCount
           }
         }
       }
@@ -109,9 +110,11 @@ exports.createPages = ({ graphql, actions }, options) => {
 
     // Create tags page
     const tags = result.data.tagsGroup.group;
-    tags.forEach(tag => {
+    tags.forEach((tag, idx) => {
+      const tagPath = `/tags/${_.kebabCase(tag.fieldValue)}/`;
+      tags[idx].tagPath = tagPath;
       createPage({
-        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        path: tagPath,
         component: path.resolve(__dirname, './src/templates/tags.js'),
         context: {
           tag: tag.fieldValue,
@@ -131,6 +134,7 @@ exports.createPages = ({ graphql, actions }, options) => {
           skip: i * postsPerPage,
           totalPosts: posts.length,
           numPages,
+          tags,
           currentPage: i + 1
         },
       });

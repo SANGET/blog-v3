@@ -1,8 +1,14 @@
 import React from 'react';
 
-const AboutPage = () => {
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+
+const AboutPage = ({ location }) => {
   return (
-    <div className="about">about</div>
+    <Layout location={location}>
+      <SEO title="关于思行合一" />
+      <div className="about">about</div>
+    </Layout>
   );
 };
 

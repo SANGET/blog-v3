@@ -7,6 +7,7 @@ import SEO from '../components/seo';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import TimeTip from '../components/time-tip';
+import TagsList from '../components/tags-list';
 
 import calculateReadTime from '../../utils/calc-read-time';
 
@@ -26,7 +27,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
-    const { currentPage, limit, totalPosts } = this.props.pageContext;
+    const { currentPage, limit, totalPosts, tags } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -34,6 +35,7 @@ class BlogIndex extends React.Component {
           title={siteTitle}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}/>
         <Bio />
+        <TagsList tags={tags} />
         <section className="post-list">
           {
             posts.map(({ node }) => {
