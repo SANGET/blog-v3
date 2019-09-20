@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 const Scripts = ({ resources }) => {
   React.useEffect(() => {
     const isMobile = /iPhone|Android|iOS/.test(navigator.userAgent);
-    document.querySelector('#wrapper').classList.add(isMobile ? 'mobile' : 'desktop');
+    const wrapperDOM = document.querySelector('#wrapper');
+    wrapperDOM.classList.add((isMobile ? 'mobile' : 'desktop'), 'ready');
   }, []);
   // return ReactDOM.createPortal(
   //   (

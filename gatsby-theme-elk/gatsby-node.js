@@ -115,7 +115,7 @@ exports.createPages = ({ graphql, actions }, options) => {
       tags[idx].tagPath = tagPath;
       createPage({
         path: tagPath,
-        component: path.resolve(__dirname, './src/templates/tags.js'),
+        component: layoutMapper.tags,
         context: {
           tag: tag.fieldValue,
         },
@@ -128,7 +128,7 @@ exports.createPages = ({ graphql, actions }, options) => {
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: path.resolve(__dirname, './src/templates/blog-list.js'),
+        component: layoutMapper.blogList,
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,

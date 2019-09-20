@@ -7,6 +7,10 @@ a {
 }
 .wrapper {
   position: relative;
+  opacity: 0;
+  &.ready {
+    opacity: 1;
+  }
   &.desktop {
     .container {
       width: 60%;
