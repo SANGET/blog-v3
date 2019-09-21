@@ -9,7 +9,7 @@ import TimeTip from '../components/time-tip';
 import TagsList from '../components/tags-list';
 import Tags from '../components/tags-render';
 
-import calculateReadTime from '../../utils/calc-read-time';
+// import calculateReadTime from '../../utils/calc-read-time';
 
 import '../style/index.scss';
 

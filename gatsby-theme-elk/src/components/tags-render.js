@@ -9,7 +9,7 @@ const Tags = ({ tags, className, ...other }) => {
         tags.map((tag, idx) => {
           return (
             <Link key={tag} to={wrapTagPath(tag)}>
-              # <span className="tag mr10">{tag}</span>
+              <span className="tag ml10"># {tag}</span>
             </Link>
           );
         })
