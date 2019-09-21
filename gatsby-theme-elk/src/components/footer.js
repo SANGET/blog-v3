@@ -11,7 +11,7 @@ const Footer = ({ title }) => {
           <a href="https://www.gatsbyjs.org/"
             rel="noopener noreferrer"
             className="ms5" target="_blank">Gatsby</a>,
-          <a href="https://www.gatsbyjs.org/"
+          <a href="https://github.com/SANGET/gatsby-theme-elk"
             rel="noopener noreferrer"
             className="ms5" target="_blank">Gatsby Theme Elk</a>,
           <a href="https://ui.ukelli.com"
@@ -30,7 +30,7 @@ const Footer = ({ title }) => {
             {/* <ToolTip
               // position="right"
               n="envelope" s="r" title="zh.sanget@gmail.com" /> */}
-            <Icon n="envelope" s="r" /> zh.sanget@gmail.com
+            <Icon n="envelope" s="r" />
           </a>
         </div>
         <div className="contact">
