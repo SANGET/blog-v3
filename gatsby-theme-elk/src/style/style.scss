@@ -7,20 +7,23 @@ a {
 }
 .wrapper {
   position: relative;
-  opacity: 0;
+  // opacity: 0;
   // transition: opacity 0.2s ease;
-  &.ready {
-    opacity: 1;
+  // &.ready {
+  //   opacity: 1;
+  // }
+  .container {
+    width: 60%;
+    max-width: 980px;
+    min-width: 768px;
   }
-  &.desktop {
-    .container {
-      width: 60%;
-      max-width: 980px;
-      min-width: 768px;
-    }
-  }
+  // &.desktop {
+  // }
   &.mobile {
     .container {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
       &.main {
         padding: 20px 10px;
       }

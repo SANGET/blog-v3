@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const _ = require("lodash");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const calculateReadTime = require(path.resolve(__dirname, './utils/calc-read-time'));
 const layoutMapper = require('./utils/layout-mapper');
@@ -76,6 +75,22 @@ exports.createPages = ({ graphql, actions }, options) => {
             }
           }
         }
+        pagesRemark: allMarkdownRemark(
+          filter: { fileAbsolutePath: {regex : "\/pages/"} }
+          limit: 2000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                layout
+              }
+            }
+          }
+        }
         tagsGroup: allMarkdownRemark(limit: 2000) {
           group(field: frontmatter___tags) {
             fieldValue
@@ -106,6 +121,20 @@ exports.createPages = ({ graphql, actions }, options) => {
           previous,
           readTime,
           next,
+        },
+      });
+    });
+
+    // Create pages.
+    const pages = result.data.pagesRemark.edges;
+    pages.forEach((page, index) => {
+      const layoutComponent = layoutMapper[page.node.frontmatter.layout || 'page'];
+
+      createPage({
+        path: page.node.fields.slug,
+        component: layoutComponent,
+        context: {
+          slug: page.node.fields.slug,
         },
       });
     });
