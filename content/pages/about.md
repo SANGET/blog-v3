@@ -12,7 +12,7 @@ layout: post
 大学时期组织了乐队，当过吉他手、贝斯手，也演出过，得意过，失落过，也算是小小地圆了一场音乐梦。但唯一遗憾的是，大学时期并没有钱买一把属于自己的电吉他。现在在房间角落的那把 Jazz 吉他，弹起来已经不是当年的那份感觉了。但我依然热爱。
 
 <escape>
-  <img style="width: 300px; max-width: 50%; margin: 0 0 25px;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/other/guitar.jpg" />
+  <img style="width: 300px; max-width: 50%; margin: 0 0 25px;" src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/guitar.jpg" />
 </escape>
 
 `6` 岁那年接触了计算机，当时的我认为以后是要做个游戏设计师，要实现所思所想。当然现实并不会常如愿，要很努力才能如愿，我们拼命想抓住的蝴蝶，要很努力才能抓住。所以我依然会很努力去把我的构思实现。
@@ -39,15 +39,15 @@ layout: post
 
 <escape>
   <div class="photoset-grid" data-layout="333">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/1.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/2.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/3.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/4.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/5.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/6.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/7.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/8.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/images/me/9.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/2.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/3.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/4.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/5.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/6.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/7.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/8.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/9.jpg">
   </div>
   <br />
 </escape>

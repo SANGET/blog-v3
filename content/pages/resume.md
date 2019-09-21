@@ -20,7 +20,7 @@ title: Alex's Resume
 
 <escape>
   <div class="no-print">
-    <a href="https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/other/resume.pdf">PDF简历</a>
+    <a href="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/other/resume.pdf">PDF简历</a>
   </div>
 </escape>
 

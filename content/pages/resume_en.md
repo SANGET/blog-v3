@@ -19,7 +19,7 @@ I am Alex, who is a Frontend engineer, working on Frontend related for six years
 Like to explore the pinciple of how things work, like to `read`, `sport`, `photography`, `playing guitar`, `coding`.
 
 - [More info](/about)
-- [Download as PDF](https://cdn.jsdelivr.net/gh/SANGET/blog-v2@master/source/assets/other/resume.pdf)
+- [Download as PDF](https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/other/resume.pdf)
 
 --------
 
