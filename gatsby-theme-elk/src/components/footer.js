@@ -1,5 +1,6 @@
 import React from 'react';
-import { ToolTip } from 'ukelli-ui/core/tooltip';
+import { Icon } from 'ukelli-ui/core/icon';
+// import { ToolTip } from 'ukelli-ui/core/tooltip';
 
 const Footer = ({ title }) => {
   return (
@@ -20,16 +21,16 @@ const Footer = ({ title }) => {
           <a href="https://github.com/SANGET"
             rel="noopener noreferrer"
             className="ms5" target="_blank">
-            <ToolTip
+            {/* <ToolTip
               // position="right"
-              n="github" s="b" title="Github" />
-            {/* <Icon n="github" s="b" /> */}
+              n="github" s="b" title="Github" /> */}
+            <Icon n="github" s="b" />
           </a>
           <a href="mailto:zh.sanget@gmail.com" target="_top">
-            <ToolTip
+            {/* <ToolTip
               // position="right"
-              n="envelope" s="r" title="zh.sanget@gmail.com" />
-            {/* <Icon n="envelope" s="r" /> zh.sanget@gmail.com */}
+              n="envelope" s="r" title="zh.sanget@gmail.com" /> */}
+            <Icon n="envelope" s="r" /> zh.sanget@gmail.com
           </a>
         </div>
         <div className="contact">
