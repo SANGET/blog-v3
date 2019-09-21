@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, graphql, navigate } from 'gatsby';
 import { Pagination } from 'ukelli-ui/core/pagin';
-import { Icon } from 'ukelli-ui/core/icon';
 
 import SEO from '../components/seo';
 import Bio from '../components/bio';
@@ -43,7 +42,7 @@ class BlogIndex extends React.Component {
                 const slug = node.fields.slug;
                 const title = node.frontmatter.title || slug;
                 const { description, date, tags } = node.frontmatter;
-                const readTime = calculateReadTime(node.rawMarkdownBody);
+                // const readTime = calculateReadTime(node.rawMarkdownBody);
                 // const timeDOM = (
                 //   <time className="time">
                 //     <Icon n="clock" s="r" classNames={['mr5']} />
@@ -66,7 +65,7 @@ class BlogIndex extends React.Component {
                       <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
                     </div>
                     <div className="subcontent">
-                      <TimeTip date={date} readTime={readTime} className="time-helper" />
+                      <TimeTip date={date} className="time-helper" />
                       <span className="flex"></span>
                       <Tags tags={tags} />
                     </div>
@@ -111,13 +110,13 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: {regex : "\/blog/"} }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
           excerpt
-          rawMarkdownBody
           fields {
             slug
           }

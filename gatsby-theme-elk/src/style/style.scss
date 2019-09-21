@@ -8,14 +8,14 @@ a {
 .wrapper {
   position: relative;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  // transition: opacity 0.2s ease;
   &.ready {
     opacity: 1;
   }
   &.desktop {
     .container {
       width: 60%;
-      max-width: 1024px;
+      max-width: 980px;
       min-width: 768px;
     }
   }
@@ -45,7 +45,29 @@ img {
   color: #777;
   border-top: 1px solid #e9e9e9;
   padding: 20px 0;
+  .contact {
+    // font-size: 20px;
+  }
+  .icon {
+    margin-left: 10px;
+  }
+  a {
+    color: #777;
+  }
 }
+
+.bio {
+  display: flex;
+  align-items: center;
+  .desc {
+    margin-left: 10px;
+    align-items: center;
+    .c {
+      color: #999;
+    }
+  }
+}
+
 .mobile {
   .header, .footer {
     padding-left: 10px;

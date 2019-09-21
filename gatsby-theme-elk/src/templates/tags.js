@@ -18,18 +18,20 @@ const Tags = ({ pageContext, data, location }) => {
         {
           edges.map(({ node }) => {
             const { slug } = node.fields;
-            const { title } = node.frontmatter;
+            const { title, date } = node.frontmatter;
             return (
               <span className="item" style={{
                 fontSize: '16px'
               }} key={slug}>
-                <Link to={slug}>- {title}</Link>
+                <Link to={slug}>{date} - {title}</Link>
               </span>
             );
           })
         }
+        <span className="itm">
+          <Link to="/tags">All tags</Link>
+        </span>
       </div>
-      <Link to="/tags">All tags</Link>
     </Layout>
   );
 };
@@ -76,6 +78,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date(formatString: "YYYY, MMMM DD")
           }
         }
       }

@@ -1,5 +1,6 @@
 module.exports = ({
-  blogContentPath = "data",
+  blogContentPath = "blog",
+  pagesContentPath = "pages",
   assetContentPath = "asset",
   basePath = "/"
 }) => ({
@@ -9,6 +10,13 @@ module.exports = ({
       options: {
         path: blogContentPath,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: pagesContentPath,
+        name: `page`,
       },
     },
     {
@@ -28,6 +36,7 @@ module.exports = ({
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -48,29 +57,11 @@ module.exports = ({
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-125030746-1`,
-        head: false,
-      },
-    },
     `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Alex's Blog`,
-        short_name: `思行合一`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#376bfb`,
-        display: `minimal-ui`,
-        icon: `content/assets/profile-pic.jpg`,
-      },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-advanced-sitemap`,
     // {
     //   resolve: `gatsby-plugin-postcss`,
     //   options: {

@@ -22,6 +22,7 @@ const Bio = () => {
       site {
         siteMetadata {
           author
+          title
           social {
             twitter
           }
@@ -30,18 +31,19 @@ const Bio = () => {
     }
   `);
 
-  const { author, social } = data.site.siteMetadata;
+  const { author, social, title } = data.site.siteMetadata;
   return (
-    <div>
+    <div className="bio">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         imgStyle={{
           borderRadius: `50%`,
         }}/>
-      <p>
-        <a href={`https://twitter.com/${social.twitter}`}></a>
-      </p>
+      <div className="desc">
+        <h4 className="name">{title}</h4>
+        <div className="c">思考、分享技术的价值</div>
+      </div>
     </div>
   );
 };

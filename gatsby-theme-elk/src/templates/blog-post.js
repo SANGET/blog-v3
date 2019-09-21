@@ -14,6 +14,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next, readTime } = this.props.pageContext;
     const { title, description, date, tags } = post.frontmatter;
+    const { tableOfContents } = post;
 
     return (
       <Layout
@@ -21,6 +22,10 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={title}
           description={description || post.excerpt}/>
+        <div className="post-toc-wrapper block-a">
+          <div className="title">Table of Contents</div>
+          <div className="post-toc" dangerouslySetInnerHTML={{ __html: tableOfContents }} ></div>
+        </div>
         <article className="post-detail">
           <header className="post-header">
             <h1>
@@ -76,6 +81,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

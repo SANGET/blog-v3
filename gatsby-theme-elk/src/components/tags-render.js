@@ -4,7 +4,7 @@ import wrapTagPath from '../../utils/wrap-tag-slug';
 
 const Tags = ({ tags, className, ...other }) => {
   return Array.isArray(tags) && tags.length > 0 ? (
-    <div className={`tags ${className}`} {...other}>
+    <div className={`tags ${className ? className : ''}`} {...other}>
       {
         tags.map((tag, idx) => {
           return (
