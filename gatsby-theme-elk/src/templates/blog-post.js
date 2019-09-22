@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { Icon } from 'ukelli-ui/core/icon';
+import Tether from 'tether';
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -9,6 +10,37 @@ import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
 
 class BlogPostTemplate extends React.Component {
+  componentDidMount() {
+    this.setTOC();
+  }
+  setTOC = () => {
+    // console.log('didMount')
+    this.destory();
+    this._tetherEntity = new Tether({
+      element: '.post-toc-wrapper',
+      target: '.container.main',
+      attachment: 'top left',
+      targetAttachment: 'top right',
+      offset: '-20px -10px',
+      'tether-enabled': false,
+      constraints: [
+        {
+          to: 'window',
+          attachment: 'together',
+          pin: true
+        }
+      ]
+    });
+  }
+  componentWillUnmount() {
+    this.destory();
+  }
+  destory = () => {
+    if(this._tetherEntity) {
+      this._tetherEntity.destroy();
+      this._tetherEntity.element.remove();
+    }
+  }
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
@@ -22,10 +54,6 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={title}
           description={description || post.excerpt}/>
-        <div className="post-toc-wrapper block-a">
-          <div className="title">Table of Contents</div>
-          <div className="post-toc" dangerouslySetInnerHTML={{ __html: tableOfContents }} ></div>
-        </div>
         <article className="post-detail">
           <header className="post-header">
             <h1>
@@ -62,6 +90,19 @@ class BlogPostTemplate extends React.Component {
             </div>
           </div>
         </nav>
+
+        <div className="post-toc-wrapper block-a" 
+          ref={e => {
+            if(e) {
+              e.classList.add('ready');
+              // setTimeout(() => {
+              //   this.setTOC(e);
+              // }, 100);
+            }
+          }}>
+          <div className="title">Table of Contents</div>
+          <div className="post-toc" dangerouslySetInnerHTML={{ __html: tableOfContents }} ></div>
+        </div>
       </Layout>
     );
   }

@@ -23,15 +23,13 @@ const Bio = () => {
         siteMetadata {
           author
           title
-          social {
-            twitter
-          }
+          description
         }
       }
     }
   `);
 
-  const { author, social, title } = data.site.siteMetadata;
+  const { author, title, description } = data.site.siteMetadata;
   return (
     <div className="bio">
       <Image
@@ -42,7 +40,7 @@ const Bio = () => {
         }}/>
       <div className="desc">
         <h4 className="name">{title}</h4>
-        <div className="c">思考、分享技术的价值</div>
+        <div className="c">{description}</div>
       </div>
     </div>
   );

@@ -40,6 +40,7 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
+    "tether": "^1.4.7",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "ukelli-ui": "^3.0.1-rc1"
