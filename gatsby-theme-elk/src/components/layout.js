@@ -2,11 +2,11 @@ import React from "react";
 
 import Footer from './footer';
 import Header from './header';
-// import Scripts from './scripts';
+import Scripts from './scripts';
 
 class Layout extends React.Component {
   render() {
-    const { children, loadResources, ...other } = this.props;
+    const { children, ...other } = this.props;
     return (
       <>
         <div id="wrapper" className={`wrapper`}>
@@ -14,7 +14,7 @@ class Layout extends React.Component {
           <main className="container main">{children}</main>
           <Footer {...other} />
         </div>
-        {/* <Scripts resources={loadResources} /> */}
+        <Scripts />
       </>
     );
   }

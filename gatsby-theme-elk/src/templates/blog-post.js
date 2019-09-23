@@ -17,7 +17,7 @@ class BlogPostTemplate extends React.Component {
     setTimeout(() => {
       this.setTOC();
       this.setScrollHighlight();
-    }, 200);
+    }, 100);
   }
   setTOC = () => {
     // console.log('didMount')

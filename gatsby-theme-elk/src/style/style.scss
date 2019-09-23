@@ -2,8 +2,26 @@ body {
   background-color: #fefefe;
   font-size: 14px;
 }
+p {
+  color: #666;
+}
+blockquote {
+  p {
+    color: #999;
+  }
+}
 a {
   color: $themeColor;
+}
+.uke-modal-header {
+  background-color: rgba(#000, 0.4) !important;
+  color: #FFF !important;
+  position: absolute !important;
+  z-index: 11;
+  border-bottom: none !important;
+  .btn-set {
+    color: #FFF !important;
+  }
 }
 .wrapper {
   position: relative;

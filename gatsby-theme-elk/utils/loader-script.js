@@ -7,16 +7,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>`;
 
-const LoaderScript = () => {
+const LoaderDOM = () => {
   return (
-    <>
-      <div className="__loader" id="loadingBg">
-        <div id="shadow"></div>
-        <div id="box"></div>
-      </div>
-      <div dangerouslySetInnerHTML={{__html: script}}></div>
-    </>
+    <div className="__loader" id="loadingBg">
+      <div id="shadow"></div>
+      <div id="box"></div>
+    </div>
+  );
+};
+const LoadedDOM = () => {
+  return (
+    <div dangerouslySetInnerHTML={{__html: script}}></div>
   );
 };
 
-module.exports = LoaderScript;
+module.exports.LoaderDOM = LoaderDOM;
+module.exports.LoadedDOM = LoadedDOM;

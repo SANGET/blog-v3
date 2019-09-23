@@ -41,7 +41,7 @@ layout: page
 
 <escape>
   <div class="photoset-grid" data-layout="333">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg" alt="18岁啊">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/2.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/3.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/4.jpg">

@@ -43,7 +43,8 @@
     "tether": "^1.4.7",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "ukelli-ui": "^3.0.1-rc7"
+    "ukelli-ui": "^3.0.1-rc10",
+    "unistore": "^3.4.1"
   },
   "devDependencies": {
     "gatsby": "^2.15.14",

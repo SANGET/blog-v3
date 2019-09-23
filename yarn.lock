@@ -12507,10 +12507,10 @@ ua-parser-js@^0.7.18:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
   integrity sha512-8OaIKfzL5cpx8eCMAhhvTlft8GYF8b2eQr6JkCyVdrgjcytyOmPCXrqXFcUnhonRpLlh5yxEZVohm6mzaowUOw==
 
-ukelli-ui@^3.0.1-rc7:
-  version "3.0.1-rc7"
-  resolved "https://registry.yarnpkg.com/ukelli-ui/-/ukelli-ui-3.0.1-rc7.tgz#3275f720a082a6453d3998a4d69a91436d6671e6"
-  integrity sha512-aKMP5Rpo4OudabQLxZ2cJ8+Zm6uldvFYfYiQUPqI4w1gx9XEFfhlBian6ec9J7p3/XaXXhUo8QAQpW/mn/jtCQ==
+ukelli-ui@^3.0.1-rc10:
+  version "3.0.1-rc10"
+  resolved "https://registry.yarnpkg.com/ukelli-ui/-/ukelli-ui-3.0.1-rc10.tgz#bf7f6c031af999125f017e973b0022e41121edd5"
+  integrity sha512-DFAYJk/1lmbrkrd8qOYRJylGr4Lmx1vb8Fs3nj0xU0hCzsDwjq7z+kMbDcIuAPQ38H4lko750ntgG/cGKzFb/g==
   dependencies:
     classnames "^2.2.6"
     flatpickr "^4.6.1"
@@ -12714,6 +12714,11 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
   dependencies:
     unist-util-visit-parents "^2.0.0"
+
+unistore@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/unistore/-/unistore-3.4.1.tgz#effdee7d9f2e00fdc6cecad5ab598ccd54344d38"
+  integrity sha512-p2Ej8qqrqcD10Ah0ZUKUU/mhRB8pM4q6gzjxq9kZpgxa8dks7oHT8jDP4CqLhoRof3RXOZLKB9EBV1DTzHiJRw==
 
 universalify@^0.1.0:
   version "0.1.2"

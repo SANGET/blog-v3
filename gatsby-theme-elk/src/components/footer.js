@@ -32,20 +32,20 @@ const Footer = ({ title }) => {
     <footer className="footer">
       <div className="container">
         <div className="layout">
-          <span>© {since ? since + ' ' : ''}{new Date().getFullYear()} {title}</span>
+          <span>© {since ? since + ' - ' : ''}{new Date().getFullYear()} {title}</span>
           {
             showBuildInfo && (
               <>
-                <span> - build with </span>
+                <span className="ml5">build with </span>
                 <a href="https://www.gatsbyjs.org/"
                   rel="noopener noreferrer"
-                  className="ms5" target="_blank">Gatsby</a>,
+                  className="ms5" target="_blank">Gatsby</a>
                 <a href="https://github.com/SANGET/gatsby-theme-elk"
                   rel="noopener noreferrer"
-                  className="ms5" target="_blank">Gatsby Theme Elk</a>,
+                  className="ms5" target="_blank">Gatsby-Theme-Elk</a>
                 <a href="https://ui.ukelli.com"
                   rel="noopener noreferrer"
-                  className="ms5" target="_blank">Ukelli UI</a>
+                  className="ms5" target="_blank">Ukelli-UI</a>
               </>
             )
           }

@@ -1,5 +1,5 @@
 const React = require("react");
-const LoaderScript = require('./utils/loader-script');
+const { LoaderDOM, LoadedDOM } = require('./utils/loader-script');
 
 exports.onRenderBody = ({
   setPostBodyComponents, setPreBodyComponents,
@@ -11,10 +11,11 @@ exports.onRenderBody = ({
   //     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>,
   // ]);
   setPreBodyComponents([
-    <LoaderScript />
+    <LoaderDOM />
   ]);
   setPostBodyComponents([
     <>
+      {/* <LoadedDOM /> */}
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossOrigin="anonymous"></link>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css"></link>
 
