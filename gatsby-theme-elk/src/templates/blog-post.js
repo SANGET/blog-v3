@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby";
 import { Icon } from 'ukelli-ui/core/icon';
 import Tether from 'tether';
 
-import Bio from "../components/bio";
+// import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import TimeTip from '../components/time-tip';
@@ -11,7 +11,13 @@ import Tags from '../components/tags-render';
 
 class BlogPostTemplate extends React.Component {
   componentDidMount() {
-    this.setTOC();
+    const { data, isMobile } = this.props;
+    const hasTOC = !isMobile && !!data.markdownRemark.tableOfContents;
+    if(!hasTOC) return;
+    setTimeout(() => {
+      this.setTOC();
+      this.setScrollHighlight();
+    }, 200);
   }
   setTOC = () => {
     // console.log('didMount')
@@ -32,6 +38,30 @@ class BlogPostTemplate extends React.Component {
       ]
     });
   }
+  handleScroll = () => {
+    const { $, $window, targets, $PostTOCWrapper } = this;
+    targets.each((idx, target) => {
+      if($window.scrollTop() >= $(target).offset().top) {
+        var id = $(target).attr('id');
+        $('li a', $PostTOCWrapper).removeClass('active');
+        $(`li a[href]`, $PostTOCWrapper)
+          .filter(function() {
+            return this.href.match(encodeURI(id));
+          })
+          .addClass('active');
+      }
+    });
+  }
+  setScrollHighlight = () => {
+    const $ = window.$;
+    if(!$) return;
+    this.$ = $;
+    this.$PostTOCWrapper = $('#PostTOCWrapper');
+    if(!this.$PostTOCWrapper) return;
+    this.targets = $('h2[id]');
+    this.$window = $(window);
+    this.$window.on('scroll', this.handleScroll);
+  }
   componentWillUnmount() {
     this.destory();
   }
@@ -39,18 +69,20 @@ class BlogPostTemplate extends React.Component {
     if(this._tetherEntity) {
       this._tetherEntity.destroy();
       this._tetherEntity.element.remove();
+      this.$window.off('scroll', this.handleScroll);
     }
   }
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next, readTime } = this.props.pageContext;
+    const { data, isMobile, pageContext, location } = this.props;
+    const post = data.markdownRemark;
+    const siteTitle = data.site.siteMetadata.title;
+    const { previous, next, readTime } = pageContext;
     const { title, description, date, tags } = post.frontmatter;
     const { tableOfContents } = post;
 
     return (
       <Layout
-        location={this.props.location} title={siteTitle}>
+        location={location} title={siteTitle}>
         <SEO
           title={title}
           description={description || post.excerpt}/>
@@ -90,19 +122,25 @@ class BlogPostTemplate extends React.Component {
             </div>
           </div>
         </nav>
-
-        <div className="post-toc-wrapper block-a" 
-          ref={e => {
-            if(e) {
-              e.classList.add('ready');
-              // setTimeout(() => {
-              //   this.setTOC(e);
-              // }, 100);
-            }
-          }}>
-          <div className="title">Table of Contents</div>
-          <div className="post-toc" dangerouslySetInnerHTML={{ __html: tableOfContents }} ></div>
-        </div>
+        
+        {
+          !isMobile && tableOfContents && (
+            <div 
+              id="PostTOCWrapper"
+              className="post-toc-wrapper block-a" 
+              ref={e => {
+                if(e) {
+                  if(e) e.classList.add('ready');
+                // setTimeout(() => {
+                //   this.setTOC(e);
+                // }, 100);
+                }
+              }}>
+              <div className="title">Table of Contents</div>
+              <div className="post-toc" dangerouslySetInnerHTML={{ __html: tableOfContents }} ></div>
+            </div>
+          )
+        }
       </Layout>
     );
   }

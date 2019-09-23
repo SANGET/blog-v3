@@ -19,16 +19,6 @@ a {
   }
   // &.desktop {
   // }
-  &.mobile {
-    .container {
-      width: 100%;
-      max-width: 100%;
-      min-width: 100%;
-      &.main {
-        padding: 20px 10px;
-      }
-    }
-  }
 }
 .container {
   margin: 0 auto;
@@ -75,5 +65,15 @@ img {
   .header, .footer {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .wrapper {
+    .container {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      &.main {
+        padding: 20px 10px;
+      }
+    }
   }
 }

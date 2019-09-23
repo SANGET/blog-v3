@@ -12507,10 +12507,10 @@ ua-parser-js@^0.7.18:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
   integrity sha512-8OaIKfzL5cpx8eCMAhhvTlft8GYF8b2eQr6JkCyVdrgjcytyOmPCXrqXFcUnhonRpLlh5yxEZVohm6mzaowUOw==
 
-ukelli-ui@^3.0.1-rc5:
-  version "3.0.1-rc5"
-  resolved "https://registry.yarnpkg.com/ukelli-ui/-/ukelli-ui-3.0.1-rc5.tgz#5598c70de8fc2c296f8a27af7a92e6460d68fbec"
-  integrity sha512-65KwE/fTt4x5gbIzo3+sQ47KRzlU/McSjqNmCcYRaFkkVLGRJ5SRVfY6u+YW6DvY8H6ojSg/HBp4+g9ibCtZJg==
+ukelli-ui@^3.0.1-rc7:
+  version "3.0.1-rc7"
+  resolved "https://registry.yarnpkg.com/ukelli-ui/-/ukelli-ui-3.0.1-rc7.tgz#3275f720a082a6453d3998a4d69a91436d6671e6"
+  integrity sha512-aKMP5Rpo4OudabQLxZ2cJ8+Zm6uldvFYfYiQUPqI4w1gx9XEFfhlBian6ec9J7p3/XaXXhUo8QAQpW/mn/jtCQ==
   dependencies:
     classnames "^2.2.6"
     flatpickr "^4.6.1"

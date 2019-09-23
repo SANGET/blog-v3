@@ -20,6 +20,11 @@
   //   top: 50px;
   // }
 }
+.mobile {
+  .post-toc-wrapper {
+    display: none;
+  }
+}
 .post-toc-wrapper {
   // position: absolute;
   // right: -210px;
@@ -65,7 +70,7 @@
       // word-wrap: break-word;
       // text-overflow: ellipsis;
       // white-space: nowrap;
-      &:hover {
+      &:hover,&.active {
         color: $themeColor;
       }
     }
