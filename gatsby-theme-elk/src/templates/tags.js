@@ -23,7 +23,8 @@ const Tags = ({ pageContext, data, location }) => {
               <span className="item" style={{
                 fontSize: '16px'
               }} key={slug}>
-                <Link to={slug}>{date} - {title}</Link>
+                <Link to={slug}>
+                  {title} - <span className="date">{date}</span></Link>
               </span>
             );
           })
