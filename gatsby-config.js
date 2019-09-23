@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-theme-elk",
       options: {
-        blogContentPath: `${__dirname}/content/blog`,
+        blogContentPath: `${__dirname}/content/blog-posts`,
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: "/",

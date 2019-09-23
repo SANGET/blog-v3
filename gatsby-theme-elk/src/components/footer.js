@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby";
-import { Icon } from 'ukelli-ui/core/icon';
-// import { ToolTip } from 'ukelli-ui/core/tooltip';
+// import { Icon } from 'ukelli-ui/core/icon';
+import { ToolTip } from 'ukelli-ui/core/tooltip';
 
 const Footer = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -55,20 +55,20 @@ const Footer = ({ title }) => {
               <a href={github}
                 rel="noopener noreferrer"
                 className="ms5" target="_blank">
-                {/* <ToolTip
+                <ToolTip
                   // position="right"
-                  n="github" s="b" title="Github" /> */}
-                <Icon n="github" s="b" />
+                  n="github" s="b" title="Github" />
+                {/* <Icon n="github" s="b" /> */}
               </a>
             )
           }
           {
             mail && (
               <a href="mailto:zh.sanget@gmail.com" target="_top">
-                {/* <ToolTip
-              // position="right"
-              n="envelope" s="r" title="zh.sanget@gmail.com" /> */}
-                <Icon n="envelope" s="r" />
+                <ToolTip
+                  // position="right"
+                  n="envelope" s="r" title="zh.sanget@gmail.com" />
+                {/* <Icon n="envelope" s="r" /> */}
               </a>
             )
           }
