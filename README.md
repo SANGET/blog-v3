@@ -1,3 +1,5 @@
-# A blog for Alex Zhang, building with Gatsby
+# A blog the building with Gatsby
 
+## Usage
 
+TODO
