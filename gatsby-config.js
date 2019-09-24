@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `{思行合一}`,
     author: `Alex Zhang`,
-    description: `思考、分享技术的价值`,
+    description: `思考 | 记录 | 实现 | 分享技术的价值`,
     siteUrl: `https://thinkmore.xyz`,
     social: {
       // twitter: `sanget`,

@@ -9,10 +9,23 @@ import SEO from "../components/seo";
 import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
 
+const BackToTop = () => {
+  return (
+    <span className="back-to-top" onClick={e => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }}>
+      <Icon n="chevron-up" />
+    </span>
+  );
+};
+
 class BlogPostTemplate extends React.Component {
   componentDidMount() {
     const { data, isMobile } = this.props;
-    const hasTOC = !isMobile && !!data.markdownRemark.tableOfContents;
+    const hasTOC = !isMobile 
+      && !!data.markdownRemark.tableOfContents 
+      && !!data.markdownRemark.needTOC;
     if(!hasTOC) return;
     setTimeout(() => {
       this.setTOC();
@@ -77,7 +90,7 @@ class BlogPostTemplate extends React.Component {
     const post = data.markdownRemark;
     const siteTitle = data.site.siteMetadata.title;
     const { previous, next, readTime } = pageContext;
-    const { title, description, date, tags } = post.frontmatter;
+    const { title, description, date, tags, needTOC = true } = post.frontmatter;
     const { tableOfContents } = post;
 
     return (
@@ -122,9 +135,9 @@ class BlogPostTemplate extends React.Component {
             </div>
           </div>
         </nav>
-        
+        <BackToTop />
         {
-          !isMobile && tableOfContents && (
+          needTOC && !isMobile && tableOfContents && (
             <div 
               id="PostTOCWrapper"
               className="post-toc-wrapper block-a" 
@@ -165,6 +178,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        needTOC
         tags
       }
     }
