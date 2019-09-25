@@ -8,6 +8,12 @@ body {
 p, li {
   color: #444;
 }
+li {
+  >p {
+    margin-bottom: 0.25em !important;
+    margin-top: 0 !important;
+  }
+}
 blockquote {
   p {
     color: #999;
