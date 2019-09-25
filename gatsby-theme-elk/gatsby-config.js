@@ -26,12 +26,12 @@ module.exports = ({
         name: `assets`,
       },
     },
-    {
-      resolve: "gatsby-transformer-yaml",
-      options: {
-        typeName: "Event",
-      },
-    },
+    // {
+    //   resolve: "gatsby-transformer-yaml",
+    //   options: {
+    //     typeName: "Event",
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

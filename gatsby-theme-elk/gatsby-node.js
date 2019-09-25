@@ -17,7 +17,7 @@ const wrapTagPath = require('./utils/wrap-tag-slug');
 // Define the "Event" type
 // exports.sourceNodes = ({ actions }) => {
 //   actions.createTypes(`
-//     type Event implements Node @dontInfer {
+//     type Blog implements Node @dontInfer {
 //       id: ID!
 //       name: String!
 //       location: String!
@@ -26,29 +26,29 @@ const wrapTagPath = require('./utils/wrap-tag-slug');
 //       url: String!
 //       slug: String!
 //     }
-//   `)
-// }
+//   `);
+// };
 
 
 // Define resolvers for custom fields
-exports.createResolvers = ({ createResolvers }, options) => {
-  const basePath = options.basePath || "/";
-  // Quick-and-dirty helper to convert strings into URL-friendly slugs.
-  const slugify = str => {
-    const slug = str
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)+/g, "");
-    return `/${basePath}/${slug}`.replace(/\/\/+/g, "/");
-  };
-  createResolvers({
-    Event: {
-      slug: {
-        resolve: source => slugify(source.name),
-      },
-    },
-  });
-};
+// exports.createResolvers = ({ createResolvers }, options) => {
+//   const basePath = options.basePath || "/";
+//   // Quick-and-dirty helper to convert strings into URL-friendly slugs.
+//   const slugify = str => {
+//     const slug = str
+//       .toLowerCase()
+//       .replace(/[^a-z0-9]+/g, "-")
+//       .replace(/(^-|-$)+/g, "");
+//     return `/${basePath}/${slug}`.replace(/\/\/+/g, "/");
+//   };
+//   createResolvers({
+//     Blog: {
+//       slug: {
+//         resolve: source => slugify(source.name),
+//       },
+//     },
+//   });
+// };
 
 exports.createPages = ({ graphql, actions }, options) => {
   const { createPage } = actions;
@@ -174,11 +174,21 @@ exports.createPages = ({ graphql, actions }, options) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    let value = createFilePath({ node, getNode });
+    // const basePath = options.basePath || "/";
+    // // Quick-and-dirty helper to convert strings into URL-friendly slugs.
+    // const slugify = str => {
+    //   const slug = str
+    //     .toLowerCase()
+    //     .replace(/[^a-z0-9]+/g, "-")
+    //     .replace(/(^-|-$)+/g, "");
+    //   return `/${basePath}/${slug}`.replace(/\/\/+/g, "/");
+    // };
+    // value = slugify(value);
     createNodeField({
       name: `slug`,
       node,
