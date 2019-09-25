@@ -31,7 +31,9 @@ class BlogPostTemplate extends React.Component {
   }
   needTOCFilter = () => {
     const { data, isMobile } = this.props;
-    const { tableOfContents, needTOC = true } = data.markdownRemark;
+    const { tableOfContents } = data.markdownRemark;
+    let { needTOC } = data.markdownRemark.frontmatter;
+    if(needTOC == null) needTOC = true;
     const _needTOC = !isMobile 
       && !!tableOfContents 
       && !!needTOC;
