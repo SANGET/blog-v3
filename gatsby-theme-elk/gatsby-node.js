@@ -103,7 +103,6 @@ exports.createPages = ({ graphql, actions }, options) => {
     if (result.errors) {
       throw result.errors;
     }
-    // const blogPostTMPL = path.resolve(__dirname, `./src/templates/blog-post.js`);
 
     // Create blog posts pages.
     const posts = result.data.postsRemark.edges;

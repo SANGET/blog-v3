@@ -22,15 +22,20 @@ const BackToTop = () => {
 
 class BlogPostTemplate extends React.Component {
   componentDidMount() {
-    const { data, isMobile } = this.props;
-    const hasTOC = !isMobile 
-      && !!data.markdownRemark.tableOfContents 
-      && !!data.markdownRemark.needTOC;
-    if(!hasTOC) return;
+    const _needTOC = this.needTOCFilter();
+    if(!_needTOC) return;
     setTimeout(() => {
       this.setTOC();
       this.setScrollHighlight();
     }, 100);
+  }
+  needTOCFilter = () => {
+    const { data, isMobile } = this.props;
+    const { tableOfContents, needTOC = true } = data.markdownRemark;
+    const _needTOC = !isMobile 
+      && !!tableOfContents 
+      && !!needTOC;
+    return _needTOC;
   }
   setTOC = () => {
     // console.log('didMount')
@@ -86,12 +91,13 @@ class BlogPostTemplate extends React.Component {
     }
   }
   render() {
-    const { data, isMobile, pageContext, location } = this.props;
+    const { data, pageContext, location } = this.props;
     const post = data.markdownRemark;
     const siteTitle = data.site.siteMetadata.title;
     const { previous, next, readTime } = pageContext;
-    const { title, description, date, tags, needTOC = true } = post.frontmatter;
+    const { title, description, date, tags } = post.frontmatter;
     const { tableOfContents } = post;
+    const _needTOC = this.needTOCFilter();
 
     return (
       <Layout
@@ -137,7 +143,7 @@ class BlogPostTemplate extends React.Component {
         </nav>
         <BackToTop />
         {
-          needTOC && !isMobile && tableOfContents && (
+          _needTOC && (
             <div 
               id="PostTOCWrapper"
               className="post-toc-wrapper block-a" 
