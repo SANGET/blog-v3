@@ -16,6 +16,7 @@ const Scripts = () => {
   React.useEffect(() => {
     window.$(document).ready(function() {
       (function ($) {
+        $('#wrapper').addClass('ready');
         $('.photoset-grid').photosetGrid({
           // onComplete: () => {
           // }

@@ -1,4 +1,5 @@
 import React from "react";
+// import { Loading } from 'ukelli-ui/core/loading';
 
 import Footer from './footer';
 import Header from './header';
@@ -10,6 +11,7 @@ class Layout extends React.Component {
     return (
       <>
         <div id="wrapper" className={`wrapper`}>
+          {/* <Loading inrow loading /> */}
           <Header {...other} />
           <main className="container main">{children}</main>
           <Footer {...other} />
