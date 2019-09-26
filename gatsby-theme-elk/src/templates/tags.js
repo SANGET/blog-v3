@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-// Components
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from '../components/layout';
+import Link from '../components/link';
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext;

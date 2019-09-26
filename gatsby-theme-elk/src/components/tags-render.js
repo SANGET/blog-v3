@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, graphql } from "gatsby";
 import wrapTagPath from '../../utils/wrap-tag-slug';
+import Link from './link';
 
 const Tags = ({ tags, className, ...other }) => {
   return Array.isArray(tags) && tags.length > 0 ? (

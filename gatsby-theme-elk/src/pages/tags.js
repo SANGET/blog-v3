@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 // Utilities
 import kebabCase from "lodash/kebabCase";
 // Components
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import SEO from "../components/seo";
+import Link from '../components/link';
 
 const TagsPage = ({
   data: {

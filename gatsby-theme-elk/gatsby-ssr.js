@@ -2,7 +2,7 @@ const React = require("react");
 const { LoaderDOM, LoadedDOM } = require('./utils/loader-script');
 
 exports.onRenderBody = ({
-  setPostBodyComponents, setPreBodyComponents,
+  setPostBodyComponents, setPreBodyComponents, setHeadComponents
 }) => {
   // setHeadComponents([
   //   <script

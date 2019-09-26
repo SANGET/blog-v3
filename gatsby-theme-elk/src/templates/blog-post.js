@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { Icon } from 'ukelli-ui/core/icon';
 import Tether from 'tether';
 
@@ -8,6 +8,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
+import Link from '../components/link';
 
 const BackToTop = () => {
   return (

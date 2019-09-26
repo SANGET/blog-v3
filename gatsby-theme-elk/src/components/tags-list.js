@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, graphql } from "gatsby";
-// const _ = require("lodash");
+import Link from './link';
 
 const TagsList = ({ tags, className, ...other }) => {
   return (

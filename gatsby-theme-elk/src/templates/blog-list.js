@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, graphql, navigate } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { Pagination } from 'ukelli-ui/core/pagin';
+import { Loading } from 'ukelli-ui/core/loading';
 
 import SEO from '../components/seo';
 import Bio from '../components/bio';
@@ -8,23 +9,24 @@ import Layout from '../components/layout';
 import TimeTip from '../components/time-tip';
 import TagsList from '../components/tags-list';
 import Tags from '../components/tags-render';
+import Link from '../components/link';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
 import '../style/index.scss';
 
 class BlogIndex extends React.Component {
-  componentDidMount() {
-    document.body.addEventListener('scroll', this.handleScroll, {
-      capture: true,
-      passive: true
-    });
-  }
-  handleScroll = (e) => {
-    console.log(e);
-  }
+  // componentDidMount() {
+  //   document.body.addEventListener('scroll', this.handleScroll, {
+  //     capture: true,
+  //     passive: true
+  //   });
+  // }
+  // handleScroll = (e) => {
+  //   console.log(e);
+  // }
   render() {
-    const { data } = this.props;
+    const { data, loading } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
     const { currentPage, limit, totalPosts, tags } = this.props.pageContext;
@@ -35,6 +37,7 @@ class BlogIndex extends React.Component {
           title={siteTitle}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}/>
         <Bio />
+        {/* <Loading inrow loading /> */}
         <div className="post-wrapper">
           <section className="post-list">
             {
