@@ -8,17 +8,19 @@ const { Call, EventEmitter } = require('basic-helper');
 
 const { LINK_TO_PAGE } = require('./utils/const');
 
+let prefHref = window.location.href;
 const Wrapper = ({ element, props }) => {
   const isMobile = /iPhone|Android|iOS/.test(navigator.userAgent);
 
   const [loading, setLoading] = React.useState(true);
+  const currHref = window.location.href;
   React.useEffect(() => {
     // setLoading(false);
     // console.log('useEffect')
     const loadingDOM = document.querySelector('#loadingBg');
     if(loadingDOM) document.body.removeChild(loadingDOM);
     const handleLinkToPage = () => {
-      setLoading(true);
+      if(prefHref !== currHref) setLoading(true);
     };
     EventEmitter.on(LINK_TO_PAGE, handleLinkToPage);
     setTimeout(() => {
@@ -28,7 +30,7 @@ const Wrapper = ({ element, props }) => {
       // setLoading(true);
       EventEmitter.rm(LINK_TO_PAGE, handleLinkToPage);
     };
-  }, [window.location.href]);
+  }, [currHref]);
   return (
     <div className={isMobile ? 'mobile' : 'desktop'}>
       <Loading inrow loading={loading} />
