@@ -129,11 +129,11 @@ Technical labels: `Polymer`, `Node`, `MONO`
 - [uke-admin-web-scaffold](https://scaffold.thinkmore.xyz/) Scaffold of web admin dashboard
 - [uke-dashboard](https://admin.thinkmore.xyz/) Web admin dashboard
 
---------
+<!-- --------
 
 ## Educational experience
 
-- Guangdong Industry Technical College 2010-2013
+- Guangdong Industry Technical College -->
 
 --------
 
