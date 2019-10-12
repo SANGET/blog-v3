@@ -25,7 +25,7 @@ const Wrapper = ({ element, props }) => {
     EventEmitter.on(LINK_TO_PAGE, handleLinkToPage);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 800);
     return () => {
       // setLoading(true);
       EventEmitter.rm(LINK_TO_PAGE, handleLinkToPage);

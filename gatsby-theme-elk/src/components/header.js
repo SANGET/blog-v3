@@ -5,17 +5,17 @@ import Link from './link';
 const rootPath = `${__PATH_PREFIX__}/`;
 const navConfig = [
   {
-    title: '博客',
-    path: '/',
-    activeFilter: pathname => pathname === rootPath
-  },
-  {
-    title: '关于',
-    path: '/about',
+    title: '归档',
+    path: '/archive',
+    // activeFilter: pathname => pathname === rootPath
   },
   {
     title: '标签',
     path: '/tags',
+  },
+  {
+    title: '关于',
+    path: '/about',
   },
 ];
 
@@ -33,15 +33,16 @@ const Header = (props) => {
   const defaultSiteTitle = siteData.site.siteMetadata.title;
   const { location, title = defaultSiteTitle } = props;
   const { pathname } = location;
-  // const isInRoot = pathname === rootPath;
+  const isInRoot = pathname === rootPath;
   let header = (
     <nav className="header-nav">
-      <div className="logo">
-        <Link
-          to={`/`}>
-          {title}
-        </Link>
-      </div>
+      {/* <div className="logo"> */}
+      <Link
+        className={`item${isInRoot ? ' active' : ''}`}
+        to={`/`}>
+          博客
+      </Link>
+      {/* </div> */}
       <span className="flex"></span>
       {
         navConfig.map((nav) => {
