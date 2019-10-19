@@ -1,9 +1,9 @@
 module.exports = {
   // pathPrefix: 'https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/',
   siteMetadata: {
-    title: `{思行合一}`,
-    author: `Alex Zhang`,
-    description: `思考 | 记录 | 实现 | 分享技术的价值`,
+    title: `Sanget's Blog`,
+    author: `Sanget`,
+    description: `Thinking`,
     siteUrl: `https://thinkmore.xyz`,
     social: {
       // twitter: `sanget`,
@@ -35,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Alex's Blog`,
-        short_name: `思行合一`,
+        name: `Sanget's Blog`,
+        short_name: `Sanget's blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#376bfb`,

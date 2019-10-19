@@ -32,12 +32,6 @@ const Bio = () => {
   const { author, title, description } = data.site.siteMetadata;
   return (
     <div className="bio">
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}/>
       <div className="desc">
         <h4 className="name">{title}</h4>
         <div className="c">{description}</div>

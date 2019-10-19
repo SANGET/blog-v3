@@ -9,7 +9,6 @@ const AboutPage = ({ location, data: {
 } }) => {
   return (
     <Layout location={location}>
-      {/* <SEO title="关于思行合一" /> */}
       <div className="markdown-body">
         <div className="about-page" dangerouslySetInnerHTML={{ __html: html }} ></div>
       </div>

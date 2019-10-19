@@ -5,16 +5,16 @@ import Link from './link';
 const rootPath = `${__PATH_PREFIX__}/`;
 const navConfig = [
   {
-    title: '归档',
+    title: 'Archive',
     path: '/archive',
     // activeFilter: pathname => pathname === rootPath
   },
   {
-    title: '标签',
+    title: 'Tags',
     path: '/tags',
   },
   {
-    title: '关于',
+    title: 'About',
     path: '/about',
   },
 ];
@@ -40,10 +40,10 @@ const Header = (props) => {
       <Link
         className={`item${isInRoot ? ' active' : ''}`}
         to={`/`}>
-          博客
+          Blog
       </Link>
       {/* </div> */}
-      <span className="flex"></span>
+      {/* <span className="flex"></span> */}
       {
         navConfig.map((nav) => {
           const { title, path, activeFilter } = nav;
