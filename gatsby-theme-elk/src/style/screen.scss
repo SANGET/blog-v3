@@ -1,0 +1,34 @@
+$miniScreenWidth: 480px;
+$smallScreenWidth: 768px;
+$mediumScreenWidth: 992px;
+$bigScreenWidth: 1200px;
+
+@media screen and (max-width: $bigScreenWidth) {
+  #PostTOCWrapper {
+    display: none;
+  }
+}
+@media screen and (max-width: $smallScreenWidth) {
+  .header, .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .wrapper {
+    .container {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      &.main {
+        padding: 20px 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $miniScreenWidth) {
+  .archive-page {
+    .item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

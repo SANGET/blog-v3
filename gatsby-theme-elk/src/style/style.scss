@@ -88,30 +88,24 @@ img {
 }
 
 .bio {
-  display: flex;
-  align-items: center;
+  // align-items: center;
   .desc {
+    display: flex;
     // margin-left: 10px;
-    align-items: center;
+    align-items: flex-end;
+    .name {
+      // font-weight: bold;
+      font-size: 1.1em;
+      color: #555;
+      margin-right: 10px;
+    }
     .c {
       color: #999;
     }
   }
 }
-
-.mobile {
-  .header, .footer {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .wrapper {
-    .container {
-      width: 100%;
-      max-width: 100%;
-      min-width: 100%;
-      &.main {
-        padding: 20px 10px;
-      }
-    }
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
   }
 }

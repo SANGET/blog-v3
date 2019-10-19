@@ -13,8 +13,6 @@ import Link from '../components/link';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
-import '../style/index.scss';
-
 class BlogIndex extends React.Component {
   // componentDidMount() {
   //   document.body.addEventListener('scroll', this.handleScroll, {

@@ -4,7 +4,7 @@ import Link from './link';
 
 const Tags = ({ tags, className, ...other }) => {
   return Array.isArray(tags) && tags.length > 0 ? (
-    <div className={`tags ${className ? className : ''}`} {...other}>
+    <span className={`tags ${className ? className : ''}`} {...other}>
       {
         tags.map((tag, idx) => {
           return (
@@ -14,7 +14,7 @@ const Tags = ({ tags, className, ...other }) => {
           );
         })
       }
-    </div>
+    </span>
   ) : null;
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { DebounceClass } from "basic-helper";
 import { Icon } from 'ukelli-ui/core/icon';
 import Tether from 'tether';
 
@@ -9,6 +10,8 @@ import SEO from "../components/seo";
 import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
 import Link from '../components/link';
+
+const delayExec = (new DebounceClass()).exec;
 
 const BackToTop = () => {
   return (
@@ -23,11 +26,8 @@ const BackToTop = () => {
 
 class BlogPostTemplate extends React.Component {
   componentDidMount() {
-    const _needTOC = this.needTOCFilter();
-    if(!_needTOC) return;
     setTimeout(() => {
-      this.setTOC();
-      this.setScrollHighlight();
+      this.setupTOC();
     }, 100);
   }
   needTOCFilter = () => {
@@ -39,6 +39,14 @@ class BlogPostTemplate extends React.Component {
       && !!tableOfContents 
       && !!needTOC;
     return _needTOC;
+  }
+  setupTOC = () => {
+    delayExec(() => {
+      const _needTOC = this.needTOCFilter();
+      if(!_needTOC) return;
+      this.setTOC();
+      this.setScrollHighlight();
+    }, 100);
   }
   setTOC = () => {
     // console.log('didMount')
@@ -115,7 +123,7 @@ class BlogPostTemplate extends React.Component {
             </h1>
             <div className="subcontent">
               <TimeTip date={date} readTime={readTime} className="time-helper" />
-              <span className="flex"></span>
+              {/* <span className="flex"></span> */}
               <Tags tags={tags} />
             </div>
           </header>
@@ -152,7 +160,8 @@ class BlogPostTemplate extends React.Component {
               className="post-toc-wrapper block-a" 
               ref={e => {
                 if(e) {
-                  if(e) e.classList.add('ready');
+                  e.classList.add('ready');
+                  // this.setupTOC(e);
                 // setTimeout(() => {
                 //   this.setTOC(e);
                 // }, 100);

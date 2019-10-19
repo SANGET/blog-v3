@@ -33,7 +33,7 @@ const Bio = () => {
   return (
     <div className="bio">
       <div className="desc">
-        <h4 className="name">{title}</h4>
+        <div className="name">{title}</div>
         <div className="c">{description}</div>
       </div>
     </div>

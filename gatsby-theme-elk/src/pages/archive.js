@@ -40,13 +40,18 @@ const ArchivePage = (props) => {
                 perYear = currYear;
               }
               return (
-                <div key={slug} className="mr15 post">
+                <div key={slug} className="post">
                   {yearTip}
-                  <div className="layout a-i-c">
-                    <Link to={slug}>
-                      {title} - <span className="date">{date}</span>
-                    </Link>
-                    <Tags tags={tags} />
+                  <div className="layout a-i-c item mb5">
+                    <span className="mr10">
+                      <Link to={slug}>
+                        {title}
+                      </Link>
+                    </span>
+                    <div>
+                      <span className="date">{date}</span>
+                      {/* <Tags tags={tags} /> */}
+                    </div>
                   </div>
                 </div>
               );
@@ -80,7 +85,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            tags
+            # tags
           }
         }
       }

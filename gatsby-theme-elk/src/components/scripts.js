@@ -27,9 +27,11 @@ const Scripts = () => {
           const title = imgDOM.alt || 'Perview';
           getImgWidth(imgUrl).then((offsetWidth) => {
             const screenWidth = getScreenWidth();
+            let width = offsetWidth > screenWidth ? screenWidth : offsetWidth;
+            if(width > 600) width = 600;
             ShowModal({
               title,
-              width: offsetWidth > screenWidth ? screenWidth : offsetWidth,
+              width,
               needMinBtn: false,
               children: (
                 <img src={imgUrl} alt="" />
