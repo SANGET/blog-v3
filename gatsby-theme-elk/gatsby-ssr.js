@@ -1,7 +1,9 @@
-const React = require("react");
-const { LoaderDOM, LoadedDOM } = require('./utils/loader-script');
+import React from 'react';
+import { LoaderDOM, LoadedDOM } from './utils/loader-script';
 
-exports.onRenderBody = ({
+import Wrapper from './src/components/layout-wrapper';
+
+export const onRenderBody = ({
   setPostBodyComponents, setPreBodyComponents, setHeadComponents
 }) => {
   // setHeadComponents([
@@ -29,4 +31,11 @@ exports.onRenderBody = ({
       <script src="https://cdnjs.cloudflare.com/ajax/libs/photoset-grid/1.0.1/jquery.photoset-grid.min.js" defer></script>
     </>
   ]);
+};
+
+export const wrapPageElement = ({ element, props }) => {
+// exports.wrapPageElement = ({ element, props }) => {
+  return (
+    <Wrapper props={props}>{element}</Wrapper>
+  );
 };
