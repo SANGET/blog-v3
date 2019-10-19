@@ -69,8 +69,8 @@ class BlogIndex extends React.Component {
                     </div>
                     <div className="subcontent">
                       <TimeTip date={date} className="time-helper" />
-                      <span className="flex"></span>
-                      <Tags tags={tags} />
+                      {/* <span className="flex"></span>
+                      <Tags tags={tags} /> */}
                     </div>
                     {/* {timeDOM}
                   <span className="read-time ml20">
@@ -126,7 +126,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            tags
+            # tags
             description
           }
         }

@@ -1,4 +1,6 @@
 
+$postMargin: 15px;
+
 .desktop {
   .post-wrapper {
     display: flex;
@@ -80,6 +82,7 @@
   padding: 20px 0;
   .post-title {
     color: #000;
+    margin-bottom: $postMargin;
     // margin-top: 5px;
     a {
       color: inherit;
@@ -109,6 +112,9 @@
         color: $themeColor;
       }
     }
+    p {
+      margin-bottom: $postMargin;
+    }
   }
   .time, .read-time {
     color: #888;
@@ -137,6 +143,11 @@
 .subcontent {
   display: flex;
   color: #777;
+  // .tags {
+  //   a {
+  //     color: #BBB;
+  //   }
+  // }
 }
 .tags-list {
   padding-left: 20px;
