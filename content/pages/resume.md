@@ -6,8 +6,6 @@ title: Alex's Resume
 
 <escape>
   <div class="no-print simple-nav">
-    <h2>导航</h2>
-    <a href="/" style="margin-right: 20px">访问博客</a>
     <a href="/resume_en">English version</a>
   </div>
 </escape>
