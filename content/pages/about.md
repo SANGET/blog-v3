@@ -11,13 +11,14 @@ layout: page
 
 > 始于前端，不止前端
 
-我是（ Alex | Sanget ），90 年生于广东，一个低调、务实、喜欢喝早茶的普通人。假如生活不如意，那就去吃一笼凤爪。
+我是（ Alex | Sanget ），90 后，广东人，一个低调、务实、喜欢喝早茶的普通人。
 
-喜欢`音乐`、`摄影`、`旅游`、`编程`。
+喜欢`音乐`、`摄影`、`旅游`、`编程`。是 `极简主义`、`完美主义` 者。
 
 <escape>
   <div class="photoset-grid" data-layout="3">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/guitar.jpg" alt="Godin 5th Avenue">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg" alt="18岁啊">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/covers/bg1.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/trip/bugiuo/9.jpg">
   </div>
@@ -34,20 +35,20 @@ layout: page
 
 <!-- ----------- -->
 
-## 更多
+<!-- ## 更多 -->
 
-<escape>
+<!-- <escape>
   <div class="photoset-grid" data-layout="3">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg" alt="18岁啊">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/8.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/9.jpg">
-    <!-- <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/4.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/4.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/5.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/6.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/7.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/8.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/9.jpg"> -->
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/9.jpg">
   </div>
-</escape>
+</escape> -->
 
 感谢
