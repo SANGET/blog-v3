@@ -1,0 +1,211 @@
+---
+author: Alex
+date: 2019-10-16
+layout: post
+title: 项目重构之路(一) -- typescript + yarn
+description: 最近在扩展之前的业务系统，猛的发现维护成本有点高，有不合理的结构和配置，接口的入参和返回的数据结构不明确，需要通过 log 查看。痛定思痛，决定用 typescript 重构项目(2000+文件)。
+keywords: [重构, typescript 重构]
+tags:
+  - 记录
+  - 重构
+---
+
+- `typescript` 提供一种明确的编程方案，大幅提高代码质量。
+- `yarn workspace` 提供一种更好的代码组织方式的方案，提升项目的扩展性和可维护性。
+
+## 起因
+
+最近在扩展之前的业务系统，猛的发现维护成本有点高，有不合理的结构和配置，接口的入参和返回的数据结构不明确，需要通过 log 查看。痛定思痛，决定用 typescript 重构项目(2000+文件)。
+
+在重构业务系统之前，已经把基础库都重构了一遍，重构可以很好的整理归纳以前不合理的地方，为以后做更好产品做准备。
+
+### JS 的痛
+
+用强类型语言编程的程序员，在使用 JS 时会很没有安全感，因为太多的不确定，太过自由了，不能在编码时明确知道函数入参是什么，接口返回数据结构是怎么样，是否有可能在空数据做引用 (undefined.xx)，全靠运行时的 log 查看。这是 JS 的历史遗留问题。
+
+团队合作的时候会更难。例如 A 写的接口还要写一份文档来描述接口的`参数数量`、`类型`，哪些是必填字段，才能提供给 B 使用，并且在使用过程还要在 IDE 和文档之间来回切换，这样效率真低，而且增加了维护代码的成本（额外的接口文档说明）。
+
+TS 很能解决这个问题。当然 flow 也可以，而且对 js 原有项目入侵较小。最终我选择了 TS。
+
+世上没有万灵药，TS 提供解决 JS 的历史遗留问题的方案，但是方案执行关键还是在于编码的人。所以必须从自身开始，推动团队进步，提升产品质量。
+
+----------------
+
+## 从整理工作区开始
+
+一直都有使用 yarn 的工作区这个功能，工作区最重要的理念是把代码切割成可复用的模块，核心也是提供一种更好组织代码的方案，当然，方案执行关键还是看人。我试着把代码结构调整到最合适的状态。
+
+### 图片加载
+
+先来一个引用图片的例子，有以下结构：
+
+- src
+  - app.ts
+  - image
+    - logo.png
+
+```tsx
+// app.ts
+<img src={require('./image/logo.png')} />
+```
+
+通过 webpack 的构建支持，app.ts 就把 logo 加载了。但还有两个问题，影响后续维护：
+
+1. 相对路径的繁琐。
+2. 图片文件夹变动，所有组件都需要重新调整。
+
+怎么存放图片会更灵活？我选择把图片放到工作区内。
+
+调整下项目结构：
+
+- package
+  - @images
+    - package.json
+    - common
+      - logo.png
+- src
+  - app.ts
+- package.json
+
+工作区要使用 yarn 配合，并且在项目根目录的 package.json 中添加对应配置：
+
+```json
+// package.json
+{
+  "private": true,
+  "workspace": ["packages/@images"]
+}
+```
+
+在 packages/images 也要加入 package.json
+
+```json
+// packages/images/package.json
+{
+  "name": "@images"
+}
+```
+
+通过 yarn 命令，就可以在 src/app.ts 中就可以通过以下方式引用图片了：
+
+```tsx
+// app.ts
+<img src={require('@images/common/logo.png')} />
+```
+
+虽然解决了相对路径的问题，但是图片路径变动会影响已经引用的组件的问题还没解决，所以如何更进一步？
+
+我的做法是在 @images 中实现一个用于加载图片的函数 `loadImage()` ，并且统一配置图片路径的映射。
+
+期望的使用方式：
+
+```tsx
+// app.ts
+import { loadImage } from '@images';
+
+<img src={loadImage('logo')} />
+```
+
+这样就可以更灵活配置图片的路径了。
+
+### 实现 loadImage()
+
+现在将结构再做调整：
+
+- package
+  - @images
+    - index.ts // 主要用于配置图片路径的映射
+    - common
+      - logo.png
+- src
+  - app.ts
+
+在 package/images/index.ts 中：
+
+```ts
+export const ImageMapper = {
+  logo: 'common/logo.png',
+};
+
+// 加载图片的路径
+export function loadImage(mapKey: string, image?: string) {
+  // 在开发阶段就要抛出错误，保证图片必须要有
+  if(!mapKey) throw Error(`mapKey is required.`);
+  return require(`./${ImageMapper[cata] || cata}${image ? `/${image}` : ''}`);
+}
+```
+
+在 app.ts 中使用：
+
+```tsx
+import { loadImage } from '@images';
+// app.ts
+<img src={loadImage('logo')} />
+```
+
+在最终的应用层可以很方便的使用 @images 提供的接口获取图片。无论 logo 的位置符合变化，都是 @images 模块之内的事情，只要把 @images 模块图片目录整理好，所有引用的组件都不需要关心图片路径的变化了。
+
+但是如何知道 loadImage(mapKey) 第一个参数有哪些？
+
+### 入参提示和检查
+
+就是在调用 loadImage 的时候，检查第一个参数，并且提供已有选项的提示，例如：
+
+```ts
+export const ImageMapper = {
+  logo: 'common/logo.png',
+  bannerv1: 'banner/v1/banner.jpg',
+  bannerv2: 'banner/v2/banner.jpg',
+};
+
+type ImageMapperCata = 'logo' | 'banner' | 'bannerv1';
+
+// 加载图片的路径
+export function loadImage(mapKey: string, image?: string) {
+  // 在开发阶段就要抛出错误，保证图片必须要有
+  if(!mapKey) throw Error(`mapKey is required.`);
+  return require(`./${ImageMapper[cata] || cata}${image ? `/${image}` : ''}`);
+}
+```
+
+这样在调用 `loadImage('logo')` 的时候将检查是否符合预期数据，并且有输入提示。
+
+但是手动写 `ImageMapperCata` 好累，好在 typescript 有更好的办法：
+
+```ts
+export const ImageMapper = {
+  logo: 'common/logo.png',
+  bannerv1: 'banner/v1/banner.jpg',
+  bannerv2: 'banner/v2/banner.jpg',
+};
+
+// 就是这样
+type MakeReadOnly<Type> = { readonly [key in keyof Type ]: Type[key] };
+type ReadOnlyImageMapper = MakeReadOnly<typeof ImageMapper>;
+
+// 加载图片的路径
+export function loadImage(mapKey: string, image?: string) {
+  // 在开发阶段就要抛出错误，保证图片必须要有
+  if(!mapKey) throw Error(`mapKey is required.`);
+  return require(`./${ImageMapper[cata] || cata}${image ? `/${image}` : ''}`);
+}
+```
+
+这样无论再写多少个 `imageMap` 都会自动做入参检测。
+
+## 冰山一角
+
+以上只是重构项目的思路的小部分，只是 typescript 和 yarn workspace 的冰山一角，还有很多需要探索和实践的。
+
+目标很明确的：
+
+1. 让团队合作更加高效无间，减少不确定带来的摩擦
+2. 让项目结构更友好，更容易扩展和维护
+
+把代码写好了只是第一步，但是也是最重要的一步，是一个产品的基石。这样才有机会让技术产生价值。
+
+## 未来
+
+其实 typescript 可以做的还有很多，例如做做服务 API 的时候，可以做一份 API.d.ts，提供给客户端使用，里面详细描述 API 参数、API 返回数据结构。这样开发产品会更友好。我也会尝试往这方向努力。
+
+感谢。
