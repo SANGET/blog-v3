@@ -26,3 +26,17 @@ function staircase(n) {
   }
 }
 staircase(10);
+
+var str = "/2019/2019-03-24-React Table 固定列、固定表头的实现/";
+var str2 = "/2019-03-24-React Table 固定列、固定表头的实现/";
+var timeRegExp = /((19[2-9]\d{1})|(20\d{2}))-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|30|31)/;
+timeRegExp.test(str2);
+/((19[2-9]\d{1})|(2\d{3}))-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|30|31)/.test('/2019-03-24-React Table 固定列、固定表头的实现/');
+var slugify = str => {
+  var basePath = '/';
+  const slugArr = str.split('/').filter(s => !!s);
+  const currSlug = slugArr[slugArr.length - 1];
+  return `/${basePath}/${currSlug}`.replace(/\/\/+/g, "/");
+};
+var res = slugify(str);
+console.log(res);

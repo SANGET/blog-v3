@@ -175,19 +175,19 @@ exports.createPages = ({ graphql, actions }, options) => {
 
 exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
+  const timeRegExp = /((19[2-9]\d{1})|(20\d{2}))-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|30|31)-/;
 
   if (node.internal.type === `MarkdownRemark`) {
     let value = createFilePath({ node, getNode });
-    // const basePath = options.basePath || "/";
-    // // Quick-and-dirty helper to convert strings into URL-friendly slugs.
-    // const slugify = str => {
-    //   const slug = str
-    //     .toLowerCase()
-    //     .replace(/[^a-z0-9]+/g, "-")
-    //     .replace(/(^-|-$)+/g, "");
-    //   return `/${basePath}/${slug}`.replace(/\/\/+/g, "/");
-    // };
-    // value = slugify(value);
+    const basePath = options.basePath || "/";
+    const slugify = str => {
+      const slugArr = str.split('/').filter(s => !!s);
+      let currSlug = slugArr[slugArr.length - 1];
+      currSlug = currSlug.replace(timeRegExp, '');
+      currSlug = currSlug.replace(/\s+/g,"");
+      return `/${basePath}/${currSlug}`.replace(/\/\/+/g, "/");
+    };
+    value = slugify(value);
     createNodeField({
       name: `slug`,
       node,
