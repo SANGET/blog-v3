@@ -18,7 +18,7 @@ export const onRenderBody = ({
   setPostBodyComponents([
     <>
       {/* <LoadedDOM /> */}
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossOrigin="anonymous"></link>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.3.1/css/all.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css"></link>
 
       <script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js" defer></script>
@@ -28,7 +28,7 @@ export const onRenderBody = ({
       {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
       <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> */}
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/photoset-grid/1.0.1/jquery.photoset-grid.min.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/gh/stylehatch/photoset-grid@master/jquery.photoset-grid.min.js" defer></script>
     </>
   ]);
 };
