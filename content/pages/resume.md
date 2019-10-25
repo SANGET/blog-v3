@@ -158,8 +158,8 @@ title: Alex's Resume
 
 ## 自我评价
 
-- 自律、自我驱动，不断学习，追求完美，寻求突破。
-- 在国外生活 4 年，英语日常交流，无障碍的英文技术文档阅读。
+- `自律`、`自我驱动`，`极简主义`、`完美主义`。
+- 国外生活 5 年，英语水平足够日常交流，英文技术文档阅读。
 
 [uke-request]: https://github.com/SANGET/uke-request
 [basic-helper]: https://github.com/SANGET/basic-helper
