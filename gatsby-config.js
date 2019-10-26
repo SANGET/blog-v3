@@ -1,20 +1,4 @@
 module.exports = {
-  // pathPrefix: 'https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/',
-  siteMetadata: {
-    title: `Sanget's Blog`,
-    author: `Sanget`,
-    description: `Thinking`,
-    siteUrl: `https://thinkmore.xyz`,
-    social: {
-      // twitter: `sanget`,
-      mail: `zh.sanget@gmail.com`,
-      github: `https://github.com/SANGET`,
-    },
-    footer: {
-      showBuildInfo: true,
-      since: 2013
-    }
-  },
   plugins: [
     {
       resolve: "gatsby-theme-elk",
@@ -23,6 +7,19 @@ module.exports = {
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: "/",
+        siteTitle: `Sanget's Blog`,
+        author: `Sanget`,
+        description: `Thinking`,
+        siteUrl: `https://thinkmore.xyz`,
+        social: {
+          // twitter: `sanget`,
+          mail: `zh.sanget@gmail.com`,
+          github: `https://github.com/SANGET`,
+        },
+        footer: {
+          showBuildInfo: true,
+          since: 2013
+        }
       },
     },
     {

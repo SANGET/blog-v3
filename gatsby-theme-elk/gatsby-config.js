@@ -2,8 +2,29 @@ module.exports = ({
   blogContentPath = "blog",
   pagesContentPath = "pages",
   assetContentPath = "asset",
-  basePath = "/"
+  basePath = "/",
+  siteTitle = 'gatsby-theme-elk',
+  author = `gatsby-theme-elk's Author`,
+  description = `description`,
+  siteUrl = `https://github.com/SANGET/gatsby-theme-elk`,
+  social = {
+    // twitter: `sanget`,
+    mail: `zh.sanget@gmail.com`,
+    github: `https://github.com/SANGET`,
+  },
+  footer = {
+    showBuildInfo: true,
+    since: 2019
+  }
 }) => ({
+  siteMetadata: {
+    title: siteTitle,
+    author: author,
+    description,
+    siteUrl,
+    social,
+    footer
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
