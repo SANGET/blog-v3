@@ -16,11 +16,11 @@ layout: page
 喜欢`音乐`、`摄影`、`旅游`、`编程`。是 `极简主义`、`完美主义` 者。
 
 <escape>
-  <div class="photoset-grid" data-layout="3">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/guitar.jpg" alt="Godin 5th Avenue">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg" alt="18岁啊">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/covers/bg1.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/trip/bugiuo/9.jpg">
+  <div class="photoset-grid" data-layout="22">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/guitar.jpg" alt="Godin 5th Avenue">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/1.jpg" alt="18岁啊">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/bg1.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/trip/bugiuo/9.jpg">
   </div>
 </escape>
 
@@ -39,15 +39,15 @@ layout: page
 
 <!-- <escape>
   <div class="photoset-grid" data-layout="3">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/1.jpg" alt="18岁啊">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/8.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/9.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/4.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/5.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/6.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/7.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/8.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/me/9.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/1.jpg" alt="18岁啊">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/8.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/4.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/5.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/6.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/7.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/8.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg">
   </div>
 </escape> -->
 

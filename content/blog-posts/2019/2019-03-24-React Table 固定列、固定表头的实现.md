@@ -4,7 +4,7 @@ date: 2019-03-24
 layout: post
 title: 如何实现 React Table 固定列、固定表头
 description: 可应用于生产的 React Table 实现
-photos: https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/react-table.png
+photos: https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/react-table.png
 # permalink: /react-table
 keywords: React Table, Table 固定列, Table 固定表头
 tags: 
@@ -20,7 +20,7 @@ tags:
 
 <escape>
   <video width="100%" controls>
-    <source src="https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/video/react-table-demo.mov" type="video/mp4">
+    <source src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/video/react-table-demo.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </escape>

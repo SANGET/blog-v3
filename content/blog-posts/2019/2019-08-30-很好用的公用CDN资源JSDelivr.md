@@ -18,13 +18,13 @@ tags:
 
 先看看官方的介绍：
 
-![](https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/jsdelivr.png)
+![](https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/jsdelivr.png)
 
 > Wow, Awesome!
 
 这是在中国大陆唯一有 license 的公有 CDN，而且实际使用中的访问速度也是极快的：
 
-![](https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/jsdelivr-speed.png)
+![](https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/jsdelivr-speed.png)
 
 > 有些地方没有数据，这是美中不足的地方，但是毕竟是公用免费
 
@@ -32,7 +32,7 @@ tags:
 
 仅仅如此其实并不够好，JSDelivr 还能够集成 Github、NPM 资源，只需要通过符合 JSDelivr 规则的 URL 引用，即可直接使用 Github 中的资源。
 
-例如本站的图片直接通过 jsdelivr 引用 Github 的资源 `https://cdn.jsdelivr.net/gh/SANGET/gatsby-theme-elk@master/content/assets/images/other/jsdelivr-speed.png`。
+例如本站的图片直接通过 jsdelivr 引用 Github 的资源 `https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/jsdelivr-speed.png`。
 
 也可以使用发布到 NPM 的资源，这就是生产力。
 
