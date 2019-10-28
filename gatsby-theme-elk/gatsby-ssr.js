@@ -6,12 +6,6 @@ import Wrapper from './src/components/layout-wrapper';
 export const onRenderBody = ({
   setPostBodyComponents, setPreBodyComponents, setHeadComponents
 }) => {
-  // setHeadComponents([
-  //   <script
-  //     key="1"
-  //     type="text/javascript"
-  //     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>,
-  // ]);
   setPreBodyComponents([
     <LoaderDOM />
   ]);
