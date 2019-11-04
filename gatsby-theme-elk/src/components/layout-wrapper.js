@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Loading } from 'ukelli-ui/core/loading';
-import { Call, EventEmitter } from 'basic-helper';
+import { Loading } from '@dear-ui/core/loading';
+import { Call, EventEmitter } from '@mini-code/base-func';
 
 import { LINK_TO_PAGE } from '../../utils/const';
 
@@ -17,7 +17,7 @@ const Wrapper = ({ children, props }) => {
   /** 删除 loading 背景 */
   React.useEffect(() => {
     const loadingDOM = document.querySelector('#loadingBg');
-    if(loadingDOM) document.body.removeChild(loadingDOM);
+    if (loadingDOM) document.body.removeChild(loadingDOM);
   }, []);
 
   /** 设置加载和判断是否移动设备 */
@@ -26,7 +26,7 @@ const Wrapper = ({ children, props }) => {
     setIsMobile(_isMobile);
     const currHref = window.location.href;
     const handleLinkToPage = () => {
-      if(prefHref !== currHref) {
+      if (prefHref !== currHref) {
         setLoading(true);
         prefHref = currHref;
       }
@@ -45,7 +45,7 @@ const Wrapper = ({ children, props }) => {
       <Loading inrow loading={loading} />
       {React.cloneElement(children, {
         ...props,
-        isMobile
+        isMobile,
       })}
     </div>
   );

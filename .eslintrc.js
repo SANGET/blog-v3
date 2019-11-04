@@ -2,7 +2,10 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
   },
-  extends: `react-app`,
+  extends: [
+    "airbnb-base",
+    `react-app`
+  ],
   "rules": {
     "indent": ["error", 2],
     "semi": ["error", "always"],

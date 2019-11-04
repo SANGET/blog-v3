@@ -10,7 +10,8 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
-    "basic-helper": "^3.0.7",
+    "@mini-code/base-func": "^1.0.2",
+    "@dear-ui/core": "^4.0.0-alpha2.0",
     "css-loader": "^3.2.0",
     "gatsby": "^2.15.14",
     "gatsby-image": "^2.2.18",
@@ -45,7 +46,6 @@
     "tether": "^1.4.7",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "ukelli-ui": "^3.0.1-rc10",
     "unistore": "^3.4.1"
   },
   "devDependencies": {

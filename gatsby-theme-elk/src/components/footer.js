@@ -1,7 +1,6 @@
 import React from 'react';
-import { useStaticQuery, graphql } from "gatsby";
-// import { Icon } from 'ukelli-ui/core/icon';
-import { ToolTip } from 'ukelli-ui/core/tooltip';
+import { useStaticQuery, graphql } from 'gatsby';
+import { ToolTip } from '@dear-ui/core/tooltip';
 
 const Footer = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +23,7 @@ const Footer = ({ title }) => {
       }
     }
   `);
-  const siteMetadata = data.site.siteMetadata;
+  const { siteMetadata } = data.site;
   const footerData = siteMetadata.footer;
   const { github, mail } = siteMetadata.social;
   const { showBuildInfo = true, since } = footerData;
@@ -32,7 +31,7 @@ const Footer = ({ title }) => {
     <footer className="footer">
       <div className="container">
         <div className="layout">
-          <span>© {since ? since + ' - ' : ''}{new Date().getFullYear()} {title}</span>
+          <span>© {since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
           {
             showBuildInfo && (
               <>
@@ -43,9 +42,9 @@ const Footer = ({ title }) => {
                 <a href="https://github.com/SANGET/gatsby-theme-elk"
                   rel="noopener noreferrer"
                   className="ms5" target="_blank">Gatsby-Theme-Elk</a>
-                <a href="https://ui.ukelli.com"
+                <a href="https://ui.thinkmore.xyz"
                   rel="noopener noreferrer"
-                  className="ms5" target="_blank">Ukelli-UI</a>
+                  className="ms5" target="_blank">@dear-ui</a>
               </>
             )
           }

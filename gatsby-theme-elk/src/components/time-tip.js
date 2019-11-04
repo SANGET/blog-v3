@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'ukelli-ui/core/icon';
+import { Icon } from '@dear-ui/core/icon';
 
 const TimeTip = ({ date, readTime, ...other }) => {
   return (

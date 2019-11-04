@@ -1,5 +1,4 @@
 import React from "react";
-import { Loading } from 'ukelli-ui/core/loading';
 
 import Footer from './footer';
 import Header from './header';

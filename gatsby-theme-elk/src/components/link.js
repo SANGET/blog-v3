@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql, navigate } from 'gatsby';
-import { Call, EventEmitter } from 'basic-helper';
+import { Call, EventEmitter } from '@mini-code/base-func';
 
 import { LINK_TO_PAGE } from '../../utils/const';
 

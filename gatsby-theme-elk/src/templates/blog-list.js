@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, navigate } from 'gatsby';
-import { Pagination } from 'ukelli-ui/core/pagin';
-import { Loading } from 'ukelli-ui/core/loading';
+import { Pagination } from '@dear-ui/core/pagination';
 
 import SEO from '../components/seo';
 import Bio from '../components/bio';
@@ -27,20 +26,22 @@ class BlogIndex extends React.Component {
     const { data, loading } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
-    const { currentPage, limit, totalPosts, tags } = this.props.pageContext;
+    const {
+      currentPage, limit, totalPosts, tags,
+    } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={siteTitle}
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}/>
+          keywords={['blog', 'gatsby', 'javascript', 'react']}/>
         <Bio />
         {/* <Loading inrow loading /> */}
         <div className="post-wrapper">
           <section className="post-list">
             {
               posts.map(({ node }) => {
-                const slug = node.fields.slug;
+                const { slug } = node.fields;
                 const title = node.frontmatter.title || slug;
                 const { description, date, tags } = node.frontmatter;
                 // const readTime = calculateReadTime(node.rawMarkdownBody);
@@ -55,14 +56,14 @@ class BlogIndex extends React.Component {
                     className="post-item">
                     <div
                       className="post-entity"
-                      onClick={e => {
+                      onClick={(e) => {
                         navigate(`/${slug}`);
                       }}>
-                      <h4 className="post-title">
+                      <h3 className="post-title">
                         <Link style={{ boxShadow: 'none' }} to={slug}>
                           {title}
                         </Link>
-                      </h4>
+                      </h3>
                       <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
                     </div>
                     <div className="subcontent">
@@ -82,15 +83,15 @@ class BlogIndex extends React.Component {
           </section>
           {/* <TagsList tags={tags} /> */}
         </div>
-        <Pagination 
+        <Pagination
           isNeedHelper={false}
           pagingInfo={{
             pIdx: currentPage - 1,
             pSize: limit,
             total: totalPosts,
-            active: true
+            active: true,
           }}
-          onPagin={nextPagin => {
+          onPagin={(nextPagin) => {
             // console.log(nextPagin);
             const nextPageIdx = nextPagin.pIdx + 1;
             navigate(`/${nextPageIdx === 1 ? '' : nextPageIdx}`);

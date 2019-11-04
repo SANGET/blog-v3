@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowModal } from 'ukelli-ui/core/modal';
-import { getScreenWidth } from 'ukelli-ui/core/utils/screen';
+import { ShowModal } from '@dear-ui/core/modal';
+import { getScreenWidth } from '@dear-ui/core/utils/screen';
 
 const getImgWidth = (url) => {
   return new Promise((resolve) => {
