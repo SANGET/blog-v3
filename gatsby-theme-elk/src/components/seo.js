@@ -5,12 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title, resources }) {
+function SEO({
+  description, lang, meta, title, resources,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,7 +24,7 @@ function SEO({ description, lang, meta, title, resources }) {
           }
         }
       }
-    `
+    `,
   );
 
   const metaDescription = description || site.siteMetadata.description;
@@ -37,23 +39,23 @@ function SEO({ description, lang, meta, title, resources }) {
       meta={[
         {
           name: 'viewport',
-          content: "width=device-width, initial-scale=1, maximum-scale=2"
+          content: 'width=device-width, initial-scale=1, maximum-scale=2',
         },
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: title,
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website',
         },
         // {
         //   name: `twitter:card`,
@@ -77,9 +79,9 @@ function SEO({ description, lang, meta, title, resources }) {
           switch (resource.type) {
           case 'link':
             return (
-              <link key={idx} 
-                type={resource.rel || "text/css"} 
-                rel="stylesheet" 
+              <link key={idx}
+                type={resource.rel || 'text/css'}
+                rel="stylesheet"
                 href={resource.url} />
             );
           default:
@@ -92,9 +94,9 @@ function SEO({ description, lang, meta, title, resources }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: 'en',
   meta: [],
-  description: ``,
+  description: '',
 };
 
 SEO.propTypes = {

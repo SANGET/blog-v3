@@ -4,13 +4,11 @@ import { Call, EventEmitter } from '@mini-code/base-func';
 
 import { LINK_TO_PAGE } from '../../utils/const';
 
-const CusLink = ({ onClick, ...props }) => {
-  return (
-    <Link {...props} onClick={e => {
-      Call(onClick, e);
-      EventEmitter.emit(LINK_TO_PAGE);
-    }} />
-  );
-};
+const CusLink = ({ onClick, ...props }) => (
+  <Link {...props} onClick={(e) => {
+    Call(onClick, e);
+    EventEmitter.emit(LINK_TO_PAGE);
+  }} />
+);
 
 export default CusLink;

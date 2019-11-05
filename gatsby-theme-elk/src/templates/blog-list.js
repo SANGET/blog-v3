@@ -59,11 +59,11 @@ class BlogIndex extends React.Component {
                       onClick={(e) => {
                         navigate(`/${slug}`);
                       }}>
-                      <h3 className="post-title">
+                      <h4 className="post-title">
                         <Link style={{ boxShadow: 'none' }} to={slug}>
                           {title}
                         </Link>
-                      </h3>
+                      </h4>
                       <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
                     </div>
                     <div className="subcontent">

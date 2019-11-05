@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 // Utilities
-import kebabCase from "lodash/kebabCase";
+import kebabCase from 'lodash/kebabCase';
 // Components
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from "../components/seo";
+import SEO from '../components/seo';
 import Link from '../components/link';
 
 const TagsPage = ({
@@ -15,7 +15,7 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
-  location
+  location,
 }) => {
   const allTags = group.length;
   return (
@@ -27,11 +27,11 @@ const TagsPage = ({
         <p>Total {allTags} tags</p>
         <div className="tag-cloud block-a">
           {
-            group.map(tag => {
+            group.map((tag) => {
               const { fieldValue, totalCount } = tag;
               return (
                 <span key={fieldValue} className="mr15" style={{
-                  fontSize: `${15 + totalCount}px`
+                  fontSize: `${15 + totalCount}px`,
                 }}>
                   <Link to={`/tags/${kebabCase(fieldValue)}/`}>
                     {fieldValue} ({totalCount})
@@ -53,7 +53,7 @@ TagsPage.propTypes = {
         PropTypes.shape({
           fieldValue: PropTypes.string.isRequired,
           totalCount: PropTypes.number.isRequired,
-        }).isRequired
+        }).isRequired,
       ),
     }),
     site: PropTypes.shape({

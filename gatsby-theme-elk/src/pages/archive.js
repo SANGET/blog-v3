@@ -1,18 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-// Utilities
-import kebabCase from "lodash/kebabCase";
-// Components
-import { graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from "../components/seo";
+import SEO from '../components/seo';
 import Link from '../components/link';
 import Tags from '../components/tags-render';
 
 const ArchivePage = (props) => {
   const {
     data,
-    location
+    location,
   } = props;
   const posts = data.allMarkdownRemark.edges;
   const sideTitle = data.site.siteMetadata.title;
@@ -29,11 +25,11 @@ const ArchivePage = (props) => {
             posts.map(({ node }) => {
               const { fields, frontmatter } = node;
               const { date, tags } = frontmatter;
-              const slug = fields.slug;
+              const { slug } = fields;
               const title = frontmatter.title || slug;
               const currYear = date.split(', ')[1];
               let yearTip;
-              if(perYear !== currYear) {
+              if (perYear !== currYear) {
                 yearTip = (
                   <h3>@{currYear}</h3>
                 );

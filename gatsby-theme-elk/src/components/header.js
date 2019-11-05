@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from 'gatsby';
 import Link from './link';
 
 const rootPath = `${__PATH_PREFIX__}/`;
@@ -7,7 +7,7 @@ const navConfig = [
   {
     title: 'Blog',
     path: '/',
-    activeFilter: pathname => pathname === rootPath
+    activeFilter: (pathname) => pathname === rootPath,
   },
   {
     title: 'Archive',
@@ -38,7 +38,7 @@ const Header = (props) => {
   const defaultSiteTitle = siteData.site.siteMetadata.title;
   const { location, title = defaultSiteTitle } = props;
   const { pathname } = location;
-  let header = (
+  const header = (
     <nav className="header-nav">
       {
         navConfig.map((nav) => {

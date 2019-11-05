@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import Footer from './footer';
 import Header from './header';
@@ -8,7 +8,7 @@ class Layout extends React.Component {
   render() {
     const { children, ...other } = this.props;
     return (
-      <div id="wrapper" className={`wrapper`}>
+      <div id="wrapper" className={'wrapper'}>
         <Header {...other} />
         <main className="container main">{children}</main>
         <Footer {...other} />

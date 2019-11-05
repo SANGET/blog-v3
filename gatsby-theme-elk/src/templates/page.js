@@ -1,20 +1,20 @@
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-const AboutPage = ({ location, data: {
-  markdownRemark: { html }
-} }) => {
-  return (
-    <Layout location={location}>
-      <div className="markdown-body">
-        <div className="about-page" dangerouslySetInnerHTML={{ __html: html }} ></div>
-      </div>
-    </Layout>
-  );
-};
+const AboutPage = ({
+  location, data: {
+    markdownRemark: { html },
+  },
+}) => (
+  <Layout location={location}>
+    <div className="markdown-body">
+      <div className="about-page" dangerouslySetInnerHTML={{ __html: html }} ></div>
+    </div>
+  </Layout>
+);
 
 export default AboutPage;
 

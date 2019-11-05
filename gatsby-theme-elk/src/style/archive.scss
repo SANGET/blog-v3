@@ -1,17 +1,22 @@
 .archive-page {
+  line-height: 1.5rem;
+
   .post {
     color: #444;
+
     a {
       font-size: 1.1em;
       color: inherit;
       text-decoration: none;
       margin: 3px 0;
+
       // border-bottom: 1px dashed #EEE;
       &:hover {
         color: $themeColor;
       }
     }
   }
+
   .tags {
     color: #BBB;
   }

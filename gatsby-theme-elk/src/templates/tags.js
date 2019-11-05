@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Link from '../components/link';
@@ -9,7 +9,7 @@ const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
+    totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`;
   return (
     <Layout location={location} title={data.site.siteMetadata.title}>
@@ -21,7 +21,7 @@ const Tags = ({ pageContext, data, location }) => {
             const { title, date } = node.frontmatter;
             return (
               <span className="item" style={{
-                fontSize: '16px'
+                fontSize: '16px',
               }} key={slug}>
                 <Link to={slug}>
                   {title} - <span className="date">{date}</span></Link>
@@ -53,7 +53,7 @@ Tags.propTypes = {
               slug: PropTypes.string.isRequired,
             }),
           }),
-        }).isRequired
+        }).isRequired,
       ),
     }),
   }),

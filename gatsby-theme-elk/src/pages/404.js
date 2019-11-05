@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 class NotFoundPage extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class NotFoundPage extends React.Component {
         <SEO title="404: Not Found" />
         <div className="text-center">
           {/* <Icon n="surprise" s="r" /> */}
-          <div style={{fontSize: 200}}>
+          <div style={{ fontSize: 200 }}>
             404
           </div>
           <p>Not Found</p>
