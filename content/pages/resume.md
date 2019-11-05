@@ -69,7 +69,7 @@ title: Alex's Resume
   - 项目仓库（客户端开源）：[https://github.com/elk-chat/elk_web][elk-chat]
   - 在线地址（非商用）：[https://chat.thinkmore.xyz/][chat-online]
 
-### @dear-ui
+### @deer-ui
 
 > Synergy88
 
@@ -77,18 +77,18 @@ title: Alex's Resume
 - 技术结构：
   - 通用轻量的组件集合。
 - 技术标签: `Typescript`, `React`, `Node`
-- 基于 @dear-ui 的应用：
+- 基于 @deer-ui 的应用：
   - [Elk-Chat][elk-chat]
-  - [@dear-ui/admin-scaffold][elk-chat]
+  - [@deer-ui/admin-scaffold][elk-chat]
 - 相关资源
-  - 项目仓库：[https://github.com/minimal-studio/dear-ui][dear-ui]
+  - 项目仓库：[https://github.com/minimal-studio/deer-ui][deer-ui]
   - 在线文档：[https://ui.thinkmore.xyz/][ui-doc]
 
 ### 管理系统脚手架
 
 > Synergy88
 
-- 介绍：`admin-scaffold` 是基于 `React`、`dear-ui` 的管理后台脚手架，主攻「业务和 UI 分离」、「业务声明式开发」方向，把大部分的通用需求交给后端人员。稳健高效，统一 UI 交互、视觉效果，支持多标签页。
+- 介绍：`admin-scaffold` 是基于 `React`、`deer-ui` 的管理后台脚手架，主攻「业务和 UI 分离」、「业务声明式开发」方向，把大部分的通用需求交给后端人员。稳健高效，统一 UI 交互、视觉效果，支持多标签页。
 - 目的：为了快速响应日益丰富繁杂的业务管理系统开发需求，减少人员流动对项目的维护影响，高效稳健的开发，而构建的管理系统脚手架工具。
 - 主要负责：脚手架整体制作与规划，说明文档编写，功能持续迭代。
 - 技术标签: `Typescript`, `React`, `Node`
@@ -161,7 +161,7 @@ title: Alex's Resume
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper
-[dear-ui]: https://github.com/minimal-studio/dear-ui
+[deer-ui]: https://github.com/minimal-studio/deer-ui
 [admin-scaffold]: https://github.com/minimal-studio/admin-scaffold
 [admin-dashboard]: https://github.com/minimal-studio/admin-dashboard
 [elk-chat]: https://github.com/elk-chat/elk_web

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, navigate } from 'gatsby';
-import { Pagination } from '@dear-ui/core/pagination';
+import { Pagination } from '@deer-ui/core/pagination';
 
 import SEO from '../components/seo';
 import Bio from '../components/bio';

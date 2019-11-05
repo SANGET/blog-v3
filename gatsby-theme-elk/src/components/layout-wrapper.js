@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Loading } from '@dear-ui/core/loading';
+import { Loading } from '@deer-ui/core/loading';
 import { Call, EventEmitter } from '@mini-code/base-func';
 
 import { LINK_TO_PAGE } from '../../utils/const';

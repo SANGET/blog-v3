@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@dear-ui/core/icon';
+import { Icon } from '@deer-ui/core/icon';
 
 const TimeTip = ({ date, readTime, ...other }) => {
   return (

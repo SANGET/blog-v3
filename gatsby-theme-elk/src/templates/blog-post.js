@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { DebounceClass } from '@mini-code/base-func';
-import { Icon } from '@dear-ui/core/icon';
+import { Icon } from '@deer-ui/core/icon';
 import Tether from 'tether';
 
 // import Bio from "../components/bio";

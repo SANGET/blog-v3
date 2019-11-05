@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { ToolTip } from '@dear-ui/core/tooltip';
+import { ToolTip } from '@deer-ui/core/tooltip';
 
 const Footer = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -44,7 +44,7 @@ const Footer = ({ title }) => {
                   className="ms5" target="_blank">Gatsby-Theme-Elk</a>
                 <a href="https://ui.thinkmore.xyz"
                   rel="noopener noreferrer"
-                  className="ms5" target="_blank">@dear-ui</a>
+                  className="ms5" target="_blank">@deer-ui</a>
               </>
             )
           }
