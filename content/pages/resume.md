@@ -12,7 +12,7 @@ title: Alex's Resume
 
 ## 个人简介
 
-我是张相杰（Alex），前端工程师，从事前端相关工作六年。过去主要工作为：`UI 框架` 建设、规划和应用； `web 管理后台前端框架` 搭建与应用；前端项目质量把控和团队协调等。
+我是张相杰（Alex），前端工程师，从事前端相关工作六年。过去主要工作为：业务系统的前端功能规划和实现，前端团队建设，前端技术积累，SaaS 系统研发等。
 
 喜欢探寻事物运行原理，喜欢 `读书`、`运动`、`摄影`、`弹吉他`、`coding`。
 
@@ -24,7 +24,7 @@ title: Alex's Resume
 
 ## 技能树
 
-- 前端: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`
+- 前端: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`
 - 后端: `Node`
 - 部署: `Docker`, `Kubernetes`, `Netlify`
 - 工具: `Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
@@ -67,9 +67,9 @@ title: Alex's Resume
 - 技术标签：`Typescript`, `Protobuf`, `React`, `Redux`, `Flutter`
 - 相关资源
   - 项目仓库（客户端开源）：[https://github.com/elk-chat/elk_web][elk-chat]
-  - 在线地址（非商用）：[https://chat.thinkmore.xyz/][chat.ukelli]
+  - 在线地址（非商用）：[https://chat.thinkmore.xyz/][chat-online]
 
-### Ukelli-UI
+### @dear-ui
 
 > Synergy88
 
@@ -77,25 +77,24 @@ title: Alex's Resume
 - 技术结构：
   - 通用轻量的组件集合。
 - 技术标签: `Typescript`, `React`, `Node`
-- 基于 Ukelli-UI 的应用：
+- 基于 @dear-ui 的应用：
   - [Elk-Chat][elk-chat]
-  - [uke-admin-web-scaffold][elk-chat]
+  - [@dear-ui/admin-scaffold][elk-chat]
 - 相关资源
-  - 项目仓库：[https://github.com/ukelli/ukelli-ui][ukelli-ui]
+  - 项目仓库：[https://github.com/minimal-studio/dear-ui][dear-ui]
   - 在线文档：[https://ui.thinkmore.xyz/][ui-doc]
 
 ### 管理系统脚手架
 
 > Synergy88
 
-- 介绍：`uke-admin-web-scaffold` 是基于 `React`、`Ukelli-UI` 的管理后台脚手架，主攻「业务和 UI 分离」、「业务声明式开发」方向，把大部分的通用需求交给后端人员。稳健高效，统一 UI 交互、视觉效果，支持多标签页。
+- 介绍：`admin-scaffold` 是基于 `React`、`dear-ui` 的管理后台脚手架，主攻「业务和 UI 分离」、「业务声明式开发」方向，把大部分的通用需求交给后端人员。稳健高效，统一 UI 交互、视觉效果，支持多标签页。
 - 目的：为了快速响应日益丰富繁杂的业务管理系统开发需求，减少人员流动对项目的维护影响，高效稳健的开发，而构建的管理系统脚手架工具。
 - 主要负责：脚手架整体制作与规划，说明文档编写，功能持续迭代。
 - 技术标签: `Typescript`, `React`, `Node`
 - 相关资源
-  - 项目仓库：[https://github.com/SANGET/uke-admin-web-scaffold][uke-admin-web-scaffold]
-  - 在线文档：[https://scaffold.thinkmore.xyz/][uke-admin-web-scaffold-doc]
-  - [uke-dashboard][uke-admin-seed]：管理系统模版框架应用，主要为了应对快速开发系统的需求，规范管理后台的开发规范。
+  - [项目仓库][admin-scaffold]
+  - [admin-dashboard][admin-dashboard]：管理系统模版框架应用，主要为了应对快速开发系统的需求，规范管理后台的开发规范。
 
 ### 通讯工具类库
 
@@ -105,8 +104,7 @@ title: Alex's Resume
 - 目的：主要用于一个对于通讯安全有一定要求的项目，尽可能增加通讯数据被抓包解析的成本，以及压缩请求体的体积（最大10M请求体，压缩后为700k）。
 - 技术标签: `Typescript`, `RC4`, `LZMA`
 - 相关资源
-  - 项目仓库：[https://github.com/SANGET/uke-request][uke-request]
-  - 在线文档：[https://request.thinkmore.xyz/][uke-request-doc]
+  - [项目仓库][request]
 
 ### Web Server
 
@@ -116,7 +114,7 @@ title: Alex's Resume
 - 目的：提供一个可视化的前端发布系统，主要应用于 ReactNative 的热更新服务。
 - 技术标签：`Node`, `Express`, `Koa`, `Docker`
 - 相关资源
-  - 项目仓库：[https://github.com/SANGET/uke-web-server](https://github.com/SANGET/uke-web-server)
+  - [项目仓库](https://github.com/minimal-studio/web-server)
 
 ### 商务租赁平台
 
@@ -161,20 +159,16 @@ title: Alex's Resume
 - `自律`、`自我驱动`，`极简主义`、`完美主义`。
 - 国外生活 5 年，英语水平足够日常交流，英文技术文档阅读。
 
-[uke-request]: https://github.com/SANGET/uke-request
-[basic-helper]: https://github.com/SANGET/basic-helper
-[ukelli-ui]: https://github.com/ukelli/ukelli-ui
-[uke-admin-web-scaffold]: https://github.com/SANGET/uke-admin-web-scaffold
-[uke-admin-seed]: https://github.com/SANGET/uke-admin-seed
+[request]: https://github.com/minimal-studio/request
+[basic-helper]: https://github.com/minimal-studio/basic-helper
+[dear-ui]: https://github.com/minimal-studio/dear-ui
+[admin-scaffold]: https://github.com/minimal-studio/admin-scaffold
+[admin-dashboard]: https://github.com/minimal-studio/admin-dashboard
 [elk-chat]: https://github.com/elk-chat/elk_web
-[chat.ukelli]: https://chat.thinkmore.xyz/
+[chat-online]: https://chat.thinkmore.xyz/
 
-[uke-admin-web-scaffold-doc]: https://scaffold.thinkmore.xyz/
-[uke-dashboard-doc]: https://admin.thinkmore.xyz/
+[dashboard-doc]: https://admin.thinkmore.xyz/
 [ui-doc]: https://ui.thinkmore.xyz/
-[uke-request-doc]: https://request.thinkmore.xyz/
-[request-doc]: https://request.thinkmore.xyz/
-[basic-doc]: https://basic.thinkmore.xyz/
 
 [form-generator]: https://thinkmore.xyz/%E5%9F%BA%E4%BA%8Ereact%E6%89%93%E9%80%A0%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E8%A1%A8%E5%8D%95
 [table-desc]: https://ui.thinkmore.xyz/Table
