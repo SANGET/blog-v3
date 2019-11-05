@@ -763,10 +763,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@deer-ui/core@^4.0.0-alpha3.1":
-  version "4.0.0-alpha3.1"
-  resolved "https://registry.yarnpkg.com/@deer-ui/core/-/core-4.0.0-alpha3.1.tgz#04aab0e49681be7cfc8e16194f01846914928c75"
-  integrity sha512-BvYG8orJla6Bhb9TLsjnIKl06MopEt1MsnwORNFUfcz53ag6kHunMKuDwIePDXMoPR/s8zYJAORrD+MRf1CAFQ==
+"@deer-ui/core@^4.0.0-alpha4.0":
+  version "4.0.0-alpha4.0"
+  resolved "https://registry.yarnpkg.com/@deer-ui/core/-/core-4.0.0-alpha4.0.tgz#b021d287f74f232036ab67a2f6abe277278b2452"
+  integrity sha512-aq92ht5VoYGrWukuUQBghrUwxfvgxzdV7obl0Lgbo98ROSSu+jiJs9oDG32Bj4N2xvt/qOl9SG0cX1a1OEc6Ag==
   dependencies:
     classnames "^2.2.6"
 
