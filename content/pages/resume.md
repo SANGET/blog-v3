@@ -67,9 +67,9 @@ title: Alex's Resume
 
 > Synergy88
 
-- 介绍：`@deer-ui` 是一个 UI 组织，由基于 `React` 的 `@deer-ui/core` 作为核心驱动，提供 [`聚合表单生成器`][form-generator]、[`数据渲染引擎`][table-desc]，应用于前端 web 开发，管理后台开发。
+- 介绍：`@deer-ui` 是一个 UI 组织，为构建视觉、交互统一的 web 应用提供灵活、可扩展的开发方式。由基于 `React` 的 `@deer-ui/core` 作为核心驱动，提供 [`聚合表单生成器`][form-generator]、[`数据渲染引擎`][table-desc]，应用于前端 web 开发，管理后台开发。
 - 组织结构：
-  - `@deer-ui/core` 核心 UI 库，提供可扩展的基础
+  - `@deer-ui/core` 核心 UI 库，提供可扩展的基础，基于原子设计原则
   - `@deer-ui/enhance-ui` 基于 `@deer-ui/core` 的增强 UI 组件集合
   - `@deer-ui/admin-scaffold` 管理后台 UI 脚手架
 - 技术标签: `Typescript`, `React`
