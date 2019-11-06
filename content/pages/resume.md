@@ -61,7 +61,7 @@ title: Alex's Resume
   - `@mini-code/base-func` 核心函数库，包含处理常用的 `数组`, `数字`, `时间`, `订阅发布` 等功能模块
   - `@mini-code/request` 通讯工具类库，基于 fetch 的封装，采取中间件机制，对数据进行过滤。内置了「RC4 加解密」和「LZMA 压解缩」中间件，支持 RESTFul API。
   - `@mini-code/scripts` 基于 react-scripts 扩展的开发环境，提供 React typescript 应用的开发与构建环境
-  - `@mini-code/page-generator` 页面生成工具，主要用于减轻繁重的管理系统的页面的开发任务，以及提高页面的统一性，可维护性
+  - `@mini-code/page-generator` 页面生成工具，主要用于减轻繁重的管理系统页面的开发任务工作量，以及提高页面的统一性，可维护性
 
 ### @deer-ui
 
