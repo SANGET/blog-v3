@@ -82,7 +82,7 @@ Libs:
 
 - [`basic-helper`][basic-helper]: Provides commonly used data processing functions such as `Time Processing`, `Money Format Processing`, `Array Processing`, `Universal Subscription Publishing Mechanism`, `Local Storage Interface` (For Web and React-Native), etc.
 - [`uke-request`][uke-request]: Http request encapsulation based on fetch API, built-in middleware (built-in RC4 data encryption and decryption, LZMA data decompression middleware) mechanism, RESTFul API support.
-- [`ukelli-ui`][ukelli-ui]: Base on `React`'s `UI` Lib, used in all front-end projects of the company, with unified UI interaction and presentation, improving development efficiency.
+- [`deer-ui`][deer-ui]: Base on `React`'s `UI` Lib, used in all front-end projects of the company, with unified UI interaction and presentation, improving development efficiency.
 - [`uke-admin-web-scaffold`][uke-admin-web-scaffold]: Front-end admin manager system's scaffold, with business and UI separation, declarative page business development, improve development efficiency, unified UI interaction, style, support for multi-tab pages, parameter routing jumps, etc.
 - [`uke-dashboard`][uke-admin-seed]: Combined with the above-mentioned management system template framework, mainly to meet the needs of rapid development systems, standardize the development specifications of the management background, easy project maintenance.
 
@@ -123,7 +123,7 @@ Technical labels: `Polymer`, `Node`, `MONO`
 - [elk-chat](https://chat.thinkmore.xyz/) IM client
 - [basic-helper](https://basic.thinkmore.xyz/) JS basic helper lib
 - [uke-request](https://request.thinkmore.xyz/) HTTP request lib with middleware
-- [ukelli-ui](https://ui.thinkmore.xyz/) Base on React's UI lib
+- [deer-ui](https://ui.thinkmore.xyz/) Base on React's UI lib
 - [uke-admin-web-scaffold](https://scaffold.thinkmore.xyz/) Scaffold of web admin dashboard
 - [uke-dashboard](https://admin.thinkmore.xyz/) Web admin dashboard
 
@@ -148,7 +148,7 @@ Technical labels: `Polymer`, `Node`, `MONO`
 
 [uke-request]: https://github.com/SANGET/uke-request
 [basic-helper]: https://github.com/SANGET/basic-helper
-[ukelli-ui]: https://github.com/ukelli/ukelli-ui
+[deer-ui]: https://github.com/ukelli/deer-ui
 [uke-admin-web-scaffold]: https://github.com/SANGET/uke-admin-web-scaffold
 [uke-admin-seed]: https://github.com/SANGET/uke-admin-seed
 [elk-chat]: https://github.com/elk-chat/elk_web

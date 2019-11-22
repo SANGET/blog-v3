@@ -26,7 +26,7 @@ tags:
 </escape>
 
 - live demo uke-dashboard [https://admin.thinkmore.xyz/](https://admin.thinkmore.xyz/) ( 用户名 admin, 密码 123 ). 介绍一下 uke-dashboard 是一套前后端分离模式的管理后台前端框架，已经经过了实际项目的验证，快速应对项目需求。
-- [Ukelli-UI Table 的文档][ukelli-table]，此 Table 已经在 ukelli-ui 中实现，还有更多表格功能
+- [Table 的文档][table-doc]
 
 --------------
 
@@ -76,8 +76,8 @@ const columns = [
 
 这样我认为会有一定 __问题__ ，因为根据以往的项目来看，这样会「分散开发时的注意力」，就算反复调试的 `width` 也未必准确，毕竟内容是不确定的。
 
-__所以 uke-table 对 column 的宽度做了计算优化，达到「column 自适应内容宽度」，超出一定宽度会自动换行这样的目的。__ 从而让开发更加专注于业务，而不是 UI 信息。
+__所以 table 对 column 的宽度做了计算优化，达到「column 自适应内容宽度」，超出一定宽度会自动换行这样的目的。__ 从而让开发更加专注于业务，而不是 UI 信息。
 
-uke-table 文档: [https://ui.thinkmore.xyz/Table][ukelli-table]
+table 文档: [https://ui.thinkmore.xyz/Table][table-doc]
 
-[ukelli-table]:https://ui.thinkmore.xyz/Table
+[table-doc]:https://ui.thinkmore.xyz/Table

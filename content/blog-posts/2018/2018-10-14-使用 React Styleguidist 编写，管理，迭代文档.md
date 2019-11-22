@@ -2,8 +2,8 @@
 author: Alex
 date: 2018-10-14
 layout: post
-title: 使用 React Styleguidist 编写，管理，迭代文档
-description: 其实 React Styleguidist 挺难用的，后来改用了 docz
+title: 使用 React Styleguidist 编写，管理，迭代文档(已废弃)
+description: 其实 React Styleguidist 挺难用的，后来改用了 docz, docz 也很难用，后来基于 gatsby 重新做了一个
 # permalink: /use-react-styleguidist
 keywords: 制作前端库文档
 tags: 
@@ -127,9 +127,7 @@ module.exports = {
 
 同类型的 style guide 也有不少，不过 react styleguidist 相对完善一些
 
-Ukelli-UI 便是基于此方式来编写文档，虽然有些傻，但是还能接受，用 markdown 的方式来写例子，更好维护和查看了
-
-[Ukelli-UI 的 style guide 配置](https://github.com/ukelli/ukelli-ui/blob/master/styleguide.config.js)
+deer-ui 便是基于此方式来编写文档，虽然有些傻，但是还能接受，用 markdown 的方式来写例子，更好维护和查看了
 
 --------------
 
