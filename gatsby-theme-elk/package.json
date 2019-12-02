@@ -10,10 +10,10 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
-    "@mini-code/base-func": "^1.0.2",
-    "@deer-ui/core": "^4.0.0-alpha4.0",
+    "@mini-code/base-func": "^1.1.0",
+    "@deer-ui/core": "^4.0.0-rc1.7",
     "css-loader": "^3.2.0",
-    "gatsby": "^2.15.14",
+    "gatsby": "^2.18.5",
     "gatsby-image": "^2.2.18",
     "gatsby-plugin-advanced-sitemap": "^1.4.4",
     "gatsby-plugin-feed": "^2.3.12",
