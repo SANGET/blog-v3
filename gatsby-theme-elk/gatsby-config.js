@@ -2,7 +2,6 @@ module.exports = ({
   blogContentPath = 'blog',
   pagesContentPath = 'pages',
   assetContentPath = 'asset',
-  basePath = '/',
   siteTitle = 'gatsby-theme-elk',
   author = 'gatsby-theme-elk\'s Author',
   description = 'description',

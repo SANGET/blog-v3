@@ -115,7 +115,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = data.site.siteMetadata.title;
     const { previous, next, readTime } = pageContext;
     const {
-      title, description, date, tags,
+      title, description, date, tags, photos,
     } = post.frontmatter;
     const { tableOfContents } = post;
     const _needTOC = this.needTOCFilter();

@@ -19,7 +19,7 @@ const Scripts = () => {
           // onComplete: () => {
           // }
         });
-        $('#wrapper img').on('click', ({ target }) => {
+        $('.photoset-grid img').on('click', ({ target }) => {
           const imgDOM = $(target)[0];
           const imgUrl = imgDOM.currentSrc;
           const title = imgDOM.alt || 'Perview';

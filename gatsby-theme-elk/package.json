@@ -1,15 +1,23 @@
 {
   "name": "gatsby-theme-elk",
-  "version": "1.0.0",
+  "version": "1.0.1-rc1.3",
   "main": "index.js",
   "license": "MIT",
+  "keywords": [
+    "gatsby-theme",
+    "gatsby-theme-elk"
+  ],
   "scripts": {
-    "release": "gatsby build",
+    "release": "npm publish",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop"
   },
   "devDependencies": {
+  },
+  "dependencies": {
+    "@mini-code/base-func": "^1.1.0",
+    "@deer-ui/core": "^4.0.0-rc2.1",
     "css-loader": "^3.2.0",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.2.18",
@@ -28,7 +36,6 @@
     "gatsby-remark-responsive-iframe": "^2.2.16",
     "gatsby-remark-smartypants": "^2.1.8",
     "gatsby-source-filesystem": "^2.1.22",
-    "gatsby-theme-elk": "*",
     "gatsby-transformer-remark": "^2.6.22",
     "gatsby-transformer-sharp": "^2.2.14",
     "gatsby-transformer-yaml": "^2.2.9",
@@ -37,11 +44,7 @@
     "postcss-loader": "^3.0.0",
     "prismjs": "^1.17.1",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
-  },
-  "dependencies": {
-    "@mini-code/base-func": "^1.1.0",
-    "@deer-ui/core": "^4.0.0-rc2.1",
+    "typeface-montserrat": "0.0.75",
     "prop-types": "^15.7.2",
     "lodash": "^4.17.15",
     "react": "^16.9.0",
