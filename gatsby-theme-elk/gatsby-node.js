@@ -1,6 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const fs = require('fs');
+const path = require('path');
+
+const { createFilePath } = require('gatsby-source-filesystem');
+
 const calculateReadTime = require(path.resolve(__dirname, './utils/calc-read-time'));
 const layoutMapper = require('./utils/layout-mapper');
 const wrapTagPath = require('./utils/wrap-tag-slug');
@@ -98,8 +100,8 @@ exports.createPages = ({ graphql, actions }, options) => {
           }
         }
       }
-    `
-  ).then(result => {
+    `,
+  ).then((result) => {
     if (result.errors) {
       throw result.errors;
     }
@@ -158,7 +160,7 @@ exports.createPages = ({ graphql, actions }, options) => {
     const numPages = Math.ceil(posts.length / postsPerPage);
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
-        path: i === 0 ? `/` : `/${i + 1}`,
+        path: i === 0 ? '/' : `/${i + 1}`,
         component: layoutMapper.blogList,
         context: {
           limit: postsPerPage,
@@ -166,7 +168,7 @@ exports.createPages = ({ graphql, actions }, options) => {
           totalPosts: posts.length,
           numPages,
           tags,
-          currentPage: i + 1
+          currentPage: i + 1,
         },
       });
     });
@@ -177,19 +179,19 @@ exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
   const timeRegExp = /((19[2-9]\d{1})|(20\d{2}))-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|30|31)-/;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     let value = createFilePath({ node, getNode });
-    const basePath = options.basePath || "/";
-    const slugify = str => {
-      const slugArr = str.split('/').filter(s => !!s);
+    const basePath = options.basePath || '/';
+    const slugify = (str) => {
+      const slugArr = str.split('/').filter((s) => !!s);
       let currSlug = slugArr[slugArr.length - 1];
       currSlug = currSlug.replace(timeRegExp, '');
-      currSlug = currSlug.replace(/\s+/g,"");
-      return `/${basePath}/${currSlug}`.replace(/\/\/+/g, "/");
+      currSlug = currSlug.replace(/\s+/g, '');
+      return `/${basePath}/${currSlug}`.replace(/\/\/+/g, '/');
     };
     value = slugify(value);
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
     });

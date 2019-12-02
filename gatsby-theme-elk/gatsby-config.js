@@ -1,50 +1,50 @@
 module.exports = ({
-  blogContentPath = "blog",
-  pagesContentPath = "pages",
-  assetContentPath = "asset",
-  basePath = "/",
+  blogContentPath = 'blog',
+  pagesContentPath = 'pages',
+  assetContentPath = 'asset',
+  basePath = '/',
   siteTitle = 'gatsby-theme-elk',
-  author = `gatsby-theme-elk's Author`,
-  description = `description`,
-  siteUrl = `https://github.com/SANGET/gatsby-theme-elk`,
+  author = 'gatsby-theme-elk\'s Author',
+  description = 'description',
+  siteUrl = 'https://github.com/SANGET/gatsby-theme-elk',
   social = {
     // twitter: `sanget`,
-    mail: `zh.sanget@gmail.com`,
-    github: `https://github.com/SANGET`,
+    mail: 'zh.sanget@gmail.com',
+    github: 'https://github.com/SANGET',
   },
   footer = {
     showBuildInfo: true,
-    since: 2019
-  }
+    since: 2019,
+  },
 }) => ({
   siteMetadata: {
     title: siteTitle,
-    author: author,
+    author,
     description,
     siteUrl,
     social,
-    footer
+    footer,
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: blogContentPath,
-        name: `blog`,
+        name: 'blog',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: pagesContentPath,
-        name: `page`,
+        name: 'page',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: assetContentPath,
-        name: `assets`,
+        name: 'assets',
       },
     },
     // {
@@ -54,35 +54,35 @@ module.exports = ({
     //   },
     // },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          `gatsby-remark-autolink-headers`,
+          'gatsby-remark-autolink-headers',
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
             },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              wrapperStyle: 'margin-bottom: 1.0725rem',
             },
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-advanced-sitemap`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-feed',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-advanced-sitemap',
     // {
     //   resolve: `gatsby-plugin-postcss`,
     //   options: {

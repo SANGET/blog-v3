@@ -9,9 +9,7 @@
     "clean": "gatsby clean",
     "develop": "gatsby develop"
   },
-  "dependencies": {
-    "@mini-code/base-func": "^1.1.0",
-    "@deer-ui/core": "^4.0.0-rc1.7",
+  "devDependencies": {
     "css-loader": "^3.2.0",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.2.18",
@@ -35,28 +33,26 @@
     "gatsby-transformer-sharp": "^2.2.14",
     "gatsby-transformer-yaml": "^2.2.9",
     "history": "^4.10.1",
-    "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "prismjs": "^1.17.1",
+    "typeface-merriweather": "0.0.72",
+    "typeface-montserrat": "0.0.75"
+  },
+  "dependencies": {
+    "@mini-code/base-func": "^1.1.0",
+    "@deer-ui/core": "^4.0.0-rc2.1",
+    "prop-types": "^15.7.2",
+    "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
     "tether": "^1.4.7",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
     "unistore": "^3.4.1"
   },
-  "devDependencies": {
-    "gatsby": "^2.15.14",
-    "gatsby-plugin-sass": "^2.1.14",
-    "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
-  },
   "peerDependencies": {
-    "gatsby": "^2.15.14",
+    "gatsby": "^2.18.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }

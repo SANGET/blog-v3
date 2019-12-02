@@ -61,7 +61,7 @@ const loaderCSS = `
 const LoaderDOM = () => {
   return (
     <>
-      <div dangerouslySetInnerHTML={{__html: loaderCSS}}></div>
+      <div dangerouslySetInnerHTML={{ __html: loaderCSS }}></div>
       <div className="__loader" id="loadingBg">
         <div id="shadow"></div>
         <div id="box"></div>
@@ -71,7 +71,7 @@ const LoaderDOM = () => {
 };
 const LoadedDOM = () => {
   return (
-    <div dangerouslySetInnerHTML={{__html: script}}></div>
+    <div dangerouslySetInnerHTML={{ __html: script }}></div>
   );
 };
 

@@ -4,10 +4,10 @@ import { LoaderDOM, LoadedDOM } from './utils/loader-script';
 import Wrapper from './src/components/layout-wrapper';
 
 export const onRenderBody = ({
-  setPostBodyComponents, setPreBodyComponents, setHeadComponents
+  setPostBodyComponents, setPreBodyComponents, setHeadComponents,
 }) => {
   setPreBodyComponents([
-    <LoaderDOM />
+    <LoaderDOM />,
   ]);
   setPostBodyComponents([
     <>
@@ -16,11 +16,11 @@ export const onRenderBody = ({
 
       <script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js" defer></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism.css"></link>
-      
+
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" defer></script>
 
       <script src="https://cdn.jsdelivr.net/gh/stylehatch/photoset-grid@master/jquery.photoset-grid.min.js" defer></script>
-    </>
+    </>,
   ]);
 };
 
