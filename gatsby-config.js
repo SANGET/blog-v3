@@ -7,7 +7,7 @@ module.exports = {
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: '/',
-        siteTitle: `Sanget's Blog`,
+        siteTitle: 'Sanget\'s Blog',
         author: 'Sanget',
         description: 'Thinking',
         siteUrl: 'https://thinkmore.xyz',
