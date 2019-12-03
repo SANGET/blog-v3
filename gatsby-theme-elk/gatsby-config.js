@@ -15,6 +15,24 @@ module.exports = ({
     showBuildInfo: true,
     since: 2019,
   },
+  sideMenu = [
+    {
+      title: 'Blog',
+      path: '/',
+    },
+    {
+      title: 'Archive',
+      path: '/archive',
+    },
+    {
+      title: 'Tags',
+      path: '/tags',
+    },
+    {
+      title: 'About',
+      path: '/about',
+    },
+  ],
 }) => ({
   siteMetadata: {
     title: siteTitle,
@@ -23,6 +41,7 @@ module.exports = ({
     siteUrl,
     social,
     footer,
+    sideMenu,
   },
   plugins: [
     {

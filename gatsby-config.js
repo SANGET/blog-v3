@@ -7,7 +7,7 @@ module.exports = {
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: '/',
-        siteTitle: 'Sanget\'s Blog',
+        siteTitle: `Sanget's Blog`,
         author: 'Sanget',
         description: 'Thinking',
         siteUrl: 'https://thinkmore.xyz',
@@ -20,6 +20,24 @@ module.exports = {
           showBuildInfo: true,
           since: 2013,
         },
+        sideMenu: [
+          {
+            title: 'Blog',
+            path: '/',
+          },
+          {
+            title: 'Archive',
+            path: '/archive',
+          },
+          {
+            title: 'Tags',
+            path: '/tags',
+          },
+          {
+            title: 'About',
+            path: '/about',
+          },
+        ],
       },
     },
     {
