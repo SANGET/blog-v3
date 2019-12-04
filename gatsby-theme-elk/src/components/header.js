@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Container } from '@deer-ui/core/container';
 import Link from './link';
 
 const rootPath = `${__PATH_PREFIX__}/`;
@@ -44,9 +45,9 @@ const Header = (props) => {
 
   return (
     <header className="no-print header">
-      <div className="container">
+      <Container>
         {header}
-      </div>
+      </Container>
     </header>
   );
 };

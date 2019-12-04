@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Container } from '@deer-ui/core/container';
 import Footer from './footer';
 import Header from './header';
 import Scripts from './scripts';
@@ -10,7 +11,7 @@ class Layout extends React.Component {
     return (
       <div id="wrapper" className={'wrapper'}>
         <Header {...other} />
-        <main className="container main">{children}</main>
+        <Container className="main">{children}</Container>
         <Footer {...other} />
         <Scripts />
       </div>

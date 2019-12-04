@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-elk",
-  "version": "1.0.1-rc1.6",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "keywords": [
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@mini-code/base-func": "^1.1.0",
-    "@deer-ui/core": "^4.0.0-rc2.4",
+    "@deer-ui/core": "^4.0.0-rc3.2",
     "css-loader": "^3.2.0",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.2.18",

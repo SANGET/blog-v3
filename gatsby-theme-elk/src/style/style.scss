@@ -41,15 +41,15 @@ a {
   //   opacity: 1;
   // }
   .container {
-    width: 60%;
-    max-width: 980px;
-    min-width: 768px;
+    padding: 0 10px;
+    // width: 60%;
+    // max-width: 980px;
+    // min-width: 768px;
   }
   // &.desktop {
   // }
 }
 .container {
-  margin: 0 auto;
   &.main {
     padding: 40px 0;
   }
@@ -80,7 +80,7 @@ img {
     // font-size: 20px;
   }
   .icon {
-    font-size: 20px;
+    font-size: 16px;
     width: 30px;
     text-align: center;
   }

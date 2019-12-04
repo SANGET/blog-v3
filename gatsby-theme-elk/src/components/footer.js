@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Icon } from '@deer-ui/core/icon';
 import { Grid } from '@deer-ui/core/grid';
 import { ToolTip } from '@deer-ui/core/tooltip';
+import { Container } from '@deer-ui/core/container';
 
 const Footer = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -31,7 +32,7 @@ const Footer = ({ title }) => {
   const { showBuildInfo = true, since } = footerData;
   return (
     <footer className="footer">
-      <div className="container">
+      <Container>
         <Grid container>
           <span>© {since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
           {
@@ -74,7 +75,7 @@ const Footer = ({ title }) => {
         </Grid>
         <div className="contact">
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };
