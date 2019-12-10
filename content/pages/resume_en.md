@@ -12,7 +12,7 @@ title: Alex's Resume
 
 ## My Profile
 
-I am Alex, who is a Frontend engineer, working on Frontend related for six years. The main work in the pass was: Construction, planning and application of `UI lib`; Construction and application of `Web admin dashboard Framework`; Front-end project quality control and team coordination.
+I am Alex, a Frontend engineer, six years experience of Frontend develop. The main work in the pass was: Construction, planning and application of `UI lib`; Construction and application of `Web admin dashboard Framework`; Front-end project quality control and team coordination.
 
 Like to explore the pinciple of how things work, like to `read`, `sport`, `photography`, `playing guitar`, `coding`.
 
@@ -59,7 +59,7 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
 ### IM Client
 
 - Github（client open source）: [https://github.com/elk-chat/elk_web][elk-chat]
-- Live demo（Not commercial）: [https://chat.thinkmore.xyz/][chat.ukelli]
+- Live demo（Not commercial）: [https://chat.thinkmore.xyz/][chat]
 
 > Synergy88
 
@@ -81,10 +81,9 @@ Purpose: Standardize how the front-end team develops, improve project developmen
 Libs:
 
 - [`basic-helper`][basic-helper]: Provides commonly used data processing functions such as `Time Processing`, `Money Format Processing`, `Array Processing`, `Universal Subscription Publishing Mechanism`, `Local Storage Interface` (For Web and React-Native), etc.
-- [`uke-request`][uke-request]: Http request encapsulation based on fetch API, built-in middleware (built-in RC4 data encryption and decryption, LZMA data decompression middleware) mechanism, RESTFul API support.
+- [`request`][request]: Http request encapsulation based on fetch API, built-in middleware (built-in RC4 data encryption and decryption, LZMA data decompression middleware) mechanism, RESTFul API support.
 - [`deer-ui`][deer-ui]: Base on `React`'s `UI` Lib, used in all front-end projects of the company, with unified UI interaction and presentation, improving development efficiency.
-- [`uke-admin-web-scaffold`][uke-admin-web-scaffold]: Front-end admin manager system's scaffold, with business and UI separation, declarative page business development, improve development efficiency, unified UI interaction, style, support for multi-tab pages, parameter routing jumps, etc.
-- [`uke-dashboard`][uke-admin-seed]: Combined with the above-mentioned management system template framework, mainly to meet the needs of rapid development systems, standardize the development specifications of the management background, easy project maintenance.
+- [`admin-scaffold`][admin-scaffold]: Front-end admin manager system's scaffold, with business and UI separation, declarative page business development, improve development efficiency, unified UI interaction, style, support for multi-tab pages, parameter routing jumps, etc.
 
 Technical labels: `Typescript`, `React`, `Node`
 
@@ -122,10 +121,9 @@ Technical labels: `Polymer`, `Node`, `MONO`
 
 - [elk-chat](https://chat.thinkmore.xyz/) IM client
 - [basic-helper](https://basic.thinkmore.xyz/) JS basic helper lib
-- [uke-request](https://request.thinkmore.xyz/) HTTP request lib with middleware
+- [request](https://request.thinkmore.xyz/) HTTP request lib with middleware
 - [deer-ui](https://ui.thinkmore.xyz/) Base on React's UI lib
-- [uke-admin-web-scaffold](https://scaffold.thinkmore.xyz/) Scaffold of web admin dashboard
-- [uke-dashboard](https://admin.thinkmore.xyz/) Web admin dashboard
+- [admin-scaffold](https://scaffold.thinkmore.xyz/) Scaffold of web admin dashboard
 
 <!-- --------
 
@@ -146,11 +144,9 @@ Technical labels: `Polymer`, `Node`, `MONO`
 - Living in an English environment for 4 years, improving my self.
 - Self-discipline, self-motivation, keep learning, pursuit of perfection, seeking breakthrough.
 
-[uke-request]: https://github.com/SANGET/uke-request
+[request]: https://github.com/SANGET/request
 [basic-helper]: https://github.com/SANGET/basic-helper
 [deer-ui]: https://github.com/ukelli/deer-ui
-[uke-admin-web-scaffold]: https://github.com/SANGET/uke-admin-web-scaffold
-[uke-admin-seed]: https://github.com/SANGET/uke-admin-seed
+[admin-scaffold]: https://github.com/SANGET/admin-scaffold
 [elk-chat]: https://github.com/elk-chat/elk_web
-[chat.ukelli]: https://chat.thinkmore.xyz/
-
+[chat]: https://chat.thinkmore.xyz/
