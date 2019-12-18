@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Loading } from '@deer-ui/core/loading';
 import { Call, EventEmitter } from '@mini-code/base-func';
+import { queryIsMobile } from '@deer-ui/core/utils';
 
 import { LINK_TO_PAGE } from '../../utils/const';
 
@@ -22,8 +23,8 @@ const Wrapper = ({ children, props }) => {
 
   /** 设置加载和判断是否移动设备 */
   React.useEffect(() => {
-    const _isMobile = /iPhone|Android|iOS/.test(navigator.userAgent);
-    setIsMobile(_isMobile);
+    const isMobile2 = queryIsMobile();
+    setIsMobile(isMobile2);
     const currHref = window.location.href;
     const handleLinkToPage = () => {
       if (prefHref !== currHref) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Grid } from '@deer-ui/core/grid';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Link from '../components/link';
@@ -38,7 +39,10 @@ const ArchivePage = (props) => {
               return (
                 <div key={slug} className="post">
                   {yearTip}
-                  <div className="layout a-i-c item mb5">
+                  <Grid
+                    container
+                    alignItems="center"
+                    className="item mb5">
                     <span className="mr10">
                       <Link to={slug}>
                         {title}
@@ -48,7 +52,7 @@ const ArchivePage = (props) => {
                       <span className="date">{date}</span>
                       {/* <Tags tags={tags} /> */}
                     </div>
-                  </div>
+                  </Grid>
                 </div>
               );
             })

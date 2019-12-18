@@ -11,7 +11,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "gatsby": "^2.15.14",
+    "gatsby": "^2.18.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
@@ -36,12 +36,13 @@
     "url": "git+https://github.com/SANGET/gatsby-theme-elk.git"
   },
   "scripts": {
+    "release": "cd ./gatsby-theme-elk; npm run release",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --port 8889",
     "clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   }
 }

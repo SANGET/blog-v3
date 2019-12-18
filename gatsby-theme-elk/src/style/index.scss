@@ -1,4 +1,8 @@
-@import '@deer-ui/core/style/default.scss';
+@import '@deer-ui/core/style/var.scss';
+
+$container-xl-width: 960px;
+
+@import '@deer-ui/core/style/index.scss';
 
 @import './style.scss';
 @import './posts.scss';

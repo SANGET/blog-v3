@@ -1,6 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Icon } from '@deer-ui/core/icon';
+import { Grid } from '@deer-ui/core/grid';
 import { ToolTip } from '@deer-ui/core/tooltip';
+import { Container } from '@deer-ui/core/container';
 
 const Footer = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -29,8 +32,8 @@ const Footer = ({ title }) => {
   const { showBuildInfo = true, since } = footerData;
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="layout">
+      <Container>
+        <Grid container>
           <span>© {since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
           {
             showBuildInfo && (
@@ -51,30 +54,28 @@ const Footer = ({ title }) => {
           <span className="flex"></span>
           {
             github && (
-              <a href={github}
-                rel="noopener noreferrer"
-                className="ms5" target="_blank">
-                <ToolTip
-                  // position="right"
-                  n="github" s="b" title="Github" />
-                {/* <Icon n="github" s="b" /> */}
-              </a>
+              <ToolTip title="Github">
+                <a href={github}
+                  rel="noopener noreferrer"
+                  className="ms5" target="_blank">
+                  <Icon n="github" s="b" />
+                </a>
+              </ToolTip>
             )
           }
           {
             mail && (
-              <a href="mailto:zh.sanget@gmail.com" target="_top">
-                <ToolTip
-                  // position="right"
-                  n="envelope" s="r" title="zh.sanget@gmail.com" />
-                {/* <Icon n="envelope" s="r" /> */}
-              </a>
+              <ToolTip title={mail}>
+                <a href={`mailto:${mail}`} target="_top">
+                  <Icon n="envelope" s="r" />
+                </a>
+              </ToolTip>
             )
           }
-        </div>
+        </Grid>
         <div className="contact">
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };
