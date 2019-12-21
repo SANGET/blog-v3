@@ -144,9 +144,9 @@ Technical labels: `Polymer`, `Node`, `MONO`
 - Living in an English environment for 4 years, improving my self.
 - Self-discipline, self-motivation, keep learning, pursuit of perfection, seeking breakthrough.
 
-[request]: https://github.com/SANGET/request
-[basic-helper]: https://github.com/SANGET/basic-helper
-[deer-ui]: https://github.com/ukelli/deer-ui
-[admin-scaffold]: https://github.com/SANGET/admin-scaffold
+[request]: https://github.com/minimal-code/request
+[basic-helper]: https://github.com/minimal-code/basic-helper
+[deer-ui]: https://github.com/minimal-code/deer-ui
+[admin-scaffold]: https://github.com/minimal-code/admin-scaffold
 [elk-chat]: https://github.com/elk-chat/elk_web
 [chat]: https://chat.thinkmore.xyz/
