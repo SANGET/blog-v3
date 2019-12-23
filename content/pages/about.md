@@ -20,7 +20,7 @@ layout: page
     <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/guitar.jpg" alt="Godin 5th Avenue">
     <!-- <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/1.jpg" alt="18岁啊"> -->
     <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/bg1.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/trip/bugiuo/9.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/banner.jpg">
   </div>
 </escape>
 
