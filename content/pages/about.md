@@ -44,12 +44,18 @@ layout: page
   </div>
 </escape> -->
 
-## 其他页面
+## 其他
 
 - [Reading list](/read-list)
 - [Resume](/resume)
 
-## 多看看世界
+## Godin 5th avenue
+
+> 我最喜欢的一把吉他
+
+![Godin 5th avenue](../assets/images/other/guitar.jpg)
+
+<!-- ## 多看看世界
 
 <escape>
   <div class="photoset-grid" data-layout="21">
@@ -57,6 +63,6 @@ layout: page
     <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/bg1.jpg">
     <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/banner.jpg">
   </div>
-</escape>
+</escape> -->
 
-感谢
+<!-- 感谢 -->
