@@ -26,7 +26,7 @@ const Scripts = () => {
           getImgWidth(imgUrl).then((offsetWidth) => {
             const screenWidth = getScreenWidth();
             let width = offsetWidth > screenWidth ? screenWidth : offsetWidth;
-            if (width > 600) width = 600;
+            if (width > 800) width = 800;
             ShowModal({
               title,
               width,
