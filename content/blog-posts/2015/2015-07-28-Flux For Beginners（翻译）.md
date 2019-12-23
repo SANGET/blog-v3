@@ -2,7 +2,7 @@
 author: Alex
 date: 2015-07-28
 layout: post
-title: React 学习中, 对于 Flux 数据流的评论翻译
+title: Flux For Beginners（翻译）
 keywords: React, Flux, 翻译
 # # permalink: "/application-tech-question"
 tags:

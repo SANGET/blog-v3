@@ -3,12 +3,14 @@ author: Alex
 date: 2019-07-31
 layout: post
 title: 构建稳定可靠的 websocket 连接
-keywords: 可靠的 websocket, 稳定的 websocket
+keywords: 
+  - websocket
 # permalink: /build-stable-websocket-connection
 description: 「只有主动把控的才能稳定可靠。」
 tags: 
   - 技术
   - 前端
+  - websocket
 ---
 
 ## 目的

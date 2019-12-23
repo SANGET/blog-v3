@@ -3,26 +3,19 @@ title: 关于我
 layout: page
 ---
 
-## 关于博客
+## 博客主题
 
-这里主要是个人的记录和分享。记录整理知识，分享技术、有趣的故事、景色。
+分享技术，记录个人经历，探索技术的价值。
 
 ## 关于我
 
 > 始于前端，不止前端
 
-我是（ Alex | Sanget ），90 后，一个低调、务实、喜欢喝早茶的广东人。
+张相杰(Alex)，90 后，一个低调、务实、喜欢喝早茶的广东人。
 
-喜欢 `音乐`、`摄影`、`旅游`、`编程`。是 `极简主义`、`完美主义` 者。
+喜欢 `编程`、`音乐`、`摄影`、`旅游`。
 
-<escape>
-  <div class="photoset-grid" data-layout="21">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/guitar.jpg" alt="Godin 5th Avenue">
-    <!-- <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/1.jpg" alt="18岁啊"> -->
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/bg1.jpg">
-    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/banner.jpg">
-  </div>
-</escape>
+`极简主义`、`完美主义`。
 
 <!-- ## 时间线
 
@@ -50,5 +43,20 @@ layout: page
     <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg">
   </div>
 </escape> -->
+
+## 其他页面
+
+- [Reading list](/read-list)
+- [Resume](/resume)
+
+## 多看看世界
+
+<escape>
+  <div class="photoset-grid" data-layout="21">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/guitar.jpg" alt="Godin 5th Avenue">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/bg1.jpg">
+    <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/covers/banner.jpg">
+  </div>
+</escape>
 
 感谢

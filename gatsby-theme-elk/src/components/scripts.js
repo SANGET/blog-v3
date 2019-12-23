@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowModal } from '@deer-ui/core/modal';
-import { getScreenWidth } from '@deer-ui/core/utils/screen';
+// import { ShowModal } from '@deer-ui/core/modal';
+// import { getScreenWidth } from '@deer-ui/core/utils/screen';
 
 const getImgWidth = (url) => new Promise((resolve) => {
   const img = new Image();
@@ -24,17 +24,17 @@ const Scripts = () => {
           const imgUrl = imgDOM.currentSrc;
           const title = imgDOM.alt || 'Perview';
           getImgWidth(imgUrl).then((offsetWidth) => {
-            const screenWidth = getScreenWidth();
-            let width = offsetWidth > screenWidth ? screenWidth : offsetWidth;
-            if (width > 800) width = 800;
-            ShowModal({
-              title,
-              width,
-              needMinBtn: false,
-              children: (
-                <img src={imgUrl} alt="" />
-              ),
-            });
+            // const screenWidth = getScreenWidth();
+            // let width = offsetWidth > screenWidth ? screenWidth : offsetWidth;
+            // if (width > 800) width = 800;
+            // ShowModal({
+            //   title,
+            //   width,
+            //   needMinBtn: false,
+            //   children: (
+            //     <img src={imgUrl} alt="" />
+            //   ),
+            // });
           });
         });
       }(window.jQuery));
