@@ -141,7 +141,7 @@ Technical labels: `Polymer`, `Node`, `MONO`
 
 ## Self-evaluation
 
-- Living in an English environment for 4 years, improving my self.
+<!-- - Living in an English environment for 4 years, improving my self. -->
 - Self-discipline, self-motivation, keep learning, pursuit of perfection, seeking breakthrough.
 
 [request]: https://github.com/minimal-code/request

@@ -176,7 +176,7 @@ title: Alex's Resume
 ## 自我评价
 
 - `自律`、`自我驱动`，`极简主义`、`完美主义`。
-- 国外生活 5 年，日常可用英语交流，无障碍阅读英文技术文档。
+<!-- - 国外生活 5 年，日常可用英语交流，无障碍阅读英文技术文档。 -->
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper
