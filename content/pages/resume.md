@@ -75,8 +75,8 @@ title: Alex's Resume
 - 技术标签: `Typescript`, `React`
 - 基于 @deer-ui 的应用：
   - [Elk-Chat][elk-chat]
-  <!-- - [@deer-ui/admin-scaffold][admin-scaffold] -->
-  - [admin-dashboard][dashboard-doc]
+  - [@deer-ui/admin-scaffold][scaffold-demo]
+  <!-- - [admin-dashboard][dashboard-doc] -->
 - 相关资源
   - [项目仓库][deer-ui]
   - [在线文档][ui-doc]
@@ -124,28 +124,6 @@ title: Alex's Resume
   - [项目仓库][elk-chat]（客户端开源）
   - [在线地址][chat-online]
 
-<!-- ### 管理系统脚手架
-
-> Synergy88
-
-- 介绍：`@dear-ui/admin-scaffold` 是基于 `React`、`@deer-ui/core` 的管理后台脚手架，主打「业务和 UI 分离」、「业务声明式开发」方向，把大部分的通用需求交给后端人员。稳健高效，统一 UI 交互、视觉效果，支持多标签页。
-- 目的：为了快速响应日益丰富繁杂的业务管理系统开发需求，减少人员流动对项目的维护影响，高效稳健的开发，而构建的管理系统脚手架工具。
-- 主要负责：脚手架整体制作与规划，说明文档编写，功能持续迭代。
-- 技术标签: `Typescript`, `React`, `Node`
-- 相关资源
-  - [项目仓库][admin-scaffold]
-  - [admin-dashboard][admin-dashboard]：管理系统模版框架应用，主要为了应对快速开发系统的需求，规范管理后台的开发规范。 -->
-
-<!-- ### 通讯工具类库
-
-> Synergy88
-
-- 介绍：基于 fetch API 的 HTTP 请求封装，采取中间件机制，对数据进行过滤。内置了「RC4 加解密」和「LZMA 压解缩」中间件，支持中间件扩展，支持 RESTFul API。
-- 目的：主要用于一个对于通讯安全有一定要求的项目，尽可能增加通讯数据结构被破解的成本，以及压缩请求体的体积（最大10M请求体，压缩后为500k）。
-- 技术标签: `Typescript`, `RC4`, `LZMA`
-- 相关资源
-  - [项目仓库][request] -->
-
 ### 国际司综合业务管理系统
 
 > 广州海关
@@ -187,6 +165,7 @@ title: Alex's Resume
 [chat-online]: https://chat.thinkmore.xyz/
 
 [dashboard-doc]: https://admin.thinkmore.xyz/
+[scaffold-demo]: https://scaffold.thinkmore.xyz/
 [ui-doc]: https://ui.thinkmore.xyz/
 
 [form-generator]: https://thinkmore.xyz/%E5%9F%BA%E4%BA%8Ereact%E6%89%93%E9%80%A0%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E8%A1%A8%E5%8D%95
