@@ -4,13 +4,13 @@ date: 2019-08-30
 layout: post
 title: 很好用的公用CDN资源 JSDelivr
 description: 很好用的公用CDN资源JSDelivr
-keywords: [公用CDN资源, JSDelivr]
+keywords: 
+  - 公用CDN资源
+  - JSDelivr
 tags:
   - 前端
   - 记录
 ---
-
-## 前言
 
 由于某些原因，很多公用免费的 CDN 资源在中国大陆并不很好用，就算是付费的，也有一定的限制，例如每天的刷新次数有限之类的。那有没有一款造福人类的，或者造福中国大陆的公用 CDN 呢？
 

@@ -4,7 +4,8 @@ date: 2019-10-10
 layout: post
 title: 使用 Docker 搭建 Node 开发环境
 description: 在开发后端服务时，需要在本地配置数据库，Redis 等环境，很是麻烦，如果直接使用 Docker 来配置，则简单方便的多。
-keywords: [Docker 配置开发环境]
+keywords: 
+  - Docker 配置开发环境
 tags:
   - 技术
   - 记录

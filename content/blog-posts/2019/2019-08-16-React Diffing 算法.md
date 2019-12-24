@@ -3,13 +3,12 @@ author: Alex
 date: 2019-08-16
 layout: post
 title: React Diffing 算法
-keywords: [React Diffing 算法]
+keywords: 
+  - React Diffing 算法
 description: 有很多讲解 React Diff 算法的文章，都很努力试图把这个事情讲清楚，但是都没有官方解释来的透彻。
 tags: 
   - 记录
 ---
-
-## 前言
 
 有很多讲解 React Diff 算法的文章，都很努力试图把这个事情讲清楚，但是都没有官方解释来的透彻。
 

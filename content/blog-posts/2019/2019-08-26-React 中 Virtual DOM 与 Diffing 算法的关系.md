@@ -4,13 +4,14 @@ date: 2019-08-26
 layout: post
 title: React 中 Virtual DOM 与 Diffing 算法的关系
 description: Virtual DOM 与 Diffing 算法的关系
-keywords: [Virtual DOM, Diffing 算法, Virtual DOM 与 Diff 算法]
+keywords: 
+  - Virtual DOM
+  - Diffing 算法
+  - Virtual DOM 与 Diff 算法
 tags:
   - 前端
   - 记录
 ---
-
-## 前言
 
 这篇文章是基于 React 官方文档对于 Virtual DOM 的理念和 Diffing 算法的策略的整合。
 

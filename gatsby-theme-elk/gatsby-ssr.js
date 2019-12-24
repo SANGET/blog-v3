@@ -19,6 +19,7 @@ export const onRenderBody = ({
     <script key="5" src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" defer></script>,
 
     <script key="6" src="https://cdn.jsdelivr.net/gh/stylehatch/photoset-grid@master/jquery.photoset-grid.min.js" defer></script>,
+    <script key="6" src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js" defer></script>,
   ]);
 };
 

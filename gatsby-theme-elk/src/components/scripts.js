@@ -19,24 +19,25 @@ const Scripts = () => {
           // onComplete: () => {
           // }
         });
-        $('.photoset-grid img').on('click', ({ target }) => {
-          const imgDOM = $(target)[0];
-          const imgUrl = imgDOM.currentSrc;
-          const title = imgDOM.alt || 'Perview';
-          getImgWidth(imgUrl).then((offsetWidth) => {
-            // const screenWidth = getScreenWidth();
-            // let width = offsetWidth > screenWidth ? screenWidth : offsetWidth;
-            // if (width > 800) width = 800;
-            // ShowModal({
-            //   title,
-            //   width,
-            //   needMinBtn: false,
-            //   children: (
-            //     <img src={imgUrl} alt="" />
-            //   ),
-            // });
-          });
-        });
+        if (window.mediumZoom) window.mediumZoom('img');
+        // $('.photoset-grid img').on('click', ({ target }) => {
+        //   const imgDOM = $(target)[0];
+        //   const imgUrl = imgDOM.currentSrc;
+        //   const title = imgDOM.alt || 'Perview';
+        //   getImgWidth(imgUrl).then((offsetWidth) => {
+        //     // const screenWidth = getScreenWidth();
+        //     // let width = offsetWidth > screenWidth ? screenWidth : offsetWidth;
+        //     // if (width > 800) width = 800;
+        //     // ShowModal({
+        //     //   title,
+        //     //   width,
+        //     //   needMinBtn: false,
+        //     //   children: (
+        //     //     <img src={imgUrl} alt="" />
+        //     //   ),
+        //     // });
+        //   });
+        // });
       }(window.jQuery));
     });
   }, []);
