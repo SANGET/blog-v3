@@ -44,14 +44,14 @@ layout: page
   </div>
 </escape> -->
 
-## 其他
+## 更多
 
 - [Reading list](/read-list)
 - [Resume](/resume)
 
-## Godin 5th avenue
+-------------
 
-> 我最喜欢的一把吉他
+> Godin 5th avenue，最喜欢的一把吉他
 
 ![Godin 5th avenue](../assets/images/other/guitar.jpg)
 
