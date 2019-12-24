@@ -6,21 +6,18 @@ title: Alex's Resume
 
 <escape>
   <div class="no-print simple-nav">
-    <a href="/resume_en">English version</a>
+    <a href="/resume_en" class="mr20">English version</a>
+    <a href="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/other/resume.pdf">PDF简历下载</a>
   </div>
 </escape>
 
 ## 个人简介
 
-我是张相杰（Alex），前端工程师，从事前端相关工作六年。过去主要工作为：业务系统的前端功能规划和实现，前端团队建设，前端技术积累，SaaS 系统研发等。
+我是张相杰（Alex），前端工程师，从事前端相关工作六年。过去主要工作为：前端基础工具建设，业务系统前端功能模块研发，前端团队建设。
 
-喜欢探寻事物运行原理，喜欢 `读书`、`运动`、`摄影`、`弹吉他`、`coding`。
+喜欢探寻事物运行原理，喜欢 `coding`、`读书`、`运动`、`摄影`、`吉他`
 
-<escape>
-  <div class="no-print">
-    <a href="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/other/resume.pdf">PDF简历下载</a>
-  </div>
-</escape>
+`自律`、`自我驱动`，`极简主义`、`完美主义`
 
 ## 技能树
 
@@ -35,19 +32,27 @@ title: Alex's Resume
 
 > 2015.02 - 至今
 
-- 公司简介：toB 综合技术提供商。
-- 主营业务：SaaS 商业系统研发、游戏研发、IM 服务。
+- 公司简介：toB 综合技术提供商
+- 主营业务：内部商业系统研发、SaaS 产品研发、游戏研发、IM 服务研发
 - 职位：前端组负责人
-- 职责：负责前端基础框架、脚手架的规划与搭建，代码审阅，项目进度跟进，前端任务分配，前端技能讲解和培训。
+- 职责：负责前端基础建设，UI Components、Admin-Scaffold 搭建，代码审阅，前端任务分配及进度跟踪，前端技能培训等
 
 ### 广州海关技术处
 
 > 2013.07 - 2015.01
 
-- 单位简介：中国海关。
-- 主营业务：海关事务。
+- 单位简介：中国海关
+- 主营业务：海关事务
 - 职位：软件工程师
-- 职责：负责中国海关内部业务系统的开发和维护，新系统原型制作、前端应用开发。
+- 职责：负责中国海关内部业务系统的开发和维护，新系统原型制作、前端应用开发
+
+## 产品
+
+### Admin-Scaffold
+
+- 动机：为了满足公司快速开发业务系统的需求，并在「交付产品的交互、视觉一致（可用性）」，「敏捷开发和可持续稳定发布（可扩展性）」，「产品可持续维护，降低人员流动对项目的影响（可维护性）」等方面做了平衡而打造的前端基础产品
+- 职责：发起人，制作者
+- [在线地址][scaffold-demo]
 
 ## 项目
 
@@ -55,26 +60,26 @@ title: Alex's Resume
 
 > Synergy88
 
-- 介绍：`@mini-code` 是一个 web 前端通用函数组织，计划用最简单的方式让想法产品化。
+- 介绍：`@mini-code` 是一个 web 前端通用函数组织，计划用最简单的方式让想法产品化
 - 组织结构：
   - [组织地址](https://github.com/minimal-studio)
   - `@mini-code/base-func` 核心函数库，包含处理常用的 `数组`, `数字`, `时间`, `订阅发布` 等功能模块
-  - `@mini-code/request` 通讯工具类库，基于 fetch 的封装，采取中间件机制，对数据进行过滤。内置了「RC4 加解密」和「LZMA 压解缩」中间件，支持 RESTFul API。
-  - `@mini-code/scripts` 基于 react-scripts 扩展的开发环境，提供 React typescript 应用的开发与构建环境
-  - `@mini-code/page-generator` 页面生成工具，主要用于减轻繁重的管理系统页面的开发任务工作量，以及提高页面的统一性，可维护性
+  - `@mini-code/request` 通讯工具类库，基于 fetch 的封装，采取中间件机制，对数据进行过滤。内置了「RC4 加解密」和「LZMA 压解缩」中间件，支持 RESTFul API
+  - `@mini-code/scripts` 基于 react-scripts 扩展的开发环境，提供 React typescript 应用的开发环境
+  - `@mini-code/page-generator` 页面生成工具，为了减轻繁重的管理系统页面的开发任务工作量而制作，提高页面一致性，可维护性
 
 ### @deer-ui
 
 > Synergy88
 
-- 介绍：`@deer-ui` 是一个 UI 组织，为构建视觉、交互统一的 web 应用提供灵活、可扩展的开发方式。由基于 `React` 的 `@deer-ui/core` 作为核心驱动，提供 [`聚合表单生成器`][form-generator]、[`数据渲染引擎`][table-desc]，应用于前端 web 开发，管理后台开发。
+- 介绍：`@deer-ui` 是一个 UI 组织，为快速构建 web 应用提供灵活、可扩展的开发方式。由 `@deer-ui/core` 作为核心驱动，提供通用 UI Components，整合并提供 [`Form Controller`][form-generator]、[`Table Template`][table-desc]，快速响应 web 开发，管理后台开发
 - 组织结构：
   - `@deer-ui/core` 核心 UI 库，提供可扩展的基础，基于原子设计原则
   - `@deer-ui/enhance-ui` 基于 `@deer-ui/core` 的增强 UI 组件集合
-  - `@deer-ui/admin-scaffold` 管理后台 UI 脚手架
+  - `@deer-ui/admin-scaffold` 管理后台 `Scaffold`
 - 技术标签: `Typescript`, `React`
 - 基于 @deer-ui 的应用：
-  - [Elk-Chat][elk-chat]
+  - [elk_chat][elk-chat]
   - [@deer-ui/admin-scaffold][scaffold-demo]
   <!-- - [admin-dashboard][dashboard-doc] -->
 - 相关资源
@@ -85,10 +90,10 @@ title: Alex's Resume
 
 > Synergy88
 
-- 介绍：商业 SaaS 系统，提供某个商业领域的成熟解决方案。长期项目。
-- 主要负责：提供前端基础技术支持，业务分析，业务模块开发，协调设计与前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等。
+- 介绍：商业 SaaS 系统，提供某商业领域的解决方案
+- 主要负责：提供前端基础技术支持，业务分析，业务模块开发，协调设计与前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等
 - 项目重构:
-  - 迭代了 5 个大版本，最新结构采用 typescript + lerna + yarn workspace 的方式重新组织，兼顾可维护性、可扩展性、敏捷开发、并行开发等需求，[查看详情][refactor-system]。
+  - 迭代了 5 个大版本，最新结构采用 typescript + lerna + yarn workspace 的方式重新组织，兼顾可维护性、可扩展性、敏捷开发、并行开发等需求，[查看详情][refactor-system]
 - 技术分析:
   - React 作为基础 UI 渲染引擎
   - Yarn workspace 切割共用业务，提供 React 与 React-Native 共用
@@ -100,9 +105,9 @@ title: Alex's Resume
 
 > Synergy88
 
-- 介绍：包含通用的权限控制，RESTFul 业务开发等。
-- 目的：提供 SaaS 业务系统的快速业务开发支持。
-- 动机：由于前后端分离的开发方式产生了接口对接沟通成本（后端人员并不考虑前端使用情况），计划从数据库类型出发，到业务 API 的开发，通过 ts 将 API 数据结构封装成 SDK，提供给客户端使用，减少开发沟通成本。
+- 介绍：包含通用的权限控制，RESTFul 业务开发等
+- 目的：提供 SaaS 业务系统的快速业务开发支持
+- 动机：由于前后端分离的开发方式产生了接口对接沟通成本（后端人员并不考虑前端使用情况），计划从数据库类型出发，到业务 API 的开发，通过 ts 将 API 数据结构封装成 SDK，提供给客户端使用，减少开发沟通成本
 - 技术标签：`Node`, `Typescript`, `Express`, `Koa`, `TypeORM`, `MYSql`, `Docker`
 - [项目仓库](https://github.com/SANGET/node-web-server)
 
@@ -110,15 +115,15 @@ title: Alex's Resume
 
 > Synergy88
 
-- 介绍：与公司业务结合，满足内部 IM 使用需求。
-- 主要负责：web 客户端研发，native 客户端（Flutter）规划与研发。
+- 介绍：与公司业务结合，满足内部 IM 使用需求
+- 主要负责：web 客户端研发，native 客户端（Flutter）研发
 - 技术结构：
-  - 前后端分离架构。
-  - web 客户端整体使用 `Typescript`。
-  - 项目结构分为 3 层结构，SDK -> Actions -> UI。
-    1. `SDK` 为「以 `websocket` 作为通讯通道， `protobuf` 作为底层通讯协议」的 `API` 封装，提供给 Actions 与 UI 数据支持。
-    2. `Actions` 为应用核心业务数据和对应的操作的封装，拥有一套完整的内部数据结构，为 `UI` 提供数据。主要使用 Redux 管理方案。
-    3. `UI` 为数据展示以及处理响应用户操作，以及业务处理等。主要使用 `React`。
+  - 前后端分离架构
+  - web 客户端整体使用 `Typescript`
+  - 项目结构分为 3 层结构，SDK -> Actions -> UI
+    1. `SDK` 为「以 `websocket` 作为通讯通道， `protobuf` 作为底层通讯协议」的 `API` 封装，提供给 Actions 与 UI 数据支持
+    2. `Actions` 为应用核心业务数据和对应的操作的封装，拥有一套完整的内部数据结构，为 `UI` 提供数据。主要使用 Redux 管理方案
+    3. `UI` 为数据展示以及处理响应用户操作，以及业务处理等。主要使用 `React`
 - 技术标签：`Typescript`, `Protobuf`, `React`, `Redux`, `Flutter`
 - 相关资源
   - [项目仓库][elk-chat]（客户端开源）
@@ -128,17 +133,17 @@ title: Alex's Resume
 
 > 广州海关
 
-- 简介：中国海关总署国际司业务系统，处理国内海关人员和领导出入境的流程。
-- 系统架构：系统分层架构，分为Data、Framework、Workflow、User、Web、Web Api，测试先行，TDD（测试驱动开发）模式，实现底层逻辑高度重用，适配其他业务系统，开发其他业务系统，只需要实现表现层 Web。
-- 本人职责：负责项目前端设计、实现和前端组织，web api 制定。
+- 简介：中国海关总署国际司业务系统，处理国内海关人员和领导出入境的流程
+- 系统架构：系统分层架构，分为Data、Framework、Workflow、User、Web、Web Api，测试先行，TDD（测试驱动开发）模式，实现底层逻辑高度重用，适配其他业务系统，开发其他业务系统，只需要实现表现层 Web
+- 本人职责：负责项目前端设计、实现和前端组织，web api 制定
 - 技术标签：`Angular`, `D3`, `RequestJs`, `.NET MVC 4.5`, `Web API`, `MongoDB`, `MSSQL`
 
 ### 海关邮递物品查询系统
 
 > 广州海关
 
-- 本人职责：项目海关邮递物件的微信接入。
-- 微信公众号：广州海关12360（gz12360）的邮递物件查询系统。
+- 本人职责：项目海关邮递物件的微信接入
+- 微信公众号：广州海关12360（gz12360）的邮递物件查询系统
 - 技术标签：`Polymer`, `Node`, `MONO`
 
 ## 联系方式
@@ -147,14 +152,9 @@ title: Alex's Resume
 - <a href="https://github.com/SANGET" target="_blank">GitHub</a>
 - [个人博客](https://thinkmore.xyz/)
 
-<!-- ## 教育经历
+## 教育经历
 
-- 广东轻工职业技术学院 -->
-
-## 自我评价
-
-- `自律`、`自我驱动`，`极简主义`、`完美主义`。
-<!-- - 国外生活 5 年，日常可用英语交流，无障碍阅读英文技术文档。 -->
+- 广东轻工职业技术学院
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper

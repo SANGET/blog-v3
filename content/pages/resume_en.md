@@ -6,7 +6,9 @@ title: Alex's Resume
 
 <escape>
   <div class="no-print simple-nav">
-    <a href="/resume">中文简历</a>
+    <a href="/resume" class="mr20">中文简历</a>
+    <a href="/about" class="mr20">More information</a>
+    <a href="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/other/resume.pdf">PDF resume</a>
   </div>
 </escape>
 
@@ -15,9 +17,6 @@ title: Alex's Resume
 I am Alex, a Frontend engineer, six years experience of Frontend develop. The main work in the pass was: Construction, planning and application of `UI lib`; Construction and application of `Web admin dashboard Framework`; Front-end project quality control and team coordination.
 
 Like to explore the pinciple of how things work, like to `read`, `sport`, `photography`, `playing guitar`, `coding`.
-
-- [More info](/about)
-- [Download as PDF](https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/other/resume.pdf)
 
 --------
 
