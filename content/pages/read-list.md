@@ -12,6 +12,7 @@ title: Read list
 - [x] JavaScript 高级程序设计
 - [x] 高性能 JavaScript
 - [ ] 算法导论
+- [ ] 计算机程序设计艺术
 - [ ] 代码重构
 - [ ] Web 信息架构
 - [ ] 数据库系统概念
@@ -21,13 +22,18 @@ title: Read list
 
 ## 产品
 
-- [ ] 启示录
+- [x] 启示录
 - [ ] 用户体验设计
+- [ ] don't make me think
+- [ ] 谷歌和亚马逊如何做产品
+- [ ] 幕后产品
+- [ ] human interface guide
+- [ ] design guidelines
 
 ## 思考方式
 
 - [x] 影响力
-- [ ] 失控
+- [x] 失控
 - [ ] 必然
 - [ ] 科技想要什么
 - [ ] 和时间做朋友
