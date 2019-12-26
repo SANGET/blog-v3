@@ -152,9 +152,9 @@ title: Alex's Resume
 - <a href="https://github.com/SANGET" target="_blank">GitHub</a>
 - [个人博客](https://thinkmore.xyz/)
 
-## 教育经历
+<!-- ## 教育经历
 
-- 广东轻工职业技术学院
+- 广东轻工职业技术学院 -->
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper
