@@ -4,7 +4,7 @@ layout: page
 title: Read list
 ---
 
-> 更专业，视野更广
+> 学无止境
 
 ## 技术
 
@@ -24,9 +24,9 @@ title: Read list
 
 - [x] 启示录
 - [ ] 用户体验设计
-- [ ] don't make me think
 - [ ] 谷歌和亚马逊如何做产品
 - [ ] 幕后产品
+- [ ] don't make me think
 - [ ] human interface guide
 - [ ] design guidelines
 
@@ -39,6 +39,8 @@ title: Read list
 - [ ] 和时间做朋友
 - [ ] 如何阅读一本书
 - [ ] 优秀到不能忽略
+- [ ] 自私的基因
+- [ ] 社会心理学
 
 ## 科幻
 
