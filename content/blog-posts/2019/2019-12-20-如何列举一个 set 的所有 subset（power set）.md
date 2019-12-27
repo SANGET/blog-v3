@@ -2,7 +2,7 @@
 author: Alex
 date: 2019-12-20
 layout: post
-title: 如何列举一个 set 的所有 Subset（PowerSet）
+title: 如何列举一个 set 的所有 subset（power set）
 description: 之前遇到一个问题：如何列举一个 set 的所有 subset（power set），后来找了答案发现我的思路错了。
 keywords: 
   - powerset
