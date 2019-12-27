@@ -11,7 +11,7 @@ layout: page
 
 > 始于前端，不止前端
 
-张相杰(Alex)，90 后，一个低调、务实、喜欢喝早茶的广东人。
+张相杰(Alex)，90 后，低调、务实、喜欢喝早茶的广东人。
 
 喜欢 `编程`、`音乐`、`摄影`、`旅游`。
 
@@ -51,9 +51,9 @@ layout: page
 
 -------------
 
-> Godin 5th avenue，最喜欢的一把吉他
+<!-- > Godin 5th avenue，最喜欢的一把吉他
 
-![Godin 5th avenue](../assets/images/other/guitar.jpg)
+![Godin 5th avenue](../assets/images/other/guitar.jpg) -->
 
 <!-- ## 多看看世界
 
