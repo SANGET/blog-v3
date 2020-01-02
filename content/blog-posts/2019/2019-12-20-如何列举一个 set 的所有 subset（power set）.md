@@ -13,11 +13,11 @@ tags:
   - 翻译
 ---
 
-> 此文章为翻译，原文地址：https://coderbyte.com/algorithm/print-all-subsets-given-set
+> 参考：https://coderbyte.com/algorithm/print-all-subsets-given-set
 
 ### Why
 
-之前遇到一个问题：如何列举一个 set 的所有 subset（power set），后来找了答案发现我的思路错了。这也暴露了我的算法基础不扎实的问题。
+之前遇到一个问题：如何列举一个 set 的所有 subset（power set），后来找了答案发现我的思路错了。这也意识到我的算法基础不够扎实。
 
 ### power set
 
