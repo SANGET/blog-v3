@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "blog services for alex's blog",
   "scripts": {
-    "setup": "sls dynamodb install"
+    "setup": "sls dynamodb install",
+    "dev": "sls offline"
   },
   "author": "",
   "license": "MIT",
