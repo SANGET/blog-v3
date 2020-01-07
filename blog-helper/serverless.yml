@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: blog-helper
+service: BlogHelper
 # app and org for use with dashboard.serverless.com
 app: blog
 org: sanget
@@ -20,13 +20,18 @@ org: sanget
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
+plugins:
+  - serverless-plugin-typescript
+  - serverless-dynamodb-local
+  - serverless-offline
+
 provider:
   name: aws
   runtime: nodejs12.x
 
 # you can overwrite defaults here
 #  stage: dev
-#  region: us-east-1
+  region: ap-northeast-1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -60,6 +65,22 @@ provider:
 functions:
   hello:
     handler: handler.hello
+  likeBlog:
+    handler: handler.likeBlog
+  visitBlog:
+    handler: handler.visitBlog
+  getLikes:
+    handler: handler.getLikes
+    events:
+      - http:
+          path: likes
+          method: get
+  getVisitors:
+    handler: handler.getVisitors
+    events:
+      - http:
+          path: visitors
+          method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
