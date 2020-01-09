@@ -177,7 +177,7 @@ exports.createPages = ({ graphql, actions }, options) => {
 
 exports.onCreateNode = ({ node, actions, getNode }, options) => {
   const { createNodeField } = actions;
-  const timeRegExp = /((19[2-9]\d{1})|(20\d{2}))-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|30|31)-/;
+  const timeRegExp = /(((19[2-9]\d{1})|(20\d{2}))-)?((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|30|31)-/;
 
   if (node.internal.type === 'MarkdownRemark') {
     let value = createFilePath({ node, getNode });
