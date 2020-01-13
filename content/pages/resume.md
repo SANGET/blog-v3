@@ -22,7 +22,7 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
 ## 技能树
 
 - 前端: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`
-- 后端: `Node`, `MySQL`, `DynamoDB`
+- 后端: `Node`, `DynamoDB`
 - 部署: `Docker`, `Netlify`
 - 工具: `Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
 
@@ -65,8 +65,10 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
   - [组织地址](https://github.com/minimal-studio)
   - `@mini-code/base-func` 核心函数库，包含处理常用的 `数组`, `数字`, `时间`, `订阅发布` 等功能模块
   - `@mini-code/request` 通讯工具类库，基于 fetch 的封装，采取中间件机制，对数据进行过滤。内置了「RC4 加解密」和「LZMA 压解缩」中间件，支持 RESTFul API
-  - `@mini-code/scripts` 基于 react-scripts 扩展的开发环境，提供 React typescript 应用的开发环境
+  - `@mini-code/scripts` 基于 `react-scripts` 扩展的开发环境，提供 `react + typescript` 应用的开发环境
   - `@mini-code/page-generator` 页面生成工具，为了减轻繁重的管理系统页面的开发任务工作量而制作，提高页面一致性，可维护性
+  - `version-helper` 产品版本助手，提供统一的版本提示。版本号构成：`x.y.z+buildVersion`
+  - `web-server` 基于 node 的 web server，适用于短平快的服务构建需求。`typescript + typeORM + express + mysql + docker`
 
 ### @deer-ui
 
@@ -79,47 +81,23 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
   - `@deer-ui/admin-scaffold` 管理后台 `Scaffold`
 - 技术标签: `Typescript`, `React`
 - 基于 @deer-ui 的应用：
-  - [elk_chat][elk-chat]
   - [@deer-ui/admin-scaffold][scaffold-demo]
+  - [react-ui-doc][react-ui-doc] 用 mdx 编写 UI Components 文档的生成器
+  - [elk_chat][elk-chat]
   <!-- - [admin-dashboard][dashboard-doc] -->
 - 相关资源
   - [项目仓库][deer-ui]
   - [在线文档][ui-doc]
 
-### 商业租赁平台
-
-> Synergy88
-
-- 介绍：商业 SaaS 系统，提供某商业领域的解决方案
-- 主要负责：提供前端基础技术支持，业务分析，业务模块开发，协调设计与前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等
-- 项目重构:
-  - 迭代了 5 个大版本，最新结构采用 typescript + lerna + yarn workspace 的方式重新组织，兼顾可维护性、可扩展性、敏捷开发、并行开发等需求，[查看详情][refactor-system]
-- 技术分析:
-  - React 作为基础 UI 渲染引擎
-  - Yarn workspace 切割共用业务，提供 React 与 React-Native 共用
-  - lerna 管理共用模块之间的关系
-  - Typescript 提升代码的可预测性
-- 技术标签: `React`, `React-Native`, `Node`
-
-### node-web-server
-
-> Synergy88
-
-- 介绍：包含通用的权限控制，RESTFul 业务开发等
-- 目的：提供 SaaS 业务系统的快速业务开发支持
-- 动机：由于前后端分离的开发方式产生了接口对接沟通成本（后端人员并不考虑前端使用情况），计划从数据库类型出发，到业务 API 的开发，通过 ts 将 API 数据结构封装成 SDK，提供给客户端使用，减少开发沟通成本
-- 技术标签：`Node`, `Typescript`, `Express`, `Koa`, `TypeORM`, `MYSql`, `Docker`
-- [项目仓库](https://github.com/SANGET/node-web-server)
-
-### IM 客户端(Elk-Chat)
+### IM 服务(Elk_Chat)
 
 > Synergy88
 
 - 介绍：与公司业务结合，满足内部 IM 使用需求
 - 主要负责：web 客户端研发，native 客户端（Flutter）研发
 - 技术结构：
-  - 前后端分离架构
-  - web 客户端整体使用 `Typescript`
+  - 前后端分离
+  - web 客户端基于 `Typescript`
   - 项目结构分为 3 层结构，SDK -> Actions -> UI
     1. `SDK` 为「以 `websocket` 作为通讯通道， `protobuf` 作为底层通讯协议」的 `API` 封装，提供给 Actions 与 UI 数据支持
     2. `Actions` 为应用核心业务数据和对应的操作的封装，拥有一套完整的内部数据结构，为 `UI` 提供数据。主要使用 Redux 管理方案
@@ -128,6 +106,57 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
 - 相关资源
   - [项目仓库][elk-chat]（客户端开源）
   - [在线地址][chat-online]
+
+### 代理-交易系统
+
+> Synergy88
+
+- 介绍：代理-交易记账产品，提供基于代理角色层级的交易记账解决方案，SaaS 方向
+- 主要负责：提供前端基础技术支持，业务模块开发，模块划分，协调设计、前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等
+- 项目重构:
+  - 迭代了 5 个大版本，最新版本基于 `typescript` 编写，采用 `lerna + yarn workspace` 的方式重新组织，平衡项目的可维护性、可扩展性、敏捷开发、并行开发等需求，[查看详情][refactor-system]
+- 技术分析:
+  - React 作为基础 UI 渲染引擎
+  - Yarn workspace 管理通用业务模块，提供 React 与 React-Native 共用
+  - lerna 管理共用模块之间的关系
+  - Typescript 提升代码的可预测性
+- 技术标签: `React`, `ReactNative`, `Node`
+
+### 餐饮配送平台
+
+> Synergy88 「服务已下线，原 zan.com」
+
+- 介绍：本地餐饮配送服务平台
+- 主要负责：提供前端基础技术支持，业务模块开发，模块划分，协调设计、前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等
+- 技术分析:
+  - 基于移动端的 `PWA` 应用
+  - 客户端 `React + Redux`
+  - 管理系统 `Admin-Scaffold`
+
+### 前端资源发布系统
+
+> Synergy88「服务已下线，使用 Jenkins 代替」
+
+- 介绍：用于管理公司所有产品的前端资源的部署流程
+- 主要负责：项目发起者、制作者
+- 动机：随着公司业务逐渐增加，为了更好地管理产品的前端资源的发布流程而制作的管理系统
+- 工作流程：本地构建 -> 登陆发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
+- 技术分析：
+  - React：管理系统的前端支持
+  - Node：资源管理，执行 shell 脚本
+  - lowDB：基于 `json` 的数据管理工具
+
+<!-- ### node-web-server
+
+> Synergy88
+
+- 介绍：包含通用的权限控制，RESTFul 业务开发等
+- 目的：提供 SaaS 业务系统的快速业务开发支持
+- 动机：由于前后端分离的开发方式产生了接口对接沟通成本（后端人员并不考虑前端使用情况），计划从数据库类型出发，到业务 API 的开发，通过 ts 将 API 数据结构封装成 SDK，提供给客户端使用，减少开发沟通成本
+- 技术标签：`Node`, `Typescript`, `Express`, `Koa`, `TypeORM`, `MYSql`, `Docker`
+- [项目仓库](https://github.com/SANGET/node-web-server) -->
+
+-----
 
 ### 国际司综合业务管理系统
 
@@ -152,9 +181,9 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
 - <a href="https://github.com/SANGET" target="_blank">GitHub</a>
 - [个人博客](https://thinkmore.xyz/)
 
-<!-- ## 教育经历
+## 教育经历
 
-- 广东轻工职业技术学院 -->
+- 广东轻工职业技术学院（2013毕业）
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper
@@ -171,3 +200,4 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
 [form-generator]: https://thinkmore.xyz/%E5%9F%BA%E4%BA%8Ereact%E6%89%93%E9%80%A0%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E8%A1%A8%E5%8D%95
 [table-desc]: https://ui.thinkmore.xyz/Table
 [refactor-system]: https://thinkmore.xyz/%E9%87%8D%E6%9E%84%E9%A1%B9%E7%9B%AE%E4%B9%8B%E8%B7%AF(%E4%B8%80)
+[react-ui-doc]: https://github.com/SANGET/react-ui-doc
