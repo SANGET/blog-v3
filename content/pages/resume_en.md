@@ -33,21 +33,19 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
 
 ### Synergy88
 
+> 2015.02 - now (Manila/PH)
+
 - Company Info: toB Integrated technology provider
 - Main business: Business system development, game development and API access, IM services..
-
-> 2015.02 - now
-
 - Position: Frontend team leader.
 - Responsibility: Responsible for front-end infrastructure, planning and construction of Frontend-scaffolding, code review, project progress follow-up, front-end task assignment, front-end skills presentation and training.
 
 ### Guangzhou Customs
 
+> 2013.07 - 2015.01 (Guangzhou/China)
+
 - Unit Info: China Customs.
 - Main business: Customs Business.
-
-> 2013.07 - 2015.01
-
 - Position: software engineer
 - Responsibility: Responsible for the development and maintenance of China Customs internal business system, new system prototyping, front-end application development.
 
