@@ -31,7 +31,7 @@ const Footer = ({ title }) => {
   const { github, mail } = siteMetadata.social;
   const { showBuildInfo = true, since } = footerData;
   return (
-    <footer className="footer">
+    <footer className="footer no-print">
       <Container>
         <Grid container>
           <span>© {since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
