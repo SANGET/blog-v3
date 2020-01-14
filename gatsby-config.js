@@ -3,6 +3,15 @@ module.exports = {
     {
       resolve: 'gatsby-theme-elk',
       options: {
+        /** blog helper 提供博客 add like、visitor 记录、comment 等 serverless 功能 */
+        blogHelperOptions: {
+          // 激活 like 功能
+          enabledLike: true,
+          // 激活访客记录功能
+          enabledVisitor: true,
+          // API 地址
+          apiUrl: 'http://localhost:3000',
+        },
         blogContentPath: `${__dirname}/content/blog-posts`,
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,

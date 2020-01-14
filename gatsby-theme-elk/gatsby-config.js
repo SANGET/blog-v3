@@ -5,6 +5,7 @@ module.exports = ({
   siteTitle = 'gatsby-theme-elk',
   author = 'gatsby-theme-elk\'s Author',
   description = 'description',
+  blogHelperOptions = {},
   siteUrl = 'https://github.com/SANGET/gatsby-theme-elk',
   social = {
     // twitter: `sanget`,
@@ -40,6 +41,7 @@ module.exports = ({
     description,
     siteUrl,
     social,
+    blogHelperOptions,
     footer,
     sideMenu,
   },
