@@ -22,10 +22,11 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
 
 ## Skill
 
-- Frontend: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`
-- Backend: `Node`
-- Deployment: `Docker`, `Kubernetes`, `Netlify`
-- Using Tools: `Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
+- Frondend: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`
+- Backend: `Node`, `DynamoDB`
+- Deployment: `Docker`, `Netlify`, `Travis`
+- Testing: `Jest`, `Nightwatch`, `Cypress`
+- Tools: `Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
 
 --------
 
@@ -33,7 +34,7 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
 
 ### Synergy88
 
-> 2015.02 - now (Manila/PH)
+> 2015.02 - 2020.02 (Manila/PH)
 
 - Company Info: toB Integrated technology provider
 - Main business: Business system development, game development and API access, IM services..
