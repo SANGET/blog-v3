@@ -180,9 +180,14 @@ Tags: `自律`、`自我驱动`，`极简主义`、`完美主义`
 
 ## 联系方式
 
+- <a href="mailto:zzzxjalext@outlook" target="_top">zzzxjalext@outlook.com</a> 随时回复
 - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
-- <a href="https://github.com/SANGET" target="_blank">GitHub</a>
-- [个人博客](https://thinkmore.xyz/)
+- telegram: atob('YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==')
+- 电话暂不公开
+
+## 社交
+
+- [GitHub](https://github.com/SANGET)
 
 ## 教育经历
 
