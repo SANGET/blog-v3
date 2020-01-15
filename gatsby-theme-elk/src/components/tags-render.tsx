@@ -2,7 +2,7 @@ import React from 'react';
 import wrapTagPath from '../../utils/wrap-tag-slug';
 import Link from './link';
 
-const Tags = ({ tags, className, ...other }) => (Array.isArray(tags) && tags.length > 0 ? (
+const Tags = ({ tags, className = '', ...other }) => (Array.isArray(tags) && tags.length > 0 ? (
   <span className={`tags ${className || ''}`} {...other}>
     {
       tags.map((tag, idx) => (

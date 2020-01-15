@@ -4,13 +4,13 @@ import { Grid } from '@deer-ui/core/grid';
 
 const CounterTip = ({
   count,
-  ...propsForIcon
+  n, s
 }) => {
   return (
     <span className="counter-tip mr20">
       <Grid container alignItem="center">
         <Grid className="name">
-          <Icon {...propsForIcon} />
+          <Icon n={n} s={s} />
         </Grid>
         <Grid className="c ml5">{count}</Grid>
       </Grid>

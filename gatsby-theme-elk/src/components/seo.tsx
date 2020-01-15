@@ -77,15 +77,15 @@ function SEO({
       {
         Array.isArray(resources) && resources.map((resource, idx) => {
           switch (resource.type) {
-          case 'link':
-            return (
-              <link key={idx}
-                type={resource.rel || 'text/css'}
-                rel="stylesheet"
-                href={resource.url} />
-            );
-          default:
-            break;
+            case 'link':
+              return (
+                <link key={idx}
+                  type={resource.rel || 'text/css'}
+                  rel="stylesheet"
+                  href={resource.url} />
+              );
+            default:
+              break;
           }
         })
       }

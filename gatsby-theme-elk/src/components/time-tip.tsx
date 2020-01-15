@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@deer-ui/core/icon';
 
-const TimeTip = ({ date, readTime, ...other }) => (
+const TimeTip = ({ date, readTime = '', ...other }) => (
   <div {...other}>
     <time className="time">
       <Icon n="clock" s="r" classNames={['mr5']} />

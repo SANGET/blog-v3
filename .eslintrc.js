@@ -2,24 +2,44 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
   },
-  extends: [
+  "extends": [
     "airbnb-base",
-    `react-app`
+    "plugin:@typescript-eslint/recommended",
+    "react-app"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react", "@typescript-eslint"
   ],
   "rules": {
-    "indent": ["error", 2],
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "semi": ["error", "always"],
+    "import/no-dynamic-require": 0,
     "no-unused-vars": [
       1,
       {
-        "vars": "all", "args": "after-used", "ignoreRestSiblings": false
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
       }
     ],
     "import/prefer-default-export": 0,
-    "arrow-body-style": 0,
+    "no-underscore-dangle": 0,
     "no-console": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-case-declarations": 0,
+    "no-plusplus": 0,
+    "comma-dangle": 0,
+    "quotes": 0,
+    "no-prototype-builtins": 0,
+    "arrow-body-style": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-static-element-interactions": 0,
+    "react-hooks/exhaustive-deps": 0,
     "react/jsx-tag-spacing": 0,
     "react/destructuring-assignment": 0,
     "react/no-unused-state": 0,
@@ -27,12 +47,25 @@ module.exports = {
     "react/jsx-max-props-per-line": 0,
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-one-expression-per-line": 0,
-    "react/jsx-closing-bracket-location": [1, "after-props"],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", "tsx", "ts"]
       }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": [
+          "node_modules",
+          "./packages"
+        ]
+      }
+    },
+    "import/external-module-folders": [
+      "./packages"
     ]
   }
 }

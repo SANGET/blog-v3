@@ -5,11 +5,16 @@ import { Icon } from '@deer-ui/core/icon';
 import Tether from 'tether';
 
 // import Bio from "../components/bio";
+import { ToolTip } from '@deer-ui/core/tooltip';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
 import Link from '../components/link';
+import {
+  getVisitorsByTitles, getLikeByTitles, likeBlog, visitBlog
+} from '../blog-helper/api';
+import CounterTip from '../components/counter-tip';
 
 const delayExec = (new DebounceClass()).exec;
 
@@ -22,11 +27,66 @@ const BackToTop = () => (
   </span>
 );
 
-class BlogPostTemplate extends React.Component {
+class BlogPostTemplate extends React.Component<{}, {
+  currVisit: number;
+  currLike: number;
+}> {
+  $
+
+  $window
+
+  targets
+
+  $PostTOCWrapper
+
+  _tetherEntity
+
+  state = {
+    currVisit: 0,
+    currLike: 0,
+  }
+
   componentDidMount() {
     setTimeout(() => {
       this.setupTOC();
     }, 100);
+    this.initBlogData();
+  }
+
+  initBlogData = async () => {
+    const siteTitle = this.props.data.markdownRemark.frontmatter.title;
+    await this.visitBlog(siteTitle);
+    const getDataQueue = [
+      getVisitorsByTitles(siteTitle),
+      getLikeByTitles(siteTitle)
+    ];
+    Promise.all(getDataQueue)
+      .then(([visitor, like]) => {
+        this.setState({
+          currVisit: visitor[0],
+          currLike: like[0],
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  visitBlog = (title) => {
+    return new Promise((resolve) => {
+      const { data } = this.props;
+      const { blogHelperOptions } = data.site.siteMetadata;
+      if (blogHelperOptions) {
+        visitBlog(title)
+          .then((res) => {
+            // console.log(res);
+            resolve(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    });
   }
 
   needTOCFilter = () => {
@@ -78,6 +138,7 @@ class BlogPostTemplate extends React.Component {
         const id = $(target).attr('id');
         $('li a', $PostTOCWrapper).removeClass('active');
         $('li a[href]', $PostTOCWrapper)
+          // eslint-disable-next-line func-names
           .filter(function () {
             return this.href.match(encodeURI(id));
           })
@@ -109,8 +170,22 @@ class BlogPostTemplate extends React.Component {
     }
   }
 
+  likeThisBlog = (title: string) => {
+    likeBlog(title)
+      .then((res) => {
+        // console.log(res);
+        this.setState(({ currLike }) => ({
+          currLike: currLike + 1
+        }));
+      })
+      .catch((err) => {
+
+      });
+  }
+
   render() {
     const { data, pageContext, location } = this.props;
+    const { blogHelperOptions } = data.site.siteMetadata;
     const post = data.markdownRemark;
     const siteTitle = data.site.siteMetadata.title;
     const { previous, next, readTime } = pageContext;
@@ -119,6 +194,8 @@ class BlogPostTemplate extends React.Component {
     } = post.frontmatter;
     const { tableOfContents } = post;
     const _needTOC = this.needTOCFilter();
+    const { enabledLike, enabledVisitor } = blogHelperOptions;
+    const { currVisit, currLike } = this.state;
 
     return (
       <Layout
@@ -135,6 +212,39 @@ class BlogPostTemplate extends React.Component {
               <TimeTip date={date} readTime={readTime} className="time-helper" />
               {/* <span className="flex"></span> */}
               <Tags tags={tags} />
+              <span className="flex"></span>
+              {
+                enabledVisitor && (
+                  <ToolTip
+                    className="mr10"
+                    n="tripadvisor"
+                    s="b"
+                    title="Visitor">
+                    <span className="ps10">
+                      {currVisit}
+                    </span>
+                  </ToolTip>
+                  // <CounterTip n="tripadvisor" s="b" count={currVisit} />
+                )
+              }
+              {
+                enabledLike && (
+                  <span onClick={(e) => {
+                    this.likeThisBlog(title);
+                  }}>
+                    <ToolTip
+                      className="mr10"
+                      n="thumbs-up"
+                      s="r"
+                      title="Likes">
+                      <span className="ps10">
+                        {currLike}
+                      </span>
+                    </ToolTip>
+                    {/* <CounterTip n="thumbs-up" s="r" count={currLike} /> */}
+                  </span>
+                )
+              }
             </div>
           </header>
           <div className="markdown-body">
@@ -195,6 +305,11 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        blogHelperOptions {
+          enabledLike
+          enabledVisitor
+          apiUrl
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

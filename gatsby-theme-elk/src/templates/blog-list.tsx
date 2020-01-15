@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, navigate } from 'gatsby';
 import { Pagination } from '@deer-ui/core/pagination';
 
+import { ToolTip } from '@deer-ui/core/tooltip';
 import SEO from '../components/seo';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -10,41 +11,76 @@ import TagsList from '../components/tags-list';
 import Tags from '../components/tags-render';
 import CounterTip from '../components/counter-tip';
 import Link from '../components/link';
+import { CommonPageProps } from '../utils/types';
+import {
+  getVisitorsByTitles, visitBlog, getLikeByTitles
+} from '../blog-helper/api';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
-const getAllBlogTitles = (posts) => {
-  const res = [];
+interface BlogListProps extends CommonPageProps {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+        blogHelperOptions: {
+          apiUrl: string;
+          enabledLike: boolean;
+          enabledVisitor: boolean;
+        };
+      };
+    };
+    allMarkdownRemark: {
+      edges: ({
+        node: {
+          excerpt;
+          fields: {
+            slug;
+          };
+          frontmatter: {
+            date;
+            title: string;
+            description;
+          };
+        };
+      })[];
+    };
+  };
+}
+
+const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edges']) => {
+  const res: any[] = [];
   posts.forEach((item) => {
     res.push(item.node.frontmatter.title);
   });
   return res;
 };
 
-class BlogList extends React.Component {
+class BlogList extends React.Component<BlogListProps> {
   state = {
     visitorList: [],
     likeList: [],
   }
 
   componentDidMount() {
-    const { data, loading } = this.props;
+    this.initBlogVisitorsData();
+  }
+
+  initBlogVisitorsData = () => {
+    const { data } = this.props;
     const { blogHelperOptions } = data.site.siteMetadata;
     if (blogHelperOptions) {
-      const { apiUrl } = blogHelperOptions;
-      fetch(`${apiUrl}/visitors`, {
-        method: 'POST',
-        body: JSON.stringify({
-          blogTitles: getAllBlogTitles(data.allMarkdownRemark.edges),
-        }),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((res) => {
-          console.log(res);
+      const { enabledLike, enabledVisitor } = blogHelperOptions;
+      const titles = getAllBlogTitles(data.allMarkdownRemark.edges);
+      const getDataQueue = [
+        enabledVisitor && getVisitorsByTitles(titles),
+        enabledLike && getLikeByTitles(titles)
+      ];
+      Promise.all(getDataQueue)
+        .then(([visitors, likes]) => {
           this.setState({
-            visitorList: res,
+            visitorList: visitors,
+            likeList: likes
           });
         })
         .catch((err) => {
@@ -54,32 +90,15 @@ class BlogList extends React.Component {
   }
 
   visitBlog = (slug, title) => {
-    navigate(`/${slug}`);
-    const { data, loading } = this.props;
-    const { blogHelperOptions } = data.site.siteMetadata;
-    if (blogHelperOptions) {
-      const { apiUrl } = blogHelperOptions;
-
-      fetch(`${apiUrl}/visit?blogTitle=${title}`, {
-        method: 'GET',
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    const nextPageUrl = `/${slug}/`.replace(/\/+$/gi, '/');
+    navigate(nextPageUrl);
   }
 
   // handleScroll = (e) => {
   //   console.log(e);
   // }
   render() {
-    const { data, loading } = this.props;
+    const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
@@ -98,7 +117,6 @@ class BlogList extends React.Component {
           title={siteTitle}
           keywords={['blog', 'gatsby', 'javascript', 'react']}/>
         <Bio />
-        {/* <Loading inrow loading /> */}
         <div className="post-wrapper">
           <section className="post-list">
             {
@@ -136,12 +154,30 @@ class BlogList extends React.Component {
                       <TimeTip date={date} className="time-helper" />
                       {
                         enabledVisitor && (
-                          <CounterTip n="tripadvisor" s="b" count={currVisit} />
+                          <ToolTip
+                            className="mr10"
+                            n="tripadvisor"
+                            s="b"
+                            title="Visitor">
+                            <span className="ps10">
+                              {currVisit}
+                            </span>
+                          </ToolTip>
+                          // <CounterTip n="tripadvisor" s="b" count={currVisit} />
                         )
                       }
                       {
                         enabledLike && (
-                          <CounterTip n="thumbs-up" s="r" count={currLike} />
+                          <ToolTip
+                            className="mr10"
+                            n="thumbs-up"
+                            s="r"
+                            title="Likes">
+                            <span className="ps10">
+                              {currLike}
+                            </span>
+                          </ToolTip>
+                          // <CounterTip n="thumbs-up" s="r" count={currLike} />
                         )
                       }
                       {/* <span className="flex"></span>
