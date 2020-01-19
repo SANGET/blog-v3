@@ -13,8 +13,9 @@ import CounterTip from '../components/counter-tip';
 import Link from '../components/link';
 import { CommonPageProps } from '../utils/types';
 import {
-  getVisitorsByTitles, visitBlog, getLikeByTitles
+  GetVisitorsByTitles, VisitBlog, GetLikeByTitles
 } from '../blog-helper/api';
+import { iconMap } from '../utils/constants';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
@@ -57,9 +58,17 @@ const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edg
 };
 
 class BlogList extends React.Component<BlogListProps> {
+  blogHelperOptions
+
   state = {
     visitorList: [],
     likeList: [],
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
   }
 
   componentDidMount() {
@@ -68,19 +77,19 @@ class BlogList extends React.Component<BlogListProps> {
 
   initBlogVisitorsData = () => {
     const { data } = this.props;
-    const { blogHelperOptions } = data.site.siteMetadata;
+    const { blogHelperOptions } = this;
     if (blogHelperOptions) {
       const { enabledLike, enabledVisitor } = blogHelperOptions;
       const titles = getAllBlogTitles(data.allMarkdownRemark.edges);
       const getDataQueue = [
-        enabledVisitor && getVisitorsByTitles(titles),
-        enabledLike && getLikeByTitles(titles)
+        enabledVisitor && GetVisitorsByTitles(titles),
+        enabledLike && GetLikeByTitles(titles)
       ];
       Promise.all(getDataQueue)
         .then(([visitors, likes]) => {
           this.setState({
-            visitorList: visitors,
-            likeList: likes
+            visitorList: visitors.counter,
+            likeList: likes.counter
           });
         })
         .catch((err) => {
@@ -94,6 +103,10 @@ class BlogList extends React.Component<BlogListProps> {
     navigate(nextPageUrl);
   }
 
+  renderVisit = () => {
+    
+  }
+
   // handleScroll = (e) => {
   //   console.log(e);
   // }
@@ -103,8 +116,7 @@ class BlogList extends React.Component<BlogListProps> {
     const posts = data.allMarkdownRemark.edges;
 
     /** blogHelper */
-    const { blogHelperOptions } = data.site.siteMetadata;
-    const { enabledLike, enabledVisitor } = blogHelperOptions;
+    const { enabledLike, enabledVisitor } = this.blogHelperOptions;
     const { visitorList, likeList } = this.state;
 
     const {
@@ -126,8 +138,8 @@ class BlogList extends React.Component<BlogListProps> {
                 const { description, date, tags } = node.frontmatter;
 
                 /** blogHelper */
-                const currVisit = visitorList[idx];
-                const currLike = likeList[idx];
+                const currVisit = enabledVisitor ? visitorList[idx] : 0;
+                const currLike = enabledLike ? likeList[idx] : 0;
                 // const readTime = calculateReadTime(node.rawMarkdownBody);
                 // const timeDOM = (
                 //   <time className="time">
@@ -155,9 +167,8 @@ class BlogList extends React.Component<BlogListProps> {
                       {
                         enabledVisitor && (
                           <ToolTip
+                            {...iconMap.visit}
                             className="mr10"
-                            n="tripadvisor"
-                            s="b"
                             title="Visitor">
                             <span className="ps10">
                               {currVisit}
@@ -170,8 +181,7 @@ class BlogList extends React.Component<BlogListProps> {
                         enabledLike && (
                           <ToolTip
                             className="mr10"
-                            n="thumbs-up"
-                            s="r"
+                            {...iconMap.like(false)}
                             title="Likes">
                             <span className="ps10">
                               {currLike}

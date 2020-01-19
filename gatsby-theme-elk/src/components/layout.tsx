@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Container } from '@deer-ui/core/container';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -23,10 +23,13 @@ const Layout = (props) => {
     }
   `);
   useEffect(() => {
-    const { apiUrl } = data.site.siteMetadata.blogHelperOptions;
-    setRequest({
-      baseUrl: apiUrl,
-    });
+    const { blogHelperOptions } = data.site.siteMetadata;
+    if (blogHelperOptions) {
+      const { apiUrl } = blogHelperOptions;
+      setRequest({
+        baseUrl: apiUrl,
+      });
+    }
   }, []);
   const { children, ...other } = props;
   return (

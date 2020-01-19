@@ -12,9 +12,9 @@ import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
 import Link from '../components/link';
 import {
-  getVisitorsByTitles, getLikeByTitles, likeBlog, visitBlog
+  GetVisitorsByTitles, GetLikeByTitles, LikeBlog, VisitBlog, Counter
 } from '../blog-helper/api';
-import CounterTip from '../components/counter-tip';
+import { iconMap } from '../utils/constants';
 
 const delayExec = (new DebounceClass()).exec;
 
@@ -27,9 +27,10 @@ const BackToTop = () => (
   </span>
 );
 
+
 class BlogPostTemplate extends React.Component<{}, {
-  currVisit: number;
-  currLike: number;
+  currVisit: Counter;
+  currLike: Counter;
 }> {
   $
 
@@ -41,9 +42,17 @@ class BlogPostTemplate extends React.Component<{}, {
 
   _tetherEntity
 
+  blogHelperOptions
+
   state = {
-    currVisit: 0,
-    currLike: 0,
+    currVisit: {},
+    currLike: {},
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
   }
 
   componentDidMount() {
@@ -56,36 +65,37 @@ class BlogPostTemplate extends React.Component<{}, {
   initBlogData = async () => {
     const siteTitle = this.props.data.markdownRemark.frontmatter.title;
     await this.visitBlog(siteTitle);
-    const getDataQueue = [
-      getVisitorsByTitles(siteTitle),
-      getLikeByTitles(siteTitle)
-    ];
-    Promise.all(getDataQueue)
-      .then(([visitor, like]) => {
-        this.setState({
-          currVisit: visitor[0],
-          currLike: like[0],
+    setTimeout(() => {
+      const { enabledLike, enabledVisitor } = this.blogHelperOptions;
+      const getDataQueue = [
+        enabledVisitor && GetVisitorsByTitles([siteTitle]),
+        enabledLike && GetLikeByTitles([siteTitle], true)
+      ];
+      Promise.all(getDataQueue)
+        .then(([visitor, like]) => {
+          this.setState({
+            currVisit: visitor,
+            currLike: like,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
         });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    }, 100);
   }
 
   visitBlog = (title) => {
     return new Promise((resolve) => {
-      const { data } = this.props;
-      const { blogHelperOptions } = data.site.siteMetadata;
-      if (blogHelperOptions) {
-        visitBlog(title)
+      if (this.blogHelperOptions) {
+        VisitBlog(title)
           .then((res) => {
-            // console.log(res);
             resolve(res);
           })
           .catch((err) => {
             console.log(err);
           });
       }
+      resolve();
     });
   }
 
@@ -171,11 +181,13 @@ class BlogPostTemplate extends React.Component<{}, {
   }
 
   likeThisBlog = (title: string) => {
-    likeBlog(title)
+    LikeBlog(title)
       .then((res) => {
-        // console.log(res);
         this.setState(({ currLike }) => ({
-          currLike: currLike + 1
+          currLike: {
+            counter: currLike.counter + 1,
+            detail: true
+          }
         }));
       })
       .catch((err) => {
@@ -183,9 +195,47 @@ class BlogPostTemplate extends React.Component<{}, {
       });
   }
 
+  renderLike = () => {
+    if (!this.blogHelperOptions) return null;
+    const { enabledLike } = this.blogHelperOptions;
+    const { currLike } = this.state;
+    const isLiked = currLike && currLike.detail;
+
+    return enabledLike && (
+      <span onClick={(e) => {
+        !isLiked && this.likeThisBlog(title);
+      }}>
+        <ToolTip
+          {...iconMap.like(isLiked)}
+          className={`ml10 ${isLiked ? 't_red' : ''}`}
+          title="Likes">
+          <span className="ps10">
+            {currLike && currLike.counter}
+          </span>
+        </ToolTip>
+        {/* <CounterTip n="thumbs-up" s="r" count={currLike} /> */}
+      </span>
+    );
+  }
+
+  renderVisitor = () => {
+    if (!this.blogHelperOptions) return null;
+    const { enabledVisitor } = this.blogHelperOptions;
+    const { currVisit } = this.state;
+    return enabledVisitor && (
+      <ToolTip
+        {...iconMap.visit}
+        className="ml10"
+        title="Visitors">
+        <span className="ps10">
+          {currVisit && currVisit.counter}
+        </span>
+      </ToolTip>
+    );
+  }
+
   render() {
     const { data, pageContext, location } = this.props;
-    const { blogHelperOptions } = data.site.siteMetadata;
     const post = data.markdownRemark;
     const siteTitle = data.site.siteMetadata.title;
     const { previous, next, readTime } = pageContext;
@@ -194,8 +244,6 @@ class BlogPostTemplate extends React.Component<{}, {
     } = post.frontmatter;
     const { tableOfContents } = post;
     const _needTOC = this.needTOCFilter();
-    const { enabledLike, enabledVisitor } = blogHelperOptions;
-    const { currVisit, currLike } = this.state;
 
     return (
       <Layout
@@ -214,36 +262,10 @@ class BlogPostTemplate extends React.Component<{}, {
               <Tags tags={tags} />
               <span className="flex"></span>
               {
-                enabledVisitor && (
-                  <ToolTip
-                    className="mr10"
-                    n="tripadvisor"
-                    s="b"
-                    title="Visitor">
-                    <span className="ps10">
-                      {currVisit}
-                    </span>
-                  </ToolTip>
-                  // <CounterTip n="tripadvisor" s="b" count={currVisit} />
-                )
+                this.renderVisitor()
               }
               {
-                enabledLike && (
-                  <span onClick={(e) => {
-                    this.likeThisBlog(title);
-                  }}>
-                    <ToolTip
-                      className="mr10"
-                      n="thumbs-up"
-                      s="r"
-                      title="Likes">
-                      <span className="ps10">
-                        {currLike}
-                      </span>
-                    </ToolTip>
-                    {/* <CounterTip n="thumbs-up" s="r" count={currLike} /> */}
-                  </span>
-                )
+                this.renderLike()
               }
             </div>
           </header>
