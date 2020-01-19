@@ -19,7 +19,7 @@
   "dependencies": {
     "@deer-ui/core": "^4.0.0-rc5.6",
     "@mini-code/base-func": "^1.1.0",
-    "@mini-code/request": "^1.0.0-alpha2.3",
+    "@mini-code/request": "^1.0.0-rc1.0",
     "css-loader": "^3.2.0",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.2.18",
