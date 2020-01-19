@@ -1265,10 +1265,10 @@
   resolved "https://registry.yarnpkg.com/@mini-code/base-func/-/base-func-1.1.0.tgz#8c9e2d12074fa824b88312a7a73a4bd3f86f77ef"
   integrity sha512-nw+hzOcxDf1u2NFqWlUwhL3ZoaXlPZ2ulbqpdZJR6JpVmk5f00o/R5a6HF1oyGc/oBa5a93p334QBfL4nc+3lw==
 
-"@mini-code/request@^1.0.0-alpha2.3":
-  version "1.0.0-alpha2.3"
-  resolved "https://registry.yarnpkg.com/@mini-code/request/-/request-1.0.0-alpha2.3.tgz#2514b4912492813b005ecd2767f54cff28cca377"
-  integrity sha512-T1KHPj/gauz3BZnKFFBxbOQmN60KpNF2IkwZdTt/2nKy2RTkD7ePZE+Yi1ZnbkL9gesQCwfmxM4GZrxYeLVEvA==
+"@mini-code/request@^1.0.0-rc1.0":
+  version "1.0.0-rc1.0"
+  resolved "https://registry.yarnpkg.com/@mini-code/request/-/request-1.0.0-rc1.0.tgz#4e5e22f3fd73dbd5b57150bc2c17b87671582c88"
+  integrity sha512-+h2Ipj0gQnlAtSfIvfWRDllsQ6ViJiyuo9KAjaexVl6m9jybpCwWdklu6FzuVuzk0H/QALqo38iMdOqlSjlkXw==
   dependencies:
     lzma "^2.3.2"
     rc4-ts "^2.0.0"
@@ -1370,6 +1370,11 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
+
+"@types/fingerprintjs2@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/fingerprintjs2/-/fingerprintjs2-2.0.0.tgz#3af76e165416fa75261bbce4393f5445fca4cadd"
+  integrity sha512-isSTwNnW5I6zGZnpkinmVcV9pJqr7cLELns+tXDYzskIOAb2J+iCQ0mQJ9bRjHJhZfdlTFXZoCYK9ZgT3oMWXQ==
 
 "@types/get-port@^0.0.4":
   version "0.0.4"
