@@ -12,14 +12,15 @@ import Tags from '../components/tags-render';
 import CounterTip from '../components/counter-tip';
 import Link from '../components/link';
 import { CommonPageProps } from '../utils/types';
-import {
-  GetVisitorsByTitles, VisitBlog, GetLikeByTitles
-} from '../blog-helper/api';
+// import {
+//   GetVisitorsByTitles, VisitBlog, GetLikeByTitles
+// } from '../blog-helper/api';
 import { iconMap } from '../utils/constants';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
 interface BlogListProps extends CommonPageProps {
+  // BlogHelperAPI: {};
   data: {
     site: {
       siteMetadata: {
@@ -76,14 +77,14 @@ class BlogList extends React.Component<BlogListProps> {
   }
 
   initBlogVisitorsData = () => {
-    const { data } = this.props;
+    const { data, BlogHelperAPI } = this.props;
     const { blogHelperOptions } = this;
     if (blogHelperOptions) {
       const { enabledLike, enabledVisitor } = blogHelperOptions;
       const titles = getAllBlogTitles(data.allMarkdownRemark.edges);
       const getDataQueue = [
-        enabledVisitor && GetVisitorsByTitles(titles),
-        enabledLike && GetLikeByTitles(titles)
+        enabledVisitor && BlogHelperAPI.GetVisitorsByTitles(titles),
+        enabledLike && BlogHelperAPI.GetLikeByTitles(titles)
       ];
       Promise.all(getDataQueue)
         .then(([visitors, likes]) => {

@@ -6,7 +6,6 @@ import { RequestClass, RequestConfig } from '@mini-code/request';
 import { getClientFingerprint } from '../utils/get-fingerprint';
 import { SessionCache } from './cache';
 
-
 export interface Counter {
   counter: number[];
   detail?: {};

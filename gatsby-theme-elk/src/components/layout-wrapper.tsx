@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Loading } from '@deer-ui/core/loading';
 import { Call, EventEmitter } from '@mini-code/base-func';
 import { queryIsMobile } from '@deer-ui/core/utils';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import { LINK_TO_PAGE } from '../../utils/const';
 
@@ -10,9 +11,30 @@ import '../style/index.scss';
 
 let prefHref;
 const Wrapper = ({ children, props }) => {
+  const data = useStaticQuery(graphql`
+    query layoutQuery {
+      site {
+        siteMetadata {
+          blogHelperOptions {
+            enabledLike
+            enabledVisitor
+            apiUrl
+          }
+        }
+      }
+    }
+  `);
+  useEffect(() => {
+    const { blogHelperOptions } = data.site.siteMetadata;
+    if (blogHelperOptions) {
+      const { apiUrl } = blogHelperOptions;
+      props.BlogHelperAPI.setRequest({
+        baseUrl: apiUrl,
+      });
+    }
+  }, []);
   // const isMobile = /iPhone|Android|iOS/.test(navigator.userAgent);
   const [isMobile, setIsMobile] = React.useState(false);
-
   const [loading, setLoading] = React.useState(true);
 
   /** 删除 loading 背景 */

@@ -11,9 +11,9 @@ import SEO from '../components/seo';
 import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
 import Link from '../components/link';
-import {
-  GetVisitorsByTitles, GetLikeByTitles, LikeBlog, VisitBlog, Counter
-} from '../blog-helper/api';
+// import {
+//   GetVisitorsByTitles, GetLikeByTitles, LikeBlog, VisitBlog, Counter
+// } from '../blog-helper/api';
 import { iconMap } from '../utils/constants';
 
 const delayExec = (new DebounceClass()).exec;
@@ -29,8 +29,8 @@ const BackToTop = () => (
 
 
 class BlogPostTemplate extends React.Component<{}, {
-  currVisit: Counter;
-  currLike: Counter;
+  currVisit: {};
+  currLike: {};
 }> {
   $
 
@@ -63,13 +63,14 @@ class BlogPostTemplate extends React.Component<{}, {
   }
 
   initBlogData = async () => {
+    const { BlogHelperAPI } = this.props;
     const siteTitle = this.props.data.markdownRemark.frontmatter.title;
     await this.visitBlog(siteTitle);
     setTimeout(() => {
       const { enabledLike, enabledVisitor } = this.blogHelperOptions;
       const getDataQueue = [
-        enabledVisitor && GetVisitorsByTitles([siteTitle]),
-        enabledLike && GetLikeByTitles([siteTitle], true)
+        enabledVisitor && BlogHelperAPI.GetVisitorsByTitles([siteTitle]),
+        enabledLike && BlogHelperAPI.GetLikeByTitles([siteTitle], true)
       ];
       Promise.all(getDataQueue)
         .then(([visitor, like]) => {
@@ -87,7 +88,7 @@ class BlogPostTemplate extends React.Component<{}, {
   visitBlog = (title) => {
     return new Promise((resolve) => {
       if (this.blogHelperOptions) {
-        VisitBlog(title)
+        this.props.BlogHelperAPI.VisitBlog(title)
           .then((res) => {
             resolve(res);
           })
@@ -181,7 +182,7 @@ class BlogPostTemplate extends React.Component<{}, {
   }
 
   likeThisBlog = (title: string) => {
-    LikeBlog(title)
+    this.props.BlogHelperAPI.LikeBlog(title)
       .then((res) => {
         this.setState(({ currLike }) => ({
           currLike: {
