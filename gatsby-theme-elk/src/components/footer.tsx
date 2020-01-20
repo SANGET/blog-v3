@@ -4,6 +4,9 @@ import { Icon } from '@deer-ui/core/icon';
 import { Grid } from '@deer-ui/core/grid';
 import { ToolTip } from '@deer-ui/core/tooltip';
 import { Container } from '@deer-ui/core/container';
+import { ShowModal } from '@deer-ui/core/modal';
+
+import { getClientFingerprint } from '../utils/get-fingerprint';
 
 const Footer = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -72,9 +75,21 @@ const Footer = ({ title }) => {
               </ToolTip>
             )
           }
+          <ToolTip
+            n="fingerprint"
+            title="fingerprint"
+            onClick={async (e) => {
+              const fp = await getClientFingerprint();
+              ShowModal({
+                title: 'Fingerprint',
+                children: () => (
+                  <div className="p10">
+                    {fp}
+                  </div>
+                )
+              });
+            }} />
         </Grid>
-        <div className="contact">
-        </div>
       </Container>
     </footer>
   );
