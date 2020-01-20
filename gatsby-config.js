@@ -10,7 +10,7 @@ module.exports = {
           // 激活访客记录功能
           enabledVisitor: true,
           // API 地址
-          apiUrl: 'https://r45ti7ves9.execute-api.ap-northeast-1.amazonaws.com/production',
+          apiUrl: 'https://lxz03fie0k.execute-api.ap-northeast-1.amazonaws.com/prod',
           // apiUrl: 'http://localhost:3000',
         },
         blogContentPath: `${__dirname}/content/blog-posts`,

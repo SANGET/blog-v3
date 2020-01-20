@@ -104,10 +104,6 @@ class BlogList extends React.Component<BlogListProps> {
     navigate(nextPageUrl);
   }
 
-  renderVisit = () => {
-    
-  }
-
   // handleScroll = (e) => {
   //   console.log(e);
   // }

@@ -15,7 +15,13 @@ interface CounterStruct {
   data: Counter;
 }
 
-const $R = new RequestClass();
+const $R = new RequestClass({
+  // commonHeaders: {
+  //   'accept': '*/*',
+  //   'accept-encoding': 'gzip, deflate, br',
+  //   'sec-fetch-mode': 'cors'
+  // }
+});
 
 export const setRequest = (config: RequestConfig) => {
   $R.setConfig(config);
@@ -31,7 +37,7 @@ const setFPHeader = async (data) => {
     $R.setConfig({
       commonHeaders: {
         // 浏览器指纹
-        FP: fingerprint
+        FP: fingerprint,
       }
     });
     setHeader = true;

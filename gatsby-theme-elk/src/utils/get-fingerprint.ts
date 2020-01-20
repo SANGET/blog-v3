@@ -1,3 +1,5 @@
+import Fingerprint2 from 'fingerprintjs2';
+
 /**
  * get client fingerprint
  */
@@ -26,7 +28,6 @@ export const getClientFingerprint = () => {
         resolve(murmur);
       });
     };
-    const { Fingerprint2, requestIdleCallback } = window;
     if (requestIdleCallback) {
       requestIdleCallback(() => {
         getFP();

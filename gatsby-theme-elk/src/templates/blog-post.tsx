@@ -184,19 +184,20 @@ class BlogPostTemplate extends React.Component<{}, {
   likeThisBlog = (title: string) => {
     this.props.BlogHelperAPI.LikeBlog(title)
       .then((res) => {
+        // console.log(res);
         this.setState(({ currLike }) => ({
           currLike: {
-            counter: currLike.counter + 1,
+            counter: currLike ? currLike.counter + 1 : 0,
             detail: true
           }
         }));
       })
       .catch((err) => {
-
+        console.log(err);
       });
   }
 
-  renderLike = () => {
+  renderLike = (title) => {
     if (!this.blogHelperOptions) return null;
     const { enabledLike } = this.blogHelperOptions;
     const { currLike } = this.state;
@@ -266,7 +267,7 @@ class BlogPostTemplate extends React.Component<{}, {
                 this.renderVisitor()
               }
               {
-                this.renderLike()
+                this.renderLike(title)
               }
             </div>
           </header>
