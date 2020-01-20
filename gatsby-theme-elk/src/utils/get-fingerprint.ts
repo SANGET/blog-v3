@@ -15,8 +15,8 @@ export const getClientFingerprint = () => {
     const getFP = () => {
       Fingerprint2.get({
         excludes: {
-          canvas: true,
-          // webgl: true,
+          // canvas: true,
+          webgl: true,
           adBlock: true,
           fonts: true,
           enumerateDevices: true,
