@@ -208,9 +208,9 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
 - 社交
   - [GitHub](https://github.com/SANGET)
 
-## 教育
+<!-- ## 教育
 
-- 广东轻工职业技术学院 ~ 2013
+- 广东轻工职业技术学院 ~ 2013 -->
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper
