@@ -47,11 +47,11 @@ const LikeCache = new SessionCache('LikeCache');
  */
 export const LikeBlog = async (blogTitle: string) => {
   const hasLiked = LikeCache.getItem(blogTitle);
-  // if (hasLiked) {
-  //   return {
-  //     message: 'visited'
-  //   };
-  // }
+  if (hasLiked) {
+    return {
+      message: 'visited'
+    };
+  }
   const res = await $R.get({
     url: '/like',
     params: { blogTitle }
@@ -83,11 +83,11 @@ const VisitCache = new SessionCache('VisitCache');
  */
 export const VisitBlog = async (blogTitle: string) => {
   const hasVisited = VisitCache.getItem(blogTitle);
-  if (hasVisited) {
-    return {
-      message: 'visited'
-    };
-  }
+  // if (hasVisited) {
+  //   return {
+  //     message: 'visited'
+  //   };
+  // }
   const res = await $R.get({
     url: '/visit',
     params: { blogTitle }
