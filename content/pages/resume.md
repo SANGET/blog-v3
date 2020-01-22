@@ -129,10 +129,10 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
   - 业务切割：`web app`、`react-native app` 共用业务 `Action`
   - 模块管理：`yarn workspace`
   - 代码质量：`typescript`
-  - 单元测试：`jest`
-- 项目重构:
+  - 测试：`jest`, `Cypress`
+<!-- - 项目重构:
   - 持续迭代了 5 个重大版本，最新版基于 `typescript + lerna + yarn workspace` 的方式组织项目
-  - [重构详情][refactor-system]
+  - [重构详情][refactor-system] -->
 - 技术标签: `react`, `react-native`, `node`
 
 ### 餐饮配送平台

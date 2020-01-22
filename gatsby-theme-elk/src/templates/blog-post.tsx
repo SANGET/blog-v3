@@ -65,17 +65,17 @@ class BlogPostTemplate extends React.Component<{}, {
   initBlogData = async () => {
     const { BlogHelperAPI } = this.props;
     const siteTitle = this.props.data.markdownRemark.frontmatter.title;
-    await this.visitBlog(siteTitle);
+    const visitResData = await this.visitBlog(siteTitle);
     setTimeout(() => {
       const { enabledLike, enabledVisitor } = this.blogHelperOptions;
       const getDataQueue = [
-        enabledVisitor && BlogHelperAPI.GetVisitorsByTitles([siteTitle]),
+        // enabledVisitor && BlogHelperAPI.GetVisitorsByTitles([siteTitle]),
         enabledLike && BlogHelperAPI.GetLikeByTitles([siteTitle], true)
       ];
       Promise.all(getDataQueue)
-        .then(([visitor, like]) => {
+        .then(([like]) => {
           this.setState({
-            currVisit: visitor,
+            currVisit: visitResData,
             currLike: like,
           });
         })
@@ -86,17 +86,18 @@ class BlogPostTemplate extends React.Component<{}, {
   }
 
   visitBlog = (title) => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       if (this.blogHelperOptions) {
-        this.props.BlogHelperAPI.VisitBlog(title)
+        return this.props.BlogHelperAPI.VisitBlog(title)
           .then((res) => {
             resolve(res);
           })
           .catch((err) => {
             console.log(err);
+            reject(err);
           });
       }
-      resolve();
+      return resolve();
     });
   }
 
