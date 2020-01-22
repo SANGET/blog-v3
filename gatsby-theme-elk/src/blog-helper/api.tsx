@@ -15,13 +15,7 @@ interface CounterStruct {
   data: Counter;
 }
 
-const $R = new RequestClass({
-  // commonHeaders: {
-  //   'accept': '*/*',
-  //   'accept-encoding': 'gzip, deflate, br',
-  //   'sec-fetch-mode': 'cors'
-  // }
-});
+const $R = new RequestClass();
 
 export const setRequest = (config: RequestConfig) => {
   $R.setConfig(config);
@@ -53,11 +47,11 @@ const LikeCache = new SessionCache('LikeCache');
  */
 export const LikeBlog = async (blogTitle: string) => {
   const hasLiked = LikeCache.getItem(blogTitle);
-  if (hasLiked) {
-    return {
-      message: 'visited'
-    };
-  }
+  // if (hasLiked) {
+  //   return {
+  //     message: 'visited'
+  //   };
+  // }
   const res = await $R.get({
     url: '/like',
     params: { blogTitle }
