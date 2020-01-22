@@ -31,6 +31,7 @@ const BackToTop = () => (
 class BlogPostTemplate extends React.Component<{}, {
   currVisit: {};
   currLike: {};
+  liking: boolean;
 }> {
   $
 
@@ -47,6 +48,7 @@ class BlogPostTemplate extends React.Component<{}, {
   state = {
     currVisit: {},
     currLike: {},
+    liking: false
   }
 
   constructor(props) {
@@ -183,15 +185,19 @@ class BlogPostTemplate extends React.Component<{}, {
   }
 
   likeThisBlog = (title: string) => {
+    if (this.state.liking) return;
+    this.setState({
+      liking: true
+    });
     this.props.BlogHelperAPI.LikeBlog(title)
       .then((res) => {
-        // console.log(res);
-        this.setState(({ currLike }) => ({
+        this.setState({
+          liking: false,
           currLike: {
-            counter: currLike ? currLike.counter + 1 : 0,
+            counter: res.counter,
             detail: true
           }
-        }));
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -201,7 +207,7 @@ class BlogPostTemplate extends React.Component<{}, {
   renderLike = (title) => {
     if (!this.blogHelperOptions) return null;
     const { enabledLike } = this.blogHelperOptions;
-    const { currLike } = this.state;
+    const { currLike, liking } = this.state;
     const isLiked = currLike && currLike.detail;
 
     return enabledLike && (
@@ -213,7 +219,9 @@ class BlogPostTemplate extends React.Component<{}, {
           className={`ml10 ${isLiked ? 't_red' : ''}`}
           title="Likes">
           <span className="ps10">
-            {currLike && currLike.counter}
+            {liking ? (
+              <Icon n="circle-notch" classNames={['btn-loading']} />
+            ) : currLike && currLike.counter}
           </span>
         </ToolTip>
         {/* <CounterTip n="thumbs-up" s="r" count={currLike} /> */}
