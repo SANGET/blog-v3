@@ -28,7 +28,7 @@ export const getClientFingerprint = () => {
         resolve(murmur);
       });
     };
-    if (requestIdleCallback) {
+    if (typeof window.requestIdleCallback == 'function') {
       requestIdleCallback(() => {
         getFP();
       });
