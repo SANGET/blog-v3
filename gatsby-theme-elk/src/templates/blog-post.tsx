@@ -6,6 +6,7 @@ import Tether from 'tether';
 
 // import Bio from "../components/bio";
 import { ToolTip } from '@deer-ui/core/tooltip';
+import { Grid } from '@deer-ui/core/grid';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import TimeTip from '../components/time-tip';
@@ -236,7 +237,6 @@ class BlogPostTemplate extends React.Component<{}, {
     return enabledVisitor && (
       <ToolTip
         {...iconMap.visit}
-        className="ml10"
         title="Visitors">
         <span className="ps10">
           {currVisit && currVisit.counter}
@@ -267,7 +267,10 @@ class BlogPostTemplate extends React.Component<{}, {
             <h1>
               {title}
             </h1>
-            <div className="subcontent">
+            <Grid
+              container
+              wrap="wrap"
+              className="subcontent">
               <TimeTip date={date} readTime={readTime} className="time-helper" />
               {/* <span className="flex"></span> */}
               <Tags tags={tags} />
@@ -278,7 +281,7 @@ class BlogPostTemplate extends React.Component<{}, {
               {
                 this.renderLike(title)
               }
-            </div>
+            </Grid>
           </header>
           <div className="markdown-body">
             <section dangerouslySetInnerHTML={{ __html: post.html }} />

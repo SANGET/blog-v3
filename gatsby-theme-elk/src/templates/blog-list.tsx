@@ -3,6 +3,7 @@ import { graphql, navigate } from 'gatsby';
 import { Pagination } from '@deer-ui/core/pagination';
 
 import { ToolTip } from '@deer-ui/core/tooltip';
+import { Grid } from '@deer-ui/core/grid';
 import SEO from '../components/seo';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -159,13 +160,15 @@ class BlogList extends React.Component<BlogListProps> {
                       </h4>
                       <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
                     </div>
-                    <div className="subcontent">
+                    <Grid
+                      container
+                      wrap="wrap"
+                      className="subcontent">
                       <TimeTip date={date} className="time-helper" />
                       {
                         enabledVisitor && (
                           <ToolTip
                             {...iconMap.visit}
-                            className="mr10"
                             title="Visitor">
                             <span className="ps10">
                               {currVisit}
@@ -177,7 +180,7 @@ class BlogList extends React.Component<BlogListProps> {
                       {
                         enabledLike && (
                           <ToolTip
-                            className="mr10"
+                            className="ml10"
                             {...iconMap.like(false)}
                             title="Likes">
                             <span className="ps10">
@@ -189,7 +192,7 @@ class BlogList extends React.Component<BlogListProps> {
                       }
                       {/* <span className="flex"></span>
                       <Tags tags={tags} /> */}
-                    </div>
+                    </Grid>
                     {/* {timeDOM}
                       <span className="read-time ml20">
                         <Icon n="eye" s="r" classNames={['mr5']} />
