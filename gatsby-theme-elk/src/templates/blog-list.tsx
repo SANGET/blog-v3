@@ -101,8 +101,8 @@ class BlogList extends React.Component<BlogListProps> {
       ];
       Promise.all(getDataQueue)
         .then(([visitors, likes]) => {
-          visitorAndLikeCache.setItem('visitorList', visitors.counter);
-          visitorAndLikeCache.setItem('likeList', likes.counter);
+          this.visitorAndLikeCache.setItem('visitorList', visitors.counter);
+          this.visitorAndLikeCache.setItem('likeList', likes.counter);
           this.setState({
             visitorList: visitors.counter,
             likeList: likes.counter

@@ -91,8 +91,8 @@ class BlogPostTemplate extends React.Component<{}, {
       ];
       Promise.all(getDataQueue)
         .then(([like]) => {
-          visitorAndLikeDetailCache.setItem(`${blogTitle}_currVisit`, visitResData);
-          visitorAndLikeDetailCache.setItem(`${blogTitle}_currLike`, like);
+          this.visitorAndLikeDetailCache.setItem(`${blogTitle}_currVisit`, visitResData);
+          this.visitorAndLikeDetailCache.setItem(`${blogTitle}_currLike`, like);
           this.setState({
             currVisit: visitResData,
             currLike: like,

@@ -29,7 +29,9 @@ const Wrapper = ({ children, props }) => {
     if (blogHelperOptions) {
       const { apiUrl } = blogHelperOptions;
       props.BlogHelperAPI.setRequest({
-        baseUrl: apiUrl,
+        baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : apiUrl,
+        // baseUrl: 'https://lxz03fie0k.execute-api.ap-northeast-1.amazonaws.com/prod',
+        // baseUrl: apiUrl,
       });
     }
   }, []);
