@@ -3,13 +3,11 @@ export class SessionCache {
 
   storageData = {}
 
-  Storage = window.sessionStorage
+  Storage!: Storage
 
   constructor(storageKey: string, useLocalStoage = false) {
     this.storageKey = storageKey;
-    if (useLocalStoage) {
-      this.Storage = localStorage;
-    }
+    this.Storage = useLocalStoage ? localStorage : sessionStorage;
   }
 
   getItem = (remark) => {
