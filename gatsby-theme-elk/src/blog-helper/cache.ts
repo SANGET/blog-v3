@@ -3,12 +3,17 @@ export class SessionCache {
 
   storageData = {}
 
-  constructor(storageKey: string) {
+  Storage = window.sessionStorage
+
+  constructor(storageKey: string, useLocalStoage = false) {
     this.storageKey = storageKey;
+    if (useLocalStoage) {
+      this.Storage = localStorage;
+    }
   }
 
   getItem = (remark) => {
-    const storage = sessionStorage.getItem(this.storageKey);
+    const storage = this.Storage.getItem(this.storageKey);
     let storageObj;
     let res;
     if (storage) {
@@ -24,6 +29,6 @@ export class SessionCache {
 
   setItem = (remark, data) => {
     this.storageData[remark] = data;
-    sessionStorage.setItem(this.storageKey, JSON.stringify(this.storageData));
+    this.Storage.setItem(this.storageKey, JSON.stringify(this.storageData));
   }
 }

@@ -16,6 +16,7 @@ import Link from '../components/link';
 //   GetVisitorsByTitles, GetLikeByTitles, LikeBlog, VisitBlog, Counter
 // } from '../blog-helper/api';
 import { iconMap } from '../utils/constants';
+import { SessionCache } from '../blog-helper/cache';
 
 const delayExec = (new DebounceClass()).exec;
 
@@ -28,6 +29,7 @@ const BackToTop = () => (
   </span>
 );
 
+const visitorAndLikeDetailCache = new SessionCache('visitorAndLikeDetailCache', true);
 
 class BlogPostTemplate extends React.Component<{}, {
   currVisit: {};
@@ -46,16 +48,17 @@ class BlogPostTemplate extends React.Component<{}, {
 
   blogHelperOptions
 
-  state = {
-    currVisit: {},
-    currLike: {},
-    liking: false
-  }
-
   constructor(props) {
     super(props);
 
     this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
+    const blogTitle = this.getBlogTitle();
+
+    this.state = {
+      currVisit: visitorAndLikeDetailCache.getItem(`${blogTitle}_currVisit`) || {},
+      currLike: visitorAndLikeDetailCache.getItem(`${blogTitle}_currLike`) || {},
+      liking: false
+    };
   }
 
   componentDidMount() {
@@ -65,18 +68,22 @@ class BlogPostTemplate extends React.Component<{}, {
     this.initBlogData();
   }
 
+  getBlogTitle = () => this.props.data.markdownRemark.frontmatter.title;
+
   initBlogData = async () => {
     const { BlogHelperAPI } = this.props;
-    const siteTitle = this.props.data.markdownRemark.frontmatter.title;
-    const visitResData = await this.visitBlog(siteTitle);
+    const blogTitle = this.getBlogTitle();
+    const visitResData = await this.visitBlog(blogTitle);
     setTimeout(() => {
       const { enabledLike, enabledVisitor } = this.blogHelperOptions;
       const getDataQueue = [
-        // enabledVisitor && BlogHelperAPI.GetVisitorsByTitles([siteTitle]),
-        enabledLike && BlogHelperAPI.GetLikeByTitles([siteTitle], true)
+        // enabledVisitor && BlogHelperAPI.GetVisitorsByTitles([blogTitle]),
+        enabledLike && BlogHelperAPI.GetLikeByTitles([blogTitle], true)
       ];
       Promise.all(getDataQueue)
         .then(([like]) => {
+          visitorAndLikeDetailCache.setItem(`${blogTitle}_currVisit`, visitResData);
+          visitorAndLikeDetailCache.setItem(`${blogTitle}_currLike`, like);
           this.setState({
             currVisit: visitResData,
             currLike: like,

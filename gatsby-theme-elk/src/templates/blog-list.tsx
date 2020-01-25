@@ -17,6 +17,7 @@ import { CommonPageProps } from '../utils/types';
 //   GetVisitorsByTitles, VisitBlog, GetLikeByTitles
 // } from '../blog-helper/api';
 import { iconMap } from '../utils/constants';
+import { SessionCache } from '../blog-helper/cache';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
@@ -59,12 +60,14 @@ const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edg
   return res;
 };
 
+const visitorAndLikeCache = new SessionCache('visitorAndLikeCache', true);
+
 class BlogList extends React.Component<BlogListProps> {
   blogHelperOptions
 
   state = {
-    visitorList: [],
-    likeList: [],
+    visitorList: visitorAndLikeCache.getItem('visitorList') || [],
+    likeList: visitorAndLikeCache.getItem('likeList') || [],
   }
 
   constructor(props) {
@@ -89,6 +92,8 @@ class BlogList extends React.Component<BlogListProps> {
       ];
       Promise.all(getDataQueue)
         .then(([visitors, likes]) => {
+          visitorAndLikeCache.setItem('visitorList', visitors.counter);
+          visitorAndLikeCache.setItem('likeList', likes.counter);
           this.setState({
             visitorList: visitors.counter,
             likeList: likes.counter
