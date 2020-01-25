@@ -29,8 +29,6 @@ const BackToTop = () => (
   </span>
 );
 
-const visitorAndLikeDetailCache = new SessionCache('visitorAndLikeDetailCache', true);
-
 class BlogPostTemplate extends React.Component<{}, {
   currVisit: {};
   currLike: {};
@@ -48,20 +46,31 @@ class BlogPostTemplate extends React.Component<{}, {
 
   blogHelperOptions
 
+  visitorAndLikeDetailCache
+
   constructor(props) {
     super(props);
 
     this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
-    const blogTitle = this.getBlogTitle();
 
     this.state = {
-      currVisit: visitorAndLikeDetailCache.getItem(`${blogTitle}_currVisit`) || {},
-      currLike: visitorAndLikeDetailCache.getItem(`${blogTitle}_currLike`) || {},
+      currVisit: {},
+      currLike: {},
       liking: false
     };
   }
 
   componentDidMount() {
+    if (!this.visitorAndLikeDetailCache) {
+      this.visitorAndLikeDetailCache = new SessionCache('visitorAndLikeDetailCache', true);
+    }
+    const blogTitle = this.getBlogTitle();
+
+    this.setState({
+      currVisit: this.visitorAndLikeDetailCache.getItem(`${blogTitle}_currVisit`) || {},
+      currLike: this.visitorAndLikeDetailCache.getItem(`${blogTitle}_currLike`) || {},
+    });
+
     setTimeout(() => {
       this.setupTOC();
     }, 100);

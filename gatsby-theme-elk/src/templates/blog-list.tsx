@@ -60,23 +60,32 @@ const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edg
   return res;
 };
 
-const visitorAndLikeCache = new SessionCache('visitorAndLikeCache', true);
-
 class BlogList extends React.Component<BlogListProps> {
   blogHelperOptions
 
-  state = {
-    visitorList: visitorAndLikeCache.getItem('visitorList') || [],
-    likeList: visitorAndLikeCache.getItem('likeList') || [],
-  }
+  visitorAndLikeCache
 
   constructor(props) {
     super(props);
 
     this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
+
+    this.state = {
+      visitorList: [],
+      likeList: [],
+    };
   }
 
   componentDidMount() {
+    if (!this.visitorAndLikeCache) {
+      this.visitorAndLikeCache = new SessionCache('visitorAndLikeCache', true);
+    }
+
+    this.setState({
+      visitorList: this.visitorAndLikeCache.getItem('visitorList') || [],
+      likeList: this.visitorAndLikeCache.getItem('likeList') || [],
+    });
+
     this.initBlogVisitorsData();
   }
 

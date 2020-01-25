@@ -41,11 +41,12 @@ const setFPHeader = async (data) => {
 
 $R.useBefore(setFPHeader);
 
-const LikeCache = new SessionCache('LikeCache');
+let LikeCache;
 /**
  * 喜欢博客，暂时只有喜欢，没有取消
  */
 export const LikeBlog = async (blogTitle: string) => {
+  if (!LikeCache) LikeCache = new SessionCache('LikeCache');
   const hasLiked = LikeCache.getItem(blogTitle);
   if (hasLiked) {
     return {
@@ -77,11 +78,12 @@ export const GetLikeByTitles = async (blogTitles: string[], isReturnDetail = fal
   return res.data;
 };
 
-const VisitCache = new SessionCache('VisitCache');
+let VisitCache;
 /**
  * 访问博客
  */
 export const VisitBlog = async (blogTitle: string) => {
+  if (!VisitCache) VisitCache = new SessionCache('VisitCache');
   const hasVisited = VisitCache.getItem(blogTitle);
   // if (hasVisited) {
   //   return {
