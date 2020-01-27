@@ -3,7 +3,7 @@ author: Alex
 date: 2019-07-16
 layout: post
 title: 如何向 ArrayBuffer 写入 Uint64 数据
-description: 先从 JS 的 Uint53 说起...
+description: 先从 JS 的 Number 说起...
 keywords: ArrayBuffer Uint64, Uint64 js, protobuf uint64
 # permalink: /protobufjs-uint64
 tags: 
@@ -11,11 +11,11 @@ tags:
   - 前端
 ---
 
-## JS 的 Uint53
+## JS 的 Number
 
-JS 的 Number 精度只有 「-2^52 ~ 2^52 - 1」，可以通过 `Number.MAX_SAFE_INTEGER` 查看 JS 的安全运算范围。
+JS 的 Number 的实现是基于 IEEE 754 的浮点数标准（Standard for Floating-Point Arithmetic），所以整数部分的精度只有 「-2^52 ~ 2^52 - 1」，可以通过 `Number.MAX_SAFE_INTEGER` 查看 JS 的安全运算范围。
 
-由于这个原因，在一些需要更精确运算的应用场景中，JS Number 精度就不够了，例如需要把 64 位数字写入到 buffer 数组中。
+由于这个原因，在一些需要更精确运算的应用场景中，JS Number 精度就不够了，例如需要把 64 位整数（Int64）写入到 buffer 数组中。
 
 那怎么解决 JS 的精度问题？
 
@@ -23,7 +23,7 @@ JS 的 Number 精度只有 「-2^52 ~ 2^52 - 1」，可以通过 `Number.MAX_SAF
 
 ## 使用 BigInt
 
-在最新的 stage3 中，引入了 BigInt API，用于解决超出 JS Number 运算范围的精度问题。
+在最新的 ECMAScript 标准中，已经将 BigInt 定义为 JS 的原始类型（Primitive value）。
 
 >打开浏览器的控制台输入
 
@@ -48,17 +48,17 @@ view.setBigUint64(offset, BigInt('123456789012412421521'), littleEndian);
 console.log(view) // 刚好用 64 字节写满 8 位的 buffer
 ```
 
-但是事情并没有那么一帆风顺，目前只有 Chrome 和 Firefox 等主流浏览器实现了，Safari 系列的 javascriptCore 引擎并不支持，需要用另外的方法兼容。
+但是事情并没有那么一帆风顺，目前只有 Chrome 和 Firefox 等主流浏览器实现了，Safari 系列暂不支持，需要用另外的方法兼容。
 
-如何兼容不支持 `BigInt` 的 js 引擎？
+如何兼容不支持 `BigInt` 的浏览器？
 
 --------------
 
-## 使用 Chrome 团队出品的 JSBI
+## 使用 Chrome 团队的 JSBI
 
 - [JSBI GitHub](https://github.com/GoogleChromeLabs/jsbi#readme)
 
-可以兼容大数据运算的需求
+这是根据 ECMAScript 给出对于 BigInt 的定义的 JS polyfill 实现，完美实现 BigInt
 
 ```js
 import JSBI from 'jsbi'
@@ -78,9 +78,9 @@ console.log(String(result));
 
 --------------
 
-## 操作 buffer 中 64 位数据的方案
+通过修改 DataView 的原型，实现写入 Int64 到 buffer 操作的浏览器兼容方案：
 
-写一个 polyfill，在项目中引入，以下例子为 `TS`
+> 以下例子为 `TS`
 
 ```ts
 import JSBI from 'jsbi';
