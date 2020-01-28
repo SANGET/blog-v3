@@ -267,7 +267,7 @@ class BlogPostTemplate extends React.Component<{}, {
     const siteTitle = data.site.siteMetadata.title;
     const { previous, next, readTime } = pageContext;
     const {
-      title, description, date, tags, photos,
+      title, description, date, tags, photos, keywords
     } = post.frontmatter;
     const { tableOfContents } = post;
     const _needTOC = this.needTOCFilter();
@@ -277,7 +277,9 @@ class BlogPostTemplate extends React.Component<{}, {
         location={location} title={siteTitle}>
         <SEO
           title={title}
-          description={description || post.excerpt}/>
+          description={description || post.excerpt}
+          keywords={keywords}
+        />
         <article className="post-detail">
           <header className="post-header">
             <h1>
@@ -373,6 +375,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        keywords
         needTOC
         tags
       }

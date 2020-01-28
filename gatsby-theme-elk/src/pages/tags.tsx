@@ -20,7 +20,7 @@ const TagsPage = ({
   const allTags = group.length;
   return (
     <Layout location={location} title={title}>
-      <SEO title={`${title}的文章标签`} />
+      <SEO title="Tags" />
       <div>
         <h1>Tags</h1>
         <br/>

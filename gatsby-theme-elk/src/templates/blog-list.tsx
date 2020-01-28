@@ -138,7 +138,7 @@ class BlogList extends React.Component<BlogListProps> {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title={siteTitle}
+          title="Blog list"
           keywords={['blog', 'gatsby', 'javascript', 'react']}/>
         <Bio />
         <div className="post-wrapper">
@@ -147,7 +147,9 @@ class BlogList extends React.Component<BlogListProps> {
               posts.map(({ node }, idx) => {
                 const { slug } = node.fields;
                 const title = node.frontmatter.title || slug;
-                const { description, date, tags } = node.frontmatter;
+                const {
+                  description, date, tags, author
+                } = node.frontmatter;
 
                 /** blogHelper */
                 const currVisit = enabledVisitor ? visitorList[idx] : 0;
@@ -266,6 +268,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            author
             # tags
             description
           }

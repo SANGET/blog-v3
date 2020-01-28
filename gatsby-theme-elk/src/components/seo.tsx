@@ -6,13 +6,26 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+interface SEOProps {
+  title: string;
+  description?: string;
+  lang?: string;
+  keywords?: string[];
+  meta?: {}[];
+  resources?: ({
+    type: string;
+    rel: string;
+    url: string;
+  })[];
+}
+
 function SEO({
   description, lang, meta, title, resources,
-}) {
+  keywords
+}: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -57,22 +70,26 @@ function SEO({
           property: 'og:type',
           content: 'website',
         },
-        // {
-        //   name: `twitter:card`,
-        //   content: `summary`,
-        // },
-        // {
-        //   name: `twitter:creator`,
-        //   content: site.siteMetadata.author,
-        // },
-        // {
-        //   name: `twitter:title`,
-        //   content: title,
-        // },
-        // {
-        //   name: `twitter:description`,
-        //   content: metaDescription,
-        // },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: 'keywords',
+          content: keywords?.join(',')
+        }
       ].concat(meta)}>
       {
         Array.isArray(resources) && resources.map((resource, idx) => {
@@ -94,16 +111,9 @@ function SEO({
 }
 
 SEO.defaultProps = {
-  lang: 'en',
+  lang: 'cn',
   meta: [],
   description: '',
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 };
 
 export default SEO;

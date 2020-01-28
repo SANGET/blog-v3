@@ -16,7 +16,7 @@ const ArchivePage = (props) => {
   let perYear;
   return (
     <Layout location={location} title={sideTitle}>
-      <SEO title={`${sideTitle}的文章标签`} />
+      <SEO title="Archive" />
       <div>
         <h1>Archive</h1>
         <br/>

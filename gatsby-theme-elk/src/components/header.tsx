@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Container } from '@deer-ui/core/container';
 import Link from './link';
 
-const rootPath = `${__PATH_PREFIX__}/`;
+const rootPath = `${__PATH_PREFIX__ || ''}/`;
 
 const Header = (props) => {
   const siteData = useStaticQuery(graphql`
@@ -29,7 +29,9 @@ const Header = (props) => {
       {
         sideMenu.map((nav) => {
           const { title: subTitle, path, activeFilter } = nav;
-          const isActive = activeFilter ? activeFilter(pathname) : pathname === path;
+          const isRoot = path === rootPath;
+          // eslint-disable-next-line no-nested-ternary
+          const isActive = isRoot ? pathname === path : (activeFilter ? activeFilter(pathname) : pathname.indexOf(path) !== -1);
           return (
             <Link
               key={path}

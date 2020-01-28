@@ -4,19 +4,29 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const AboutPage = ({
+const PageLayout = ({
   location, data: {
-    markdownRemark: { html },
+    markdownRemark: {
+      html,
+      frontmatter: {
+        title: pageTitle
+      }
+    },
   },
-}) => (
-  <Layout location={location}>
-    <div className="markdown-body">
-      <div className="about-page" dangerouslySetInnerHTML={{ __html: html }} ></div>
-    </div>
-  </Layout>
-);
+}) => {
+  return (
+    <Layout location={location}>
+      <SEO
+        title={pageTitle}
+      />
+      <div className="markdown-body">
+        <div className="about-page" dangerouslySetInnerHTML={{ __html: html }} ></div>
+      </div>
+    </Layout>
+  );
+};
 
-export default AboutPage;
+export default PageLayout;
 
 export const queryAbout = graphql`
   query PageQuery($slug: String!) {
