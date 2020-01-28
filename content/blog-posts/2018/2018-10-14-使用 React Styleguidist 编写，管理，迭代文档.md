@@ -5,7 +5,8 @@ layout: post
 title: 使用 React Styleguidist 编写，管理，迭代文档(已废弃)
 description: 其实 React Styleguidist 挺难用的，后来改用了 docz, docz 也很难用，后来基于 gatsby 重新做了一个
 # permalink: /use-react-styleguidist
-keywords: 制作前端库文档
+keywords: 
+  - 编写前端 UI Components 文档
 tags: 
   - 记录
   - 技术

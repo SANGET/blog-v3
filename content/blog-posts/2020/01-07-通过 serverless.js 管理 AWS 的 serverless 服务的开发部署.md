@@ -4,6 +4,10 @@ date: 2020-01-07
 layout: post
 title: 通过 serverless.js 管理 AWS 的 serverless 服务的开发部署
 description: 最近趁着闲暇时间研究了一下 AWS 的各种服务，并且记录了如何通过 serverless.js 管理 serverless 服务的开发和部署。
+keywords: 
+  - serverless
+  - serverless.js
+  - AWS serverless
 tags:
   - 记录
   - serverless

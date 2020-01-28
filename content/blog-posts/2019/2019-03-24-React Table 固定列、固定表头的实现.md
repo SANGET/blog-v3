@@ -5,8 +5,10 @@ layout: post
 title: 如何实现 Table 的固定列（Fixed column）、固定表头（Fixed Header）
 description: 可应用于生产的 React Table 实现
 photos: https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/other/react-table.png
-# permalink: /react-table
-keywords: React Table, Table 固定列, Table 固定表头
+keywords: 
+  - React Table
+  - Table 固定列
+  - Table 固定表头
 tags: 
   - 技术
   - 前端

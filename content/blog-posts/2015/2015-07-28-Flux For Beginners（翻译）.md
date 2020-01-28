@@ -3,7 +3,10 @@ author: Alex
 date: 2015-07-28
 layout: post
 title: Flux For Beginners（翻译）
-keywords: React, Flux, 翻译
+keywords: 
+  - React
+  - Flux
+  - 翻译
 # # permalink: "/application-tech-question"
 tags:
   - 学习

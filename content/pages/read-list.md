@@ -1,7 +1,7 @@
 ---
 author: Alex
 layout: page
-title: Read list
+title: Reading list
 ---
 
 > 学无止境

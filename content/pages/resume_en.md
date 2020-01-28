@@ -1,7 +1,7 @@
 ---
 author: Alex
 layout: page
-title: Alex's Resume
+title: Alex's Resume English version
 ---
 
 <escape>
