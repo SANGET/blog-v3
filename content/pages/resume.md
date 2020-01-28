@@ -7,7 +7,7 @@ title: Alex's Resume
 <escape>
   <div class="no-print simple-nav">
     <a href="/resume_en" class="mr20">English version</a>
-    <a href="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/other/resume.pdf">PDF简历下载</a>
+    <a href="https://cdn.jsdelivr.net/gh/SANGET/resource@master/files/resume.pdf">PDF简历下载</a>
   </div>
 </escape>
 

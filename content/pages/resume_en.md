@@ -8,7 +8,7 @@ title: Alex's Resume English version
   <div class="no-print simple-nav">
     <a href="/resume" class="mr20">中文简历</a>
     <a href="/about" class="mr20">More information</a>
-    <a href="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/other/resume.pdf">PDF resume</a>
+    <a href="https://cdn.jsdelivr.net/gh/SANGET/resource@master/files/resume.pdf">PDF resume</a>
   </div>
 </escape>
 
