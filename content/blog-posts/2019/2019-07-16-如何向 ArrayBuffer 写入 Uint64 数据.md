@@ -16,7 +16,7 @@ tags:
 
 ## JS 的 Number
 
-JS 的 Number 的实现是基于 IEEE 754 的浮点数标准（Standard for Floating-Point Arithmetic），所以整数部分的精度只有 「-2^52 ~ 2^52 - 1」，可以通过 `Number.MAX_SAFE_INTEGER` 查看 JS 的安全运算范围。
+JS 的 Number 的实现是基于 IEEE 754 的浮点数标准（Standard for Floating-Point Arithmetic），整数部分的精度只有 「-2^52 ~ 2^52 - 1」，可以通过 `Number.MAX_SAFE_INTEGER` 查看 JS 的安全运算范围。
 
 由于这个原因，在一些需要更精确运算的应用场景中，JS Number 精度就不够了，例如需要把 64 位整数（Int64）写入到 buffer 数组中。
 
