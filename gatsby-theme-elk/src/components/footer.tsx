@@ -59,8 +59,7 @@ const Footer = ({ title }) => {
             github && (
               <ToolTip title="Github">
                 <a href={github}
-                  rel="noopener noreferrer"
-                  className="ms5" target="_blank">
+                  rel="noopener noreferrer" target="_blank">
                   <Icon n="github" s="b" />
                 </a>
               </ToolTip>
