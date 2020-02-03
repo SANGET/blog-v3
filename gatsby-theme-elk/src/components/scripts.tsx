@@ -12,9 +12,10 @@ const getImgWidth = (url) => new Promise((resolve) => {
 
 const Scripts = () => {
   React.useEffect(() => {
+    const rootWrapper = document.querySelector('#wrapper');
+    if (rootWrapper) rootWrapper.classList.add('ready');
     window.$(document).ready(() => {
       (function ($) {
-        $('#wrapper').addClass('ready');
         $('.photoset-grid').photosetGrid({
           // onComplete: () => {
           // }
