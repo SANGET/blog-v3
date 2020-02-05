@@ -111,7 +111,7 @@ function SEO({
 }
 
 SEO.defaultProps = {
-  lang: 'cn',
+  lang: 'en',
   meta: [],
   description: '',
 };
