@@ -4,7 +4,7 @@ layout: page
 title: Reading list
 ---
 
-> 学无止境
+---------
 
 - [x] 《深入浅出 Node》
 - [x] 《JavaScript 高级程序设计》

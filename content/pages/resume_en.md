@@ -7,22 +7,19 @@ title: Alex's Resume English version
 <escape>
   <div class="no-print simple-nav">
     <a href="/resume" class="mr20">中文简历</a>
-    <a href="/about" class="mr20">More information</a>
-    <a href="https://cdn.jsdelivr.net/gh/SANGET/resource@master/files/resume.pdf">PDF resume</a>
+    <a href="https://cdn.jsdelivr.net/gh/SANGET/resource@master/files/resume_en.pdf">PDF resume</a>
   </div>
 </escape>
 
 ## My Profile
 
-I am Alex, a Frontend engineer, six years experience of Frontend develop. The main work in the pass was: Construction, planning and application of `UI lib`; Construction and application of `Web admin dashboard Framework`; Front-end project quality control and team coordination.
-
-Like to explore the pinciple of how things work, like to `read`, `sport`, `photography`, `playing guitar`, `coding`.
+I am Alex Zhang, a Frontend engineer, seven years experience of Frontend develop. The main work in the pass was: Front-end infrastructure construction, front-end module development, product development, etc.
 
 --------
 
 ## Skill
 
-- Frondend: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`
+- Frondend:  `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`, `TypeORM`
 - Backend: `Node`, `DynamoDB`
 - Deployment: `Docker`, `Netlify`, `Travis`
 - Testing: `Jest`, `Nightwatch`, `Cypress`
@@ -34,7 +31,7 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
 
 ### Synergy88
 
-> 2015.02 - 2020.02 (Manila/PH)
+> 2015.02 - 2020.02 (Manila PH)
 
 - Company Info: toB Integrated technology provider
 - Main business: Business system development, game development and API access, IM services..
@@ -43,16 +40,50 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
 
 ### Guangzhou Customs
 
-> 2013.07 - 2015.01 (Guangzhou/China)
+> 2013.07 - 2015.01 (Guangzhou China)
 
 - Unit Info: China Customs.
 - Main business: Customs Business.
-- Position: software engineer
+- Position: Software engineer
 - Responsibility: Responsible for the development and maintenance of China Customs internal business system, new system prototyping, front-end application development.
 
 --------
 
 ## Project experience
+
+### @mini-code
+
+> Synergy88 - Front-end infrastructure
+
+- Introduction：`@mini-code` is a organization of web frontend of base function library, provide a environment for frontend app's development and deployment, data filter, RESTFul API, Testing, etc.
+- Structure：
+  - `@mini-code/base-func` Core function library，provide modules of  `Array`, `Number`, `Datetime`, `Eventemitter` 
+  - `@mini-code/request` HTTP requestment tool library, based on fetch API, provides data filtering support by middleware. Built-in `RC4 encryption and decryption` and` LZMA decompression` middleware, supporting RESTFul API
+  - `@mini-code/scripts` Development environment based on `react-scripts` extension
+  - `@mini-code/page-generator` Page generation tool, made to reduce the workload of management system development, improve system consistency and maintainability
+  - `version-helper` A library that provides uniform application version numbers
+  - `web-server` Based on node's web server, built with`typescript + typeORM + express + mysql + docker`
+- Resources
+  - [GitHub](https://github.com/minimal-studio)
+
+### @deer-ui
+
+> Synergy88 - Front-end infrastructure
+
+- Introduction：`@ deer-ui` is a UI organization based on` React`, which provides flexible and extensible front-end basic support for quickly startup web applications
+- Structure：
+  - `@deer-ui/core` Core UI library, providing extensible UI Components foundation. atomic design principles
+  - `@deer-ui/enhance-ui` Collection of enhanced UI components based on @ deer-ui / core
+- Technical tags: `typescript`, `react`
+- Applications：
+  - [@deer-ui/admin-scaffold][scaffold-demo] Frontend scaffold for admin system
+  - [elk_chat][elk-chat] Protobuf-based IM client
+  - [react-ui-doc][react-ui-doc] Document generator for writing UI Components documents with mdx
+  - [gatsby-theme-elk][gatsby-theme-elk] Markdown-based website generator
+  - Business system of company
+- Resources
+  - [@deer-ui github][deer-ui]
+  - [@deer-ui online doc][ui-doc]
 
 ### IM Client
 
@@ -69,21 +100,6 @@ Like to explore the pinciple of how things work, like to `read`, `sport`, `photo
   3. `UI` for data display and processing in response to user operations, as well as business processing, etc. Use `React` as a renderer.
 
 Technical labels: `Typescript`, `Protobuf`, `React`, `Redux`, `Flutter`
-
-### Front-end base library and framework construction
-
-> Synergy88
-
-Purpose: Standardize how the front-end team develops, improve project development efficiency, establish a sound document mechanism, and maintain projects sustainably.
-
-Libs:
-
-- [`basic-helper`][basic-helper]: Provides commonly used data processing functions such as `Time Processing`, `Money Format Processing`, `Array Processing`, `Universal Subscription Publishing Mechanism`, `Local Storage Interface` (For Web and React-Native), etc.
-- [`request`][request]: Http request encapsulation based on fetch API, built-in middleware (built-in RC4 data encryption and decryption, LZMA data decompression middleware) mechanism, RESTFul API support.
-- [`deer-ui`][deer-ui]: Base on `React`'s `UI` Lib, used in all front-end projects of the company, with unified UI interaction and presentation, improving development efficiency.
-- [`admin-scaffold`][admin-scaffold]: Front-end admin manager system's scaffold, with business and UI separation, declarative page business development, improve development efficiency, unified UI interaction, style, support for multi-tab pages, parameter routing jumps, etc.
-
-Technical labels: `Typescript`, `React`, `Node`
 
 ### Business Platform
 
@@ -115,36 +131,32 @@ Technical labels: `Polymer`, `Node`, `MONO`
 
 --------
 
-## Open source libs
-
-- [elk-chat](https://chat.thinkmore.xyz/) IM client
-- [basic-helper](https://basic.thinkmore.xyz/) JS basic helper lib
-- [request](https://request.thinkmore.xyz/) HTTP request lib with middleware
-- [deer-ui](https://ui.thinkmore.xyz/) Base on React's UI lib
-- [admin-scaffold](https://scaffold.thinkmore.xyz/) Scaffold of web admin dashboard
-
-<!-- --------
-
-## Educational experience
-
-- Guangdong Industry Technical College -->
-
---------
-
 ## Contact
 
-- <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
-- <a href="https://github.com/SANGET" target="_blank">GitHub</a>
-- [Personal Blog](https://thinkmore.xyz/)
+- Email：
+  - <a href="mailto:zzzxjalext@outlook" target="_top">zzzxjalext@outlook.com</a>
+  - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
+- Telegram：atob('YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==')
+- Phone：
+- Social：
+  - [GitHub](https://github.com/SANGET)
 
 ## Self-evaluation
 
 <!-- - Living in an English environment for 4 years, improving my self. -->
 - Self-discipline, self-motivation, keep learning, pursuit of perfection, seeking breakthrough.
 
-[request]: https://github.com/minimal-code/request
-[basic-helper]: https://github.com/minimal-code/basic-helper
-[deer-ui]: https://github.com/minimal-code/deer-ui
-[admin-scaffold]: https://github.com/minimal-code/admin-scaffold
+[request]: https://github.com/minimal-studio/request
+[basic-helper]: https://github.com/minimal-studio/basic-helper
+[deer-ui]: https://github.com/minimal-studio/deer-ui
+[admin-scaffold]: https://github.com/minimal-studio/admin-scaffold
+[admin-dashboard]: https://github.com/minimal-studio/admin-dashboard
 [elk-chat]: https://github.com/elk-chat/elk_web
-[chat]: https://chat.thinkmore.xyz/
+[chat-online]: https://chat.thinkmore.xyz/
+
+[dashboard-doc]: https://admin.thinkmore.xyz/
+[scaffold-demo]: https://scaffold.thinkmore.xyz/
+[ui-doc]: https://ui.thinkmore.xyz/
+[refactor-system]: https://thinkmore.xyz/%E9%87%8D%E6%9E%84%E9%A1%B9%E7%9B%AE(%E4%B8%80)
+[react-ui-doc]: https://github.com/SANGET/react-ui-doc
+[gatsby-theme-elk]: https://github.com/SANGET/react-ui-doc

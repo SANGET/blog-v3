@@ -13,15 +13,11 @@ title: Alex's Resume
 
 ## 个人简介
 
-我是张相杰（Alex），前端工程师，从事前端相关工作 7 年。过去主要工作为：前端基础建设与应用，前端模块研发，产品研发等。
-
-喜欢 `coding`、`读书`、`运动`、`摄影`、`吉他`
-
-Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
+我是张相杰（Alex），前端工程师，从事前端工作 7 年 +。过去主要工作为：前端基础建设与应用，前端模块研发，产品研发等。
 
 ## 技能树
 
-- 前端: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`
+- 前端: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`, `TypeORM`
 - 后端: `Node`, `DynamoDB`
 - 测试: `Jest`, `Nightwatch`, `Cypress`
 - 部署: `Docker`, `Netlify`, `Travis`
@@ -33,22 +29,21 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
 
 > 2015.02 - 2020.02 （海外 | 马尼拉）
 
-- 公司简介：toB 综合技术提供商。为集团旗下的市场部门提供「业务系统研发」、「产品研发」服务，包括「交易系统」、「财务系统」、「游戏」、「IM 服务」
-- 行业介绍：地产、餐饮、游戏动画
+- 公司简介：toB 综合技术提供商，为集团内市场部门提供`业务系统研发`、`产品研发`等服务，例如`交易系统`、`财务系统`、`IM 服务`、`游戏制作`等
+- 行业介绍：IT、地产、餐饮、游戏动画
 - 职位：前端组负责人
 - 职责：
-  - 负责前端基础建设与应用
+  - 前端基础建设
   - 前端团队建设
-  - 代码审阅
+  - 代码审阅、任务分配、进度跟踪
   - UT、e2e 测试
-  - 前端任务分配及进度跟踪
   - 前端技术分享
 
 ### 广州海关技术处
 
 > 2013.07 - 2015.01 （广东 | 广州）
 
-- 单位简介：广州海关技术处软件科，为中国海关研发业务系统。例如车辆进出关、国际司法业务系统
+- 单位简介：广州海关技术处软件科，为中国海关研发`业务系统`。例如`车辆进出关`、`国际司业务系统` 等
 - 行业介绍：海关事务，进出口业务，公共服务
 - 职位：软件工程师
 - 职责：
@@ -62,32 +57,31 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
 
 > Synergy88 - 前端基础建设
 
-- 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端的开发、构建环境、基础数据处理、RESTFul API、测试流程等
+- 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API，测试流程等支持
 - 组织结构：
-  - `@mini-code/base-func` 核心函数库，包含处理常用的 `数组`, `数字`, `时间`, `订阅发布` 等功能模块
-  - `@mini-code/request` 通讯工具类库，基于 fetch 的封装，采取中间件机制，对数据进行过滤。内置了「RC4 加解密」和「LZMA 压解缩」中间件，支持 RESTFul API
-  - `@mini-code/scripts` 基于 `react-scripts` 扩展的开发环境，提供 `react + typescript` 应用的开发环境
-  - `@mini-code/page-generator` 页面生成工具，为了减轻繁重的管理系统页面的开发任务工作量而制作，提高页面一致性，可维护性
-  - `version-helper` 产品版本助手，提供统一的版本提示。版本号构成：`x.y.z+buildVersion`
-  - `web-server` 基于 node 的 web server，适用于短平快的后端服务构建需求。`typescript + typeORM + express + mysql + docker`
+  - `@mini-code/base-func` 核心函数库，包含处理常用的 `数组`, `数字`, `时间`, `订阅发布` 等模块
+  - `@mini-code/request` HTTP 请求工具，基于 fetch API，提供中间件机制，支持数据过滤。内置了`RC4 加解密`和`LZMA 压解缩`中间件，支持 RESTFul API
+  - `@mini-code/scripts` 基于 `react-scripts` 扩展的开发环境，根据团队定制
+  - `@mini-code/page-generator` 页面生成工具，为了减轻管理系统的开发工作量而制作，提高系统一致性，可维护性
+  - `version-helper` 提供统一的应用版本号的生产的辅助库
+  - `web-server` 基于 node 的 web server，适用于轻量级的后端服务需求。`typescript + typeORM + express + mysql + docker`
 - 相关资源
-  - [组织地址](https://github.com/minimal-studio)
+  - [GitHub](https://github.com/minimal-studio)
 
 ### @deer-ui
 
 > Synergy88 - 前端基础建设
 
-- 介绍：`@deer-ui` 是一个基于 react 的 UI 组织，为快速构建 web 应用提供灵活、可扩展的前端基础支持。由 `@deer-ui/core` 核心驱动，提供通用 UI Components，快速响应 web 客户端开发、web 管理后台开发等需求
+- 介绍：`@deer-ui` 是一个基于 `React` 的 UI 组织，为快速构建 web 应用提供灵活、可扩展的前端基础支持
 - 组织结构：
-  - `@deer-ui/core` 核心 UI 库，提供可扩展的基础，基于原子设计原则
+  - `@deer-ui/core` 核心 UI 库，提供可扩展的 UI Components 基础，原子设计原则
   - `@deer-ui/enhance-ui` 基于 `@deer-ui/core` 的增强 UI 组件集合
-  <!-- - `@deer-ui/admin-scaffold` 管理后台 `Scaffold` -->
 - 技术标签: `typescript`, `react`
-- 基于 @deer-ui 的应用：
+- 基于 `@deer-ui` 的应用：
   - [@deer-ui/admin-scaffold][scaffold-demo] 管理系统 scaffold
   - [elk_chat][elk-chat] 基于 protobuf 的 IM 客户端
   - [react-ui-doc][react-ui-doc] 使用 mdx 编写 UI Components 文档的文档生成器
-  - [gatsby-theme-elk][gatsby-theme-elk] 基于 markdown 的博客管理工具
+  - [gatsby-theme-elk][gatsby-theme-elk] 基于 markdown 的网站生成工具
   - 公司业务系统
   <!-- - [admin-dashboard][dashboard-doc] -->
 - 相关资源
@@ -96,51 +90,46 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
 
 ### IM 服务
 
-> Synergy88 - toC 业务应用
+> Synergy88 - 业务应用
 
 - 介绍：与公司业务结合，满足内部 IM 使用需求
 - 主要负责：web 客户端研发，native 客户端（flutter）研发
 - 技术结构：
   - 前后端分离
-  - web 客户端
-    - 分为 3 层结构，SDK -> Actions -> UI
-      1. `SDK`：基于 `websocket`、`protobuf` 提供 `API` 基础服务，由 Actions、UI 消费服务。
-      2. `Actions`：提供核心业务数据操作，由 `UI` 调度并消费数据。采用 redux + redux saga 管理数据。
-      3. `UI`：应用与用户交互层，调度与消费基础 Action 提供的数据和操作。采用 `react` 渲染。
+  - web 客户端分 3 层结构，SDK -> Actions -> UI
+    - `SDK`：封装 `websocket`、`protobuf` ，提供与远端交互数据的 API 服务，由 Actions、UI 调度并消费
+    2. `Actions`：提供核心业务数据操作，由 `UI` 调度并消费数据。`redux + redux saga` 管理数据
+    - `UI`：交互层，采用 `react` 渲染
   - native 客户端
     - 与 web 客户端结构类似
     - 采用 `flutter` 构建
+      - 基于 BLoC 管理数据
 - 技术标签：`typescript`, `protobuf`, `react`, `redux`, `flutter`
 - 相关资源
-  - [项目仓库][elk-chat]（客户端开源）
-  - [在线地址][chat-online]
+  - [GitHub][elk-chat]（客户端开源）
+  - [Elk-Chat Online][chat-online]
 
-### 代理-交易系统
+### 交易系统
 
 > Synergy88 - toB 业务应用
 
-- 介绍：代理-交易记账产品，提供基于代理角色层级的交易记账解决方案，SaaS 方向
-- 主要负责：提供前端基础技术支持，业务模块开发，模块划分，协调设计、前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等
+- 介绍：基于代理层级的交易系统
+- 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；，开发任务分配与跟踪；代码审阅等
 - 技术分析:
-  - 基础：`react + redux`
-  - web 应用、PWA：`react`
+  - 基础：`react` + `redux` + `typescript`
+  - web 应用、PWA：`react`, `react-native`
   - 移动端应用：`react-native`
   - 环境构建：`webpack`
-  - 业务切割：`web app`、`react-native app` 共用业务 `Action`
   - 模块管理：`yarn workspace`
-  - 代码质量：`typescript`
-  - 测试：`jest`, `Cypress`
-- 技术标签: `react`, `react-native`, `node`
-<!-- - 项目重构:
-  - 持续迭代了 5 个重大版本，最新版基于 `typescript + lerna + yarn workspace` 的方式组织项目
-  - [重构详情][refactor-system] -->
+  - 测试：`jest`, `cypress`
+- 技术标签: `react`, `react-native`, `node`, `typescript`
 
 ### 餐饮配送平台
 
 > Synergy88 - 本地生活服务
 
-- 介绍：本地餐饮配送服务平台。_原 zan.com，服务已下线_
-- 主要负责：提供前端基础技术支持，业务模块开发，模块划分，协调设计、前端对接，协调前后端对接，开发任务分配与跟踪，代码审阅等
+- 介绍：本地餐饮配送服务平台。---- _zan.com，服务已下线_
+- 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；，开发任务分配与跟踪；代码审阅等
 - 技术分析：
   - 基于移动端的 `PWA` 应用
   - 客户端 `react + redux`
@@ -150,24 +139,14 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
 
 > Synergy88 - 内部应用
 
-- 介绍：用于管理公司所有产品的前端资源的部署流程。_使用 Jenkins 代替，服务已下线_
+- 介绍：用于管理公司所有产品的前端资源的部署流程。---- _使用 Jenkins 代替，服务已下线_
 - 主要负责：项目发起者、制作者
-- 动机：随着公司业务逐渐增加，为了更好地管理产品的前端资源的发布流程而制作的管理系统
-- 工作流程：本地构建 -> 登陆发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
+- 动机：随着公司业务上升，为了更好地管理产品的前端发布流程而制作的
+- 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
 - 技术分析：
-  - `react`：管理系统的前端支持
-  - `node`：资源管理服务，shell 脚本执行器
-  - `lowDB`：基于 `json` 的数据管理工具
-
-<!-- ### node-web-server
-
-> Synergy88
-
-- 介绍：包含通用的权限控制，RESTFul 业务开发等
-- 目的：提供 SaaS 业务系统的快速业务开发支持
-- 动机：由于前后端分离的开发方式产生了接口对接沟通成本（后端人员并不考虑前端使用情况），计划从数据库类型出发，到业务 API 的开发，通过 ts 将 API 数据结构封装成 SDK，提供给客户端使用，减少开发沟通成本
-- 技术标签：`Node`, `typescript`, `Express`, `Koa`, `TypeORM`, `MYSql`, `Docker`
-- [项目仓库](https://github.com/SANGET/node-web-server) -->
+  - `@de er-ui/admin-scaffold`：管理系统的前端支持
+  - `@mini-code/web-server`：后端数据支持
+    - `lowDB`：基于 `json` 的数据管理工具
 
 -----
 
@@ -194,18 +173,21 @@ Tags `自律`、`自我驱动`，`极简主义`、`完美主义`
 
 > 个人项目
 
-- BlogHelper：基于 `serverless` 的博客助理服务，提供`点赞（like）`，`访客记录（visitor）`，`文章评论（comment）`等功能
+- BlogHelper：`serverless` 博客助理服务，提供`点赞（like）`，`访客记录（visitor）`等功能
+  - [GitHub](https://github.com/SANGET/blog-helper-serverless)
+
+## 自我评价
+
+`coding`、`读书`、`运动`、`摄影`、`吉他` 、`自律`、`自我驱动`，`极简主义`、`完美主义`
 
 ## 联系方式
 
-- Email:
-  - <a href="mailto:zzzxjalext@outlook" target="_top">zzzxjalext@outlook.com</a> 随时回复
+- Email：
+  - <a href="mailto:zzzxjalext@outlook" target="_top">zzzxjalext@outlook.com</a>
   - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
-- Telegram:
-  - atob('YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==')
-- 电话号码
-  - 暂不公开
-- 社交
+- Telegram：atob('YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==')
+- 电话号码：
+- 社交：
   - [GitHub](https://github.com/SANGET)
 
 <!-- ## 教育
