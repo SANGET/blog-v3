@@ -55,6 +55,10 @@ function SEO({
           content: 'width=device-width, initial-scale=1, maximum-scale=2',
         },
         {
+          name: 'Content-Type',
+          content: 'text/html; charset=utf-8',
+        },
+        {
           name: 'description',
           content: metaDescription,
         },

@@ -17,11 +17,11 @@ title: Alex's Resume
 
 ## 技能树
 
-- 前端: `Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`, `TypeORM`
-- 后端: `Node`, `DynamoDB`
-- 测试: `Jest`, `Nightwatch`, `Cypress`
-- 部署: `Docker`, `Netlify`, `Travis`
-- 工具: `Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
+- 前端：`Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`, `TypeORM`
+- 后端：`Node`, `DynamoDB`
+- 测试：`Jest`, `Nightwatch`, `Cypress`
+- 部署：`Docker`, `Netlify`, `Travis`
+- 工具：`Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
 
 ## 工作经历
 
@@ -76,14 +76,13 @@ title: Alex's Resume
 - 组织结构：
   - `@deer-ui/core` 核心 UI 库，提供可扩展的 UI Components 基础，原子设计原则
   - `@deer-ui/enhance-ui` 基于 `@deer-ui/core` 的增强 UI 组件集合
-- 技术标签: `typescript`, `react`
+- 技术标签：`typescript`, `react`
 - 基于 `@deer-ui` 的应用：
   - [@deer-ui/admin-scaffold][scaffold-demo] 管理系统 scaffold
   - [elk_chat][elk-chat] 基于 protobuf 的 IM 客户端
   - [react-ui-doc][react-ui-doc] 使用 mdx 编写 UI Components 文档的文档生成器
   - [gatsby-theme-elk][gatsby-theme-elk] 基于 markdown 的网站生成工具
   - 公司业务系统
-  <!-- - [admin-dashboard][dashboard-doc] -->
 - 相关资源
   - [@deer-ui github][deer-ui]
   - [@deer-ui online doc][ui-doc]
@@ -97,9 +96,9 @@ title: Alex's Resume
 - 技术结构：
   - 前后端分离
   - web 客户端分 3 层结构，SDK -> Actions -> UI
-    - `SDK`：封装 `websocket`、`protobuf` ，提供与远端交互数据的 API 服务，由 Actions、UI 调度并消费
+    1. `SDK`：封装 `websocket`、`protobuf` ，提供与远端交互数据的 API 服务，由 Actions、UI 调度并消费
     2. `Actions`：提供核心业务数据操作，由 `UI` 调度并消费数据。`redux + redux saga` 管理数据
-    - `UI`：交互层，采用 `react` 渲染
+    3. `UI`：交互层，采用 `react` 渲染
   - native 客户端
     - 与 web 客户端结构类似
     - 采用 `flutter` 构建
@@ -114,39 +113,33 @@ title: Alex's Resume
 > Synergy88 - toB 业务应用
 
 - 介绍：基于代理层级的交易系统
-- 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；，开发任务分配与跟踪；代码审阅等
-- 技术分析:
-  - 基础：`react` + `redux` + `typescript`
+- 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；开发任务分配与跟踪；代码审阅等
+- 技术分析：
+  - 基础：`react`, `redux`, `typescript`
   - web 应用、PWA：`react`, `react-native`
   - 移动端应用：`react-native`
   - 环境构建：`webpack`
   - 模块管理：`yarn workspace`
   - 测试：`jest`, `cypress`
-- 技术标签: `react`, `react-native`, `node`, `typescript`
+- 技术标签：`react`, `react-native`, `node`, `typescript`
 
 ### 餐饮配送平台
 
 > Synergy88 - 本地生活服务
 
-- 介绍：本地餐饮配送服务平台。---- _zan.com，服务已下线_
+- 介绍：本地餐饮配送服务平台。zan.com，服务已下线
 - 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；，开发任务分配与跟踪；代码审阅等
-- 技术分析：
-  - 基于移动端的 `PWA` 应用
-  - 客户端 `react + redux`
-  - 管理系统 `admin-scaffold`
+- 技术标签：`PWA`, `react + redux`, `admin-scaffold`
 
 ### 前端资源发布系统
 
 > Synergy88 - 内部应用
 
-- 介绍：用于管理公司所有产品的前端资源的部署流程。---- _使用 Jenkins 代替，服务已下线_
+- 介绍：用于管理公司所有产品的前端资源的部署流程。服务已下线，使用 Jenkins 代替
 - 主要负责：项目发起者、制作者
 - 动机：随着公司业务上升，为了更好地管理产品的前端发布流程而制作的
 - 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
-- 技术分析：
-  - `@de er-ui/admin-scaffold`：管理系统的前端支持
-  - `@mini-code/web-server`：后端数据支持
-    - `lowDB`：基于 `json` 的数据管理工具
+- 技术标签：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB`
 
 -----
 
