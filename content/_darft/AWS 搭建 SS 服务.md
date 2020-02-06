@@ -17,10 +17,10 @@
 
 ```shell
 sudo apt-get update
-apt-get install shadowsocks-libev
+sudo apt-get install shadowsocks-libev
 ```
 
-5. 编辑 /etc/shadowsocks-libev/config.json 并且启动服务
+5. 编辑 `sudo vi /etc/shadowsocks-libev/config.json` 并且启动服务
 
 ```json
 {
