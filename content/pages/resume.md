@@ -182,6 +182,7 @@ title: Alex's Resume
 - 电话号码：
 - 社交：
   - [GitHub](https://github.com/SANGET)
+  - [Linkin][linkin]
 
 <!-- ## 教育
 
@@ -201,3 +202,5 @@ title: Alex's Resume
 [refactor-system]: https://thinkmore.xyz/%E9%87%8D%E6%9E%84%E9%A1%B9%E7%9B%AE(%E4%B8%80)
 [react-ui-doc]: https://github.com/SANGET/react-ui-doc
 [gatsby-theme-elk]: https://github.com/SANGET/react-ui-doc
+
+[linkin]: https://www.linkedin.com/in/alex-zhang-391551191/
