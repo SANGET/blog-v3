@@ -964,10 +964,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@deer-ui/core@^4.0.0-rc5.6":
-  version "4.0.0-rc5.6"
-  resolved "https://registry.yarnpkg.com/@deer-ui/core/-/core-4.0.0-rc5.6.tgz#8b7aa874d83726fee2f3186f5602e71d35098790"
-  integrity sha512-fB4QfsGevoMnXl8V62OvX4O2jfPk30ZDWA2yJTS4JRG9WfyleUMOABx1nzddU5qhHoLPn8YyZJjVMt73ltO1nA==
+"@deer-ui/core@^4.0.0-rc5.7":
+  version "4.0.0-rc5.7"
+  resolved "https://registry.yarnpkg.com/@deer-ui/core/-/core-4.0.0-rc5.7.tgz#61c5bcbd3abcad76c6d88e59f68834d4e95adc04"
+  integrity sha512-MQ7sv7FlgjBuHO2rgNDbQgyjDxbEuL4rGu78UCQiMGQKd3lpEtPwmRoy79B5E41xbL0uCIGXI58fPMET8xWSEQ==
   dependencies:
     classnames "^2.2.6"
 

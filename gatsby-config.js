@@ -11,6 +11,7 @@ module.exports = {
           enabledVisitor: true,
           // API 地址
           apiUrl: 'https://lxz03fie0k.execute-api.ap-northeast-1.amazonaws.com/prod',
+          // apiUrl: 'https://blog-helper-api.thinkmore.xyz/prod',
           // apiUrl: 'http://localhost:3000',
         },
         blogContentPath: `${__dirname}/content/blog-posts`,
@@ -28,7 +29,7 @@ module.exports = {
         },
         footer: {
           showBuildInfo: true,
-          since: 2013,
+          since: false,
         },
         sideMenu: [
           {

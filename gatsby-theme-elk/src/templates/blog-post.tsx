@@ -7,6 +7,7 @@ import Tether from 'tether';
 // import Bio from "../components/bio";
 import { ToolTip } from '@deer-ui/core/tooltip';
 import { Grid } from '@deer-ui/core/grid';
+import { Spinning } from '@deer-ui/core/loading';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import TimeTip from '../components/time-tip';
@@ -237,7 +238,7 @@ class BlogPostTemplate extends React.Component<{}, {
           title="Likes">
           <span className="ps10">
             {liking ? (
-              <Icon n="circle-notch" classNames={['btn-loading']} />
+              <Spinning color="black" />
             ) : currLike && currLike.counter}
           </span>
         </ToolTip>

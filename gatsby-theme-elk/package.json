@@ -19,7 +19,7 @@
     "typescript": "3.7.4"
   },
   "dependencies": {
-    "@deer-ui/core": "^4.0.0-rc5.6",
+    "@deer-ui/core": "^4.0.0-rc5.7",
     "@mini-code/base-func": "^1.1.0",
     "@mini-code/request": "^1.0.0-rc1.0",
     "css-loader": "^3.2.0",
