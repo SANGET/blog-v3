@@ -16,7 +16,7 @@ export default function Comment() {
           repo: 'blog-v3',
           owner: 'SANGET',
           admin: ['SANGET'],
-          id: location.pathname, // Ensure uniqueness and length less than 50
+          id: decodeURI(window.location.pathname), // Ensure uniqueness and length less than 50
           distractionFreeMode: false // Facebook-like distraction free mode
         });
         gitalk.render('gitalk-container');
