@@ -9,6 +9,7 @@ import { ToolTip } from '@deer-ui/core/tooltip';
 import { Grid } from '@deer-ui/core/grid';
 import { Spinning } from '@deer-ui/core/loading';
 import Layout from '../components/layout';
+import Comment from '../components/comment';
 import SEO from '../components/seo';
 import TimeTip from '../components/time-tip';
 import Tags from '../components/tags-render';
@@ -306,6 +307,8 @@ class BlogPostTemplate extends React.Component<{}, {
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </article>
+
+        <Comment />
 
         <nav>
           <div className="post-shortcut-nav">
