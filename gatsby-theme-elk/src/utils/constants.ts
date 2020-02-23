@@ -14,3 +14,6 @@ export const iconMap: {
     s: 'r'
   }
 };
+
+export const VisitorListCache = 'visitorList';
+export const LikeListCache = 'likeList';

@@ -19,6 +19,13 @@ import Link from '../components/link';
 // } from '../blog-helper/api';
 import { iconMap } from '../utils/constants';
 import { SessionCache } from '../blog-helper/cache';
+import {
+  GetLikeByTitles, VisitBlog, LikeBlog, Counter
+} from '../blog-helper/api';
+
+interface BlogPostProps {
+  data: any;
+}
 
 const delayExec = (new DebounceClass()).exec;
 
@@ -31,9 +38,9 @@ const BackToTop = () => (
   </span>
 );
 
-class BlogPostTemplate extends React.Component<{}, {
-  currVisit: {};
-  currLike: {};
+class BlogPostTemplate extends React.Component<BlogPostProps, {
+  currVisit: Counter | null;
+  currLike: Counter | null;
   liking: boolean;
 }> {
   $
@@ -56,8 +63,8 @@ class BlogPostTemplate extends React.Component<{}, {
     this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
 
     this.state = {
-      currVisit: {},
-      currLike: {},
+      currVisit: null,
+      currLike: null,
       liking: false
     };
   }
@@ -69,8 +76,8 @@ class BlogPostTemplate extends React.Component<{}, {
     const blogTitle = this.getBlogTitle();
 
     this.setState({
-      currVisit: this.visitorAndLikeDetailCache.getItem(`${blogTitle}_currVisit`) || {},
-      currLike: this.visitorAndLikeDetailCache.getItem(`${blogTitle}_currLike`) || {},
+      currVisit: this.visitorAndLikeDetailCache.getItem(`${blogTitle}_currVisit`),
+      currLike: this.visitorAndLikeDetailCache.getItem(`${blogTitle}_currLike`),
     });
 
     setTimeout(() => {
@@ -82,14 +89,13 @@ class BlogPostTemplate extends React.Component<{}, {
   getBlogTitle = () => this.props.data.markdownRemark.frontmatter.title;
 
   initBlogData = async () => {
-    const { BlogHelperAPI } = this.props;
     const blogTitle = this.getBlogTitle();
     const visitResData = await this.visitBlog(blogTitle);
     setTimeout(() => {
       const { enabledLike, enabledVisitor } = this.blogHelperOptions;
       const getDataQueue = [
-        // enabledVisitor && BlogHelperAPI.GetVisitorsByTitles([blogTitle]),
-        enabledLike && BlogHelperAPI.GetLikeByTitles([blogTitle], true)
+        // enabledVisitor && GetVisitorsByTitles([blogTitle]),
+        enabledLike && GetLikeByTitles([blogTitle], true)
       ];
       Promise.all(getDataQueue)
         .then(([like]) => {
@@ -107,9 +113,9 @@ class BlogPostTemplate extends React.Component<{}, {
   }
 
   visitBlog = (title) => {
-    return new Promise((resolve, reject) => {
+    return new Promise<Counter>((resolve, reject) => {
       if (this.blogHelperOptions) {
-        return this.props.BlogHelperAPI.VisitBlog(title)
+        return VisitBlog(title)
           .then((res) => {
             resolve(res);
           })
@@ -208,7 +214,7 @@ class BlogPostTemplate extends React.Component<{}, {
     this.setState({
       liking: true
     });
-    this.props.BlogHelperAPI.LikeBlog(title)
+    LikeBlog(title)
       .then((res) => {
         this.setState({
           liking: false,
@@ -238,9 +244,13 @@ class BlogPostTemplate extends React.Component<{}, {
           className={`ml10 ${isLiked ? 't_red' : ''}`}
           title="Likes">
           <span className="ps10">
-            {liking ? (
-              <Spinning color="black" />
-            ) : currLike && currLike.counter}
+            {
+              // eslint-disable-next-line no-nested-ternary
+              liking ? (
+                <Spinning color="black" />
+              ) : (
+                currLike ? currLike.counter : <Spinning color="black" />
+              )}
           </span>
         </ToolTip>
         {/* <CounterTip n="thumbs-up" s="r" count={currLike} /> */}
@@ -257,7 +267,11 @@ class BlogPostTemplate extends React.Component<{}, {
         {...iconMap.visit}
         title="Visitors">
         <span className="ps10">
-          {currVisit && currVisit.counter}
+          {
+            currVisit
+              ? currVisit.counter
+              : <Spinning color="black" />
+          }
         </span>
       </ToolTip>
     );

@@ -8,18 +8,15 @@ import { SessionCache } from './cache';
 
 export interface Counter {
   counter: number[];
+  counterForBlog?: {
+    [title: string]: number;
+  };
   detail?: {};
 }
 
 interface CounterStruct {
   data: Counter;
 }
-
-const $R = new RequestClass();
-
-export const setRequest = (config: RequestConfig) => {
-  $R.setConfig(config);
-};
 
 let setHeader = false;
 /**
@@ -28,7 +25,7 @@ let setHeader = false;
 const setFPHeader = async (data) => {
   if (!setHeader) {
     const fingerprint = await getClientFingerprint();
-    $R.setConfig({
+    initRequest().setConfig({
       commonHeaders: {
         // 浏览器指纹
         FP: fingerprint,
@@ -39,7 +36,26 @@ const setFPHeader = async (data) => {
   return data;
 };
 
-$R.useBefore(setFPHeader);
+let $R;
+export const initRequest = (): RequestClass => {
+  if ($R) return $R;
+  $R = new RequestClass();
+  $R.useBefore(setFPHeader);
+  return $R;
+};
+
+export const setRequest = (config: RequestConfig) => {
+  initRequest().setConfig(config);
+};
+
+const genCounterForBlog = (blogTitles: string[], counters: number[]) => {
+  const resData = {};
+  blogTitles.forEach((title, idx) => {
+    const currCounterforBlog = counters[idx];
+    resData[title] = currCounterforBlog;
+  });
+  return resData;
+};
 
 let LikeCache;
 /**
@@ -53,7 +69,7 @@ export const LikeBlog = async (blogTitle: string) => {
       message: 'visited'
     };
   }
-  const res = await $R.get({
+  const res = await initRequest().get<CounterStruct>({
     url: '/like',
     params: { blogTitle }
   });
@@ -67,13 +83,15 @@ export const LikeBlog = async (blogTitle: string) => {
  * 通过 title 获取博客的喜欢数
  */
 export const GetLikeByTitles = async (blogTitles: string[], isReturnDetail = false) => {
-  const res = await $R.post<CounterStruct>({
+  const res = await initRequest().post<CounterStruct>({
     url: '/likes',
     data: {
       blogTitles,
       detail: isReturnDetail
     }
   });
+  const resData = res.data;
+  resData.counterForBlog = genCounterForBlog(blogTitles, resData.counter);
 
   return res.data;
 };
@@ -84,13 +102,13 @@ let VisitCache;
  */
 export const VisitBlog = async (blogTitle: string) => {
   if (!VisitCache) VisitCache = new SessionCache('VisitCache');
-  const hasVisited = VisitCache.getItem(blogTitle);
+  // const hasVisited = VisitCache.getItem(blogTitle);
   // if (hasVisited) {
   //   return {
   //     message: 'visited'
   //   };
   // }
-  const res = await $R.get({
+  const res = await initRequest().get<CounterStruct>({
     url: '/visit',
     params: { blogTitle }
   });
@@ -104,10 +122,12 @@ export const VisitBlog = async (blogTitle: string) => {
  * 通过 title 获取博客的访客数
  */
 export const GetVisitorsByTitles = async (blogTitles: string[]) => {
-  const res = await $R.post<CounterStruct>({
+  const res = await initRequest().post<CounterStruct>({
     url: '/visitors',
     data: { blogTitles }
   });
+  const resData = res.data;
+  resData.counterForBlog = genCounterForBlog(blogTitles, resData.counter);
 
-  return res.data;
+  return resData;
 };

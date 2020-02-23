@@ -1265,10 +1265,10 @@
   resolved "https://registry.yarnpkg.com/@mini-code/base-func/-/base-func-1.1.0.tgz#8c9e2d12074fa824b88312a7a73a4bd3f86f77ef"
   integrity sha512-nw+hzOcxDf1u2NFqWlUwhL3ZoaXlPZ2ulbqpdZJR6JpVmk5f00o/R5a6HF1oyGc/oBa5a93p334QBfL4nc+3lw==
 
-"@mini-code/request@^1.0.0-rc1.0":
-  version "1.0.0-rc1.0"
-  resolved "https://registry.yarnpkg.com/@mini-code/request/-/request-1.0.0-rc1.0.tgz#4e5e22f3fd73dbd5b57150bc2c17b87671582c88"
-  integrity sha512-+h2Ipj0gQnlAtSfIvfWRDllsQ6ViJiyuo9KAjaexVl6m9jybpCwWdklu6FzuVuzk0H/QALqo38iMdOqlSjlkXw==
+"@mini-code/request@^1.0.0-rc1.1":
+  version "1.0.0-rc1.1"
+  resolved "https://registry.yarnpkg.com/@mini-code/request/-/request-1.0.0-rc1.1.tgz#38e5aec0ab88943faa3920e65a1310c16212f0cb"
+  integrity sha512-b1DUUbZn5kha7yQPTVCKYvhvkGmEOaNpfV9Mure9HAzq6Ln2GqFfiWbTv5r9znqh02biYI99RXjcvXF6f+ZhRg==
   dependencies:
     lzma "^2.3.2"
     rc4-ts "^2.0.0"

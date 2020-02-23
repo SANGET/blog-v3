@@ -8,21 +8,21 @@ import SEO from '../components/seo';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import TimeTip from '../components/time-tip';
-import TagsList from '../components/tags-list';
-import Tags from '../components/tags-render';
-import CounterTip from '../components/counter-tip';
+// import TagsList from '../components/tags-list';
+// import Tags from '../components/tags-render';
+// import CounterTip from '../components/counter-tip';
 import Link from '../components/link';
 import { CommonPageProps } from '../utils/types';
 // import {
 //   GetVisitorsByTitles, VisitBlog, GetLikeByTitles
 // } from '../blog-helper/api';
-import { iconMap } from '../utils/constants';
+import { iconMap, VisitorListCache, LikeListCache } from '../utils/constants';
 import { SessionCache } from '../blog-helper/cache';
+import { GetVisitorsByTitles, GetLikeByTitles, Counter } from '../blog-helper/api';
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
 interface BlogListProps extends CommonPageProps {
-  // BlogHelperAPI: {};
   data: {
     site: {
       siteMetadata: {
@@ -60,7 +60,10 @@ const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edg
   return res;
 };
 
-class BlogList extends React.Component<BlogListProps> {
+class BlogList extends React.Component<BlogListProps, {
+  visitorList: Counter['counterForBlog'];
+  likeList: Counter['counterForBlog'];
+}> {
   blogHelperOptions
 
   visitorAndLikeCache
@@ -71,8 +74,8 @@ class BlogList extends React.Component<BlogListProps> {
     this.blogHelperOptions = props.data.site.siteMetadata.blogHelperOptions;
 
     this.state = {
-      visitorList: [],
-      likeList: [],
+      visitorList: {},
+      likeList: {},
     };
   }
 
@@ -81,31 +84,39 @@ class BlogList extends React.Component<BlogListProps> {
       this.visitorAndLikeCache = new SessionCache('visitorAndLikeCache', true);
     }
 
+    const visitorListCache = this.visitorAndLikeCache.getItem(VisitorListCache);
+    const likeListCache = this.visitorAndLikeCache.getItem(LikeListCache);
+
+    /** 如果是数组的结构，则将缓存清楚 */
+    if (Array.isArray(visitorListCache)) {
+      localStorage.clear();
+    }
+
     this.setState({
-      visitorList: this.visitorAndLikeCache.getItem('visitorList') || [],
-      likeList: this.visitorAndLikeCache.getItem('likeList') || [],
+      visitorList: visitorListCache || {},
+      likeList: likeListCache || {},
     });
 
     this.initBlogVisitorsData();
   }
 
   initBlogVisitorsData = () => {
-    const { data, BlogHelperAPI } = this.props;
+    const { data } = this.props;
     const { blogHelperOptions } = this;
     if (blogHelperOptions) {
       const { enabledLike, enabledVisitor } = blogHelperOptions;
       const titles = getAllBlogTitles(data.allMarkdownRemark.edges);
       const getDataQueue = [
-        enabledVisitor && BlogHelperAPI.GetVisitorsByTitles(titles),
-        enabledLike && BlogHelperAPI.GetLikeByTitles(titles)
+        enabledVisitor && GetVisitorsByTitles(titles),
+        enabledLike && GetLikeByTitles(titles)
       ];
       Promise.all(getDataQueue)
         .then(([visitors, likes]) => {
-          this.visitorAndLikeCache.setItem('visitorList', visitors.counter);
-          this.visitorAndLikeCache.setItem('likeList', likes.counter);
+          this.visitorAndLikeCache.setItem(VisitorListCache, visitors.counterForBlog);
+          this.visitorAndLikeCache.setItem(LikeListCache, likes.counterForBlog);
           this.setState({
-            visitorList: visitors.counter,
-            likeList: likes.counter
+            visitorList: visitors.counterForBlog,
+            likeList: likes.counterForBlog
           });
         })
         .catch((err) => {
@@ -152,8 +163,8 @@ class BlogList extends React.Component<BlogListProps> {
                 } = node.frontmatter;
 
                 /** blogHelper */
-                const currVisit = enabledVisitor ? visitorList[idx] : 0;
-                const currLike = enabledLike ? likeList[idx] : 0;
+                const currVisit = enabledVisitor ? visitorList[title] || 0 : 0;
+                const currLike = enabledLike ? likeList[title] || 0 : 0;
                 // const readTime = calculateReadTime(node.rawMarkdownBody);
                 // const timeDOM = (
                 //   <time className="time">
@@ -174,7 +185,8 @@ class BlogList extends React.Component<BlogListProps> {
                           {title}
                         </Link>
                       </h4>
-                      <p className="post-desc" dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
+                      <p className="post-desc"
+                        dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
                     </div>
                     <Grid
                       container

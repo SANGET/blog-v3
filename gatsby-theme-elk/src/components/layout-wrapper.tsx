@@ -8,6 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { LINK_TO_PAGE } from '../../utils/const';
 
 import '../style/index.scss';
+import { setRequest } from '../blog-helper/api';
 
 let prefHref;
 const Wrapper = ({ children, props }) => {
@@ -28,8 +29,9 @@ const Wrapper = ({ children, props }) => {
     const { blogHelperOptions } = data.site.siteMetadata;
     if (blogHelperOptions) {
       const { apiUrl } = blogHelperOptions;
-      props.BlogHelperAPI.setRequest({
-        baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : apiUrl,
+      setRequest({
+        baseUrl: apiUrl,
+        // baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : apiUrl,
         // baseUrl: 'https://blog-helper-api.thinkmore.xyz/prod',
         // baseUrl: 'https://lxz03fie0k.execute-api.ap-northeast-1.amazonaws.com/prod',
         // baseUrl: apiUrl,
