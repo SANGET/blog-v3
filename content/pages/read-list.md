@@ -8,6 +8,8 @@ title: Reading list
 
 - [x] 《深入浅出 Node》
 - [x] 《JavaScript 高级程序设计》
+- [x] 《JavaScript 设计模式》
+- [x] 《JavaScript 语言精髓》
 - [x] 《高性能 JavaScript》
 - [x] 《网络是怎样连接的》
 - [ ] 《算法导论》
