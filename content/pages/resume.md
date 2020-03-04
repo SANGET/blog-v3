@@ -176,7 +176,7 @@ title: Alex's Resume
 ## 联系方式
 
 - Email：
-  - <a href="mailto:zzzxjalext@outlook" target="_top">zzzxjalext@outlook.com</a>
+  - <a href="mailto:zzzxjalex@outlook" target="_top">zzzxjalex@outlook.com</a>
   - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
 - Telegram：`atob("YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==")`
 - 电话号码：
