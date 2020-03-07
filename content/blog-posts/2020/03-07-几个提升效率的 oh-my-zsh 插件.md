@@ -1,6 +1,6 @@
 ---
 author: Alex
-date: 2020-01-07
+date: 2020-03-07
 layout: post
 title: 几个提升效率的 oh-my-zsh 插件
 # description: 
