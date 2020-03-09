@@ -22,7 +22,7 @@ tags:
   - 命令语法高亮，可以清晰知道输入是否正确
   - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 - z
-  - 自动已使用过的 shell 的提示
+  - 已进入过的 path 的提示，例如想进入 /etc/www，只需要输入 www 然后通过 tab 键补全为 /etc/www
   - oh-my-zsh 自带，无需额外安装
 
 plugin 安装很简单，只需要将对应的插件 clone 到 `${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/` 目录下即可。下载完以后在 `~/.zshrc` 中激活
