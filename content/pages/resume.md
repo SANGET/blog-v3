@@ -179,7 +179,7 @@ title: Alex's Resume
   - <a href="mailto:zzzxjalex@outlook" target="_top">zzzxjalex@outlook.com</a>
   - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
 - Telegram：`atob("YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==")`
-- 电话号码：
+- 电话号码：`atob("MTM2NjIzNDQ5MTc=")`
 - 社交：
   - [GitHub](https://github.com/SANGET)
   - [Linkin][linkin]
