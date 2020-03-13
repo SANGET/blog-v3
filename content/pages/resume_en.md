@@ -136,8 +136,8 @@ Technical labels: `Polymer`, `Node`, `MONO`
 - Email：
   - <a href="mailto:zzzxjalext@outlook" target="_top">zzzxjalext@outlook.com</a>
   - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
-- Telegram：atob('YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==')
-- Phone：
+- Telegram：`atob('YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==')`
+- Phone：`atob("MTM2NjIzNDQ5MTc=")`：
 - Social：
   - [GitHub](https://github.com/SANGET)
 
