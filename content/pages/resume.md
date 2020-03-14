@@ -182,7 +182,7 @@ title: Alex's Resume
 - 电话号码：`atob("MTM2NjIzNDQ5MTc=")`
 - 社交：
   - [GitHub](https://github.com/SANGET)
-  - [Linkin][linkin]
+  - [LinkedIn][linkedIn]
 
 <!-- ## 教育
 
@@ -203,4 +203,4 @@ title: Alex's Resume
 [react-ui-doc]: https://github.com/SANGET/react-ui-doc
 [gatsby-theme-elk]: https://github.com/SANGET/react-ui-doc
 
-[linkin]: https://www.linkedin.com/in/alex-zhang-391551191/
+[linkedIn]: https://www.linkedin.com/in/alex-zhang-391551191/
