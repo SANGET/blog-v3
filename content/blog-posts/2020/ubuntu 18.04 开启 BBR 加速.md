@@ -1,0 +1,52 @@
+---
+author: Alex
+date: 2020-03-17
+layout: post
+title: ubuntu 18.04 开启 BBR 加速
+# description: 
+keywords: 
+  - ubuntu 18.04 开启 BBR 加速
+tags:
+  - 记录
+  - 技术
+---
+
+## 1、修改系统变量
+
+```sh
+sudo -i
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+```
+
+## 2、保存生效
+
+```sh
+sysctl -p
+```
+
+## 3、查看内核是否已开启BBR
+
+```sh
+sysctl net.ipv4.tcp_available_congestion_control
+```
+
+显示以下即已开启：
+
+```sh
+# sysctl net.ipv4.tcp_available_congestion_control
+net.ipv4.tcp_available_congestion_control = reno cubic bbr
+```
+
+## 4、查看BBR是否启动
+
+```sh
+lsmod | grep bbr
+```
+
+显示以下即启动成功：
+
+```sh
+# lsmod | grep bbr
+tcp_bbr                20480  1
+```
