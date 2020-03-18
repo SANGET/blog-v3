@@ -40,7 +40,7 @@ const PageLayout = ({
       </div>
       <hr />
       <div className="no-print page-visitor">
-        visitors {visitorCount && visitorCount.counter[0]}
+        visitors <span style={{ color: '#FFF' }}>{visitorCount && visitorCount.counter[0]}</span>
       </div>
     </Layout>
   );
