@@ -6,9 +6,9 @@ import { queryIsMobile } from '@deer-ui/core/utils';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { LINK_TO_PAGE } from '../../utils/const';
+import { setRequest } from '../blog-helper/api';
 
 import '../style/index.scss';
-import { setRequest } from '../blog-helper/api';
 
 const Wrapper = ({ children, props }) => {
   const data = useStaticQuery(graphql`

@@ -16,11 +16,10 @@ const PageLayout = ({
     },
   },
 }) => {
-  const visitorAndLikeDetailCache = useMemo(() => {
-    return new SessionCache('pageVisitor', true);
-  }, pageTitle);
-  const [visitorCount, setVisitorCount] = useState(visitorAndLikeDetailCache.getItem(pageTitle));
+  const [visitorCount, setVisitorCount] = useState();
   useEffect(() => {
+    const visitorAndLikeDetailCache = new SessionCache('pageVisitor', true);
+    setVisitorCount(visitorAndLikeDetailCache.getItem(pageTitle));
     VisitBlog(pageTitle)
       .then((res) => {
         visitorAndLikeDetailCache.setItem(pageTitle, res);
