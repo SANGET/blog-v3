@@ -16,7 +16,7 @@ interface CusLinkProps {
 const CusLink = ({ onClick, to, ...props }: CusLinkProps) => (
   <Link {...props} to={to} onClick={(e) => {
     Call(onClick, e);
-    EventEmitter.emit(LINK_TO_PAGE, '');
+    EventEmitter.emit(LINK_TO_PAGE, to);
   }} />
 );
 

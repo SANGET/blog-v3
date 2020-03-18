@@ -10,7 +10,6 @@ import { LINK_TO_PAGE } from '../../utils/const';
 import '../style/index.scss';
 import { setRequest } from '../blog-helper/api';
 
-let prefHref;
 const Wrapper = ({ children, props }) => {
   const data = useStaticQuery(graphql`
     query layoutQuery {
@@ -50,13 +49,13 @@ const Wrapper = ({ children, props }) => {
 
   /** 设置加载和判断是否移动设备 */
   React.useEffect(() => {
+    console.log(loading);
     const isMobile2 = queryIsMobile();
     setIsMobile(isMobile2);
     const currHref = window.location.href;
-    const handleLinkToPage = () => {
-      if (prefHref !== currHref) {
+    const handleLinkToPage = (to) => {
+      if (to !== currHref) {
         setLoading(true);
-        prefHref = currHref;
       }
     };
     EventEmitter.on(LINK_TO_PAGE, handleLinkToPage);
@@ -66,11 +65,14 @@ const Wrapper = ({ children, props }) => {
     return () => {
       // setLoading(true);
       EventEmitter.rm(LINK_TO_PAGE, handleLinkToPage);
+      // setLoading(false);
     };
   }, [loading]);
   return (
     <div className={isMobile ? 'mobile' : 'desktop'} id="__out_wrapper">
-      <Loading inrow loading={loading} />
+      <div className="wrapper-loading-tip">
+        <Loading inrow loading={loading} />
+      </div>
       {React.cloneElement(children, {
         ...props,
         isMobile,
