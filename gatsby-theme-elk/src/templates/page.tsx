@@ -38,6 +38,7 @@ const PageLayout = ({
           className="about-page"
           dangerouslySetInnerHTML={{ __html: html }} ></div>
       </div>
+      <hr />
       <div className="no-print page-visitor">
         visitors {visitorCount && visitorCount.counter[0]}
       </div>
