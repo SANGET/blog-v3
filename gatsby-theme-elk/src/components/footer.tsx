@@ -36,24 +36,8 @@ const Footer = ({ title }) => {
   return (
     <footer className="footer no-print">
       <Container>
-        <Grid container>
-          <span>© {since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
-          {
-            showBuildInfo && (
-              <>
-                <span className="ml5">build with </span>
-                <a href="https://www.gatsbyjs.org/"
-                  rel="noopener noreferrer"
-                  className="ms5" target="_blank">Gatsby</a>
-                <a href="https://github.com/SANGET/gatsby-theme-elk"
-                  rel="noopener noreferrer"
-                  className="ms5" target="_blank">Gatsby-Theme-Elk</a>
-                <a href="https://ui.thinkmore.xyz"
-                  rel="noopener noreferrer"
-                  className="ms5" target="_blank">@deer-ui</a>
-              </>
-            )
-          }
+        <Grid container space={10}>
+          <span>©{since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
           <span className="flex"></span>
           {
             github && (
@@ -89,6 +73,25 @@ const Footer = ({ title }) => {
               });
             }} />
         </Grid>
+        {
+          showBuildInfo && (
+            <>
+              <hr />
+              <Grid container space={10}>
+                <span>Build with </span>
+                <a href="https://www.gatsbyjs.org/"
+                  rel="noopener noreferrer"
+                  className="ms5" target="_blank">gatsby</a>
+                <a href="https://github.com/SANGET/gatsby-theme-elk"
+                  rel="noopener noreferrer"
+                  className="ms5" target="_blank">gatsby-theme-elk</a>
+                <a href="https://ui.thinkmore.xyz"
+                  rel="noopener noreferrer"
+                  className="ms5" target="_blank">@deer-ui</a>
+              </Grid>
+            </>
+          )
+        }
       </Container>
     </footer>
   );

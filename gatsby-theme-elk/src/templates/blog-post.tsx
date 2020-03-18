@@ -322,8 +322,6 @@ class BlogPostTemplate extends React.Component<BlogPostProps, {
           </div>
         </article>
 
-        <Comment />
-
         <nav>
           <div className="post-shortcut-nav">
             <div>
@@ -344,6 +342,9 @@ class BlogPostTemplate extends React.Component<BlogPostProps, {
             </div>
           </div>
         </nav>
+
+        <Comment />
+
         <BackToTop />
         {
           _needTOC && (

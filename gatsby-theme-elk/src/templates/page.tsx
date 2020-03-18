@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { VisitBlog } from '../blog-helper/api';
+import { SessionCache } from '../blog-helper/cache';
 
 const PageLayout = ({
   location, data: {
@@ -14,13 +16,31 @@ const PageLayout = ({
     },
   },
 }) => {
+  const visitorAndLikeDetailCache = useMemo(() => {
+    return new SessionCache('pageVisitor', true);
+  }, pageTitle);
+  const [visitorCount, setVisitorCount] = useState(visitorAndLikeDetailCache.getItem(pageTitle));
+  useEffect(() => {
+    VisitBlog(pageTitle)
+      .then((res) => {
+        visitorAndLikeDetailCache.setItem(pageTitle, res);
+        setVisitorCount(res);
+      })
+      .catch((err) => {
+      });
+  }, []);
   return (
     <Layout location={location}>
       <SEO
         title={pageTitle}
       />
       <div className="markdown-body">
-        <div className="about-page" dangerouslySetInnerHTML={{ __html: html }} ></div>
+        <div
+          className="about-page"
+          dangerouslySetInnerHTML={{ __html: html }} ></div>
+      </div>
+      <div className="no-print page-visitor">
+        visitors {visitorCount && visitorCount.counter[0]}
       </div>
     </Layout>
   );

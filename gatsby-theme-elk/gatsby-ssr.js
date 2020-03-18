@@ -21,6 +21,8 @@ export const onRenderBody = ({
       <script src="https://cdn.jsdelivr.net/gh/stylehatch/photoset-grid@master/jquery.photoset-grid.min.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js" defer></script>
 
+      <script id="dsq-count-scr" src="//alex-blog-1.disqus.com/count.js" async></script>
+
       {/* <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@2.1.0/dist/fingerprint2.min.js"></script> */}
     </React.Fragment>
   ]);
