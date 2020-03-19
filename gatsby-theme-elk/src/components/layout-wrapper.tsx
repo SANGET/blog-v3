@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import { Loading } from '@deer-ui/core/loading';
 import { Call, EventEmitter } from '@mini-code/base-func';
@@ -9,6 +9,57 @@ import { LINK_TO_PAGE } from '../../utils/const';
 import { setRequest } from '../blog-helper/api';
 
 import '../style/index.scss';
+
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    const isMobile2 = queryIsMobile();
+    setIsMobile(isMobile2);
+  }, []);
+
+  return isMobile;
+};
+
+const useAPI = (blogHelperOptions) => {
+  useEffect(() => {
+    if (blogHelperOptions) {
+      const { apiUrl } = blogHelperOptions;
+      setRequest({
+        baseUrl: apiUrl,
+        // baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : apiUrl,
+        // baseUrl: 'https://blog-helper-api.thinkmore.xyz/prod',
+        // baseUrl: 'https://lxz03fie0k.execute-api.ap-northeast-1.amazonaws.com/prod',
+        // baseUrl: apiUrl,
+      });
+    }
+  }, []);
+};
+
+const usePageLoading = () => {
+  const [loading, setLoading] = React.useState(false);
+
+  const currHref = window.location.href;
+  const prevHref = useRef('');
+  /** 设置加载和判断是否移动设备 */
+  React.useEffect(() => {
+    if (prevHref.current !== currHref) {
+      setLoading(false);
+      prevHref.current = currHref;
+    }
+    const handleLinkToPage = (to) => {
+      if (to !== currHref) {
+        setLoading(true);
+      }
+    };
+    EventEmitter.on(LINK_TO_PAGE, handleLinkToPage);
+    return () => {
+      EventEmitter.rm(LINK_TO_PAGE, handleLinkToPage);
+    };
+  }, [loading, currHref]);
+
+  return loading;
+};
 
 const Wrapper = ({ children, props }) => {
   const data = useStaticQuery(graphql`
@@ -24,22 +75,10 @@ const Wrapper = ({ children, props }) => {
       }
     }
   `);
-  useEffect(() => {
-    const { blogHelperOptions } = data.site.siteMetadata;
-    if (blogHelperOptions) {
-      const { apiUrl } = blogHelperOptions;
-      setRequest({
-        baseUrl: apiUrl,
-        // baseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : apiUrl,
-        // baseUrl: 'https://blog-helper-api.thinkmore.xyz/prod',
-        // baseUrl: 'https://lxz03fie0k.execute-api.ap-northeast-1.amazonaws.com/prod',
-        // baseUrl: apiUrl,
-      });
-    }
-  }, []);
-  // const isMobile = /iPhone|Android|iOS/.test(navigator.userAgent);
-  const [isMobile, setIsMobile] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
+
+  useAPI(data.site.siteMetadata.blogHelperOptions);
+
+  const loading = usePageLoading();
 
   /** 删除 loading 背景 */
   React.useEffect(() => {
@@ -47,27 +86,8 @@ const Wrapper = ({ children, props }) => {
     if (loadingDOM) document.body.removeChild(loadingDOM);
   }, []);
 
-  /** 设置加载和判断是否移动设备 */
-  React.useEffect(() => {
-    console.log(loading);
-    const isMobile2 = queryIsMobile();
-    setIsMobile(isMobile2);
-    const currHref = window.location.href;
-    const handleLinkToPage = (to) => {
-      if (to !== currHref) {
-        setLoading(true);
-      }
-    };
-    EventEmitter.on(LINK_TO_PAGE, handleLinkToPage);
-    setTimeout(() => {
-      setLoading(false);
-    }, 800);
-    return () => {
-      // setLoading(true);
-      EventEmitter.rm(LINK_TO_PAGE, handleLinkToPage);
-      // setLoading(false);
-    };
-  }, [loading]);
+  const isMobile = useIsMobile();
+
   return (
     <div className={isMobile ? 'mobile' : 'desktop'} id="__out_wrapper">
       <div className="wrapper-loading-tip">

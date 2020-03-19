@@ -10,6 +10,10 @@ import Scripts from './scripts';
 
 const Layout = (props) => {
   const { children, ...other } = props;
+  useEffect(() => {
+    const rootWrapper = document.querySelector('#wrapper');
+    if (rootWrapper) rootWrapper.classList.add('ready');
+  }, []);
   return (
     <div id="wrapper" className={'wrapper'}>
       <Header {...other} />

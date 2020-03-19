@@ -12,8 +12,6 @@ import React from 'react';
 
 const Scripts = () => {
   React.useEffect(() => {
-    const rootWrapper = document.querySelector('#wrapper');
-    if (rootWrapper) rootWrapper.classList.add('ready');
     window.$(document).ready(() => {
       (function ($) {
         $('.photoset-grid').photosetGrid({
