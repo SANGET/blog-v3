@@ -23,6 +23,7 @@ export const onRenderBody = ({
 
       <script id="dsq-count-scr" src="//alex-blog-1.disqus.com/count.js" async></script>
 
+      <script src="https://browser.sentry-cdn.com/5.15.0/bundle.min.js" integrity="sha384-+ysfQckQvwCB5SppH41IScIz/Iynt2pePnJNMl+D7ZOzDJ+VYhQEuwB0pA60IDM0" crossorigin="anonymous"></script>
       {/* <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@2.1.0/dist/fingerprint2.min.js"></script> */}
     </React.Fragment>
   ]);
