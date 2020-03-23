@@ -3,8 +3,8 @@
 现有设置天梯
 
 ```sh
-git config --global http.proxy "socks5h://127.0.0.1:1080"
-git config --global https.proxy "socks5h://127.0.0.1:1080"
+git config --global http.proxy "socks5h://127.0.0.1:1086"
+git config --global https.proxy "socks5h://127.0.0.1:1086"
 ```
 
 查看更改是否成功
