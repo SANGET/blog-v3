@@ -84,7 +84,7 @@ const Wrapper = ({ children, props }) => {
   React.useEffect(() => {
     const loadingDOM = document.querySelector('#loadingBg');
     if (loadingDOM) document.body.removeChild(loadingDOM);
-    Sentry && Sentry.init({ dsn: 'https://82e677b839d04307ac5ce8099381c1a9@sentry.io/5170362' });
+    window.Sentry?.init({ dsn: 'https://82e677b839d04307ac5ce8099381c1a9@sentry.io/5170362' });
     // myUndefinedFunction();
   }, []);
 
