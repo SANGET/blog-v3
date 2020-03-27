@@ -13,15 +13,15 @@ title: Alex's Resume
 
 ## 个人简介
 
-我是张相杰（Alex），全栈工程师（偏前端）。过去主要工作为：产品研发，技术难点攻关等。
+我是张相杰（Alex），前端工程师，从事前端工作 6 年。过去主要工作为：前端基础建设与应用，前端模块研发，产品研发等。
 
 ## 技能树
 
-- 前端：`TS`, `JS`, `React`, `React-Native`, `Redux`, `Webpack`
-- 后端：`Node`, `TypeORM`, `DynamoDB`
-- 测试：`Jest`, `Mocha`, `Cypress`
+- 前端：`Typescript`, `Javascript`, `React`, `React-Native`, `Redux`, `Flutter`, `Webpack`, `Scss`, `CSS in JS`, `Gatsby`, `Next`, `TypeORM`
+- 后端：`Node`, `DynamoDB`
+- 测试：`Jest`, `Nightwatch`, `Cypress`
 - 部署：`Docker`, `Netlify`, `Travis`
-- 工具：`Mac`, `GitHub`, `VSCode`, `Jira`
+- 工具：`Mac`, `GitHub`, `VSCode`, `Atom`, `Telegram`, `Google`, `Gmail`, `Jira`
 
 ## 工作经历
 
@@ -31,11 +31,13 @@ title: Alex's Resume
 
 - 公司简介：toB 综合技术提供商，为集团内市场部门提供`业务系统研发`、`产品研发`等服务，例如`交易系统`、`财务系统`、`IM 服务`、`游戏制作`等
 - 行业介绍：IT、地产、餐饮、游戏动画
-- 职位：高级前端工程师
+- 职位：前端组负责人
 - 职责：
+  - 前端基础建设
+  - 前端团队建设
   - 代码审阅、任务分配、进度跟踪
   - UT、e2e 测试
-  - 技术分享
+  - 前端技术分享
 
 ### 广州海关技术处
 
@@ -51,39 +53,67 @@ title: Alex's Resume
 
 ## 项目
 
+### @mini-code
+
+> Synergy88 - 前端基础建设
+
+- 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API，测试流程等支持
+- 组织结构：
+  - `@mini-code/base-func` 核心函数库，包含处理常用的 `数组`, `数字`, `时间`, `订阅发布` 等模块
+  - `@mini-code/request` HTTP 请求工具，基于 fetch API，提供中间件机制，支持数据过滤。内置了`RC4 加解密`和`LZMA 压解缩`中间件，支持 RESTFul API
+  - `@mini-code/scripts` 基于 `react-scripts` 扩展的开发环境，根据团队定制
+  - `@mini-code/page-generator` 页面生成工具，为了减轻管理系统的开发工作量而制作，提高系统一致性，可维护性
+  - `version-helper` 提供统一的应用版本号的生产的辅助库
+  - `web-server` 基于 node 的 web server，适用于轻量级的后端服务需求。`typescript + typeORM + express + mysql + docker`
+- 相关资源
+  - [GitHub](https://github.com/minimal-studio)
+
 ### @deer-ui
 
-> Synergy88
+> Synergy88 - 前端基础建设
 
-- 介绍：基于 `React` 的 UI 组织，为快速构建 web 应用提供灵活、可扩展的基础支持
+- 介绍：`@deer-ui` 是一个基于 `React` 的 UI 组织，为快速构建 web 应用提供灵活、可扩展的前端基础支持
+- 组织结构：
+  - `@deer-ui/core` 核心 UI 库，提供可扩展的 UI Components 基础，原子设计原则
+  - `@deer-ui/enhance-ui` 基于 `@deer-ui/core` 的增强 UI 组件集合
+- 技术标签：`typescript`, `react`
 - 基于 `@deer-ui` 的应用：
   - [@deer-ui/admin-scaffold][scaffold-demo] 管理系统 scaffold
   - [elk_chat][elk-chat] 基于 protobuf 的 IM 客户端
   - [react-ui-doc][react-ui-doc] 使用 mdx 编写 UI Components 文档的文档生成器
   - [gatsby-theme-elk][gatsby-theme-elk] 基于 markdown 的网站生成工具
   - 公司业务系统
-- 技术标签：`react`
 - 相关资源
   - [@deer-ui github][deer-ui]
   - [@deer-ui online doc][ui-doc]
 
 ### IM 服务
 
-> Synergy88
+> Synergy88 - 业务应用
 
 - 介绍：与公司业务结合，满足内部 IM 使用需求
 - 主要负责：web 客户端研发，native 客户端（flutter）研发
-- 技术标签：`protobuf`, `react`, `redux`, `flutter`
+- 技术结构：
+  - 前后端分离
+  - web 客户端分 3 层结构，SDK -> Actions -> UI
+    1. `SDK`：封装 `websocket`、`protobuf` ，提供与远端交互数据的 API 服务，由 Actions、UI 调度并消费
+    2. `Actions`：提供核心业务数据操作，由 `UI` 调度并消费数据。`redux + redux saga` 管理数据
+    3. `UI`：交互层，采用 `react` 渲染
+  - native 客户端
+    - 与 web 客户端结构类似
+    - 采用 `flutter` 构建
+      - 基于 BLoC 管理数据
+- 技术标签：`typescript`, `protobuf`, `react`, `redux`, `flutter`
 - 相关资源
   - [GitHub][elk-chat]（客户端开源）
   - [Elk-Chat Online][chat-online]
 
 ### 交易系统
 
-> Synergy88
+> Synergy88 - toB 业务应用
 
 - 介绍：基于代理层级的交易系统
-- 主要负责：提供前端基础技术支持, 业务模块开发
+- 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；开发任务分配与跟踪；代码审阅等
 - 技术分析：
   - 基础：`react`, `redux`, `typescript`
   - web 应用、PWA：`react`, `react-native`
@@ -91,11 +121,11 @@ title: Alex's Resume
   - 环境构建：`webpack`
   - 模块管理：`yarn workspace`
   - 测试：`jest`, `cypress`
-- 技术标签：`react`, `react-native`, `node`
+- 技术标签：`react`, `react-native`, `node`, `typescript`
 
 ### 餐饮配送平台
 
-> Synergy88
+> Synergy88 - 本地生活服务
 
 - 介绍：本地餐饮配送服务平台。zan.com，服务已下线
 - 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；，开发任务分配与跟踪；代码审阅等
@@ -103,7 +133,7 @@ title: Alex's Resume
 
 ### 前端资源发布系统
 
-> Synergy88
+> Synergy88 - 内部应用
 
 - 介绍：用于管理公司所有产品的前端资源的部署流程。服务已下线，使用 Jenkins 代替
 - 主要负责：项目发起者、制作者
@@ -138,13 +168,6 @@ title: Alex's Resume
 
 - BlogHelper：`serverless` 博客助理服务，提供`点赞（like）`，`访客记录（visitor）`等功能
   - [GitHub](https://github.com/SANGET/blog-helper-serverless)
-- Base64Helper：Chrome extension，用于 base64 -> string 的互相转换
-
-> @mini-code
-
-- 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API 支持，测试流程等支持等
-- 相关资源
-  - [GitHub](https://github.com/minimal-studio)
 
 ## 自我评价
 
