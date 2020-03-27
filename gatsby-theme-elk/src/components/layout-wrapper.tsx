@@ -39,10 +39,10 @@ const useAPI = (blogHelperOptions) => {
 const usePageLoading = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const currHref = window.location.href;
   const prevHref = useRef('');
   /** 设置加载和判断是否移动设备 */
   React.useEffect(() => {
+    const currHref = window.location.href;
     if (prevHref.current !== currHref) {
       setLoading(false);
       prevHref.current = currHref;
