@@ -263,17 +263,24 @@ class BlogPostTemplate extends React.Component<BlogPostProps, {
     const { enabledVisitor } = this.blogHelperOptions;
     const { currVisit } = this.state;
     return enabledVisitor && (
-      <ToolTip
-        {...iconMap.visit}
-        title="Visitors">
-        <span className="ps10">
-          {
-            currVisit
-              ? currVisit.counter
-              : <Spinning color="black" />
-          }
-        </span>
-      </ToolTip>
+      <div>
+        View {
+          currVisit
+            ? currVisit.counter
+            : <Spinning color="black" />
+        }
+      </div>
+      // <ToolTip
+      //   {...iconMap.visit}
+      //   title="View">
+      //   <span className="ps10">
+      //     {
+      //       currVisit
+      //         ? currVisit.counter
+      //         : <Spinning color="black" />
+      //     }
+      //   </span>
+      // </ToolTip>
     );
   }
 

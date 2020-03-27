@@ -151,7 +151,7 @@ class BlogList extends React.Component<BlogListProps, {
         <SEO
           title="Blog list"
           keywords={['blog', 'gatsby', 'javascript', 'react']}/>
-        <Bio />
+        {/* <Bio /> */}
         <div className="post-wrapper">
           <section className="post-list">
             {
@@ -197,7 +197,7 @@ class BlogList extends React.Component<BlogListProps, {
                         enabledVisitor && (
                           <ToolTip
                             {...iconMap.visit}
-                            title="Visitor">
+                            title="View">
                             <span className="ps10">
                               {currVisit}
                             </span>

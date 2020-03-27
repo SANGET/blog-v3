@@ -18,8 +18,8 @@ module.exports = {
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: '/',
-        siteTitle: 'Sanget\'s Blog',
-        author: 'Sanget',
+        siteTitle: `Alex Chueng 的个人博客`,
+        author: 'Alex Chueng',
         description: 'Thinking',
         siteUrl: 'https://thinkmore.xyz',
         social: {
