@@ -14,8 +14,12 @@ const Scripts = () => {
   React.useEffect(() => {
     window.$(document).ready(() => {
       (function ($) {
-        $('.photoset-grid').photosetGrid({
-        });
+        $('.photoset-grid').photosetGrid({});
+
+        $(document.links).filter(function () {
+          return this.hostname !== window.location.hostname;
+        }).attr('target', '_blank');
+
         if (window.mediumZoom) window.mediumZoom('img');
       }(window.jQuery));
     });
