@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-import { Loading } from '@deer-ui/core/loading';
-import { Call, EventEmitter } from '@mini-code/base-func';
 import { queryIsMobile } from '@deer-ui/core/utils';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Loading } from '@deer-ui/core/loading';
 
-import { LINK_TO_PAGE } from '../../utils/const';
 import { setRequest } from '../blog-helper/api';
+import { usePageLoading } from './utils';
 
 import '../style/index.scss';
 
@@ -36,31 +35,6 @@ const useAPI = (blogHelperOptions) => {
   }, []);
 };
 
-const usePageLoading = () => {
-  const [loading, setLoading] = React.useState(false);
-
-  const prevHref = useRef('');
-  /** 设置加载和判断是否移动设备 */
-  React.useEffect(() => {
-    const currHref = window.location.href;
-    if (prevHref.current !== currHref) {
-      setLoading(false);
-      prevHref.current = currHref;
-    }
-    const handleLinkToPage = (to) => {
-      if (to !== currHref) {
-        setLoading(true);
-      }
-    };
-    EventEmitter.on(LINK_TO_PAGE, handleLinkToPage);
-    return () => {
-      EventEmitter.rm(LINK_TO_PAGE, handleLinkToPage);
-    };
-  }, [loading, currHref]);
-
-  return loading;
-};
-
 const Wrapper = ({ children, props }) => {
   const data = useStaticQuery(graphql`
     query layoutQuery {
@@ -78,8 +52,6 @@ const Wrapper = ({ children, props }) => {
 
   useAPI(data.site.siteMetadata.blogHelperOptions);
 
-  const loading = usePageLoading();
-
   /** 删除 loading 背景 */
   React.useEffect(() => {
     const loadingDOM = document.querySelector('#loadingBg');
@@ -89,6 +61,7 @@ const Wrapper = ({ children, props }) => {
   }, []);
 
   const isMobile = useIsMobile();
+  const loading = usePageLoading();
 
   return (
     <div className={isMobile ? 'mobile' : 'desktop'} id="__out_wrapper">
