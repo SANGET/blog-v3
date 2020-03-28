@@ -4,7 +4,7 @@ import { Icon } from '@deer-ui/core/icon';
 const TimeTip = ({ date, readTime = '', ...other }) => (
   <div {...other}>
     <time className="time">
-      <Icon n="clock" s="r" classNames={['mr5']} />
+      {/* <Icon n="clock" s="r" classNames={['mr5']} /> */}
       {date}
     </time>
     <span className="read-time ml20">

@@ -4,6 +4,7 @@ $postMargin: 15px;
 .desktop {
   .post-wrapper {
     display: flex;
+    margin-bottom: -30px;
     .tags-list {
       min-width: 160px;
       border-left: 1px solid #f3f3f3;
@@ -74,7 +75,7 @@ $postMargin: 15px;
   }
 }
 .post-list {
-  padding: 20px 0;
+  // padding: 20px 0;
   .post-title {
     font-weight: normal;
     color: #000;

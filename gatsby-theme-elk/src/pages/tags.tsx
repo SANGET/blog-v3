@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Link from '../components/link';
+import SideDesc from '../components/site-desc';
 
 const TagsPage = ({
   data: {
@@ -22,9 +23,10 @@ const TagsPage = ({
     <Layout location={location} title={title}>
       <SEO title="Tags" />
       <div>
-        <h1>Tags</h1>
-        <br/>
-        <p>Total {allTags} tags</p>
+        {/* <h1>Tags</h1>
+        <br/> */}
+        {/* <h3>Total {allTags} tags</h3> */}
+        <SideDesc desc={`Total ${allTags} tags`} />
         <div className="tag-cloud block-a">
           {
             group.map((tag) => {

@@ -4,7 +4,8 @@ import { Grid } from '@deer-ui/core/grid';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Link from '../components/link';
-import Tags from '../components/tags-render';
+import SideDesc from '../components/site-desc';
+// import Tags from '../components/tags-render';
 
 const ArchivePage = (props) => {
   const {
@@ -18,10 +19,9 @@ const ArchivePage = (props) => {
     <Layout location={location} title={sideTitle}>
       <SEO title="Archive" />
       <div>
-        <h1>Archive</h1>
-        <br/>
-        <p>Total {posts.length} posts</p>
-        <div className="archive-page">
+        <SideDesc desc={`Total ${posts.length} posts`} />
+        {/* <h3>Total {posts.length} posts</h3> */}
+        <div className="archive-page pu10">
           {
             posts.map(({ node }) => {
               const { fields, frontmatter } = node;

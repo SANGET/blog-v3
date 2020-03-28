@@ -10,7 +10,7 @@ export const iconMap: {
     s: isActive ? 's' : `r`
   }),
   visit: {
-    n: 'grin-squint',
+    n: 'feather',
     s: 'r'
   }
 };

@@ -9,13 +9,13 @@ export const usePageLoading = () => {
   const prevHref = useRef('');
   /** 设置加载和判断是否移动设备 */
   React.useEffect(() => {
-    const currHref = window.location.href;
-    if (prevHref.current !== currHref) {
+    const currPath = window.location.pathname;
+    if (prevHref.current !== currPath) {
       setLoading(false);
-      prevHref.current = currHref;
+      prevHref.current = currPath;
     }
     const handleLinkToPage = (to) => {
-      if (to !== currHref) {
+      if (to !== currPath) {
         setLoading(true);
       }
     };

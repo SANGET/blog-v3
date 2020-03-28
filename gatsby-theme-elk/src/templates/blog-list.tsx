@@ -97,7 +97,7 @@ class BlogList extends React.Component<BlogListProps, {
       likeList: likeListCache || {},
     });
 
-    this.initBlogVisitorsData();
+    // this.initBlogVisitorsData();
   }
 
   initBlogVisitorsData = () => {
@@ -139,8 +139,8 @@ class BlogList extends React.Component<BlogListProps, {
     const posts = data.allMarkdownRemark.edges;
 
     /** blogHelper */
-    const { enabledLike, enabledVisitor } = this.blogHelperOptions;
-    const { visitorList, likeList } = this.state;
+    // const { enabledLike, enabledVisitor } = this.blogHelperOptions;
+    // const { visitorList, likeList } = this.state;
 
     const {
       currentPage, limit, totalPosts, tags,
@@ -151,7 +151,7 @@ class BlogList extends React.Component<BlogListProps, {
         <SEO
           title="Blog list"
           keywords={['blog', 'gatsby', 'javascript', 'react']}/>
-        {/* <Bio /> */}
+        <Bio />
         <div className="post-wrapper">
           <section className="post-list">
             {
@@ -163,8 +163,8 @@ class BlogList extends React.Component<BlogListProps, {
                 } = node.frontmatter;
 
                 /** blogHelper */
-                const currVisit = enabledVisitor ? visitorList[title] || 0 : 0;
-                const currLike = enabledLike ? likeList[title] || 0 : 0;
+                // const currVisit = enabledVisitor ? visitorList[title] || 0 : 0;
+                // const currLike = enabledLike ? likeList[title] || 0 : 0;
                 // const readTime = calculateReadTime(node.rawMarkdownBody);
                 // const timeDOM = (
                 //   <time className="time">
@@ -193,12 +193,12 @@ class BlogList extends React.Component<BlogListProps, {
                       wrap="wrap"
                       className="subcontent">
                       <TimeTip date={date} className="time-helper" />
-                      {
+                      {/* {
                         enabledVisitor && (
                           <ToolTip
                             {...iconMap.visit}
                             title="View">
-                            <span className="ps10">
+                            <span className="ps5">
                               {currVisit}
                             </span>
                           </ToolTip>
@@ -211,13 +211,13 @@ class BlogList extends React.Component<BlogListProps, {
                             className="ml10"
                             {...iconMap.like(false)}
                             title="Likes">
-                            <span className="ps10">
+                            <span className="ps5">
                               {currLike}
                             </span>
                           </ToolTip>
                           // <CounterTip n="thumbs-up" s="r" count={currLike} />
                         )
-                      }
+                      } */}
                       {/* <span className="flex"></span>
                       <Tags tags={tags} /> */}
                     </Grid>

@@ -18,9 +18,9 @@ module.exports = {
         assetContentPath: `${__dirname}/content/assets`,
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: '/',
-        siteTitle: `Alex Chueng 的个人博客`,
         author: 'Alex Chueng',
-        description: 'Thinking',
+        siteTitle: `Alex Chueng 的个人博客`,
+        description: '分享技术, 记录生活',
         siteUrl: 'https://thinkmore.xyz',
         social: {
           // twitter: `sanget`,

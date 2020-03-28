@@ -36,7 +36,7 @@ const Footer = ({ title }) => {
   return (
     <footer className="footer no-print">
       <Container>
-        <Grid container space={10}>
+        <Grid container>
           <span>©{since ? `${since} - ` : ''}{new Date().getFullYear()} {title}</span>
           <span className="flex"></span>
           {
@@ -77,7 +77,7 @@ const Footer = ({ title }) => {
           showBuildInfo && (
             <>
               <hr />
-              <Grid container space={10}>
+              <Grid container>
                 <span>Build with </span>
                 <a href="https://www.gatsbyjs.org/"
                   rel="noopener noreferrer"

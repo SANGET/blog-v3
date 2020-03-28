@@ -11,8 +11,11 @@
   .wrapper {
     .container {
       &.main {
-        padding: 20px 10px;
+        padding: 10px 10px;
       }
+    }
+    blockquote {
+      margin: 20px 0 30px;
     }
   }
 }
@@ -24,8 +27,11 @@
   .wrapper {
     .container {
       &.main {
-        padding: 20px 10px;
+        padding: 10px 10px;
       }
+    }
+    blockquote {
+      margin: 20px 0 30px;
     }
   }
 }
