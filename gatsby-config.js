@@ -20,7 +20,7 @@ module.exports = {
         basePath: '/',
         author: 'Alex Chueng',
         siteTitle: `Alex Chueng 的个人博客`,
-        description: '分享技术, 记录生活',
+        description: 'Bring yourself back online.',
         siteUrl: 'https://thinkmore.xyz',
         social: {
           // twitter: `sanget`,
