@@ -12,6 +12,7 @@ title: Reading list
 - [x] 《JavaScript 语言精髓》
 - [x] 《高性能 JavaScript》
 - [x] 《网络是怎样连接的》
+- [x] 《MySQL Crash Course》
 - [ ] 《算法导论》
 - [ ] 《计算机程序设计艺术》
 - [ ] 《代码重构》
@@ -42,6 +43,7 @@ title: Reading list
 - [ ] 《如何阅读一本书》
 - [ ] 《怎样解题》
 - [ ] 《激荡三十年》
+- [ ] 《乌合之众》
 
 ---------
 
