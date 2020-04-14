@@ -13,7 +13,7 @@ title: Alex's Resume English version
 
 ## My Profile
 
-I am Alex Zhang, a Frontend engineer, seven years experience of Frontend develop. The main work in the pass was: Front-end infrastructure construction, front-end module development, product development, etc.
+I am Alex Chueng, a Frontend engineer, seven years experience of Frontend develop. The main work in the pass was: Front-end infrastructure construction, front-end module development, product development, etc.
 
 --------
 
