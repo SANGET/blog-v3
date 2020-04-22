@@ -18,7 +18,7 @@ title: Alex's Resume
 ## 技能树
 
 - 前端：`TS`, `JS`, `React`, `React-Native`, `Redux`, `Webpack`, `Scss`, `Gatsby`, `Next`
-- 后端：`Node`, `TypeORM`, `DynamoDB`, `MySQL`
+- 后端：`Node`, `TypeORM`, `SQL`, `DynamoDB`, `MySQL`
 - 测试：`Jest`, `Mocha`, `Cypress`
 - 部署：`Docker`, `Netlify`, `Travis`
 - 工具：`Mac`, `GitHub`, `VSCode`, `Jira`
