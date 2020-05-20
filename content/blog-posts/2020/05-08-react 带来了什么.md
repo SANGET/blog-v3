@@ -2,7 +2,7 @@
 author: Alex
 date: 2020-05-08
 layout: post
-title: 为什么选择 react 第二次总结
+title: react 带来了什么
 # description: 
 keywords: 
   - react
