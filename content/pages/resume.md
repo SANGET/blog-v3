@@ -13,7 +13,7 @@ title: Alex's Resume
 
 ## 个人简介
 
-我是张相杰（Alex Chueng），前端工程师，从事前端工作 7 年。过去主要工作为：系统设计，前端工程实施，前端基础建设，产品研发等。
+我是张相杰（Alex Chueng），前端工程师，从事前端工作 7 年。过去主要工作为：web 系统设计，前端工程实施，前端基础建设，产品研发等。
 
 ## 技能树
 
@@ -25,7 +25,7 @@ title: Alex's Resume
 
 ## 工作经历
 
-### 浩云科技
+<!-- ### 浩云科技
 
 > 2020.04 - 至今
 
@@ -37,21 +37,18 @@ title: Alex's Resume
   - 系统设计
   - 前端模块设计
   - 工程规划
-  - 工程实施
+  - 工程实施 -->
 
 ### Synergy88
 
 > 2015.02 - 2020.02 （海外 | 马尼拉）
 
-- 公司简介：toB 综合技术提供商，为集团内市场部门提供`业务系统研发`、`产品研发`等服务，例如`交易系统`、`财务系统`、`IM 服务`、`游戏制作`等
+- 公司简介：toB 综合技术提供商，为集团内市场部门提供`业务系统研发`、`产品研发`等服务，例如`交易系统`、`财务系统`、`IM 服务`、`游戏`等
 - 行业介绍：IT、地产、餐饮、游戏动画
 - 职位：前端组负责人
 - 职责：
-  - 前端基础建设
-  - 前端团队建设
-  - 代码审阅、任务分配、进度跟踪
-  - UT、e2e 测试
-  - 前端技术分享
+  - 前端基础建设、前端团队建设
+  - 产品质量把控：代码审阅、任务分配、进度跟踪、推进 UT、e2e 测试
 
 ### 广州海关技术处
 
@@ -74,14 +71,18 @@ title: Alex's Resume
 - 介绍：基于 `React` 的 UI 组织，为快速构建 web 应用提供灵活、可扩展的基础支持
 - 基于 `@deer-ui` 的应用：
   - [@deer-ui/admin-scaffold][scaffold-demo] 管理系统 scaffold
-  - [elk_chat][elk-chat] 基于 protobuf 的 IM 客户端
+  - [elk_chat][elk-chat] 基于 protobuf 的 web IM 客户端
   - [react-ui-doc][react-ui-doc] 使用 mdx 编写 UI Components 文档的文档生成器
   - [gatsby-theme-elk][gatsby-theme-elk] 基于 markdown 的网站生成工具
   - 公司业务系统
 - 技术标签：`react`
 - 相关资源
-  - [@deer-ui github][deer-ui]
+  - [@deer-ui GitHub][deer-ui]
   - [@deer-ui online doc][ui-doc]
+
+<!-- ### admin-scaffold
+
+管理系统 scaffold -->
 
 ### IM 服务
 
@@ -121,8 +122,8 @@ title: Alex's Resume
 
 > Synergy88
 
-- 介绍：用于管理公司所有产品的前端资源的部署流程。服务已下线，使用 Jenkins 代替
-- 主要负责：项目发起者、制作者
+- 介绍：用于管理公司所有产品的前端资源的部署流程
+- 主要负责：项目负责人
 - 动机：随着公司业务上升，为了更好地管理产品的前端发布流程而制作的
 - 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
 - 技术标签：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB`
