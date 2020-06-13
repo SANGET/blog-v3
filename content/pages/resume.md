@@ -25,19 +25,19 @@ title: Alex's Resume
 
 ## 工作经历
 
-<!-- ### 浩云科技
+### 浩云科技
 
 > 2020.04 - 至今
 
 - 公司介绍：安防设备、安防 PaaS 系统解决方案供应商
 - 行业介绍：安防领域
-- 职位：高级前端工程师
+- 职位：前端工程师
 - 职责：
   - 重构可视化云平台前端部分
-  - 系统设计
-  - 前端模块设计
+  - 系统前端设计
+  - 前端核心模块设计
   - 工程规划
-  - 工程实施 -->
+  - 工程实施
 
 ### Synergy88
 
@@ -64,6 +64,18 @@ title: Alex's Resume
 
 ## 项目
 
+### 可视化系统生产工具
+
+- 介绍：金融领域安防系统的可视化生产工具，生产的系统主要应用于金融企业的安防管理，例如银行办公大楼的物理监控设备，门禁、摄像头、安防等设备的管控。
+- 主要负责：
+  - 系统的前端架构设计
+  - 业务模型设计与可行性验证
+  - 核心模块设计与实施
+    - 技术选型
+    - 可视化编辑器技术
+    - DSL 解析技术
+- 技术选型：`react`
+
 ### @deer-ui
 
 > Synergy88
@@ -75,7 +87,7 @@ title: Alex's Resume
   - [react-ui-doc][react-ui-doc] 使用 mdx 编写 UI Components 文档的文档生成器
   - [gatsby-theme-elk][gatsby-theme-elk] 基于 markdown 的网站生成工具
   - 公司业务系统
-- 技术标签：`react`
+- 技术选型：`react`
 - 相关资源
   - [@deer-ui GitHub][deer-ui]
   - [@deer-ui online doc][ui-doc]
@@ -90,7 +102,7 @@ title: Alex's Resume
 
 - 介绍：与公司业务结合，满足内部 IM 使用需求
 - 主要负责：web 客户端研发，native 客户端（flutter）研发
-- 技术标签：`protobuf`, `react`, `redux`, `flutter`
+- 技术选型：`protobuf`, `react`, `redux`, `flutter`
 - 相关资源
   - [GitHub][elk-chat]（客户端开源）
   - [Elk-Chat Online][chat-online]
@@ -108,7 +120,7 @@ title: Alex's Resume
   - 环境构建：`webpack`
   - 模块管理：`yarn workspace`
   - 测试：`jest`, `cypress`
-- 技术标签：`react`, `react-native`, `node`
+- 技术选型：`react`, `react-native`, `node`
 
 ### 餐饮配送平台
 
@@ -116,7 +128,7 @@ title: Alex's Resume
 
 - 介绍：本地餐饮配送服务平台。zan.com，服务已下线
 - 主要负责：提供前端基础技术支持；业务模块开发；模块划分；协调设计、前端对接；协调前后端对；，开发任务分配与跟踪；代码审阅等
-- 技术标签：`PWA`, `react + redux`, `admin-scaffold`
+- 技术选型：`PWA`, `react + redux`, `admin-scaffold`
 
 ### 前端资源发布系统
 
@@ -126,7 +138,7 @@ title: Alex's Resume
 - 主要负责：项目负责人
 - 动机：随着公司业务上升，为了更好地管理产品的前端发布流程而制作的
 - 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
-- 技术标签：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB`
+- 技术选型：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB`
 
 -----
 
@@ -137,7 +149,7 @@ title: Alex's Resume
 - 简介：中国海关总署国际司业务系统，处理国内海关人员和领导出入境的流程
 - 系统架构：系统分层架构，分为Data、Framework、Workflow、User、Web、Web Api，TDD（测试驱动开发）模式，实现底层逻辑高度重用，适配其他业务系统，开发其他业务系统，只需要实现表现层 Web
 - 本人职责：负责项目前端设计、实现和前端组织，web api 制定
-- 技术标签：`Angular`, `D3`, `RequestJs`, `.NET MVC 4.5`, `Web API`, `MongoDB`, `MSSQL`
+- 技术选型：`Angular`, `D3`, `RequestJs`, `.NET MVC 4.5`, `Web API`, `MongoDB`, `MSSQL`
 
 ### 海关邮递物品查询系统
 
@@ -145,7 +157,7 @@ title: Alex's Resume
 
 - 本人职责：项目海关邮递物件的微信接入
 - 微信公众号：广州海关12360（gz12360）的邮递物件查询系统
-- 技术标签：`Polymer`, `Node`, `MONO`
+- 技术选型：`Polymer`, `Node`, `MONO`
 
 -----
 
