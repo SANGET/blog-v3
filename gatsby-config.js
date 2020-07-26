@@ -19,7 +19,7 @@ module.exports = {
         pagesContentPath: `${__dirname}/content/pages`,
         basePath: '/',
         author: 'Alex Chueng',
-        siteTitle: `Alex Chueng 的个人博客`,
+        siteTitle: `Alex Chueng 的小房间`,
         description: 'Bring yourself back online.',
         siteUrl: 'https://thinkmore.xyz',
         social: {
