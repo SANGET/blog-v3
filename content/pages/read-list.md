@@ -13,6 +13,7 @@ title: Reading list
 - [x] 《高性能 JavaScript》
 - [x] 《网络是怎样连接的》
 - [x] 《MySQL Crash Course》
+- [x] 《架构简洁之道 Clean Architecture》
 - [ ] 《Head First Java》
 - [ ] 《算法导论》
 - [ ] 《计算机程序设计艺术》
