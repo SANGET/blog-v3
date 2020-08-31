@@ -11,9 +11,9 @@ tags:
   - 技术
 ---
 
-先安装 zsh 和 ph-my-zsh(这里略过安装过程)
+先安装 `zsh` 和 `oh-my-zsh`(这里略过安装过程)
 
-这里主要是介绍几个可以提高效率的 zsh plugins
+这里主要是介绍几个可以提高效率的 `zsh plugins`
 
 - zsh-autosuggestions
   - 命令提示
