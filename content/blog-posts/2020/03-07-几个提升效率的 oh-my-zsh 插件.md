@@ -5,7 +5,7 @@ layout: post
 title: 几个提升效率的 oh-my-zsh 插件
 # description: 
 keywords: 
-  - ph-my-zsh 插件
+  - oh-my-zsh 插件
 tags:
   - 记录
   - 技术
