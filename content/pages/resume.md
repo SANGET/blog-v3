@@ -5,29 +5,31 @@ title: Alex's Resume
 ---
 
 <escape>
+
   <div class="no-print simple-nav">
     <a href="/resume_en" class="mr20">English version</a>
     <a href="https://cdn.jsdelivr.net/gh/SANGET/resource@master/files/resume.pdf">PDF简历下载</a>
   </div>
+
 </escape>
 
-## 个人简介
+## 个人简介（Intro）
 
-我是张相杰（Alex Chueng），web 工程师，从事 web （前后端）开发 7 年。主要工作：web 系统设计，前端工程实施，前端基础建设，业务产品研发等。
+我是张相杰（Alex Chueng），前端工程师，从事 web 开发 7 年。主要方向是：web 系统设计、前端基础建设、业务产品研发。
 
----
+------
 
-## 技能树
+## 技能树（Skill matrix）
 
-- 前端：`TS`, `JS`, `React`, `React-Native`, `Redux`, `Webpack`, `Scss`, `Gatsby`, `Next`
+- 前端：`TS`, `JS`, `React`, `React-Native`, `Redux`, `Webpack`, `Scss`, `Gatsby`
 - 后端：`Node`, `Nest`, `TypeORM`, `SQL`, `MySQL`
 - 测试：`Jest`, `Mocha`, `Cypress`
-- 部署：`Docker`, `Netlify`, `Travis`
-- 工具：`Mac`, `GitHub`, `VSCode`, `Jira`
+- DevOps：`Docker`, `Netlify`, `Travis`
+- 工具：`Mac`, `Git`, `VSCode`, `Jira`
 
----
+------
 
-## 工作经历
+## 工作经历（Work experience）
 
 ### 浩云科技
 
@@ -59,28 +61,23 @@ title: Alex's Resume
 - 职责：
   - 负责 `海关业务系统` 原型制作、业务开发、.NET web API 开发
 
----
+------
 
-## 项目
+## 项目（Project involved）
 
-### 可视化-低代码云平台
+### 低代码平台
 
 > 浩云科技
 
 - 介绍：
-  - 背景：目标是赋予没有编码基础的人员生产业务系统的能力，这样极大提高公司业务的交付速度，有效降低交付成本。所以低代码平台是生产力工具
-  - 用于生产的安防领域业务系统的生产工具，主要应用于金融企业的安防管理、物联网（IoT）、智慧城市、交通、司法、公共安全等安防设备的管理
+  - 背景：赋予没有编码基础的人员生产业务系统的能力，提高公司业务的交付速度，有效降低交付成本。
+  - 用处：用于生产`金融安防领域的 ERP 系统`的工具，最终产出应用于金融行业的安防设备管理、安防设备物联网，同时为建设智慧城市、交通、司法、公共安全等公共服务提供安防设备的管理方案。
 - 主要负责：
-  - 系统的前端架构设计
-  - 设计文档落地
-  - 工程方案规划、设计、实施
-  - 技术选型
-- 技术方案
-  - 可视化编辑器引擎
-  - 低代码引擎、编辑器
-  - DSL 解析引擎
-- 技术选型：
-  - 前端：`react` `redux` `rxjs` `lerna`
+  - 低代码系统的前端架构设计
+  - 推进设计方案落地，工程规划、实施
+  - 前端技术选型
+- 相关技术：
+  - 前端：`react` `redux` `rxjs` `lerna` `react-dnd` `code mirror`
   - 资源服务：`nest`
   - 平台服务：`java`
 
@@ -179,13 +176,13 @@ title: Alex's Resume
 - 相关资源
   - [GitHub](https://github.com/minimal-studio)
 
----
+------
 
 ## 自我评价
 
 `coding`、`读书`、`运动`、`摄影`、`吉他` 、`自律`、`自我驱动`，`极简主义`、`完美主义`
 
----
+------
 
 ## 联系方式
 
@@ -209,12 +206,10 @@ title: Alex's Resume
 [admin-dashboard]: https://github.com/minimal-studio/admin-dashboard
 [elk-chat]: https://github.com/elk-chat/elk_web
 [chat-online]: https://chat.thinkmore.xyz/
-
 [dashboard-doc]: https://admin.thinkmore.xyz/
 [scaffold-demo]: https://scaffold.thinkmore.xyz/
 [ui-doc]: https://ui.thinkmore.xyz/
 [refactor-system]: https://thinkmore.xyz/%E9%87%8D%E6%9E%84%E9%A1%B9%E7%9B%AE(%E4%B8%80)
 [react-ui-doc]: https://github.com/SANGET/react-ui-doc
 [gatsby-theme-elk]: https://github.com/SANGET/react-ui-doc
-
 [linkedIn]: https://www.linkedin.com/in/alex-zhang-391551191/
