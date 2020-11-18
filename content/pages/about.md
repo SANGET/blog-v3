@@ -11,7 +11,15 @@ Alex Chueng，90 后，低调务实，喜欢喝早茶。
 
 Tags: `coding`、`音乐`、`摄影`、`旅游`、`极简主义`、`完美主义`。
 
+## Pic
+
+![img](https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/7.jpg)
+![img](https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/8.jpg)
+![img](https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg)
+
 ## Ref
 
 - [Reading list](/read-list)
 - [Resume](/resume)
+
+## Thanks
