@@ -20,7 +20,7 @@ Tags: `coding`、`音乐`、`摄影`、`旅游`、`极简主义`、`完美主义
       <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/7.jpg" />
     </div>
     <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/8.jpg" />
+      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/5.jpg" />
     </div>
     <div class="flex">
       <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg" />
