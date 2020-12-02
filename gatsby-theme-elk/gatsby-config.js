@@ -86,6 +86,12 @@ module.exports = ({
         plugins: [
           'gatsby-remark-autolink-headers',
           {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+              implementation: require("sass"),
+            },
+          },
+          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
@@ -109,7 +115,7 @@ module.exports = ({
     'gatsby-plugin-feed',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    // 'gatsby-plugin-sass',
     'gatsby-plugin-advanced-sitemap',
     // {
     //   resolve: `gatsby-plugin-postcss`,
