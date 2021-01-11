@@ -1,24 +1,28 @@
-import React from 'react';
-import { graphql, navigate } from 'gatsby';
-import { Pagination } from '@deer-ui/core/pagination';
+import React from "react";
+import { graphql, navigate } from "gatsby";
+import { Pagination } from "@deer-ui/core/pagination";
 
-import { ToolTip } from '@deer-ui/core/tooltip';
-import { Grid } from '@deer-ui/core/grid';
-import SEO from '../components/seo';
-import Bio from '../components/bio';
-import Layout from '../components/layout';
-import TimeTip from '../components/time-tip';
+import { ToolTip } from "@deer-ui/core/tooltip";
+import { Grid } from "@deer-ui/core/grid";
+import SEO from "../components/seo";
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import TimeTip from "../components/time-tip";
 // import TagsList from '../components/tags-list';
 // import Tags from '../components/tags-render';
 // import CounterTip from '../components/counter-tip';
-import Link from '../components/link';
-import { CommonPageProps } from '../utils/types';
+import Link from "../components/link";
+import { CommonPageProps } from "../utils/types";
 // import {
 //   GetVisitorsByTitles, VisitBlog, GetLikeByTitles
 // } from '../blog-helper/api';
-import { iconMap, VisitorListCache, LikeListCache } from '../utils/constants';
-import { SessionCache } from '../blog-helper/cache';
-import { GetVisitorsByTitles, GetLikeByTitles, Counter } from '../blog-helper/api';
+import { iconMap, VisitorListCache, LikeListCache } from "../utils/constants";
+import { SessionCache } from "../blog-helper/cache";
+import {
+  GetVisitorsByTitles,
+  GetLikeByTitles,
+  Counter,
+} from "../blog-helper/api";
 
 // import calculateReadTime from '../../utils/calc-read-time';
 
@@ -35,7 +39,7 @@ interface BlogListProps extends CommonPageProps {
       };
     };
     allMarkdownRemark: {
-      edges: ({
+      edges: {
         node: {
           excerpt;
           fields: {
@@ -47,12 +51,14 @@ interface BlogListProps extends CommonPageProps {
             description;
           };
         };
-      })[];
+      }[];
     };
   };
 }
 
-const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edges']) => {
+const getAllBlogTitles = (
+  posts: BlogListProps["data"]["allMarkdownRemark"]["edges"]
+) => {
   const res: any[] = [];
   posts.forEach((item) => {
     res.push(item.node.frontmatter.title);
@@ -60,13 +66,16 @@ const getAllBlogTitles = (posts: BlogListProps['data']['allMarkdownRemark']['edg
   return res;
 };
 
-class BlogList extends React.Component<BlogListProps, {
-  visitorList: Counter['counterForBlog'];
-  likeList: Counter['counterForBlog'];
-}> {
-  blogHelperOptions
+class BlogList extends React.Component<
+  BlogListProps,
+  {
+    visitorList: Counter["counterForBlog"];
+    likeList: Counter["counterForBlog"];
+  }
+> {
+  blogHelperOptions;
 
-  visitorAndLikeCache
+  visitorAndLikeCache;
 
   constructor(props) {
     super(props);
@@ -81,7 +90,7 @@ class BlogList extends React.Component<BlogListProps, {
 
   componentDidMount() {
     if (!this.visitorAndLikeCache) {
-      this.visitorAndLikeCache = new SessionCache('visitorAndLikeCache', true);
+      this.visitorAndLikeCache = new SessionCache("visitorAndLikeCache", true);
     }
 
     const visitorListCache = this.visitorAndLikeCache.getItem(VisitorListCache);
@@ -108,27 +117,30 @@ class BlogList extends React.Component<BlogListProps, {
       const titles = getAllBlogTitles(data.allMarkdownRemark.edges);
       const getDataQueue = [
         enabledVisitor && GetVisitorsByTitles(titles),
-        enabledLike && GetLikeByTitles(titles)
+        enabledLike && GetLikeByTitles(titles),
       ];
       Promise.all(getDataQueue)
         .then(([visitors, likes]) => {
-          this.visitorAndLikeCache.setItem(VisitorListCache, visitors.counterForBlog);
+          this.visitorAndLikeCache.setItem(
+            VisitorListCache,
+            visitors.counterForBlog
+          );
           this.visitorAndLikeCache.setItem(LikeListCache, likes.counterForBlog);
           this.setState({
             visitorList: visitors.counterForBlog,
-            likeList: likes.counterForBlog
+            likeList: likes.counterForBlog,
           });
         })
         .catch((err) => {
           console.log(err);
         });
     }
-  }
+  };
 
   visitBlog = (slug, title) => {
-    const nextPageUrl = `/${slug}/`.replace(/\/+$/gi, '/');
+    const nextPageUrl = `${slug}`.replace(/\/+$/gi, "/");
     navigate(nextPageUrl);
-  }
+  };
 
   // handleScroll = (e) => {
   //   console.log(e);
@@ -142,58 +154,55 @@ class BlogList extends React.Component<BlogListProps, {
     // const { enabledLike, enabledVisitor } = this.blogHelperOptions;
     // const { visitorList, likeList } = this.state;
 
-    const {
-      currentPage, limit, totalPosts, tags,
-    } = this.props.pageContext;
+    const { currentPage, limit, totalPosts, tags } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="Blog list"
-          keywords={['blog', 'gatsby', 'javascript', 'react']}/>
+          keywords={["blog", "gatsby", "javascript", "react"]}
+        />
         <Bio />
         <div className="post-wrapper">
           <section className="post-list">
-            {
-              posts.map(({ node }, idx) => {
-                const { slug } = node.fields;
-                const title = node.frontmatter.title || slug;
-                const {
-                  description, date, tags, author
-                } = node.frontmatter;
+            {posts.map(({ node }, idx) => {
+              const { slug } = node.fields;
+              const title = node.frontmatter.title || slug;
+              const { description, date, tags, author } = node.frontmatter;
 
-                /** blogHelper */
-                // const currVisit = enabledVisitor ? visitorList[title] || 0 : 0;
-                // const currLike = enabledLike ? likeList[title] || 0 : 0;
-                // const readTime = calculateReadTime(node.rawMarkdownBody);
-                // const timeDOM = (
-                //   <time className="time">
-                //     <Icon n="clock" s="r" classNames={['mr5']} />
-                //     {date}
-                //   </time>
-                // );
-                return (
-                  <div key={slug}
-                    className="post-item">
-                    <div
-                      className="post-entity"
-                      onClick={(e) => {
-                        this.visitBlog(slug, title);
-                      }}>
-                      <h4 className="post-title">
-                        <Link style={{ boxShadow: 'none' }} to={slug}>
-                          {title}
-                        </Link>
-                      </h4>
-                      <p className="post-desc"
-                        dangerouslySetInnerHTML={{ __html: description || node.excerpt }} />
-                    </div>
-                    <Grid
-                      container
-                      wrap="wrap"
-                      className="subcontent">
-                      <TimeTip date={date} className="time-helper" />
-                      {/* {
+              /** blogHelper */
+              // const currVisit = enabledVisitor ? visitorList[title] || 0 : 0;
+              // const currLike = enabledLike ? likeList[title] || 0 : 0;
+              // const readTime = calculateReadTime(node.rawMarkdownBody);
+              // const timeDOM = (
+              //   <time className="time">
+              //     <Icon n="clock" s="r" classNames={['mr5']} />
+              //     {date}
+              //   </time>
+              // );
+              return (
+                <div key={slug} className="post-item">
+                  <div
+                    className="post-entity"
+                    onClick={(e) => {
+                      this.visitBlog(slug, title);
+                    }}
+                  >
+                    <h4 className="post-title">
+                      <Link style={{ boxShadow: "none" }} to={slug}>
+                        {title}
+                      </Link>
+                    </h4>
+                    <p
+                      className="post-desc"
+                      dangerouslySetInnerHTML={{
+                        __html: description || node.excerpt,
+                      }}
+                    />
+                  </div>
+                  <Grid container wrap="wrap" className="subcontent">
+                    <TimeTip date={date} className="time-helper" />
+                    {/* {
                         enabledVisitor && (
                           <ToolTip
                             {...iconMap.visit}
@@ -218,18 +227,17 @@ class BlogList extends React.Component<BlogListProps, {
                           // <CounterTip n="thumbs-up" s="r" count={currLike} />
                         )
                       } */}
-                      {/* <span className="flex"></span>
+                    {/* <span className="flex"></span>
                       <Tags tags={tags} /> */}
-                    </Grid>
-                    {/* {timeDOM}
+                  </Grid>
+                  {/* {timeDOM}
                       <span className="read-time ml20">
                         <Icon n="eye" s="r" classNames={['mr5']} />
                         {readTime} min read
                       </span> */}
-                  </div>
-                );
-              })
-            }
+                </div>
+              );
+            })}
           </section>
           {/* <TagsList tags={tags} /> */}
         </div>
@@ -244,8 +252,9 @@ class BlogList extends React.Component<BlogListProps, {
           onPagin={(nextPagin) => {
             // console.log(nextPagin);
             const nextPageIdx = nextPagin.pIdx + 1;
-            navigate(`/${nextPageIdx === 1 ? '' : nextPageIdx}`);
-          }} />
+            navigate(`/${nextPageIdx === 1 ? "" : nextPageIdx}`);
+          }}
+        />
       </Layout>
     );
   }
@@ -267,7 +276,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: {regex : "\/blog-posts/"} }
+      filter: { fileAbsolutePath: { regex: "/blog-posts/" } }
       limit: $limit
       skip: $skip
     ) {
