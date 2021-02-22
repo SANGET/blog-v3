@@ -11,117 +11,119 @@ title: Alex's Resume
   </div>
 </escape>
 
-## 1. 个人简介（Intro）
+## 个人简介（Intro）
 
-> 我是张相杰（Alex Chueng）
-
-- 前端工程师，8 年 web 开发经验，React、TS、Node 技术栈
-- 曾主导 UI 框架的规划、开发和维护
-- 曾主导低代码平台的页面建模的架构设计，并参与数据建模的架构设计
-- 曾担任公司的前端技术讲师，推进 React、TS、Node 技术栈落地，推进前端的 UT、CICD 落地
-- 5 年海外工作经验，可读写英语文档，可用英语日常交流
-- 有技术管理经历
-<!-- - 有 10 人的前端团队的管理经验 -->
-<!-- - 重度 Mac 用户 -->
+我是张相杰（Alex Chueng），前端工程师，8 年 web 开发经验(2 年后端开发经验)。目前参与业务低代码平台建设。过去曾为公司积累前端基础建设，包括 UI 库、前端工程脚手架、管理系统模版引擎等。
 
 ---
 
-<!-- ## 2. 技能树（Skill matrix）
+## 技能树（Skill matrix）
 
-- 前端：`TS`, `JS`, `React`, `Redux`, `Scss`
-- 后端：`Node`, `Webpack`, `Nest`, `TypeORM`, `MySQL`
+- 前端：`TS`, `JS`, `React`, `Redux`, `Scss`, `Gatsby`
+- 后端：`Node`, `Webpack`, `Nest`, `TypeORM`, `SQL`, `MySQL`
 - 测试：`Jest`, `Mocha`, `Cypress`
 - DevOps：`Docker`, `Netlify`
-- 工具：`Mac`, `Git`, `VSCode`, `Jira`, `Drawio`
+- 工具：`Mac`, `Git`, `VSCode`, `Jira`
 
---- -->
+---
 
-## 2. 工作经历（Work experience）
+## 工作经历（Work experience）
 
-### 2.1. 浩云科技
+### 浩云科技
 
 > 2020.04 - 至今（广东 ｜ 广州）｜ 已上市
 
-- 公司简介：金融安防、智慧物联解决方案供应商
-- 行业：金融安防、智慧安防、IoT
+- 公司介绍：金融安防、智慧物联解决方案供应商
+- 行业介绍：金融安防、智慧安防、IoT
 - 职位：前端工程师
 - 职责：
-  - 主导低代码平台页面建模的架构设计与实现
-  - 参与低代码平台数据建模模架构设计与实现
+  - 参与业务低代码平台前端架构设计
+  - 负责页面设计模块设计与实现
+  - 参与数据建模模块设计与实现
 
-### 2.2. Synergy88
+### Synergy88
 
 > 2015.02 - 2020.02 （海外 | 马尼拉）
 
-- 公司简介：在线娱乐技术提供商
-- 行业：游戏、地产、餐饮
+- 公司简介：为母公司提供业务系统研发服务
+- 行业介绍：地产、游戏、餐饮
 - 职位：前端组长
 - 职责：
-  - 核心产品的技术研发，难点攻克
-  - 负责保障所有产品的前端的实现和交付
+  - 为公司沉淀业务的前端技术
+  - 负责公司所有产品的前端（客户端）的实现和交付
+  - 负责公司前端组建设
 
-### 2.3. 广州海关
+### 广州海关技术处
 
-> 2013.07 - 2015.01 （广东 | 广州 | 技术处 | 软件科）
+> 2013.07 - 2015.01 （广东 | 广州）
 
-- 单位简介：为中国海关开发`业务系统`，帮助办事部门办公电子化
-- 行业：事业单位，海关事务
+- 单位简介：广州海关-技术处-软件科，为中国海关开发`业务系统`，帮助办事部门办公电子化
+- 行业介绍：海关事务、进出口管理
 - 职位：软件工程师
 - 职责：
   - 负责业务系统原型制作，业务逻辑开发
 
 ---
 
-## 3. 项目（Project involved）
+## 项目（Project involved）
 
-### 3.1. 业务项目
-
-#### 3.1.1. 低代码平台 - x云（名称未定）
+### 低代码平台
 
 > 浩云科技
 
 - 介绍：业务低代码平台，提供可视化的页面设计、业务设计、数据建模能力，提供应用云部署方案。
 - 职责：负责低代码平台的前端页面建模系统
 - 工作成果：
-  - 主导低代码平台页面建模的架构设计与实现
+  - 参与业务低代码平台前端架构设计
+  - 负责页面设计模块设计与实现
   - 参与数据建模模块设计与实现
+  - 参与应用源代码生成方案设计
 - 技术：
   - 前端：`react` `redux` `react-dnd` `yup`
-  - 页面建模服务：`node` `nest` `webpack` `mysql`
+  - web 资源服务：`nest` `webpack`
+  - 平台服务：`java`
 
-#### 3.1.2. IM 客户端
-
-> Synergy88
-
-- 介绍：基于 Flutter 的客户端
-- 主要负责：客户端的研发
-- 技术选型：`flutter` `dart`
-
-#### 3.1.2. 电商平台
+### @deer-ui
 
 > Synergy88
 
-- 介绍：基于代理层级的电商平台
+- 介绍：基于 `React` 的 UI 组织，为快速构建 web 应用提供灵活、可扩展的基础支持
+- 在线应用：
+  - 公司业务系统
+  - [管理系统模版引擎][scaffold-demo]
+  - [IM 客户端][elk-chat]
+  - [UI 文档生成器][react-ui-doc]
+  - [SSR 静态网站生成器][gatsby-theme-elk]
+- 技术选型：`react`
+- 相关资源
+  - [@deer-ui GitHub][deer-ui]
+  - [@deer-ui online doc][ui-doc]
+
+### 交易系统
+
+> Synergy88
+
+- 介绍：基于代理层级的交易系统
 - 主要负责：提供前端基础技术支持, 业务模块开发
 - 技术选型：
-  - 前端：`react` `redux` `typescript` `react-native` `webpack` `yarn workspace` `node`
-  - 后端：`golang`
+  - 前端：
+    - 基础：`react`, `redux`, `typescript`
+    - web 应用、PWA：`react`, `react-native`
+    - 移动端应用：`react-native`
+    - 环境构建：`webpack`
+    - 模块管理：`yarn workspace`
+  - 后端：
+    - `golang` `MySql`
+  - 测试：`jest`, `cypress`
+- 技术选型：`react`, `react-native`, `node`
 
-#### 3.1.3. 餐饮配送平台
+### 餐饮配送平台
 
 > Synergy88
 
 - 介绍：本地餐饮配送服务平台。_zan.com，服务已下线_
 - 主要负责：产品的前端开发和交付
-- 技术选型：`react` `redux`
-
-#### 3.1.3. 客服客户端 Nitalk
-
-> Synergy88
-
-- 介绍：客服客户端，采用跨终端平台解决方案 codova 技术
-- 主要负责：产品的整体实现
-- 技术选型：`ionic` `angular1.x`
+- 技术选型：`PWA` `react` `redux`
 
 <!-- ### 前端资源发布系统
 
@@ -133,7 +135,7 @@ title: Alex's Resume
 - 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
 - 技术选型：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB` -->
 
-#### 3.1.4. 国际司综合业务管理系统
+### 国际司综合业务管理系统
 
 > 广州海关 - 业务系统应用
 
@@ -142,7 +144,7 @@ title: Alex's Resume
 - 本人职责：负责项目前端设计、实现和前端组织，web api 制定
 - 技术选型：`Angular`, `D3`, `RequestJs`, `.NET MVC 4.5`, `Web API`, `MongoDB`, `MSSQL`
 
-#### 3.1.5. 海关邮递物品查询系统
+### 海关邮递物品查询系统
 
 > 广州海关 - 业务系统应用
 
@@ -150,41 +152,25 @@ title: Alex's Resume
 - 微信公众号：广州海关12360（gz12360）的邮递物件查询系统
 - 技术选型：`Polymer`, `Node`, `MONO`
 
-### 3.2. 开源项目
+### 个人项目
 
-#### 3.2.1. UI 框架 deer-ui
-
-> Synergy88
-
-- 介绍：基于 `React` 的 UI 框架
-- 在线应用：
-  - 公司业务系统
-  - [管理系统模版引擎][scaffold-demo]
-  - [IM 客户端][elk-chat]
-  - [UI 文档生成器][react-ui-doc]
-  - [SSR 静态网站生成器][gatsby-theme-elk]
-- 相关资源
-  - [@deer-ui GitHub][deer-ui]
-  - [@deer-ui online doc][ui-doc]
-
-#### 3.2.2. 个人项目
-
-- BlogHelper：基于 `AWS Lambda` 的博客助理服务，提供`点赞`，`访客记录`功能
-  - [GitHub](https://github.com/SANGET/blog-helper-serverless)
-- Base64Helper：Chrome extension，用于 base64 -> string 的互相转换
+- 个人项目
+  - BlogHelper：基于 `AWS Lambda` 的博客助理服务，提供`点赞`，`访客记录`功能
+    - [GitHub](https://github.com/SANGET/blog-helper-serverless)
+  - Base64Helper：Chrome extension，用于 base64 -> string 的互相转换
 - @mini-code
   - 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API 支持，测试流程等支持等
   - [GitHub](https://github.com/minimal-studio)
 
 ---
 
-## 4. 自我评价
+## 自我评价
 
-`coding` `读书` `运动` `摄影` `吉他`  `自律` `自我驱动`，`极简主义` `完美主义`
+`coding`、`读书`、`运动`、`摄影`、`吉他` 、`自律`、`自我驱动`，`极简主义`、`完美主义`
 
 ---
 
-## 5. 联系方式
+## 联系方式
 
 - Email：<a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
   <!-- - <a href="mailto:zzzxjalex@outlook" target="_top">zzzxjalex@outlook.com</a> -->
