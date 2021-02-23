@@ -97,14 +97,14 @@ title: Alex's Resume
 - 主要负责：客户端的研发
 - 技术选型：`flutter` `dart`
 
-#### 3.1.2. 电商平台
+#### 3.1.2. 娱乐平台
 
 > Synergy88
 
-- 介绍：基于代理层级的电商平台
-- 主要负责：提供前端基础技术支持, 业务模块开发
+- 介绍：提供线上休闲游戏的娱乐平台
+- 主要负责：提供前端技术支持
 - 技术选型：
-  - 前端：`react` `redux` `typescript` `react-native` `webpack` `yarn workspace` `node`
+  - 前端：`react` `redux` `react-native` `webpack` `node`
   - 后端：`golang`
 
 #### 3.1.3. 餐饮配送平台
