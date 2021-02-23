@@ -94,7 +94,7 @@ title: Alex's Resume
 > Synergy88
 
 - 介绍：基于 Flutter 的客户端
-- 主要负责：客户端的研发
+- 主要负责：客户端研发
 - 技术选型：`flutter` `dart`
 
 #### 3.1.2. 娱乐平台
@@ -112,7 +112,7 @@ title: Alex's Resume
 > Synergy88
 
 - 介绍：本地餐饮配送服务平台。_zan.com，服务已下线_
-- 主要负责：产品的前端开发和交付
+- 主要负责：提供前端技术支持，参与产品分析
 - 技术选型：`react` `redux`
 
 #### 3.1.3. 客服客户端 Nitalk
@@ -120,7 +120,7 @@ title: Alex's Resume
 > Synergy88
 
 - 介绍：客服客户端，采用跨终端平台解决方案 codova 技术
-- 主要负责：产品的整体实现
+- 主要负责：客户端研发
 - 技术选型：`ionic` `angular1.x`
 
 <!-- ### 前端资源发布系统
@@ -171,16 +171,16 @@ title: Alex's Resume
 
 - BlogHelper：基于 `AWS Lambda` 的博客助理服务，提供`点赞`，`访客记录`功能
   - [GitHub](https://github.com/SANGET/blog-helper-serverless)
-- Base64Helper：Chrome extension，用于 base64 -> string 的互相转换
+- Base64Helper：Chrome extension，用于 base64 <-> string 的互相转换
 - @mini-code
   - 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API 支持，测试流程等支持等
   - [GitHub](https://github.com/minimal-studio)
 
 ---
 
-## 4. 自我评价
+## 4. 标签
 
-`coding` `读书` `运动` `摄影` `吉他`  `自律` `自我驱动`，`极简主义` `完美主义`
+`编程` `读书` `篮球` `摄影` `吉他` `极简主义`
 
 ---
 
