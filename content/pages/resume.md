@@ -17,24 +17,24 @@ title: Alex's Resume
 
 - 前端工程师，8 年 web 开发经验，React、TS、Node 技术栈
 - 曾主导 UI 框架的规划、开发和维护
-- 曾主导低代码平台的页面建模的架构设计，并参与数据建模的架构设计
-- 曾担任公司的前端技术讲师，推进 React、TS、Node 技术栈落地，推进前端的 UT、CICD 落地
-- 5 年海外工作经验，可读写英语文档，可用英语日常交流
-- 有技术管理经历
+- 曾负责低代码平台页面建模的架构设计
+- 曾担任公司的前端技术讲师，推进 React、TS、Node 技术栈落地
+- 有海外工作经验，可读写英语文档，可用英语日常交流
+<!-- - 曾管理 10 人的前端团队 -->
 <!-- - 有 10 人的前端团队的管理经验 -->
 <!-- - 重度 Mac 用户 -->
 
 ---
 
-<!-- ## 2. 技能树（Skill matrix）
+## 2. 技能（Skill matrix）
 
 - 前端：`TS`, `JS`, `React`, `Redux`, `Scss`
 - 后端：`Node`, `Webpack`, `Nest`, `TypeORM`, `MySQL`
 - 测试：`Jest`, `Mocha`, `Cypress`
 - DevOps：`Docker`, `Netlify`
-- 工具：`Mac`, `Git`, `VSCode`, `Jira`, `Drawio`
+- 工具：`Mac`, `Git`, `Google`, `Jira`, `Drawio`
 
---- -->
+---
 
 ## 2. 工作经历（Work experience）
 
