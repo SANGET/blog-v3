@@ -26,6 +26,15 @@ title: Alex's Resume
 
 ---
 
+## 在线项目
+
+- 个人博客: https://thinkmore.xyz
+- UI 库: https://ui.thinkmore.xyz/
+- 管理系统运行器: https://scaffold.thinkmore.xyz/
+- UI 文档生成器: https://react-ui-doc.thinkmore.xyz/
+
+---
+
 ## 2. 技能（Skill matrix）
 
 - 前端：`TS`, `JS`, `React`, `Redux`, `Scss`
