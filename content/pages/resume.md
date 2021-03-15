@@ -26,16 +26,7 @@ title: Alex's Resume
 
 ---
 
-## 2. 在线项目
-
-- 个人博客: https://thinkmore.xyz
-- UI 库: https://ui.thinkmore.xyz/
-- 管理系统运行器: https://scaffold.thinkmore.xyz/
-- UI 文档生成器: https://react-ui-doc.thinkmore.xyz/
-
----
-
-## 3. 技能（Skill matrix）
+## 2. 技能（Skill matrix）
 
 - 前端：`TS`, `JS`, `React`, `Redux`, `Scss`
 - 后端：`Node`, `Webpack`, `Nest`, `TypeORM`, `MySQL`
@@ -45,9 +36,9 @@ title: Alex's Resume
 
 ---
 
-## 4. 工作经历（Work experience）
+## 3. 工作经历（Work experience）
 
-### 4.1. 浩云科技
+### 3.1. 浩云科技
 
 > 2020.04 - 至今（广东 ｜ 广州）｜ 已上市
 
@@ -58,7 +49,7 @@ title: Alex's Resume
   - 主导低代码平台页面建模的架构设计与实现
   - 参与低代码平台数据建模模架构设计与实现
 
-### 4.2. Synergy88
+### 3.2. Synergy88
 
 > 2015.02 - 2020.02 （海外 | 马尼拉）
 
@@ -69,7 +60,7 @@ title: Alex's Resume
   - 核心产品的技术研发，难点攻克
   - 负责保障所有产品的前端的实现和交付
 
-### 4.3. 广州海关
+### 3.3. 广州海关
 
 > 2013.07 - 2015.01 （广东 | 广州 | 技术处 | 软件科）
 
@@ -81,11 +72,11 @@ title: Alex's Resume
 
 ---
 
-## 5. 项目（Project involved）
+## 4. 项目（Project involved）
 
-### 5.1. 业务项目
+### 4.1. 业务项目
 
-#### 5.1.1. 低代码平台 - x云（名称未定）
+#### 4.1.1. 低代码平台 - x云（名称未定）
 
 > 浩云科技
 
@@ -98,7 +89,7 @@ title: Alex's Resume
   - 前端：`react` `redux` `react-dnd` `yup`
   - 页面建模服务：`node` `nest` `webpack` `mysql`
 
-#### 5.1.2. IM 客户端
+#### 4.1.2. IM 客户端
 
 > Synergy88
 
@@ -106,7 +97,7 @@ title: Alex's Resume
 - 主要负责：客户端研发
 - 技术选型：`flutter` `dart`
 
-#### 5.1.3. 娱乐平台
+#### 4.1.3. 娱乐平台
 
 > Synergy88
 
@@ -116,7 +107,7 @@ title: Alex's Resume
   - 前端：`react` `redux` `react-native` `webpack` `node`
   - 后端：`golang`
 
-#### 5.1.4. 餐饮配送平台
+#### 4.1.4. 餐饮配送平台
 
 > Synergy88
 
@@ -124,7 +115,7 @@ title: Alex's Resume
 - 主要负责：提供前端技术支持，参与产品分析
 - 技术选型：`react` `redux`
 
-#### 5.1.5. 客服客户端 Nitalk
+#### 4.1.5. 客服客户端 Nitalk
 
 > Synergy88
 
@@ -142,7 +133,7 @@ title: Alex's Resume
 - 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
 - 技术选型：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB` -->
 
-#### 5.1.6. 国际司综合业务管理系统
+#### 4.1.6. 国际司综合业务管理系统
 
 > 广州海关 - 业务系统应用
 
@@ -151,7 +142,7 @@ title: Alex's Resume
 - 本人职责：负责项目前端设计、实现和前端组织，web api 制定
 - 技术选型：`Angular`, `D3`, `RequestJs`, `.NET MVC 4.5`, `Web API`, `MongoDB`, `MSSQL`
 
-#### 5.1.7. 海关邮递物品查询系统
+#### 4.1.7. 海关邮递物品查询系统
 
 > 广州海关 - 业务系统应用
 
@@ -159,9 +150,9 @@ title: Alex's Resume
 - 微信公众号：广州海关12360（gz12360）的邮递物件查询系统
 - 技术选型：`Polymer`, `Node`, `MONO`
 
-### 5.2. 开源项目
+### 4.2. 开源项目
 
-#### 5.2.1. UI 框架 deer-ui
+#### 4.2.1. UI 框架 deer-ui
 
 > Synergy88
 
@@ -176,7 +167,7 @@ title: Alex's Resume
   - [@deer-ui GitHub][deer-ui]
   - [@deer-ui online doc][ui-doc]
 
-#### 5.2.2. 个人项目
+#### 4.2.2. 个人项目
 
 - BlogHelper：基于 `AWS Lambda` 的博客助理服务，提供`点赞`，`访客记录`功能
   - [GitHub](https://github.com/SANGET/blog-helper-serverless)
@@ -184,6 +175,15 @@ title: Alex's Resume
 - @mini-code
   - 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API 支持，测试流程等支持等
   - [GitHub](https://github.com/minimal-studio)
+
+---
+
+## 5. 资源
+
+- 个人博客: https://thinkmore.xyz
+- UI 库: https://ui.thinkmore.xyz/
+- 管理系统运行器: https://scaffold.thinkmore.xyz/
+- UI 文档生成器: https://react-ui-doc.thinkmore.xyz/
 
 ---
 
