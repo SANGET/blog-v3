@@ -182,6 +182,7 @@ title: Alex's Resume
 ## 5. 资源
 
 - 个人博客: https://thinkmore.xyz
+- 页面设计器: https://page-designer.thinkmore.xyz/
 - UI 库: https://ui.thinkmore.xyz/
 - 管理系统运行器: https://scaffold.thinkmore.xyz/
 - UI 文档生成器: https://react-ui-doc.thinkmore.xyz/
