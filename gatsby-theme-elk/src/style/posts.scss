@@ -79,9 +79,11 @@ $postMargin: 15px;
   // padding: 20px 0;
   .post-title {
     font-weight: normal;
-    color: #333;
+    color: #666;
     margin-bottom: $postMargin;
-    font-size: 18px;
+    font-size: 20px;
+    transition: all ease 0.2s;
+    margin-bottom: 6px;
     // margin-top: 5px;
     a {
       color: inherit;
@@ -93,9 +95,9 @@ $postMargin: 15px;
 .post-item {
   a {
     color: #777;
-    &:hover {
-      color: $themeColor;
-    }
+    // &:hover {
+    //   color: $themeColor;
+    // }
   }
 }
 .post-item {
@@ -109,7 +111,8 @@ $postMargin: 15px;
     cursor: pointer;
     &:hover {
       .post-title {
-        color: $themeColor;
+        // color: $themeColor;
+        color: #000;
       }
     }
     p {
@@ -138,16 +141,16 @@ $postMargin: 15px;
 }
 .post-detail {
   .back-btn {
-    font-size: 24px;
-    padding: 30px 0 50px;
+    font-size: 14px;
     color: #ccc;
+    margin-bottom: 50px;
     transition: color ease 0.3s;
     &:hover {
       color: $themeColor !important;
     }
   }
   .subcontent {
-    margin: 15px 0 30px;
+    margin: 3rem 0 3rem;
   }
   .post-title {
     font-size: 36px;
@@ -155,7 +158,11 @@ $postMargin: 15px;
 }
 .subcontent {
   display: flex;
-  color: #777;
+  color: #bbb;
+  transition: all 0.3s ease;
+  &:hover {
+    color: #999;
+  }
   // .tags {
   //   a {
   //     color: #BBB;

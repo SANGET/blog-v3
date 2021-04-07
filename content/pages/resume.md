@@ -1,13 +1,17 @@
 ---
-author: Alex
 layout: page
 title: Alex's Resume
 ---
 
 <escape>
+
   <div class="no-print simple-nav">
+    <div class="side-desc">
+      RESUME
+    </div>
     <a href="/resume_en" class="mr20">English version</a>
     <a href="https://cdn.jsdelivr.net/gh/SANGET/resource@master/files/resume.pdf">PDF简历下载</a>
+    <hr />
   </div>
 </escape>
 
@@ -24,8 +28,6 @@ title: Alex's Resume
 <!-- - 有 10 人的前端团队的管理经验 -->
 <!-- - 重度 Mac 用户 -->
 
----
-
 ## 2. 技能（Skill matrix）
 
 - 前端：`TS`, `JS`, `React`, `Redux`, `Scss`
@@ -33,8 +35,6 @@ title: Alex's Resume
 - 测试：`Jest`, `Mocha`, `Cypress`
 - DevOps：`Docker`, `Netlify`
 - 工具：`Mac`, `Git`, `Google`, `Jira`, `Drawio`
-
----
 
 ## 3. 工作经历（Work experience）
 
@@ -70,8 +70,6 @@ title: Alex's Resume
 - 职位：软件工程师
 - 职责：
   - 负责业务系统原型制作，业务逻辑开发
-
----
 
 ## 4. 项目（Project involved）
 
@@ -177,25 +175,7 @@ title: Alex's Resume
   - 介绍：`@mini-code` 是一个 web 前端通用函数组织，提供前端应用的开发和构建环境，数据处理，RESTFul API 支持，测试流程等支持等
   - [GitHub](https://github.com/minimal-studio)
 
----
-
-## 5. 资源
-
-- 个人博客: https://thinkmore.xyz
-- 页面设计器: https://page-designer.thinkmore.xyz/
-- UI 库: https://ui.thinkmore.xyz/
-- 管理系统运行器: https://scaffold.thinkmore.xyz/
-- UI 文档生成器: https://react-ui-doc.thinkmore.xyz/
-
----
-
-## 6. 标签
-
-`编程` `读书` `篮球` `摄影` `吉他` `极简主义`
-
----
-
-## 7. 联系方式
+## 5. 联系方式
 
 - Email：<a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a>
   <!-- - <a href="mailto:zzzxjalex@outlook" target="_top">zzzxjalex@outlook.com</a> -->
@@ -207,9 +187,21 @@ title: Alex's Resume
   - [GitHub](https://github.com/SANGET)
   <!-- - [LinkedIn][linkedIn] -->
 
-<!-- ## 教育
+## 6. 资源
 
-- 广东轻工职业技术学院 ~ 2013 -->
+- 个人博客: https://thinkmore.xyz
+- 页面设计器: https://page-designer.thinkmore.xyz/
+- UI 库: https://ui.thinkmore.xyz/
+- 管理系统运行器: https://scaffold.thinkmore.xyz/
+- UI 文档生成器: https://react-ui-doc.thinkmore.xyz/
+
+<!-- ## 6. 标签
+
+`编程` `读书` `篮球` `摄影` `吉他` `极简主义` -->
+
+## 7. 教育经历
+
+- 广东轻工职业技术学院 ~ 2013
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper

@@ -1,9 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Icon } from "@deer-ui/core/icon";
-import { Grid } from "@deer-ui/core/grid";
-import { ToolTip } from "@deer-ui/core/tooltip";
-import { Container } from "@deer-ui/core/container";
+import { Tooltip } from "react-tippy";
 import { ShowModal } from "@deer-ui/core/modal";
 
 import { getClientFingerprint } from "../utils/get-fingerprint";
@@ -37,30 +35,35 @@ const Footer = ({ title }) => {
     <footer className="footer no-print">
       <div className="social p20">
         {github && (
-          <ToolTip title="Github">
+          <Tooltip title="Github">
             <a href={github} rel="noopener noreferrer" target="_blank">
               <Icon n="github" s="b" />
             </a>
-          </ToolTip>
+          </Tooltip>
         )}
         {mail && (
-          <ToolTip title={mail}>
+          <Tooltip title={mail}>
             <a href={`mailto:${mail}`} target="_top">
               <Icon n="envelope" s="r" />
             </a>
-          </ToolTip>
+          </Tooltip>
         )}
-        <ToolTip
-          n="fingerprint"
-          title="fingerprint"
-          onClick={async (e) => {
-            const fp = await getClientFingerprint();
-            ShowModal({
-              title: "Fingerprint",
-              children: () => <div className="p10">{fp}</div>,
-            });
-          }}
-        />
+        <Tooltip title="fingerprint">
+          <Icon
+            n="fingerprint"
+            onClick={async (e) => {
+              const fp = await getClientFingerprint();
+              ShowModal({
+                title: "Your Browser's Fingerprint",
+                clickBgToClose: true,
+                needMaxBtn: false,
+                needMinBtn: false,
+                marginTop: "30%",
+                children: () => <div className="p20">{fp}</div>,
+              });
+            }}
+          />
+        </Tooltip>
       </div>
 
       {/* {showBuildInfo && (

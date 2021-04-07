@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, navigate } from "gatsby";
 import { Pagination } from "@deer-ui/core/pagination";
 
-import { ToolTip } from "@deer-ui/core/tooltip";
 import { Grid } from "@deer-ui/core/grid";
 import SEO from "../components/seo";
 import Bio from "../components/bio";
@@ -193,12 +192,12 @@ class BlogList extends React.Component<
                         {title}
                       </Link>
                     </h2>
-                    <p
+                    {/* <p
                       className="post-desc"
                       dangerouslySetInnerHTML={{
                         __html: description || node.excerpt,
                       }}
-                    />
+                    /> */}
                   </div>
                   <Grid container wrap="wrap" className="subcontent">
                     <TimeTip date={date} className="time-helper" />

@@ -2,9 +2,9 @@ import React from "react";
 
 const SideDesc = ({ desc, subDesc = "" }) => {
   return (
-    <blockquote>
-      <span className="mr10"></span> {subDesc}
-    </blockquote>
+    <div className="side-desc">
+      {desc} <span className="mr10"></span> {subDesc}
+    </div>
   );
 };
 

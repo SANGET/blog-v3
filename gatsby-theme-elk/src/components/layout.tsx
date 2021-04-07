@@ -4,6 +4,8 @@ import { Container } from "@deer-ui/core/container";
 import { graphql, useStaticQuery } from "gatsby";
 import { Loading } from "@deer-ui/core/loading";
 import { Icon } from "@deer-ui/core/icon";
+import UseAnimations from "react-useanimations";
+import menu2 from "react-useanimations/lib/menu2";
 
 import Footer from "./footer";
 import Header from "./header";
@@ -12,12 +14,49 @@ import { usePageLoading } from "./utils";
 // import { setRequest } from '../blog-helper/api';
 
 const Layout = (props) => {
+  const siteData = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        siteMetadata {
+          author
+          title
+          sideMenu {
+            title
+            path
+          }
+        }
+      }
+    }
+  `);
+  const { sideMenu } = siteData.site.siteMetadata;
   const { children, ...other } = props;
+  const { location } = other;
+  const { pathname } = location;
   // const loading = usePageLoading();
-  const [showNav, setShowNav] = useState(true);
+  const isInMenuPath = () => {
+    let isMenuPath = false;
+    sideMenu.map((nav) => {
+      const { title: subTitle, path, activeFilter } = nav;
+      const isRoot = path === "/";
+      // eslint-disable-next-line no-nested-ternary
+      const isActive = isRoot
+        ? pathname === path
+        : activeFilter
+        ? activeFilter(pathname)
+        : pathname.indexOf(path) !== -1;
+      if (isActive) {
+        isMenuPath = true;
+      }
+    });
+    return isMenuPath;
+  };
+  /** 如果当前路由在左侧菜单中，则默认现实，否则，默认隐藏 */
+  const defaultShowMenu = isInMenuPath();
+  const [showNav, setShowNav] = useState(defaultShowMenu);
   useEffect(() => {
     const rootWrapper = document.querySelector("#wrapper");
     if (rootWrapper) rootWrapper.classList.add("ready");
+
     const { matches } = window.matchMedia("(max-width: 960px)");
     if (matches) {
       setShowNav(false);
@@ -34,8 +73,15 @@ const Layout = (props) => {
           onClick={(e) => {
             setShowNav(!showNav);
           }}
+          style={{ marginTop: -4 }}
         >
-          <Icon n="bars" />
+          <UseAnimations
+            animationKey="menu2"
+            reverse={showNav}
+            animation={menu2}
+            size={24}
+            speed={showNav ? 1 : 2}
+          />
         </div>
         <div className="left-nav no-print">
           <div className="left-nav-content">
@@ -47,7 +93,7 @@ const Layout = (props) => {
         <Loading inrow loading={loading} />
       </div> */}
         <div className="blog-content flex">
-          <div className="container xl auto">{children}</div>
+          <div className="container md auto">{children}</div>
         </div>
       </div>
       <Scripts />

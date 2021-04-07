@@ -2,11 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import { DebounceClass } from "@mini-code/base-func";
 import { Icon } from "@deer-ui/core/icon";
-import Tether from "tether";
 // import TetherComponent from "react-tether";
 
 // import Bio from "../components/bio";
-import { ToolTip } from "@deer-ui/core/tooltip";
+import { Tooltip } from "react-tippy";
 import { Grid } from "@deer-ui/core/grid";
 import { Spinning } from "@deer-ui/core/loading";
 import Layout from "../components/layout";
@@ -167,20 +166,22 @@ class BlogPostTemplate extends React.Component<
   setTOC = () => {
     // console.log('didMount')
     this.destory();
-    this._tetherEntity = new Tether({
-      element: ".post-toc-wrapper",
-      target: ".post-detail",
-      attachment: "top left",
-      targetAttachment: "top right",
-      offset: "-20px -10px",
-      "tether-enabled": false,
-      constraints: [
-        {
-          to: "window",
-          attachment: "together",
-          pin: true,
-        },
-      ],
+    import("tether").then(({ default: Tether }) => {
+      this._tetherEntity = new Tether({
+        element: ".post-toc-wrapper",
+        target: ".post-detail",
+        attachment: "top left",
+        targetAttachment: "top right",
+        offset: "-20px -10px",
+        "tether-enabled": false,
+        constraints: [
+          {
+            to: "window",
+            attachment: "together",
+            pin: true,
+          },
+        ],
+      });
     });
   };
 
@@ -256,11 +257,8 @@ class BlogPostTemplate extends React.Component<
             !isLiked && this.likeThisBlog(title);
           }}
         >
-          <ToolTip
-            {...iconMap.like(isLiked)}
-            className={`ml10 ${isLiked ? "t_red" : ""}`}
-            title="Likes"
-          >
+          <Tooltip className={`ml10 ${isLiked ? "t_red" : ""}`} title="Likes">
+            <Icon {...iconMap.like(isLiked)} />
             <span className="ps10">
               {
                 // eslint-disable-next-line no-nested-ternary
@@ -273,7 +271,7 @@ class BlogPostTemplate extends React.Component<
                 )
               }
             </span>
-          </ToolTip>
+          </Tooltip>
           {/* <CounterTip n="thumbs-up" s="r" count={currLike} /> */}
         </span>
       )
@@ -286,9 +284,9 @@ class BlogPostTemplate extends React.Component<
     const { currVisit } = this.state;
     return (
       enabledVisitor && (
-        <div>
+        <Tooltip title="Visitor">
           View {currVisit ? currVisit.counter : <Spinning color="black" />}
-        </div>
+        </Tooltip>
         // <ToolTip
         //   {...iconMap.visit}
         //   title="View">
@@ -380,7 +378,7 @@ class BlogPostTemplate extends React.Component<
 
         <Comment />
 
-        <BackToTop />
+        {/* <BackToTop /> */}
         {_needTOC && (
           // <TetherComponent attachment="top center" />
           <div

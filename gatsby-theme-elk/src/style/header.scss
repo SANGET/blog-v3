@@ -18,14 +18,19 @@
   .item {
     $border: 1px;
     padding: 15px 30px;
-    border-bottom: $border solid transparent;
+    // border-bottom: $border solid transparent;
+    transition: all ease 0.2s;
+    color: #aaa;
     &.active {
-      border-color: $themeColor;
-      background-color: #fafafa;
+      // border-color: $themeColor;
+      // background-color: #fafafa;
+      color: #000 !important;
+      font-weight: bold;
       // color: #FFF;
     }
     &:hover {
-      background-color: #eee;
+      color: #666;
+      // background-color: #eee;
     }
   }
 }

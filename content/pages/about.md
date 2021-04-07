@@ -5,13 +5,19 @@ layout: page
 
 <!-- > 分享技术，记录个人经历，探索技术的价值。 -->
 
-## 关于我
+<escape>
+
+  <div class="side-desc">
+  ABOUT
+  </div>
+
+</escape>
 
 Alex Chueng，90 后，低调务实，喜欢喝早茶。
 
 Tags: `coding`、`音乐`、`摄影`、`旅游`、`极简主义`、`完美主义`。
 
-## Pic
+## I'AM HERE
 
 <escape>
 
@@ -29,7 +35,7 @@ Tags: `coding`、`音乐`、`摄影`、`旅游`、`极简主义`、`完美主义
 
 </escape>
 
-## Ref
+## RESOURCES
 
 - [Reading list](/read-list)
 - [Resume](/resume)

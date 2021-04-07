@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 // Utilities
-import kebabCase from 'lodash/kebabCase';
+import kebabCase from "lodash/kebabCase";
 // Components
-import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Link from '../components/link';
-import SideDesc from '../components/site-desc';
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Link from "../components/link";
+import SideDesc from "../components/site-desc";
 
 const TagsPage = ({
   data: {
@@ -26,22 +26,24 @@ const TagsPage = ({
         {/* <h1>Tags</h1>
         <br/> */}
         {/* <h3>Total {allTags} tags</h3> */}
-        <SideDesc desc={`Total ${allTags} tags`} />
+        <SideDesc desc={`TOTAL ${allTags} TAGS`} />
         <div className="tag-cloud block-a">
-          {
-            group.map((tag) => {
-              const { fieldValue, totalCount } = tag;
-              return (
-                <span key={fieldValue} className="mr15" style={{
+          {group.map((tag) => {
+            const { fieldValue, totalCount } = tag;
+            return (
+              <span
+                key={fieldValue}
+                className="mr15"
+                style={{
                   fontSize: `${15 + totalCount}px`,
-                }}>
-                  <Link to={`/tags/${kebabCase(fieldValue)}/`}>
-                    {fieldValue} ({totalCount})
-                  </Link>
-                </span>
-              );
-            })
-          }
+                }}
+              >
+                <Link to={`/tags/${kebabCase(fieldValue)}/`}>
+                  {fieldValue} ({totalCount})
+                </Link>
+              </span>
+            );
+          })}
         </div>
       </div>
     </Layout>
@@ -55,7 +57,7 @@ TagsPage.propTypes = {
         PropTypes.shape({
           fieldValue: PropTypes.string.isRequired,
           totalCount: PropTypes.number.isRequired,
-        }).isRequired,
+        }).isRequired
       ),
     }),
     site: PropTypes.shape({

@@ -1,8 +1,27 @@
 .archive-page {
   line-height: 1.5rem;
 
-  .post {
-    color: #444;
+  .archive-year {
+    margin: 3rem 0 1rem;
+  }
+
+  .archive-item {
+    // border-bottom: 1px dashed #EEE;
+
+    .item {
+      color: #777777;
+      margin-bottom: 0.75rem;
+      &:hover {
+        a {
+          color: #000;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .date {
+      color: #aaa;
+    }
 
     a {
       font-size: 1.1em;
@@ -10,14 +29,11 @@
       text-decoration: none;
       margin: 3px 0;
 
-      // border-bottom: 1px dashed #EEE;
-      &:hover {
-        color: $themeColor;
-      }
+      transition: all ease 0.2s;
     }
   }
 
   .tags {
-    color: #BBB;
+    color: #bbb;
   }
 }
