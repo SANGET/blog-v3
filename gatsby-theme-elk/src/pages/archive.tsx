@@ -33,15 +33,11 @@ const ArchivePage = (props) => {
             return (
               <div key={slug} className="archive-item">
                 {yearTip}
-                <Grid container alignItems="center" className="item">
-                  <span className="mr10">
-                    <Link to={slug}>{title}</Link>
-                  </span>
-                  <div>
-                    <span className="date">{date}</span>
-                    {/* <Tags tags={tags} /> */}
-                  </div>
-                </Grid>
+                <div className="item">
+                  <Link to={slug}>
+                    {title} - <span className="date">{date}</span>
+                  </Link>
+                </div>
               </div>
             );
           })}

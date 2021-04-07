@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Container } from "@deer-ui/core/container";
 import { graphql, useStaticQuery } from "gatsby";
-import { Loading } from "@deer-ui/core/loading";
-import { Icon } from "@deer-ui/core/icon";
 import UseAnimations from "react-useanimations";
 import menu2 from "react-useanimations/lib/menu2";
 
@@ -36,7 +33,7 @@ const Layout = (props) => {
   const isInMenuPath = () => {
     let isMenuPath = false;
     sideMenu.map((nav) => {
-      const { title: subTitle, path, activeFilter } = nav;
+      const { path, activeFilter } = nav;
       const isRoot = path === "/";
       // eslint-disable-next-line no-nested-ternary
       const isActive = isRoot

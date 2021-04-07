@@ -1,41 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import Layout from '../components/layout';
-import Link from '../components/link';
+import Layout from "../components/layout";
+import Link from "../components/link";
+import SideDesc from "../components/site-desc";
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
+    totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`;
   return (
     <Layout location={location} title={data.site.siteMetadata.title}>
-      <h1>{tagHeader}</h1>
-      <div className="tag-posts block-a">
-        {
-          edges.map(({ node }) => {
-            const { slug } = node.fields;
-            const { title, date } = node.frontmatter;
-            return (
-              <span className="item" style={{
-                fontSize: '16px',
-              }} key={slug}>
-                <Link to={slug}>
-                  {title} - <span className="date">{date}</span></Link>
-              </span>
-            );
-          })
-        }
-        <span className="itm">
+      <SideDesc desc={tagHeader} />
+      <div className="archive-item">
+        {edges.map(({ node }) => {
+          const { slug } = node.fields;
+          const { title, date } = node.frontmatter;
+          return (
+            <div className="item" key={slug}>
+              <Link to={slug}>
+                {title} - <span className="date">{date}</span>
+              </Link>
+            </div>
+          );
+        })}
+        <hr />
+        <div className="item">
           <Link to="/tags">All tags</Link>
-        </span>
+        </div>
       </div>
     </Layout>
   );
 };
+
 Tags.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
@@ -53,7 +53,7 @@ Tags.propTypes = {
               slug: PropTypes.string.isRequired,
             }),
           }),
-        }).isRequired,
+        }).isRequired
       ),
     }),
   }),

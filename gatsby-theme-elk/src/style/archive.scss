@@ -2,38 +2,38 @@
   line-height: 1.5rem;
 
   .archive-year {
-    margin: 3rem 0 1rem;
-  }
-
-  .archive-item {
-    // border-bottom: 1px dashed #EEE;
-
-    .item {
-      color: #777777;
-      margin-bottom: 0.75rem;
-      &:hover {
-        a {
-          color: #000;
-          font-weight: bold;
-        }
-      }
-    }
-
-    .date {
-      color: #aaa;
-    }
-
-    a {
-      font-size: 1.1em;
-      color: inherit;
-      text-decoration: none;
-      margin: 3px 0;
-
-      transition: all ease 0.2s;
-    }
+    margin: 3rem 0 1.5rem;
   }
 
   .tags {
     color: #bbb;
+  }
+}
+
+.archive-item {
+  .item {
+    color: #777777;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    // border-bottom: 1px dashed #eee;
+    &:hover {
+      a {
+        color: #000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .date {
+    color: #aaa;
+  }
+
+  a {
+    font-size: 1.1em;
+    color: inherit;
+    text-decoration: none;
+    margin: 3px 0;
+
+    transition: all ease 0.2s;
   }
 }

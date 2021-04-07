@@ -1,48 +1,43 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { graphql } from 'gatsby';
+import React, { useEffect, useMemo, useState } from "react";
+import { graphql } from "gatsby";
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import { VisitBlog } from '../blog-helper/api';
-import { SessionCache } from '../blog-helper/cache';
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { VisitBlog } from "../blog-helper/api";
+import { SessionCache } from "../blog-helper/cache";
 
 const PageLayout = ({
-  location, data: {
+  location,
+  data: {
     markdownRemark: {
       html,
-      frontmatter: {
-        title: pageTitle
-      }
+      frontmatter: { title: pageTitle },
     },
   },
 }) => {
   const [visitorCount, setVisitorCount] = useState();
   useEffect(() => {
-    const visitorAndLikeDetailCache = new SessionCache('pageVisitor', true);
+    const visitorAndLikeDetailCache = new SessionCache("pageVisitor", true);
     setVisitorCount(visitorAndLikeDetailCache.getItem(pageTitle));
     VisitBlog(pageTitle)
       .then((res) => {
         visitorAndLikeDetailCache.setItem(pageTitle, res);
         setVisitorCount(res);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }, []);
   return (
     <Layout location={location}>
-      <SEO
-        title={pageTitle}
-      />
+      <SEO title={pageTitle} />
       <div className="markdown-body">
         <div
           className="about-page"
-          dangerouslySetInnerHTML={{ __html: html }} ></div>
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></div>
       </div>
       <hr />
       <div className="no-print page-visitor">
-        view <span>
-          {visitorCount?.counter[0]}
-        </span>
+        view <span>{visitorCount?.counter[0]}</span>
       </div>
     </Layout>
   );

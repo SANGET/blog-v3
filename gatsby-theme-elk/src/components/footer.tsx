@@ -58,7 +58,7 @@ const Footer = ({ title }) => {
                 clickBgToClose: true,
                 needMaxBtn: false,
                 needMinBtn: false,
-                marginTop: "30%",
+                marginTop: "10%",
                 children: () => <div className="p20">{fp}</div>,
               });
             }}
