@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import { ShowModal } from '@deer-ui/core/modal';
 // import { getScreenWidth } from '@deer-ui/core/utils/screen';
 
@@ -14,14 +14,16 @@ const Scripts = () => {
   React.useEffect(() => {
     window.$(document).ready(() => {
       (function ($) {
-        $('.photoset-grid').photosetGrid({});
+        $(".photoset-grid").photosetGrid({});
 
-        $(document.links).filter(function () {
-          return this.hostname !== window.location.hostname;
-        }).attr('target', '_blank');
+        $(document.links)
+          .filter(function () {
+            return this.hostname !== window.location.hostname;
+          })
+          .attr("target", "_blank");
 
-        if (window.mediumZoom) window.mediumZoom('img');
-      }(window.jQuery));
+        if (window.mediumZoom) window.mediumZoom("img");
+      })(window.jQuery);
     });
   }, []);
   return null;

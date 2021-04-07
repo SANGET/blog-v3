@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const SideDesc = ({ desc, subDesc = '' }) => {
+const SideDesc = ({ desc, subDesc = "" }) => {
   return (
-    <blockquote>{desc} <span className="mr10"></span> {subDesc}</blockquote>
+    <blockquote>
+      <span className="mr10"></span> {subDesc}
+    </blockquote>
   );
 };
 

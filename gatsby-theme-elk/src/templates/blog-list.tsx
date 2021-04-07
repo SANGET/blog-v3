@@ -188,11 +188,11 @@ class BlogList extends React.Component<
                       this.visitBlog(slug, title);
                     }}
                   >
-                    <h4 className="post-title">
+                    <h2 className="post-title">
                       <Link style={{ boxShadow: "none" }} to={slug}>
                         {title}
                       </Link>
-                    </h4>
+                    </h2>
                     <p
                       className="post-desc"
                       dangerouslySetInnerHTML={{

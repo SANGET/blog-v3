@@ -53,9 +53,9 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "tether": "^2.0.0",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.1",
-    "tether": "^1.4.7",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
     "unistore": "^3.5.2"

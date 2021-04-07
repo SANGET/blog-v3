@@ -13722,10 +13722,10 @@ terser@^4.1.2, terser@^4.6.12:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-tether@^1.4.7:
-  version "1.4.7"
-  resolved "https://registry.npm.taobao.org/tether/download/tether-1.4.7.tgz#d56a818590d8fe72e387f77a67f93ab96d8e1fb2"
-  integrity sha1-1WqBhZDY/nLjh/d6Z/k6uW2OH7I=
+tether@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/tether/download/tether-2.0.0.tgz#8ccb03992e71e2e913e6b1d4feb6be8cb49a4f79"
+  integrity sha1-jMsDmS5x4ukT5rHU/ra+jLSaT3k=
 
 text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"

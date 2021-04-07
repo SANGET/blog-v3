@@ -1,3 +1,6 @@
+$pc_left_bar_width: 300px;
+$brand_padding: 20px;
+
 body {
   background-color: #fefefe;
   font-size: 14px;
@@ -7,11 +10,11 @@ body {
 
 p,
 li {
-  color: #444;
+  color: #717070;
 }
 
 li {
-  >p {
+  > p {
     margin-bottom: 0.25em !important;
     margin-top: 0 !important;
   }
@@ -27,10 +30,87 @@ a {
   color: $themeColor;
 }
 
-.wrapper {
-  position: relative;
+.brand {
+  padding: $brand_padding 0;
+  color: #999;
+  text-align: center;
+}
 
-  .container {}
+.handle-toggle-btn {
+  position: absolute;
+  top: $brand_padding;
+  left: $brand_padding;
+  color: #999;
+  z-index: 111;
+  &:hover {
+    color: $themeColor;
+  }
+}
+
+.main-container {
+  @include fill;
+  display: flex;
+  flex-wrap: nowrap;
+  .left-nav {
+    position: sticky;
+    height: 100%;
+    // position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    border-right: 1px solid #ddd;
+    // border-left-width: 3px solid transparent;
+    // border-image: linear-gradient(to bottom, #3eadcf, #abe9cd);
+    // border-image-slice: 10;
+    background-color: #fafafa;
+
+    transition: all ease 0.3s;
+
+    .left-nav-content {
+      height: 100%;
+      width: $pc_left_bar_width;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.wrapper {
+  @include fill;
+  .container {
+  }
+
+  &.show-nav {
+    .left-nav {
+      // display: flex;
+      width: $pc_left_bar_width;
+    }
+  }
+  &.hide-nav {
+    .left-nav {
+      // display: none;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.blog-content {
+  // position: absolute;
+  // left: $pc_left_bar_width;
+  // top: 0;
+  // bottom: 0;
+  // right: 0;
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
 }
 
 .container {
@@ -53,7 +133,7 @@ a {
   right: 10px;
   bottom: 10px;
   padding: 6px 20px;
-  border: 1px solid #EEE;
+  border: 1px solid #eee;
   border-radius: 4px;
   background-color: #f9f9f9;
   cursor: pointer;
@@ -74,10 +154,14 @@ img {
 }
 
 .footer {
-  background-color: #fafafa;
+  // background-color: #fafafa;
   color: #999;
   border-top: 1px solid #f3f3f3;
   padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   // .footer-icon {
   //   text-align: center;
@@ -102,7 +186,6 @@ img {
 }
 
 .bio {
-
   // align-items: center;
   .desc {
     display: flex;
@@ -123,7 +206,6 @@ img {
 }
 
 @media print {
-
   .no-print,
   .no-print * {
     display: none !important;

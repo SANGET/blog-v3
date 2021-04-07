@@ -4,7 +4,8 @@
   }
 }
 @media screen and (max-width: $container-md-width) {
-  .header, .footer {
+  .header,
+  .footer {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -20,7 +21,8 @@
   }
 }
 @media screen and (max-width: $container-lg-width) {
-  .header, .footer {
+  .header,
+  .footer {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -41,5 +43,14 @@
       flex-direction: column;
       align-items: flex-start;
     }
+  }
+
+  .main-container .left-nav {
+    // display: none;
+    position: absolute;
+  }
+
+  .blog-content {
+    left: 0;
   }
 }
