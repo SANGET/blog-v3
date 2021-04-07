@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Container } from "@deer-ui/core/container";
 import Link from "./link";
 
-const rootPath = `${window.__PATH_PREFIX__ || ""}/`;
+const rootPath = `${__PATH_PREFIX__ || ""}/`;
 
 const Header = (props) => {
   const siteData = useStaticQuery(graphql`
