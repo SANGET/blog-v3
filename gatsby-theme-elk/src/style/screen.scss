@@ -48,6 +48,7 @@
   .main-container .left-nav {
     // display: none;
     position: absolute;
+    z-index: 11;
   }
 
   .blog-content {
