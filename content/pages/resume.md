@@ -21,7 +21,7 @@ title: Alex's Resume
 
 - 前端工程师，8 年 web 开发经验，React、TS、Node 技术栈
 - 曾主导 UI 框架的规划、开发和维护
-- 曾负责低代码平台页面建模的架构设计
+- 曾负责低代码平台页面建模的架构设计，探索更贴切业务的技术方案
 - 曾担任公司的前端技术讲师，推进 React、TS、Node 技术栈落地
 - 有海外工作经验，可读写英语文档，可用英语日常交流
 <!-- - 曾管理 10 人的前端团队 -->
@@ -40,7 +40,7 @@ title: Alex's Resume
 
 ### 3.1. 浩云科技
 
-> 2020.04 - 至今（广东 ｜ 广州）｜ 已上市
+> 2020.04 - 2021.04（广东 ｜ 广州）｜ 已上市
 
 - 公司简介：金融安防、智慧物联解决方案供应商
 - 行业：金融安防、智慧安防、IoT
@@ -48,7 +48,6 @@ title: Alex's Resume
 - 职责：
   - 低代码平台业务线前端负责人
   - 主导低代码平台页面建模的架构设计与实现
-  - 参与低代码平台数据建模模架构设计与实现
 
 ### 3.2. Synergy88
 
@@ -182,7 +181,7 @@ title: Alex's Resume
   <!-- - <a href="mailto:zh.sanget@gmail.com" target="_top">zh.sanget@gmail.com</a> -->
 <!-- - Telegram：`atob("YWFhYWFhYWxsbGxsbGxlZWVlZWVleHh4eHh4eA==")` -->
 <!-- - 电话：`13662344917` -->
-- 电话：`atob("MTM2NjIzNDQ5MTc=")`
+- 电话：`13662344917`
 - 社交：
   - [GitHub](https://github.com/SANGET)
   <!-- - [LinkedIn][linkedIn] -->
