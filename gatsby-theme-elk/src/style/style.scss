@@ -37,7 +37,7 @@ a {
 }
 
 .handle-toggle-btn {
-  position: absolute;
+  position: fixed;
   top: $brand_padding;
   left: $brand_padding;
   color: #999;
@@ -57,12 +57,12 @@ a {
 }
 
 .main-container {
-  @include fill;
+  // @include fill;
   display: flex;
   flex-wrap: nowrap;
   .left-nav {
     position: sticky;
-    height: 100%;
+    height: 100vh;
     // position: absolute;
     left: 0;
     bottom: 0;
