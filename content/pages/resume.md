@@ -84,7 +84,7 @@ title: Alex's Resume
 
 ### 4.1. 业务项目
 
-#### 落地页配置平台
+#### 4.1.1. 落地页配置平台
 
 > 果肉网校
 
@@ -93,7 +93,7 @@ title: Alex's Resume
 - 技术：
   - `react` `redux` `react-dnd` `mysql` `webpack` `egg`
 
-#### 4.1.1. 低代码平台 - x云（名称未定）
+#### 4.1.2. 低代码平台 - x云（名称未定）
 
 > 浩云科技
 
@@ -106,7 +106,7 @@ title: Alex's Resume
   - 前端：`react` `redux` `react-dnd` `yup`
   - 页面建模服务：`node` `nest` `webpack` `mysql`
 
-#### 4.1.2. IM 客户端
+#### 4.1.3. IM 客户端
 
 > Synergy88
 
@@ -114,7 +114,7 @@ title: Alex's Resume
 - 主要负责：客户端研发
 - 技术选型：`flutter` `dart`
 
-#### 4.1.3. 娱乐平台
+#### 4.1.4. 娱乐平台
 
 > Synergy88
 
@@ -124,7 +124,7 @@ title: Alex's Resume
   - 前端：`react` `redux` `react-native` `webpack` `node`
   - 后端：`golang`
 
-#### 4.1.4. 餐饮配送平台
+#### 4.1.5. 餐饮配送平台
 
 > Synergy88
 
@@ -132,7 +132,7 @@ title: Alex's Resume
 - 主要负责：提供前端技术支持，参与产品分析
 - 技术选型：`react` `redux`
 
-#### 4.1.5. 客服客户端 Nitalk
+#### 4.1.6. 客服客户端 Nitalk
 
 > Synergy88
 
@@ -150,7 +150,7 @@ title: Alex's Resume
 - 工作流程：本地构建 -> 登入发布系统 -> 上传 built package -> 发布 -> 应用通过 ssh 将资源推送到部署服务器，并备份原有资源
 - 技术选型：`@deer-ui/admin-scaffold`, `@mini-code/web-server`, `lowDB` -->
 
-#### 4.1.6. 国际司综合业务管理系统
+#### 4.1.7. 国际司综合业务管理系统
 
 > 广州海关 - 业务系统应用
 
@@ -159,7 +159,7 @@ title: Alex's Resume
 - 本人职责：负责项目前端设计、实现和前端组织，web api 制定
 - 技术选型：`Angular`, `D3`, `RequestJs`, `.NET MVC 4.5`, `Web API`, `MongoDB`, `MSSQL`
 
-#### 4.1.7. 海关邮递物品查询系统
+#### 4.1.8. 海关邮递物品查询系统
 
 > 广州海关 - 业务系统应用
 
