@@ -31,6 +31,8 @@ Tags: `coding`、`音乐`、`摄影`、`旅游`、`极简主义`、`完美主义
     <div class="flex">
       <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg" />
     </div>
+  </div>
+  <div class="layout">
     <div class="flex">
       <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/14.jpg" />
     </div>
