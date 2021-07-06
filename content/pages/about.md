@@ -21,26 +21,18 @@ Tags: `coding`、`音乐`、`摄影`、`旅游`、`极简主义`、`完美主义
 
 <escape>
 
-  <div class="layout">
-    <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/7.jpg" />
+  <div clasn="__img_row" style="display: flex;flex-wrap: wrap;padding: 0 4px;">
+    <div class="__img_column" style="flex:33.30%;padding: 0 4px;">
+      <img style="margin-top: 8px;vertical-align: middle;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/14.jpg" />
+      <img style="margin-top: 8px;vertical-align: middle;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/7.jpg" />
     </div>
-    <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/5.jpg" />
+    <div class="__img_column" style="flex: 33.3%;padding: 0 4px;">
+      <img style="margin-top: 8px;vertical-align: middle;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg" />
+      <img style="margin-top: 8px;vertical-align: middle;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/15.jpg" />
     </div>
-    <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/9.jpg" />
-    </div>
-  </div>
-  <div class="layout">
-    <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/14.jpg" />
-    </div>
-    <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/15.jpg" />
-    </div>
-    <div class="flex">
-      <img src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/16.jpg" />
+    <div class="__img_column" style="flex: 33.3%;padding: 0 4px;">
+      <img style="margin-top: 8px;vertical-align: middle;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/16.jpg" />
+      <img style="margin-top: 8px;vertical-align: middle;" src="https://cdn.jsdelivr.net/gh/SANGET/blog-v3@master/content/assets/images/me/5.jpg" />
     </div>
   </div>
 
