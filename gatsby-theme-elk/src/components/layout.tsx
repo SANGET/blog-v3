@@ -66,7 +66,7 @@ const Layout = (props) => {
     >
       <div className="main-container">
         <div
-          className="handle-toggle-btn"
+          className="handle-toggle-btn no-print"
           onClick={(e) => {
             setShowNav(!showNav);
           }}

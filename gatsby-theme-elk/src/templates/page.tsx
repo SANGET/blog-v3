@@ -35,8 +35,8 @@ const PageLayout = ({
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
       </div>
-      <hr />
       <div className="no-print page-visitor">
+        <hr />
         view <span>{visitorCount?.counter[0]}</span>
       </div>
     </Layout>
