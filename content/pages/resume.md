@@ -22,6 +22,10 @@ title: Alex's Resume
 - 2 年低代码相关领域经验
 - 5 年海外工作经验，读写英文文档，英语日常交流
 
+## 技能
+
+- `React` `Node` `TypeScript` `Webpack` `Nest` `TypeORM` `MySQL` `Docker` `Jest`
+
 ## 工作经历
 
 <!-- |公司|行业|职位|职责|时间|
@@ -102,10 +106,6 @@ Synergy88 ｜  2015.06 ~ 2020.01 ｜ 项目负责人
 |客服客户端 - Nitalk | synergy88 | ionic + golang | 2015.02 ~ 2015.06| 跨端应用 |
 |海关邮递物品查询系统 | 广州海关 | polymer + .NET | 2014.01 ~ 2014.06|  |
 |国际司综合业务管理系统 | 广州海关 | angular + .NET | 2013.07 ~ 2015.01|  |
-
-## 技能
-
-- `React` `Node` `TypeScript` `Webpack` `Nest` `TypeORM` `MySQL` `Docker` `Jest`
 
 ## 联系方式
 
