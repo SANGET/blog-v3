@@ -145,9 +145,9 @@ Synergy88 ｜  2015.06 ~ 2020.01 ｜ 项目负责人
 - deer-ui: https://ui.thinkmore.xyz/
 - B 端脚手架: https://scaffold.thinkmore.xyz/ -->
 
-## 教育经历
+<!-- ## 教育经历
 
-- 广东轻工职业技术学院 ~ 2013
+- 广东轻工职业技术学院 ~ 2013 -->
 
 [request]: https://github.com/minimal-studio/request
 [basic-helper]: https://github.com/minimal-studio/basic-helper
